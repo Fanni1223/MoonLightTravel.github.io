@@ -19,12 +19,14 @@
 
   nav{
     background-color: #B01E68;
+    
    
   }
-  .nav-item{
+  a.nav-link{
     color: white !important;
+    
   }
-
+  
   .btn{
     background-color: #FFB400;
   }
