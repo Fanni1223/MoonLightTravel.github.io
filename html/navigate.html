@@ -28,9 +28,9 @@
           <a class="nav-link" ui-sref="rolunk">Rólunk</a>
         </li>
       </ul>
-      <form class='d-flex' role='search'>
-        <input class='form-control me-2' type='search' placeholder='Keresés' aria-label='Search'>
-        <button class='btn' type='submit'>Keresés</button>
+      <form action='../MoonLightTravel/php/kereses.php' class='d-flex' role='search' method='POST'>
+        <input class='form-control me-2' type='search' placeholder='Keresés' aria-label='Search' name='keresendo'>
+        <button class='btn' type='submit' name='mod'>Keresés</button>
       </form>
     </div>
   </div>
