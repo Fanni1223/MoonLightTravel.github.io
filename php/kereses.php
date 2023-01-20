@@ -9,7 +9,7 @@
     <title>Keresés</title>
 </head>
 <body>
-<div ng-include src="'../MoonLightTravel/html/navigate.html'"></div>
+<div ng-include src="'../MoonLightTravel.github.io/html/navigate.html'"></div>
 
 
 <?php
@@ -59,7 +59,7 @@ echo "</div>";
 <!-- Footer -->
 <footer id="availability"
  class="container-fluid bg-light text-muted"
- ng-include src="'../MoonLightTravel/html/footer.html'"></footer>
+ ng-include src="'../MoonLightTravel.github.io/html/footer.html'"></footer>
 
 </body>
 </html>
