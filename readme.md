@@ -130,3 +130,5 @@
 1. readme.md
 2. ppt bemutató alapján vizsgaremek védése
 
+
+
