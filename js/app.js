@@ -57,7 +57,11 @@
           templateUrl: './html/europa.html',
           controller: 'appController'
         })
-      
+        .state('egyiptom', {
+          url: '/egyiptom',
+          templateUrl: './html/egyiptom.html',
+          controller: 'appController'
+        })
       $urlRouterProvider.otherwise('/');
     }
   ])
