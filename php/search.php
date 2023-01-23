@@ -10,3 +10,4 @@ $rows = $eredm->fetch_all(MYSQLI_ASSOC);
 mysqli_close($kapcs);
 $rows = json_encode($rows, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
 echo $rows;
+
