@@ -131,6 +131,6 @@
 2. ppt bemutató alapján vizsgaremek védése
 
 
-
+xddd
 
 
