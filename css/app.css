@@ -142,3 +142,14 @@ h1{
     box-sizing: border-box;
 }
 
+.card-title{
+    text-align: center;
+}
+.ikon{
+   width: 25px;
+   height: 25px;
+}
+.repulo{
+    float: right;
+}
+
