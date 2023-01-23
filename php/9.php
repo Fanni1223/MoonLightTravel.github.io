@@ -1,4 +1,4 @@
-<div ng-include src="'../MoonLightTravel/html/navigate.html'"></div>
+<div ng-include src="'../MoonLightTravel.github.io/html/navigate.html'"></div>
 
 <?php
 

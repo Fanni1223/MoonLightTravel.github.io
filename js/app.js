@@ -14,7 +14,13 @@
       $stateProvider
         .state('home', {
           url: '/',
-          templateUrl: './html/home.html'
+          templateUrl: './html/home.html',
+          controller: 'appController'
+        })
+        .state('kereses', {
+          url: '/kereses',
+          templateUrl: './html/kereses.html',
+          controller: 'appController'
         })
         .state('blog', {
           url: '/blog',
@@ -46,6 +52,33 @@
         })
       
       $urlRouterProvider.otherwise('/');
+    }
+  ])
+
+  // Application controller
+  .controller('appController', [
+    '$rootScope',
+    '$scope',
+    '$state',
+    'http',
+    function($rootScope, $scope, $state, http) {
+      $scope.place = "";
+      $scope.searchForPlace = (place) => {
+        place = place.trim();
+        if (place.length) {
+          http.request({
+            url: "./php/search.php",
+            method: 'POST',
+            data: place
+          })
+          .then(data => {
+            $rootScope.keresesEredmenye = data;
+            $rootScope.$applyAsync();
+            $state.go('kereses');
+          })
+          .catch(e => console.log(e));
+        }
+      };
     }
   ])
 
