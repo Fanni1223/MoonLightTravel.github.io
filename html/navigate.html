@@ -28,9 +28,10 @@
           <a class="nav-link" ui-sref="rolunk">Rólunk</a>
         </li>
       </ul>
-      <form action='../MoonLightTravel.github.io/php/kereses.php' class='d-flex' role='search' method='POST'>
-        <input class='form-control me-2' type='search' placeholder='Keresés' aria-label='Search' name='keresendo'>
-        <button class='btn' type='submit' name='mod'>Keresés</button>
+      <form class="d-flex">
+        <input class="form-control me-2" type="search" 
+               placeholder="Keresés" ng-model="place">
+        <button class='btn' type='button' ng-click="searchForPlace(place)">Keresés</button>
       </form>
     </div>
   </div>

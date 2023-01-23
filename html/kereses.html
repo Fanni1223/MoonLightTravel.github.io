@@ -1,0 +1,20 @@
+<div ng-include src="'../MoonLightTravel.github.io/html/navigate.html'"></div>
+<div class="container">
+  <div class='row mt-2'>
+    <div class='col-md-4' ng-repeat="hely in keresesEredmenye">
+      <div class='card my-3'>
+        <img ng-src="./img/{{hely.img}}">
+        <div class='card-body'>
+          <h5 class='card-title'>{{hely.nev}}</h5>
+          <a>
+            <button type='submit' class='btn'>Tovább>></button>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+ <footer id="availability"
+         class="container-fluid bg-light text-muted"
+         ng-include src="'../MoonLightTravel.github.io/html/footer.html'">
+</footer>
