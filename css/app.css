@@ -145,6 +145,10 @@ h1{
 .card-title{
     text-align: center;
 }
+.card-title2{
+    text-align: left;
+}
+
 .ikon{
    width: 25px;
    height: 25px;
