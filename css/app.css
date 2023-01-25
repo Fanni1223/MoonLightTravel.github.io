@@ -66,6 +66,11 @@ h1{
     width: 100%;
     height: auto;
 }
+.card-img-top{
+    width: 100%;
+    height: auto;
+    
+}
   
 .card__overlay {
     position: absolute;
