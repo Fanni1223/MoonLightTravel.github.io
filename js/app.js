@@ -55,12 +55,12 @@
         .state('europa', {
           url: '/europa',
           templateUrl: './html/europa.html',
-          controller: 'appController'
+          controller: 'page2Controller'
         })
         .state('egyiptom', {
           url: '/egyiptom',
           templateUrl: './html/egyiptom.html',
-          controller: 'appController'
+          controller: 'page2Controller'
         })
         .state('parizs', {
           url: '/parizs',
@@ -98,7 +98,89 @@
     }
   ])
 
+//app run
+.run([
+  "$rootScope",
+  "$transitions",
+  "$timeout",
+  "http",
+  function ($rootScope, $transitions, $timeout, http) {
+    // On before transaction
+    let isFirstRun = true;
+    $transitions.onBefore({}, function (transition) {
+      return $timeout(function () {
+        if (isFirstRun) {
+          isFirstRun = false;
+          if (transition.to().name !== "home")
+            return transition.router.stateService.target("home");
+        }
+        return true;
+      }).catch((e) => console.log(e));
+    });
+
+    // Set global variables
+    $rootScope.state = { id: null, prev: null };
+    $rootScope.user = { id: null, type: null, name: null };
+
+    // Get Flies
+    http
+      .request({
+        url: "./php/get.php",
+        method: "POST",
+        data: {
+          db: "moonlighttravel",
+          query: "SELECT * FROM `utak` WHERE orszag = 'Egyiptom';",
+          isAssoc: true,
+        },
+      })
+      .then((data) => {
+        $rootScope.page2 = data;
+        $rootScope.$applyAsync();
+      })
+      .catch((e) => console.log(e));
+  },
+])
+
+// Page2 controller
+.controller("page2Controller", [
+  "$scope",
+  "$element",
+  "$timeout",
+  "http",
+  "$stateParams",
+  function ($scope, $element, $timeout, http, $stateParams) {
+    let getData = () => {
+      $scope.pointer = null;
+      $scope.prevView = "table";
+      $scope.view = "table";
+      $scope.isDisabled = true;
+      $scope.isEdit = false;
+      $scope.$applyAsync();
+
+      http
+        .request({
+          url: "./php/get.php",
+          method: "POST",
+          data: {
+            db: "moonlighttravel",
+            query: "SELECT * FROM `utak` WHERE orszag = 'Egyiptom';",
+            isAssoc: true,
+          },
+        })
+        .then((data) => {
+          $scope.data = data;
+          if ($scope.data.length) $scope.pointer = 0;
+          $scope.$applyAsync();
+        })
+        .catch((e) => console.log(e));
+    };
+
+    getData();
+    console.log($stateParams);
+  },
+]);
 })(window, angular);
+
 
 
 
