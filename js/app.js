@@ -60,7 +60,7 @@
         .state('egyiptom', {
           url: '/egyiptom',
           templateUrl: './html/egyiptom.html',
-          controller: 'appController'
+          controller: 'egypt'
         })
         .state('parizs', {
           url: '/parizs',
@@ -97,7 +97,6 @@
       };
     }
   ])
-
 })(window, angular);
 
 
