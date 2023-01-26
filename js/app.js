@@ -67,6 +67,11 @@
           templateUrl: './html/parizs.html',
           controller: 'appController'
         })
+        .state('hajosblog', {
+          url: '/hajosblog',
+          templateUrl: './html/hajosblog.html',
+          controller: 'appController'
+        })
       $urlRouterProvider.otherwise('/');
     }
   ])
