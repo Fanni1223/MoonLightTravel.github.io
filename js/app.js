@@ -67,6 +67,7 @@
           templateUrl: './html/parizs.html',
           controller: 'page2Controller'
         })
+<<<<<<< HEAD
         .state('marseille', {
           url: '/marseille',
           templateUrl: './html/marseille.html',
@@ -108,6 +109,13 @@
           controller: 'page2Controller'
         })
 
+=======
+        .state('hajosblog', {
+          url: '/hajosblog',
+          templateUrl: './html/hajosblog.html',
+          controller: 'appController'
+        })
+>>>>>>> 4d7f157289cb6b5df2f0124cc67fbc3fb8005491
       $urlRouterProvider.otherwise('/');
     }
   ])
