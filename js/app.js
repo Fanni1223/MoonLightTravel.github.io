@@ -72,6 +72,26 @@
           templateUrl: './html/hajosblog.html',
           controller: 'appController'
         })
+        .state('programok', {
+          url: '/programok',
+          templateUrl: './html/programok.html',
+          controller: 'appController'
+        })
+        .state('utazasiInformaciok', {
+          url: '/utazasiInformaciok',
+          templateUrl: './html/utazasiInformaciok.html',
+          controller: 'appController'
+        })
+        .state('tengerpartiNyaralasok', {
+          url: '/tengerpartiNyaralasok',
+          templateUrl: './html/tengerpartiNyaralasok.html',
+          controller: 'appController'
+        })
+        .state('kalandturak', {
+          url: '/kalandturak',
+          templateUrl: './html/kalandturak.html',
+          controller: 'appController'
+        })
       $urlRouterProvider.otherwise('/');
     }
   ])
@@ -187,5 +207,15 @@
 })(window, angular);
 
 
-
-
+function myFunction(imgs) {
+  // Get the expanded image
+  var expandImg = document.getElementById("expandedImg");
+  // Get the image text
+  var imgText = document.getElementById("imgtext");
+  // Use the same src in the expanded image as the image being clicked on from the grid
+  expandImg.src = imgs.src;
+  // Use the value of the alt attribute of the clickable image as text inside the expanded image
+  imgText.innerHTML = imgs.alt;
+  // Show the container element (hidden with CSS)
+  expandImg.parentElement.style.display = "block";
+}
