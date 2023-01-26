@@ -32,6 +32,15 @@
           templateUrl: './html/rolunk.html',
           controller: 'appController'
         })
+        .state('ut', {
+          url: '/ut',
+          templateUrl: './html/ut.html',
+          controller: 'utController',
+          params: {
+            ut: null
+          }
+        })
+        /*
         .state('afrika', {
           url: '/afrika',
           templateUrl: './html/afrika.html',
@@ -67,6 +76,7 @@
           templateUrl: './html/parizs.html',
           controller: 'page2Controller'
         })
+        */
         .state('hajosblog', {
           url: '/hajosblog',
           templateUrl: './html/hajosblog.html',
@@ -96,6 +106,49 @@
     }
   ])
 
+  //app run
+  .run([
+    "$rootScope",
+    "$transitions",
+    "$timeout",
+    "http",
+    function ($rootScope, $transitions, $timeout, http) {
+      // On before transaction
+      let isFirstRun = true;
+      $transitions.onBefore({}, function (transition) {
+        return $timeout(function () {
+          if (isFirstRun) {
+            isFirstRun = false;
+            if (transition.to().name !== "home")
+              return transition.router.stateService.target("home");
+          }
+          return true;
+        }).catch((e) => console.log(e));
+      });
+
+      // Set global variables
+      $rootScope.state = { id: null, prev: null };
+      $rootScope.user = { id: null, type: null, name: null };
+
+      // Get Flies
+      http
+        .request({
+          url: "./php/get.php",
+          method: "POST",
+          data: {
+            db: "moonlighttravel",
+            query: "SELECT * FROM `utak` WHERE varos = 'Kairó';",
+            isAssoc: true,
+          },
+        })
+        .then((data) => {
+          $rootScope.page2 = data;
+          $rootScope.$applyAsync();
+        })
+        .catch((e) => console.log(e));
+    },
+  ])
+
   // Application controller
   .controller('appController', [
     '$rootScope',
@@ -123,89 +176,39 @@
     }
   ])
 
-//app run
-.run([
-  "$rootScope",
-  "$transitions",
-  "$timeout",
-  "http",
-  function ($rootScope, $transitions, $timeout, http) {
-    // On before transaction
-    let isFirstRun = true;
-    $transitions.onBefore({}, function (transition) {
-      return $timeout(function () {
-        if (isFirstRun) {
-          isFirstRun = false;
-          if (transition.to().name !== "home")
-            return transition.router.stateService.target("home");
-        }
-        return true;
-      }).catch((e) => console.log(e));
-    });
+  // Ut controller
+  .controller("utController", [
+    "$scope",
+    "$element",
+    "$timeout",
+    "http",
+    "$stateParams",
+    function ($scope, $element, $timeout, http, $stateParams) {
 
-    // Set global variables
-    $rootScope.state = { id: null, prev: null };
-    $rootScope.user = { id: null, type: null, name: null };
 
-    // Get Flies
-    http
-      .request({
+      $scope.ut = $stateParams.ut;
+      if (!$scope.ut) {
+        $state.go('home');
+        return;
+      }
+
+      http.request({
         url: "./php/get.php",
         method: "POST",
         data: {
           db: "moonlighttravel",
-          query: "SELECT * FROM `utak` WHERE varos = 'Kairó';",
+          query: "SELECT `utak`.*, `szallas`.* FROM `utak` INNER JOIN `szallas` ON `utak`.`szallas_id` = `szallas`.`szallas_id` WHERE `kontinens` = :ut",
+          params: {ut: $scope.ut},
           isAssoc: true,
         },
       })
       .then((data) => {
-        $rootScope.page2 = data;
-        $rootScope.$applyAsync();
+        $scope.data = data;
+        $scope.$applyAsync();
       })
       .catch((e) => console.log(e));
-  },
-])
-
-
-
-// Page2 controller
-.controller("page2Controller", [
-  "$scope",
-  "$element",
-  "$timeout",
-  "http",
-  "$stateParams",
-  function ($scope, $element, $timeout, http, $stateParams) {
-    let getData = () => {
-      $scope.pointer = null;
-      $scope.prevView = "table";
-      $scope.view = "table";
-      $scope.isDisabled = true;
-      $scope.isEdit = false;
-      $scope.$applyAsync();
-
-      http
-        .request({
-          url: "./php/get.php",
-          method: "POST",
-          data: {
-            db: "moonlighttravel",
-            query: "SELECT * FROM `utak` WHERE varos = 'Kairó';",
-            isAssoc: true,
-          },
-        })
-        .then((data) => {
-          $scope.data = data;
-          if ($scope.data.length) $scope.pointer = 0;
-          $scope.$applyAsync();
-        })
-        .catch((e) => console.log(e));
-    };
-
-    getData();
-    console.log($stateParams);
-  },
-])
+    },
+  ])
 
 
 })(window, angular);
