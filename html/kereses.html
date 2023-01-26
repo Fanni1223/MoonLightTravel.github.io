@@ -3,11 +3,17 @@
   <div class='row mt-2'>
     <div class='col-md-4' ng-repeat="hely in keresesEredmenye">
       <div class='card my-3'>
-        <img ng-src="./img/{{hely.img}}">
+        <img ng-src="./img/{{hely.utak_img}}">
         <div class='card-body'>
           <h5 class='card-title'>{{hely.nev}}</h5>
+          <h5 class='card-title'>{{hely.megnev}}<img src="./img/ikonok/hotel.svg" class="ikon"></h5> 
+          <img src="./img/ikonok/star.svg" class="ikon"><img src="./img/ikonok/star.svg" class="ikon"><img src="./img/ikonok/star.svg" class="ikon"><img src="../MoonLightTravel.github.io/img/ikonok/repulo.svg" class="ikon mx-5 float-end">
+          <br>
+          <br>
+          <p class='card-title2'>{{hely.idoszak}} <span class="mx-5 float-end">{{hely.ar}}</span></p> 
+          <br>
           <a ui-sref="{{hely.html}}">
-            <button type='submit' class='btn' ng-click="searchForPlace(place)">Tovább>></button>
+            <button type='submit' class='btn'>Tovább>></button>
           </a>
         </div>
       </div>

@@ -55,17 +55,17 @@
         .state('europa', {
           url: '/europa',
           templateUrl: './html/europa.html',
-          controller: 'page2Controller'
+          controller: 'appController'
         })
-        .state('egyiptom', {
-          url: '/egyiptom',
-          templateUrl: './html/egyiptom.html',
+        .state('kairo', {
+          url: '/kairo',
+          templateUrl: './html/kairo.html',
           controller: 'page2Controller'
         })
         .state('parizs', {
           url: '/parizs',
           templateUrl: './html/parizs.html',
-          controller: 'appController'
+          controller: 'page2Controller'
         })
         .state('hajosblog', {
           url: '/hajosblog',
@@ -154,7 +154,7 @@
         method: "POST",
         data: {
           db: "moonlighttravel",
-          query: "SELECT * FROM `utak` WHERE orszag = 'Egyiptom';",
+          query: "SELECT * FROM `utak` WHERE varos = 'Kairó';",
           isAssoc: true,
         },
       })
@@ -165,6 +165,8 @@
       .catch((e) => console.log(e));
   },
 ])
+
+
 
 // Page2 controller
 .controller("page2Controller", [
@@ -188,7 +190,7 @@
           method: "POST",
           data: {
             db: "moonlighttravel",
-            query: "SELECT * FROM `utak` WHERE orszag = 'Egyiptom';",
+            query: "SELECT * FROM `utak` WHERE varos = 'Kairó';",
             isAssoc: true,
           },
         })
@@ -203,7 +205,9 @@
     getData();
     console.log($stateParams);
   },
-]);
+])
+
+
 })(window, angular);
 
 
