@@ -67,55 +67,11 @@
           templateUrl: './html/parizs.html',
           controller: 'page2Controller'
         })
-<<<<<<< HEAD
-        .state('marseille', {
-          url: '/marseille',
-          templateUrl: './html/marseille.html',
-          controller: 'page2Controller'
-        })
-        .state('lyon', {
-          url: '/lyon',
-          templateUrl: './html/lyon.html',
-          controller: 'page2Controller'
-        })
-        .state('budapest', {
-          url: '/budapest',
-          templateUrl: './html/budapest.html',
-          controller: 'page2Controller'
-        })
-        .state('pecs', {
-          url: '/pecs',
-          templateUrl: './html/pecs.html',
-          controller: 'page2Controller'
-        })
-        .state('siofok', {
-          url: '/siofok',
-          templateUrl: './html/siofok.html',
-          controller: 'page2Controller'
-        })
-        .state('mexikovaros', {
-          url: '/mexikovaros',
-          templateUrl: './html/mexikovaros.html',
-          controller: 'page2Controller'
-        })
-        .state('tokio', {
-          url: '/tokio',
-          templateUrl: './html/tokio.html',
-          controller: 'page2Controller'
-        })
-        .state('sydney', {
-          url: '/sydney',
-          templateUrl: './html/sydney.html',
-          controller: 'page2Controller'
-        })
-
-=======
         .state('hajosblog', {
           url: '/hajosblog',
           templateUrl: './html/hajosblog.html',
           controller: 'appController'
         })
->>>>>>> 4d7f157289cb6b5df2f0124cc67fbc3fb8005491
       $urlRouterProvider.otherwise('/');
     }
   ])
