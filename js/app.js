@@ -55,18 +55,59 @@
         .state('europa', {
           url: '/europa',
           templateUrl: './html/europa.html',
-          controller: 'page2Controller'
+          controller: 'appController'
         })
-        .state('egyiptom', {
-          url: '/egyiptom',
-          templateUrl: './html/egyiptom.html',
+        .state('kairo', {
+          url: '/kairo',
+          templateUrl: './html/kairo.html',
           controller: 'page2Controller'
         })
         .state('parizs', {
           url: '/parizs',
           templateUrl: './html/parizs.html',
-          controller: 'appController'
+          controller: 'page2Controller'
         })
+        .state('marseille', {
+          url: '/marseille',
+          templateUrl: './html/marseille.html',
+          controller: 'page2Controller'
+        })
+        .state('lyon', {
+          url: '/lyon',
+          templateUrl: './html/lyon.html',
+          controller: 'page2Controller'
+        })
+        .state('budapest', {
+          url: '/budapest',
+          templateUrl: './html/budapest.html',
+          controller: 'page2Controller'
+        })
+        .state('pecs', {
+          url: '/pecs',
+          templateUrl: './html/pecs.html',
+          controller: 'page2Controller'
+        })
+        .state('siofok', {
+          url: '/siofok',
+          templateUrl: './html/siofok.html',
+          controller: 'page2Controller'
+        })
+        .state('mexikovaros', {
+          url: '/mexikovaros',
+          templateUrl: './html/mexikovaros.html',
+          controller: 'page2Controller'
+        })
+        .state('tokio', {
+          url: '/tokio',
+          templateUrl: './html/tokio.html',
+          controller: 'page2Controller'
+        })
+        .state('sydney', {
+          url: '/sydney',
+          templateUrl: './html/sydney.html',
+          controller: 'page2Controller'
+        })
+
       $urlRouterProvider.otherwise('/');
     }
   ])
@@ -129,7 +170,7 @@
         method: "POST",
         data: {
           db: "moonlighttravel",
-          query: "SELECT * FROM `utak` WHERE orszag = 'Egyiptom';",
+          query: "SELECT * FROM `utak` WHERE varos = 'Kairó';",
           isAssoc: true,
         },
       })
@@ -140,6 +181,8 @@
       .catch((e) => console.log(e));
   },
 ])
+
+
 
 // Page2 controller
 .controller("page2Controller", [
@@ -163,7 +206,7 @@
           method: "POST",
           data: {
             db: "moonlighttravel",
-            query: "SELECT * FROM `utak` WHERE orszag = 'Egyiptom';",
+            query: "SELECT * FROM `utak` WHERE varos = 'Kairó';",
             isAssoc: true,
           },
         })
@@ -178,7 +221,9 @@
     getData();
     console.log($stateParams);
   },
-]);
+])
+
+
 })(window, angular);
 
 
