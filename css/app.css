@@ -66,6 +66,11 @@ h1{
     width: 100%;
     height: auto;
 }
+.card-img-top{
+    width: 100%;
+    height: auto;
+    
+}
   
 .card__overlay {
     position: absolute;
@@ -148,7 +153,9 @@ h1{
 .card-title2{
     text-align: left;
 }
-
+.card-title3{
+    text-align: right;
+}
 .ikon{
    width: 25px;
    height: 25px;
