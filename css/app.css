@@ -146,42 +146,28 @@ h2{
     --curve: 40;
 }
   
+
+
 * {
     box-sizing: border-box;
-}
-
-.card-title{
-    text-align: center;
-}
-.card-title2{
-    text-align: left;
-}
-.card-title3{
-    text-align: right;
-}
-.ikon{
-   width: 25px;
-   height: 25px;
-}
-.repulo{
-    float: right;
-}
-
-.column {
-    float: left;
-    width: 25%;
-    padding: 10px;
   }
   
-  .container2 {
-    position: relative;
-    display: none;
+  body {
+
+    font-family: Arial;
+  }
+  
+  /* The grid: Four equal columns that floats next to each other */
+  .column {
+    float: left;
+    width: 11.5%;
+    padding: 10px;
   }
   
   /* Style the images inside the grid */
   .column img {
-    opacity: 0.8;
-    cursor: pointer;
+    opacity: 0.8; 
+    cursor: pointer; 
   }
   
   .column img:hover {
@@ -195,8 +181,11 @@ h2{
     clear: both;
   }
   
-  /* The expanding image container (positioning is needed to position the close button and the text) */
-  
+  /* The expanding image container */
+  .container2 {
+    position: relative;
+    display: none;
+  }
   
   /* Expanding image text */
   #imgtext {
@@ -207,7 +196,7 @@ h2{
     font-size: 20px;
   }
   
-  /* Closable button inside the image */
+  /* Closable button inside the expanded image */
   .closebtn {
     position: absolute;
     top: 10px;
@@ -216,9 +205,22 @@ h2{
     font-size: 35px;
     cursor: pointer;
   }
-  *{
-    box-sizing: border-box;
+  .bs-callout-warning {
+    border-left-color: orange !important;
   }
-  element.style {
-    width: 100%;
-}
+  .bs-callout {
+    border: 1px solid #eee;
+    border-left-width: 5px;
+    border-radius: 3px;
+    margin: 20px 0;
+    padding: 20px;
+  }
+  .destination-description {
+    color: #004990;
+    font-size: 1.2rem;
+  }
+
+  .szoveg{
+    text-align: right;
+  }
+   
