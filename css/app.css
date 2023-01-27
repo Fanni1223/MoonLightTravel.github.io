@@ -217,6 +217,23 @@ h2{
   .szoveg{
     text-align: right;
   }
+  .card-title{
+    text-align: center;
+}
+.card-title2{
+    text-align: left;
+}
+.card-title3{
+    text-align: right;
+}
+.ikon{
+   width: 25px;
+   height: 25px;
+}
+.repulo{
+    float: right;
+}
 
-  
+
+
    
