@@ -197,7 +197,7 @@
         method: "POST",
         data: {
           db: "moonlighttravel",
-          query: "SELECT `utak`.*, `szallas`.* FROM `utak` INNER JOIN `szallas` ON `utak`.`szallas_id` = `szallas`.`szallas_id` WHERE `kontinens` = :ut",
+          query: "SELECT `utak`.*, `szallas`.* FROM `utak` INNER JOIN `szallas` ON `utak`.`szallas_id2` = `szallas`.`szallas_id` WHERE `kontinens` = :ut",
           params: {ut: $scope.ut},
           isAssoc: true,
         },
