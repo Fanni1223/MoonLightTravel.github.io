@@ -32,6 +32,15 @@
           templateUrl: './html/rolunk.html',
           controller: 'appController'
         })
+        .state('ut', {
+          url: '/ut',
+          templateUrl: './html/ut.html',
+          controller: 'utController',
+          params: {
+            ut: null
+          }
+        })
+        /*
         .state('afrika', {
           url: '/afrika',
           templateUrl: './html/afrika.html',
@@ -55,25 +64,89 @@
         .state('europa', {
           url: '/europa',
           templateUrl: './html/europa.html',
-          controller: 'page2Controller'
+          controller: 'appController'
         })
-        .state('egyiptom', {
-          url: '/egyiptom',
-          templateUrl: './html/egyiptom.html',
+        .state('kairo', {
+          url: '/kairo',
+          templateUrl: './html/kairo.html',
           controller: 'page2Controller'
         })
         .state('parizs', {
           url: '/parizs',
           templateUrl: './html/parizs.html',
-          controller: 'appController'
+          controller: 'page2Controller'
         })
+        */
         .state('hajosblog', {
           url: '/hajosblog',
           templateUrl: './html/hajosblog.html',
           controller: 'appController'
         })
+        .state('programok', {
+          url: '/programok',
+          templateUrl: './html/programok.html',
+          controller: 'appController'
+        })
+        .state('utazasiInformaciok', {
+          url: '/utazasiInformaciok',
+          templateUrl: './html/utazasiInformaciok.html',
+          controller: 'appController'
+        })
+        .state('tengerpartiNyaralasok', {
+          url: '/tengerpartiNyaralasok',
+          templateUrl: './html/tengerpartiNyaralasok.html',
+          controller: 'appController'
+        })
+        .state('kalandturak', {
+          url: '/kalandturak',
+          templateUrl: './html/kalandturak.html',
+          controller: 'appController'
+        })
       $urlRouterProvider.otherwise('/');
     }
+  ])
+
+  //app run
+  .run([
+    "$rootScope",
+    "$transitions",
+    "$timeout",
+    "http",
+    function ($rootScope, $transitions, $timeout, http) {
+      // On before transaction
+      let isFirstRun = true;
+      $transitions.onBefore({}, function (transition) {
+        return $timeout(function () {
+          if (isFirstRun) {
+            isFirstRun = false;
+            if (transition.to().name !== "home")
+              return transition.router.stateService.target("home");
+          }
+          return true;
+        }).catch((e) => console.log(e));
+      });
+
+      // Set global variables
+      $rootScope.state = { id: null, prev: null };
+      $rootScope.user = { id: null, type: null, name: null };
+
+      // Get Flies
+      http
+        .request({
+          url: "./php/get.php",
+          method: "POST",
+          data: {
+            db: "moonlighttravel",
+            query: "SELECT * FROM `utak` WHERE varos = 'Kairó';",
+            isAssoc: true,
+          },
+        })
+        .then((data) => {
+          $rootScope.page2 = data;
+          $rootScope.$applyAsync();
+        })
+        .catch((e) => console.log(e));
+    },
   ])
 
   // Application controller
@@ -103,89 +176,53 @@
     }
   ])
 
-//app run
-.run([
-  "$rootScope",
-  "$transitions",
-  "$timeout",
-  "http",
-  function ($rootScope, $transitions, $timeout, http) {
-    // On before transaction
-    let isFirstRun = true;
-    $transitions.onBefore({}, function (transition) {
-      return $timeout(function () {
-        if (isFirstRun) {
-          isFirstRun = false;
-          if (transition.to().name !== "home")
-            return transition.router.stateService.target("home");
-        }
-        return true;
-      }).catch((e) => console.log(e));
-    });
+  // Ut controller
+  .controller("utController", [
+    "$scope",
+    "$element",
+    "$timeout",
+    "http",
+    "$stateParams",
+    function ($scope, $element, $timeout, http, $stateParams) {
 
-    // Set global variables
-    $rootScope.state = { id: null, prev: null };
-    $rootScope.user = { id: null, type: null, name: null };
 
-    // Get Flies
-    http
-      .request({
+      $scope.ut = $stateParams.ut;
+      if (!$scope.ut) {
+        $state.go('home');
+        return;
+      }
+
+      http.request({
         url: "./php/get.php",
         method: "POST",
         data: {
           db: "moonlighttravel",
-          query: "SELECT * FROM `utak` WHERE orszag = 'Egyiptom';",
+          query: "SELECT `utak`.*, `szallas`.* FROM `utak` INNER JOIN `szallas` ON `utak`.`szallas_id2` = `szallas`.`szallas_id` WHERE `kontinens` = :ut",
+          params: {ut: $scope.ut},
           isAssoc: true,
         },
       })
       .then((data) => {
-        $rootScope.page2 = data;
-        $rootScope.$applyAsync();
+        $scope.data = data;
+        $scope.$applyAsync();
       })
       .catch((e) => console.log(e));
-  },
-])
+    },
+  ])
 
-// Page2 controller
-.controller("page2Controller", [
-  "$scope",
-  "$element",
-  "$timeout",
-  "http",
-  "$stateParams",
-  function ($scope, $element, $timeout, http, $stateParams) {
-    let getData = () => {
-      $scope.pointer = null;
-      $scope.prevView = "table";
-      $scope.view = "table";
-      $scope.isDisabled = true;
-      $scope.isEdit = false;
-      $scope.$applyAsync();
 
-      http
-        .request({
-          url: "./php/get.php",
-          method: "POST",
-          data: {
-            db: "moonlighttravel",
-            query: "SELECT * FROM `utak` WHERE orszag = 'Egyiptom';",
-            isAssoc: true,
-          },
-        })
-        .then((data) => {
-          $scope.data = data;
-          if ($scope.data.length) $scope.pointer = 0;
-          $scope.$applyAsync();
-        })
-        .catch((e) => console.log(e));
-    };
-
-    getData();
-    console.log($stateParams);
-  },
-]);
 })(window, angular);
 
 
-
-
+function myFunction(imgs) {
+  // Get the expanded image
+  var expandImg = document.getElementById("expandedImg");
+  // Get the image text
+  var imgText = document.getElementById("imgtext");
+  // Use the same src in the expanded image as the image being clicked on from the grid
+  expandImg.src = imgs.src;
+  // Use the value of the alt attribute of the clickable image as text inside the expanded image
+  imgText.innerHTML = imgs.alt;
+  // Show the container element (hidden with CSS)
+  expandImg.parentElement.style.display = "block";
+}

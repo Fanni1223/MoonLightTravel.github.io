@@ -1,0 +1,33 @@
+<div ng-include src="'../MoonLightTravel.github.io/html/navigate.html'"></div>
+<div class="container">
+<br>
+<h1 class="text-center mt-5">Európa</h1>
+<div class='row mt-2'>
+    <div class='col-md-4'>
+
+
+      <div class='card my-3' ng-repeat="ut in data">
+        <img ng-src="./img/{{ut.img}}">
+        <div class='card-body'>
+          <h5 class='card-title'>{{ut.nev}}</h5>
+          <h5 class='card-title'>{{ut.megnev}}<img src="./img/ikonok/hotel.svg" class="ikon"></h5> 
+          <img src="./img/ikonok/star.svg" class="ikon" ng-repeat="x in [].constructor(ut.tipus) track by $index">
+          <br>
+          <br>
+          
+          <p class='card-title2'>{{ut.idoszak}}<span class="mx-5 float-end">{{ut.ut_ar}}Ft</span></p> 
+          <br>
+          <a ui-sref="parizs">
+            <button type='submit' class='btn'>Tovább>></button>                                                     
+            
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+ <!-- Footer -->
+ <footer id="availability"
+ class="container-fluid bg-light text-muted"
+ ng-include src="'../MoonLightTravel.github.io/html/footer.html'"></footer>
