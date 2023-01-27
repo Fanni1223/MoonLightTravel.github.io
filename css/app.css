@@ -44,7 +44,7 @@ h1{
     color: #1A385A;
 }
 h2{
-    font-size: 14px;
+    font-size: 20px;
 }
 
 .cards {
@@ -167,9 +167,11 @@ h2{
     cursor: pointer; 
   }
   
+  
   .column img:hover {
     opacity: 1;
   }
+  
   
   /* Clear floats after the columns */
   .row:after {
@@ -180,6 +182,14 @@ h2{
   
   /* The expanding image container */
   .container2 {
+    position: relative;
+    display: none;
+  }
+  .container3 {
+    position: relative;
+    display: none;
+  }
+  .container4 {
     position: relative;
     display: none;
   }
