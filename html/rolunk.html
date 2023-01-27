@@ -1,51 +1,50 @@
 <div ng-include src="'../MoonLightTravel.github.io/html/navigate.html'"></div>
 <div class="container">
-<h1>Rólunk</h1>
+<h1 class="text-center">Irodák</h1>
+<style>
+.adatok
+{
+  width: 100%;
+  content: "";
+  position: absolute;
+  bottom: -15px;
+  height: 2px;
+  width: 125px;
+  background: #f8f2ef;
+}
+
+
+</style>
 </div>
 
 
-<div class='row mt-6'>
-    <div class='col-md-4'>
-      <div class='card my-2'>
-        <img src="./img/paris1-min.jpg">
-        <div class='card-body'>
-          <h5 class='card-title'>4 napos nyaralás Párizsban, a fények városában</h5>
-          <h5 class='card-title'>Manolita Paris <img src="./img/ikonok/hotel.svg" class="ikon"></h5> 
-          <img src="./img/ikonok/star.svg" class="ikon"><img src="./img/ikonok/star.svg" class="ikon"><img src="./img/ikonok/star.svg" class="ikon"><img src="./img/ikonok/star.svg" class="ikon"><img src="./img/ikonok/star.svg" class="ikon " ><img src="../MoonLightTravel.github.io/img/ikonok/repulo.svg" class="ikon mx-5 float-end" class="">
-          <br>
-          <br>
-          <h5 class='card-title2'>4 nap</h5> <h5 class='card-title mx-5'>600.000Ft</h5>
-    
-        <br>
-        <br>
-
-
-          <a>
-            <button type='submit' class='btn'>Tovább>></button>
-          </a>
-        </div>
+<div class="row mt-6 d-flex justify-content-center">
+    <div class='col-md-5'>
+      <div class='card my-3'>
+        <img src="./img/iroda_vagott.png" class="rolunk-kep">
       </div>
     </div>
 
-    <div class='col-md-6'>
-        <div class='card my-2'>
-          <img src="./img/iroda-min-vagott.jpg">
-
-          <div class='card-body'>
-            <h5 class='card-title'>Marseille, provence-i kirándulások</h5>
-            <h5 class='card-title'>Toyoko INN <img src="./img/ikonok/hotel.svg" class="ikon"></h5> 
-            <img src="./img/ikonok/star.svg" class="ikon"><img src="./img/ikonok/star.svg" class="ikon"><img src="./img/ikonok/star.svg" class="ikon"><img src="../MoonLightTravel.github.io/img/ikonok/repulo.svg" class="ikon mx-5 float-end" class="">
-            <br>
-            <br>
-            <a>
-              <button type='submit' class='btn'>Tovább>></button>
-            </a>
-          </div>
+    <div class='col-md-5'>
+        <div class='card my-3'>
+          <img src="./img/iroda-min-vagott.jpg" class="rolunk-kep">
         </div>
-      </div>
+    </div>
+</div>
 
-      
+<div class="row mt-6 d-flex justify-content-center">
+    <div class='col-md-6 '> 
+      <span class="border border-dark adatok m-auto">
+          <img src=".img/ikonok/varos.svg" alt=""> <h3>6900 Makó, Posta u. 4-6</h3> 
+          <img src=".img/ikonok/telefon.svg" alt=""> <h3>06(30) 777-7777</h3> 
+          <img src=".img/ikonok/email.svg" alt=""> <h3>moonlighttravel@gmail.com</h3>
+      </span>
+    </div>
+    <div class='col-md-4'> 
+      <span class="border border-dark terkep">
 
+      </span>
+    </div>
 </div>
 
 
@@ -55,4 +54,14 @@
  class="container-fluid bg-light text-muted"
  ng-include src="'../MoonLightTravel.github.io/html/footer.html'"></footer>
 
-                                            
+ 
+ /* Line 419 */
+
+position: absolute;
+width: 140px;
+height: 0px;
+left: 478.02px;
+top: 700px;
+
+border: 1px solid #1A385A;
+transform: rotate(90.01deg);
