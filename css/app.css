@@ -150,13 +150,7 @@ h2{
 
 * {
     box-sizing: border-box;
-  }
-  
-  body {
-
-    font-family: Arial;
-  }
-  
+  }  
   /* The grid: Four equal columns that floats next to each other */
   .column {
     float: left;
@@ -223,4 +217,6 @@ h2{
   .szoveg{
     text-align: right;
   }
+
+  
    

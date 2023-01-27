@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Gép: 127.0.0.1
--- Létrehozás ideje: 2023. Jan 27. 08:37
+-- Létrehozás ideje: 2023. Jan 27. 10:22
 -- Kiszolgáló verziója: 10.4.6-MariaDB
 -- PHP verzió: 7.3.8
 
@@ -105,14 +105,14 @@ CREATE TABLE `utak` (
   `url_varos` varchar(50) COLLATE utf8_hungarian_ci NOT NULL,
   `allapot` varchar(50) COLLATE utf8_hungarian_ci NOT NULL,
   `ut_ar` int(6) NOT NULL,
-  `html` varchar(50) COLLATE utf8_hungarian_ci NOT NULL
+  `html_oldal` varchar(50) COLLATE utf8_hungarian_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_hungarian_ci;
 
 --
 -- A tábla adatainak kiíratása `utak`
 --
 
-INSERT INTO `utak` (`ut_id`, `kontinens`, `orszag`, `varos`, `utak_img`, `leiras`, `kozlekedesi_eszkoz`, `kategoria`, `nev`, `idoszak`, `szallas_id2`, `url_kontinens`, `url_orszag`, `url_varos`, `allapot`, `ut_ar`, `html`) VALUES
+INSERT INTO `utak` (`ut_id`, `kontinens`, `orszag`, `varos`, `utak_img`, `leiras`, `kozlekedesi_eszkoz`, `kategoria`, `nev`, `idoszak`, `szallas_id2`, `url_kontinens`, `url_orszag`, `url_varos`, `allapot`, `ut_ar`, `html_oldal`) VALUES
 (1, 'Európa', 'Franciaország', 'Párizs', 'paris1-min.jpg', 'A világban Párizs a legnépszerűbb úticél a turisták körében, évi több mint 30 millió látogatóval. Párizsban az egyik leghíresebb építmény az Eiffel-torony. Az Eiffel-torony sok megpróbáltatáson ment keresztül, de még ma is a világ egyik leghíresebb épületeként ismerjük. A Notre-Dame Párizs legismertebb gótikus stílusú temploma, a Párizsi főegyházmegye főszékesegyháza. Monumentális méreteivel és díszítettségével különleges hatást gyakorol a szemlélőkre. A Louvre Párizs központi részén, a Szajna jobb partján található nemzeti múzeum, a világ egyik legismertebb és 1793 óta a francia főváros legnagyobb kiállítóhelye. A Galeries Lafayette Franciaországban több mint 30 saját áruházzal rendelkezik, de kilépett a világpiacra is: a világ több nagyvárosában nyitott boltokat. \r\n\r\nA nyaraláshoz tartozó programok:\r\nEiffel-torony\r\nNotre-Dame\r\nLouvre múzeum\r\nGaleries Lafayette\r\n', 'repülő', 'külföldi', '4 napos nyaralás Párizsban, a fények városában', '4 nap', 1, 'Europa', 'Franciaorszag', 'Parizs', 'városlátogatás', 600000, 'parizs'),
 (2, 'Európa', 'Franciaország', 'Marseille', 'marseille1-min.jpg', 'Az Európai és Mediterrán Civilizációk Múzeuma egy nemzeti múzeum a franciaországi Marseille-ben. A kék és a fehér szín sehol sem annyira gyönyörű, mint a marseille-i öblökben. A Misztrál nevű híres szél által felkorbácsolt tengerből több száz méteres magasságban nőnek ki a sziklamászók kedvenc sziklafalai – közöttük bújnak meg a híres öblök, azaz a calanque-ok. If vára, a Földközi-tenger azonos nevű szigetén áll, Marseille kikötője mellett. Hírnevét a Monte Cristo grófja című regénynek köszönheti, amelynek főhőse ebben a várban raboskodott. Ma a város egyik jelentős turisztikai látványossága. A marseille-i katedrális egy római katolikus katedrális, és Franciaország nemzeti emlékműve, Marseille-ben található. \r\n\r\n\r\nA nyaraláshoz tartozó programok:\r\nEurópai és Mediterrán Civilizációk Múzeuma\r\nCalanques Nemzeti Park\r\nIf vára\r\nLa Major katedrális', 'repülő', 'külföldi', 'Marseille, provence-i kirándulások', '4 nap', 2, 'Europa', 'Franciaorszag', 'Marseille', 'last minute', 400000, 'marseille'),
 (3, 'Európa', 'Franciaország', 'Lyon', 'lyon1-min.jpg', 'A lyoni katedrális egy római katolikus templom, amely a Place Saint-Jean-en található Lyon központjában, Franciaországban. Az Ancient Theatre of Fourvière egy római színház Lyonban, Franciaországban. Fourvière dombján épült, amely a római város központjában található. A színház az UNESCO Világörökség része, amely Lyon történelmi központját védi. A Jardin botanique de Lyon, vagy más néven Jardin botanique du Parc de la Tête d\'Or, egy 8 hektáros önkormányzati botanikus kert a Parc de la Tête d\'or-ban, Lyon 6. kerületében, Franciaországban. Hétköznapokon díjmentesen tart nyitva.\r\n\r\nA nyaraláshoz tartozó programok:\r\nLyon-katedrális\r\nTeatro Galo-Romano\r\nLyon Botanical Garden', 'busz', 'külföldi', 'Kellemes hétvége Lyon környékén', '3 nap', 3, 'Europa', 'Franciaorszag', 'Lyon', 'városlátogatás', 100000, 'lyon'),
