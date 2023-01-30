@@ -154,7 +154,7 @@ h2{
   /* The grid: Four equal columns that floats next to each other */
   .column {
     float: left;
-    width: 11.5%;
+    width: 21%;
     padding: 10px;
   }
   
@@ -242,6 +242,17 @@ h2{
 }
 .repulo{
     float: right;
+}
+
+.text{
+float: right;
+text-align: justify;
+position:right;
+margin: right;
+padding: right;
+display: inline-block;
+width: 600px;
+
 }
 
 
