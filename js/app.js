@@ -40,43 +40,15 @@
             ut: null
           }
         })
-        /*
-        .state('afrika', {
-          url: '/afrika',
-          templateUrl: './html/afrika.html',
-          controller: 'appController'
+        .state('utak', {
+          url: '/utak',
+          templateUrl: './html/utak.html',
+          controller: 'utakController',
+          params: {
+            utak: null
+          }
         })
-        .state('amerika', {
-          url: '/amerika',
-          templateUrl: './html/amerika.html',
-          controller: 'appController'
-        })
-        .state('ausztralia', {
-          url: '/ausztralia',
-          templateUrl: './html/ausztralia.html',
-          controller: 'appController'
-        })
-        .state('azsia', {
-          url: '/azsia',
-          templateUrl: './html/azsia.html',
-          controller: 'appController'
-        })
-        .state('europa', {
-          url: '/europa',
-          templateUrl: './html/europa.html',
-          controller: 'appController'
-        })
-        .state('kairo', {
-          url: '/kairo',
-          templateUrl: './html/kairo.html',
-          controller: 'page2Controller'
-        })
-        .state('parizs', {
-          url: '/parizs',
-          templateUrl: './html/parizs.html',
-          controller: 'page2Controller'
-        })
-        */
+       
         .state('hajosblog', {
           url: '/hajosblog',
           templateUrl: './html/hajosblog.html',
@@ -209,6 +181,40 @@
       .catch((e) => console.log(e));
     },
   ])
+
+// Utak controller
+.controller("utakController", [
+  "$scope",
+  "$element",
+  "$timeout",
+  "http",
+  "$stateParams",
+  function ($scope, $element, $timeout, http, $stateParams) {
+
+
+    $scope.utak = $stateParams.utak;
+    if (!$scope.utak) {
+      $state.go('home');
+      return;
+    }
+
+    http.request({
+      url: "./php/get.php",
+      method: "POST",
+      data: {
+        db: "moonlighttravel",
+        query: "SELECT `utak`.*, `szallas`.* FROM `utak` INNER JOIN `szallas` ON `utak`.`szallas_id2` = `szallas`.`szallas_id` WHERE `varos` = :utak",
+        params: {utak: $scope.utak},
+        isAssoc: true,
+      },
+    })
+    .then((data) => {
+      $scope.data = data;
+      $scope.$applyAsync();
+    })
+    .catch((e) => console.log(e));
+  },
+])
 
 
 })(window, angular);

@@ -1,34 +1,39 @@
 <div ng-include src="'../MoonLightTravel.github.io/html/navigate.html'"></div>
 <div class="container">
   <br>
-<h1>Blog</h1>
-<br>
+<h1>Utazás a görög szigetekre</h1>
+<div class="szoveg">Láttogasson el Athénba egy csodás hajóutazzással</div>
 <div class="row">
   <div class="column">
-    <img src="../MoonLightTravel.github.io/img/balaton2-min.jpg" alt="Nature" onclick="myFunction(this);">
+    <img src="../MoonLightTravel.github.io/img/gorog_ut1.jpg"  style="width:100%" onclick="myFunction(this);">
   </div>
   <div class="column">
-    <img src="../MoonLightTravel.github.io/img/balaton3-min.jpg" alt="Snow" onclick="myFunction(this);">
+    <img src="../MoonLightTravel.github.io/img/gorog_ut2.jpg"  style="width:100%" onclick="myFunction(this);">
   </div>
   <div class="column">
-    <img src="../MoonLightTravel.github.io/img/balaton4-min.jpg" alt="Mountains" onclick="myFunction(this);">
+    <img src="../MoonLightTravel.github.io/img/gorog_ut3.jpg"  style="width:100%" onclick="myFunction(this);">
   </div>
   <div class="column">
-    <img src="../MoonLightTravel.github.io/img/balaton-min.jpg" alt="Lights" onclick="myFunction(this);">
-  </div>
+    <img src="../MoonLightTravel.github.io/img/gorog_ut4.jpg"  style="width:100%" onclick="myFunction(this);">
+  </div> 
 </div>
-
-<!-- The expanding image container -->
-<div class="container2 "style="display: block;">
-  <!-- Close the image -->
+<div class="container2">
   <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
-
-  <!-- Expanded image -->
-  <img id="expandedImg" style="width:70%">
-
-  <!-- Image text -->
-  <div id="imgtext"></div>
+  <img id="expandedImg" style="width:45%"> 
+  <div id="imgtext"></div> 
 </div>
+
+
+<script>
+function myFunction(imgs) {
+  var expandImg = document.getElementById("expandedImg");
+  var imgText = document.getElementById("imgtext");
+  expandImg.src = imgs.src;
+  imgText.innerHTML = imgs.alt;
+  expandImg.parentElement.style.display = "block";
+}
+</script>
+<br>
 
 
 

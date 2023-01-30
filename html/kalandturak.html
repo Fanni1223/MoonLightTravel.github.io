@@ -1,10 +1,39 @@
 <div ng-include src="'../MoonLightTravel.github.io/html/navigate.html'"></div>
 <div class="container">
   <br>
-<h1>Blog5</h1>
+<h1>Kalandtúrák</h1>
 <br>
-<h2></h2>
+<h2>Schneeberg (2076m)</h2>
+<div class="row">
+  <div class="column">
+    <img src="../MoonLightTravel.github.io/img/hegytura.jpg"  style="width:100%" onclick="myFunction(this);">
+  </div>
+  <div class="column">
+    <img src="../MoonLightTravel.github.io/img/hegytura2.jpg"  style="width:100%" onclick="myFunction(this);">
+  </div>
+  <div class="column">
+    <img src="../MoonLightTravel.github.io/img/hegytura3.jpg"  style="width:100%" onclick="myFunction(this);">
+  </div>
+  <div class="column">
+    <img src="../MoonLightTravel.github.io/img/hegytura4.jpg"  style="width:100%" onclick="myFunction(this);">
+  </div> 
+</div>
+<div class="container2">
+  <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
+  <img id="expandedImg" style="width:45%"> 
+  <div id="imgtext"></div> 
+</div>
 
+
+<script>
+function myFunction(imgs) {
+  var expandImg = document.getElementById("expandedImg");
+  var imgText = document.getElementById("imgtext");
+  expandImg.src = imgs.src;
+  imgText.innerHTML = imgs.alt;
+  expandImg.parentElement.style.display = "block";
+}
+</script>
 
 
 
