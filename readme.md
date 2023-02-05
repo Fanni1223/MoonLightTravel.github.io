@@ -132,6 +132,5 @@
 
 
 
-![cover2](https://user-images.githubusercontent.com/114916236/215030086-86d80abc-9b2b-4925-8725-b1e2d7a58056.jpg)
 
 
