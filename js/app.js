@@ -48,6 +48,14 @@
             utak: null
           }
         })
+        .state('ajanlatok', {
+          url: '/ajanlatok',
+          templateUrl: './html/ajanlatok.html',
+          controller: 'ajanlatokController',
+          params: {
+            ajanlatok: null
+          }
+        })
         .state('hajosblog', {
           url: '/hajosblog',
           templateUrl: './html/hajosblog.html',
@@ -215,6 +223,39 @@
   },
 ])
 
+ // Ajánlatok controller
+ .controller("ajanlatokController", [
+  "$scope",
+  "$element",
+  "$timeout",
+  "http",
+  "$stateParams",
+  function ($scope, $element, $timeout, http, $stateParams) {
+
+
+    $scope.ajanlatok = $stateParams.ajanlatok;
+    if (!$scope.ajanlatok) {
+      $state.go('home');
+      return;
+    }
+
+    http.request({
+      url: "./php/get.php",
+      method: "POST",
+      data: {
+        db: "moonlighttravel",
+        query: "SELECT `utak`.*, `szallas`.* FROM `utak` INNER JOIN `szallas` ON `utak`.`szallas_id2` = `szallas`.`szallas_id` WHERE `allapot` = :ajanlatok",
+        params: {ajanlatok: $scope.ajanlatok},
+        isAssoc: true,
+      },
+    })
+    .then((data) => {
+      $scope.data = data;
+      $scope.$applyAsync();
+    })
+    .catch((e) => console.log(e));
+  },
+])
 
 })(window, angular);
 
