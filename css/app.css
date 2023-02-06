@@ -255,6 +255,13 @@ width: 600px;
 
 }
 
+.adatok{
+  border: 1px solid black;
+}
 
+.paragraphWithVertcalLine {
+  border-right: 1px solid #000;
+  width: 300px;
+  height: 300px;
+}
 
-   
