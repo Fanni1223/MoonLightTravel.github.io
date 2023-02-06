@@ -29,7 +29,7 @@
   
 <div class="row">
   <div class="column">
-    <img src="../MoonLightTravel.github.io/img/gorog_ut1.jpg"  style="width:100%" onclick="myFunction(this);">
+    <img src="../MoonLightTravel.github.io/img/gorog_ut1.jpg"  style="width:100%" onclick="myFunction(this); ">
   </div>
   <div class="column">
     <img src="../MoonLightTravel.github.io/img/mobidik.png"  style="width:100%" onclick="myFunction(this);">
@@ -47,7 +47,6 @@
   <div id="imgtext"></div> 
 </div>
 
-
 <script>
 function myFunction(imgs) {
   var expandImg = document.getElementById("expandedImg");
@@ -56,14 +55,17 @@ function myFunction(imgs) {
   imgText.innerHTML = imgs.alt;
   expandImg.parentElement.style.display = "block";
 }
-</script>
+ 
+
+
+
+  </script>
+  
 <br>
 
-
-
-
-
-
-
-
 </div>
+<!-- Footer -->
+<footer id="availability"
+class="container-fluid bg-light text-muted mt-5"
+ng-include src="'../MoonLightTravel.github.io/html/footer.html'">
+</footer>
