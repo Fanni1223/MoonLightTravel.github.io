@@ -116,6 +116,7 @@
 74. https://pixabay.com/hu/photos/medence-b%c3%a1r-b%c3%a1r-%c3%basz%c3%b3medence-3652849/
 75. https://pixabay.com/hu/photos/sz%c3%a1lloda-eleg%c3%a1ns-reggeli-luxus-940730/
 76. https://pixabay.com/hu/photos/szingap%c3%bar-fullerton-hotel-kil%c3%a1t%c3%a1s-50547/
+77. https://unsplash.com/photos/CrU3lUW2jRk
 
 
 ### Frontend és Backendhez használt alkalmazások:
@@ -132,6 +133,5 @@
 
 
 
-![cover2](https://user-images.githubusercontent.com/114916236/215030086-86d80abc-9b2b-4925-8725-b1e2d7a58056.jpg)
 
 

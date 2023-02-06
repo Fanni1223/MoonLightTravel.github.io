@@ -1,65 +1,286 @@
+<!--Banner, menü-->
 <div ng-include src="'../MoonLightTravel.github.io/html/navigate.html'"></div>
-<div class="container">
-    <h1 class="text-center mt-5">Top ajánlatok</h1>
-    <ul class="cards">
-        <li>
-            <a href="" class="card kartya">
-            <img src="../MoonLightTravel.github.io/img/tengerparti-min.jpg" class="card__image" alt="Tengerparti nyaralások" title="Tengerparti nyaralások">
-            <div class="card__overlay">        
-              <div class="card__header">
-                <svg class="card__arc" xmlns="http://www.w3.org/2000/svg"><path/></svg>                 
-                <div class="card__header-text">
-                  <h3 class="card__title">Tengerparti nyaralások</h3>
-                </div>
-              </div>
-              <p class="card__description"><button type="button" class="btn">Tovább >></button></p>
-            </div>
-            </a>
-        </li>
-      
-        <li>
-          <a href="" class="card kartya">
-            <img src="../MoonLightTravel.github.io/img/lastminute-min.jpg" class="card__image" alt="Last minute utak" title="Last minute utak">
-            <div class="card__overlay">        
-              <div class="card__header">
-                <svg class="card__arc" xmlns="http://www.w3.org/2000/svg"><path/></svg>                 
-                <div class="card__header-text">
-                  <h3 class="card__title">Last minute utak</h3>
-                </div>
-              </div>
-              <p class="card__description"><button type="button" class="btn">Tovább >></button></p>
-            </div>
-          </a>
-        </li>
-      
-        <li>
-          <a href="" class="card kartya">
-            <img src="../MoonLightTravel.github.io/img/varoslatogatas-min.jpg" class="card__image" alt="Városlátogatások" title="Városlátogatások">
-            <div class="card__overlay">        
-              <div class="card__header">
-                <svg class="card__arc" xmlns="http://www.w3.org/2000/svg"><path /></svg>                 
-                <div class="card__header-text">
-                  <h3 class="card__title">Városlátogatások</h3>
-                </div>
-              </div>
-              <p class="card__description"><button type="button" class="btn">Tovább >></button></p>
-            </div>
-          </a>
-        </li>
-      </ul>
 
-    <h1 class="text-center mt-5">Legfrissebb cikkeink</h1>
-    
-    <div class="row">
-      <div class="col 12 col-md-3">
-          <img src="../MoonLightTravel.github.io/img/turista-min.jpg" alt="">
+<div class="container">
+<!--Top ajánlatok-->
+  <h1 class="text-center mt-5">Top ajánlatok</h1>
+  <ul class="cards">
+    <li>
+      <a href="" class="card kartya">
+      <img src="../MoonLightTravel.github.io/img/tengerparti-min.jpg" class="card__image" alt="Tengerparti nyaralások"       title="Tengerparti nyaralások">
+        <div class="card__overlay">        
+          <div class="card__header">
+            <svg class="card__arc" xmlns="http://www.w3.org/2000/svg"><path/></svg>                 
+          <div class="card__header-text">
+            <h3 class="card__title">Tengerparti nyaralások</h3>
+          </div>
+          </div>
+          <p class="card__description"><button type="button" class="btn">Tovább >></button></p>
+        </div>
+      </a>
+    </li>
+      
+    <li>
+      <a href="" class="card kartya">
+      <img src="../MoonLightTravel.github.io/img/lastminute-min.jpg" class="card__image" alt="Last minute utak" title="Last minute utak">
+        <div class="card__overlay">        
+          <div class="card__header">
+            <svg class="card__arc" xmlns="http://www.w3.org/2000/svg"><path/></svg>                 
+          <div class="card__header-text">
+            <h3 class="card__title">Last minute utak</h3>
+          </div>
+          </div>
+            <p class="card__description"><button type="button" class="btn">Tovább >></button></p>
+        </div>
+      </a>
+    </li>
+      
+    <li>
+      <a href="" class="card kartya">
+      <img src="../MoonLightTravel.github.io/img/varoslatogatas-min.jpg" class="card__image" alt="Városlátogatások" title="Városlátogatások">
+        <div class="card__overlay">        
+          <div class="card__header">
+            <svg class="card__arc" xmlns="http://www.w3.org/2000/svg"><path /></svg>                 
+          <div class="card__header-text">
+            <h3 class="card__title">Városlátogatások</h3>
+          </div>
+          </div>
+            <p class="card__description"><button type="button" class="btn">Tovább >></button></p>
+        </div>
+      </a>
+    </li>
+  </ul>
+
+
+<!--Cikkek-->
+  <h1 class="text-center mt-5">Legfrissebb cikkeink</h1>
+  <div class="row mt-5">
+    <div class="col-12 col-md-6 mt-2">
+      <a ui-sref="kalandturak">
+        <img src="../MoonLightTravel.github.io/img/cikk3kezdolap.jpg" alt="Cikk" title="Cikk">
+      </a>
+    </div>
+
+    <div class="col-12 col-md-6 mt-2">
+      <a ui-sref="hajosblog">
+        <img src="../MoonLightTravel.github.io/img/cikk5kezdolap.jpg" alt="Cikk" title="Cikk">
+      </a>
+    </div>
+  </div>
+
+
+<!--Információk-->
+  <h1 class="text-center mt-5">Hasznos információk utazás előtt</h1>
+  <div class="row mt-5 mx-5">
+    <div class="col-12 col-md-3 thumbex mx-5 mt-4">
+      <div class="thumbnail">
+        <a data-bs-toggle="modal" data-bs-target="#staticBackdrop1">
+          <img src="../MoonLightTravel.github.io/img/turista-min.jpg" alt="Utasbiztosítás" title="Utasbiztosítás">
+          <span>Utasbiztosítás</span> 
+        </a>
+      </div>
+    </div>
+
+    <div class="col-12 col-md-3 thumbex mx-5 mt-4">
+      <div class="thumbnail">
+        <a data-bs-toggle="modal" data-bs-target="#staticBackdrop2">
+          <img src="../MoonLightTravel.github.io/img/repulo-min.jpg" alt="Közlekedési eszközök" title="Közlekedési eszközök">
+          <span>Közlekedés</span> 
+        </a>
+      </div>
+    </div>
+
+    <div class="col-12 col-md-3 thumbex mx-5 mt-4">
+      <div class="thumbnail">
+        <a data-bs-toggle="modal" data-bs-target="#staticBackdrop3">
+          <img src="../MoonLightTravel.github.io/img/kartya-min.jpg" alt="Árak" title="Árak">
+          <span>Árak</span> 
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="row mt-3 mx-5">
+    <div class="col-12 col-md-3 thumbex mx-5 mt-4">
+      <div class="thumbnail">
+        <a data-bs-toggle="modal" data-bs-target="#staticBackdrop4">
+          <img src="../MoonLightTravel.github.io/img/valuta-min.jpg" alt="Valutaváltás" title="Valutaváltás">
+          <span>Valutaváltás</span> 
+        </a>
+      </div>
+    </div>
+
+    <div class="col-12 col-md-3 thumbex mx-5 mt-4">
+      <div class="thumbnail">
+        <a data-bs-toggle="modal" data-bs-target="#staticBackdrop5">
+          <img src="../MoonLightTravel.github.io/img/parkolo.jpg" alt="Parkolás" title="Parkolás">
+          <span>Parkolás a repülőtéren</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="col-12 col-md-3 thumbex mx-5 mt-4">
+      <div class="thumbnail">
+        <a data-bs-toggle="modal" data-bs-target="#staticBackdrop6">
+          <img src="../MoonLightTravel.github.io/img/parkolo.jpg" alt="Okmányok" title="Okmányok">
+          <span>Szükséges okmányok</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+
+<!-- Modal1 -->
+<div class="modal fade" id="staticBackdrop1" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"   aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="staticBackdropLabel">Mi az utasbiztosítás és hogyan lehet utasbiztosítást kötni?</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <h2>utasbiztosítást belföldre és külföldre is lehet kötni.</h2>
+        <hr>
+        <h2>Az utasbiztosítás kötése kötelező?</h2>
+        <p>Az utasbiztosítás megkötése nem kötelező, de nagyon ajánlott.</p>
+        <h2>Mire kínál fedezetet az utasbiztosítás?</h2>
+        <p>Sürgősségi orvosi és mentési költségek, élet- és balesetbiztosítás, asszisztencia-szolgáltatás, poggyászbiztosítás, felelősségbiztosítás, jogvédelem biztosítás</p>
+        <h2>Az utasbiztosítás kötésének feltételei</h2>
+        <p>Az utasbiztosítást kizárólag Magyarország területén, az utazás megkezdése előtt lehet megkötni. 
+        <p>Nem köthető biztosítás a külföldön életvitelszerűen élőkre, illetve a külföldön munkát vállalókra.</p>
+        <p>A betegségbiztosításoknál természetesen nem biztosított az utazás előtt már meglévő betegség külföldi kezelése, a terhességgel kapcsolatos események.</p>
+        <p>Poggyászbiztosításnál a biztosítók kizárják a kockázatból a nemesfémeket, gyűjteményeket, szőrméket, készpénzt, sporteszközöket ideértve a kerékpárt is.</p>
+        <p>A magas egyedi értéket képviselő tárgyakat szintén nem fogadják kockázatba a biztosítók.</p>
+        <hr>
+        <h2>Utasbiztosítás megkötésében segítünk személyesen az irodában, vagy telefonon.</h2>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal2 -->
+<div class="modal fade" id="staticBackdrop2" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"   aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="staticBackdropLabel">Mi alapján választjuk ki a közlekedési eszközt?</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <h2>Az adott közlekedési eszközt igyekszünk célszerűen kiválasztani.</h2>
+        <hr>
+        <h2>Közlekedési eszközök</h2>
+        <p>A közlekedési eszközt az út hossza és az ár-érték arány alapján választjuk ki.</p>
+        <h2>A közlekedés ára</h2>
+        <p>A feltüntetett utazásnak az ára tartalmazza az oda-és a vissza út árát.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal3 -->
+<div class="modal fade" id="staticBackdrop3" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"   aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="staticBackdropLabel">Hogyan alakítjuk az árainkat?</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <h2>Fizetni személyesen, készpénzzel és bankártyával is lehet.</h2>
+        <hr>
+        <h2>Az utazásnak az ára</h2>
+        <p>Az utazás árát az alapján számoljuk, hogy hova lehet utazni, és milyen közlekedési eszközzel.</p>
+        <p>Az utazás ára tartalmazza az oda-és a vissza út árát is.</p>
+        <h2>A szállásnak az ára</h2>
+        <p>A szállást az értékelések és a legnagyobb látogatottság alapján választjuk ki az úthoz.</p>
+        <p>A szállás árát az üzemeltető állapítja meg, ez Ft/éjszaka alapján van számolva.</p>
+        <p>A szállás ára tartalmazza az úthoz tartozó napok számának az árát.</p>
+        <p>A szállás ára tartalmazza a szálláshoz tartozó ellátást is.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal4 -->
+<div class="modal fade" id="staticBackdrop4" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"   aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="staticBackdropLabel">Hogyan működik a valutaváltás?</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <h2>Irodánkban lehetőség van készpénzes valutaváltásra.</h2>
+        <hr>
+        <p>Az árfolyamok egységenként eltérőek, az aktuális árfolyamokról kérjük, érdeklődjön szemályesen az irodában, vagy telefonon.</p>
+        <p>Előzetes egyeztetéssel is lehetőség van valutaváltásra, az iroda a megadott időpontra teljesíti.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal5 -->
+  <div class="modal fade" id="staticBackdrop5" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"   aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="staticBackdropLabel">Hogyan parkolhatunk a repülőtéren?</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <h2>A Liszt Ferenc repülőtér 5 fajta parkolási lehetőséget biztosít</h2>
+          <hr>
+          <h2>PRÉMIUM PARKOLÓ</h2>
+          <p>Kiszállás és beszállás idejére biztosít parkolóhelyet.</p>
+          <p>Biztosított parkoló, rendszámfelismerővel és 24 órás kamerafelügyelettel a belépési pontoknál.</p>
+          <h2>ARRIVALS PICK-UP</h2>
+          <p>Kiszállás és beszállás idejére biztosít parkolóhelyet.</p>
+          <p>Biztosított parkoló, rendszámfelismerővel és 24 órás kamerafelügyelettel a belépési pontoknál.</p>
+          <h2>TERMINÁL PARKOLÓ</h2>
+          <p>A Terminál Parkoló ideális rövidebb távú repülőtéri parkolásra (pl. ki- és beszállás idejére, néhány órás parkolásra, üzleti utak, városlátogatások idejére).</p>
+          <p>Biztosított parkoló, rendszámfelismerővel és 24 órás kamerafelügyelettel a belépési pontoknál.</p>
+          <h2>HOLIDAY PARKOLÓ</h2>
+          <p>A Holiday Parkoló ideális hosszabb távú repülőtéri parkolásra.</p>
+          <p>Biztosított parkoló, rendszámfelismerővel és 24 órás kamerafelügyelettel a belépési pontoknál.</p>
+          <h2>SMART PARKOLÓ</h2>
+          <p>A Holiday Parkoló ideális hosszabb távú repülőtéri parkolásra.</p>
+          <p>Biztosított parkoló, rendszámfelismerővel és 24 órás kamerafelügyelettel a belépési pontoknál.</p>
+          <hr>
+          <h2>A parkolókról és a foglalásról bővebben a(z) Budapest Airport oldalán olvashat.</h2>
         </div>
       </div>
+    </div>
+  </div>
+
+  <!-- Modal6 -->
+  <div class="modal fade" id="staticBackdrop6" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"   aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="staticBackdropLabel">Mely okmányokra van szükség az utazáshoz?</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <h2>Az utazáshoz szükséges okmányok Európán belül és kívül</h2>
+          <hr>
+          <h2>Útlevél vagy személyi igazolvány</h2>
+          <p>Az Unió külső határain való be-és kilépéskor kell érvényes útlevelet vagy személyi igazolványt felmutatni. Ezeket az iratokat tartsa magánál, amikor az Unió területén utazik, mert elképzelhető, hogy biztonsági okokból, illetve a személyazonosság igazolására fel kell őket mutatnia.</p>
+          <p>A gyerekeknek is saját útlevéllel vagy személyazonosságot igazoló okmánnyal kell rendelkezniük.</p>
+          <p>Mielőtt az Unión kívülre utazik, nézzen utána, milyen dokumentumokat kíván meg az a nem uniós ország, amelybe készül. </p>
+          <h2>Vízum</h2>
+          <p>Az Unió területén vízum nélkül utazhat.</p>
+          <hr>
+          <h2>Mielőtt utazni készül érdemes utána nézni, hogy milyen okmányokat kérnek, de személyesen tájékoztatni fogjuk, amikor az utazáshoz szükséges papírokért eljön az irodába.</h2>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 
  <!-- Footer -->
  <footer id="availability"
-         class="container-fluid bg-light text-muted"
+         class="container-fluid bg-light text-muted mt-5"
          ng-include src="'../MoonLightTravel.github.io/html/footer.html'">
 </footer>
 
