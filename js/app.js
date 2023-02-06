@@ -48,7 +48,6 @@
             utak: null
           }
         })
-       
         .state('hajosblog', {
           url: '/hajosblog',
           templateUrl: './html/hajosblog.html',

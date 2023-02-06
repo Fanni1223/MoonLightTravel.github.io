@@ -1,8 +1,8 @@
+<!--Banner, menü-->
 <div ng-include src="'../MoonLightTravel.github.io/html/navigate.html'"></div>
 <div class="container">
-<br>
-<h1 class="text-center mt-5">Európa</h1>
-<div class='row mt-2'>
+  <h1 class="text-center mt-5">Európa</h1>
+  <div class='row mt-2'>
     <div class='col-12 col-md-4'>
       <div class='card my-3' ng-repeat="ut in data">
         <img ng-src="./img/{{ut.utak_img}}">
@@ -13,7 +13,6 @@
           <img ng-src="./img/ikonok/{{ut.kozlekedesi_eszkoz_img}}" class="ikon mx-5 float-end">
           <br>
           <br>
-          
           <p class='card-title2'>{{ut.idoszak}}<span class="mx-5 float-end">{{ut.ut_ar}}Ft</span></p> 
           <br>
           <a ui-sref="utak({utak:''})">
