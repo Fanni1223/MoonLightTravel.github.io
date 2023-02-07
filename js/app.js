@@ -227,6 +227,7 @@
 
  // Ajánlatok controller
  .controller("ajanlatokController", [
+  '$state',
   "$scope",
   "$element",
   "$timeout",
