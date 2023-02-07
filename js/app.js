@@ -157,12 +157,13 @@
 
   // Ut controller
   .controller("utController", [
+    '$state',
     "$scope",
     "$element",
     "$timeout",
     "http",
     "$stateParams",
-    function ($scope, $element, $timeout, http, $stateParams) {
+    function ($state, $scope, $element, $timeout, http, $stateParams) {
 
 
       $scope.ut = $stateParams.ut;
@@ -191,12 +192,13 @@
 
 // Utak controller
 .controller("utakController", [
+  '$state',
   "$scope",
   "$element",
   "$timeout",
   "http",
   "$stateParams",
-  function ($scope, $element, $timeout, http, $stateParams) {
+  function ($state, $scope, $element, $timeout, http, $stateParams) {
 
 
     $scope.utak = $stateParams.utak;
