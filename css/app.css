@@ -74,6 +74,10 @@ h2{
     height: auto;
     
 }
+.elhelyezkedes{
+  float: right;
+  
+}
   
 .card__overlay {
     position: absolute;
@@ -315,3 +319,4 @@ width: 600px;
   padding-left: 20px;
   padding-right: 20px;
 }
+
