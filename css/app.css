@@ -255,6 +255,9 @@ width: 600px;
 
 }
 
+.adatok{
+  border: 1px solid black;
+}
 
 .thumbex {
   overflow: hidden;
