@@ -76,9 +76,34 @@
           templateUrl: './html/tengerpartiNyaralasok.html',
           controller: 'appController'
         })
+        .state('turak', {
+          url: '/turak',
+          templateUrl: './html/turak.html',
+          controller: 'appController'
+        })
+        .state('tengerparti', {
+          url: '/tengerparti',
+          templateUrl: './html/tengerparti.html',
+          controller: 'appController'
+        })
         .state('kalandturak', {
           url: '/kalandturak',
           templateUrl: './html/kalandturak.html',
+          controller: 'appController'
+        })
+        .state('sport', {
+          url: '/sport',
+          templateUrl: './html/sport.html',
+          controller: 'appController'
+        })
+        .state('fesztivalok', {
+          url: '/fesztivalok',
+          templateUrl: './html/fesztivalok.html',
+          controller: 'appController'
+        })
+        .state('wellnes', {
+          url: '/wellnes',
+          templateUrl: './html/wellnes.html',
           controller: 'appController'
         })
       $urlRouterProvider.otherwise('/');
