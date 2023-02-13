@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Gép: 127.0.0.1
--- Létrehozás ideje: 2023. Jan 27. 11:06
+-- Létrehozás ideje: 2023. Feb 13. 13:08
 -- Kiszolgáló verziója: 10.4.6-MariaDB
 -- PHP verzió: 7.3.8
 
@@ -30,15 +30,15 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `foglalas` (
   `foglalas_id` int(50) NOT NULL,
-  `nev` varchar(50) COLLATE utf8_hungarian_ci NOT NULL,
+  `nev2` varchar(50) COLLATE utf8_hungarian_ci NOT NULL,
   `telefonsz` int(11) NOT NULL,
   `email` varchar(50) COLLATE utf8_hungarian_ci NOT NULL,
   `fo` int(2) NOT NULL,
   `vegosszeg` int(6) NOT NULL,
   `ut_id2` int(50) NOT NULL,
-  `orszag` varchar(100) COLLATE utf8_hungarian_ci NOT NULL,
+  `orszag2` varchar(100) COLLATE utf8_hungarian_ci NOT NULL,
   `iranyitoszam` int(10) NOT NULL,
-  `varos` varchar(100) COLLATE utf8_hungarian_ci NOT NULL,
+  `varos2` varchar(100) COLLATE utf8_hungarian_ci NOT NULL,
   `utca` varchar(100) COLLATE utf8_hungarian_ci NOT NULL,
   `hazszam` int(10) NOT NULL,
   `kisagy` int(100) NOT NULL,
@@ -58,7 +58,7 @@ CREATE TABLE `foglalas` (
 CREATE TABLE `szallas` (
   `szallas_id` int(100) NOT NULL,
   `megnev` varchar(50) COLLATE utf8_hungarian_ci NOT NULL,
-  `leiras` varchar(1000) COLLATE utf8_hungarian_ci NOT NULL,
+  `leiras2` varchar(1000) COLLATE utf8_hungarian_ci NOT NULL,
   `tipus` tinyint(4) NOT NULL,
   `elhelyezkedes` varchar(100) COLLATE utf8_hungarian_ci NOT NULL,
   `szallas_img` varchar(50) COLLATE utf8_hungarian_ci NOT NULL,
@@ -70,7 +70,7 @@ CREATE TABLE `szallas` (
 -- A tábla adatainak kiíratása `szallas`
 --
 
-INSERT INTO `szallas` (`szallas_id`, `megnev`, `leiras`, `tipus`, `elhelyezkedes`, `szallas_img`, `szallas_ar`, `ellatas`) VALUES
+INSERT INTO `szallas` (`szallas_id`, `megnev`, `leiras2`, `tipus`, `elhelyezkedes`, `szallas_img`, `szallas_ar`, `ellatas`) VALUES
 (1, 'Manolita Paris ', 'A Pigalle metróállomástól 500 méterre található Manolita Paris 5 csillagos szállást kínál Párizsban', 5, '1 rue Lepic, Butte-Montmartre, Párizs XVIII. kerülete, 75018 Párizs, Franciaország', 'hotel1-min.jpg', 900000, 'teljes ellátás '),
 (2, 'Toyoko INN', 'A Toyoko INN Marseille Saint Charles kerttel és ingyenes wifivel várja vendégeit Marseille-ben, a marseille-i Saint Charles vasúti pályaudvartól mindössze 5 perces sétára. A szálloda az A7-es autópályáról is könnyen megközelíthető. A szálláshelyen őrzött parkoló áll rendelkezésre, de a parkolóhelyek száma korlátozott, és nem foglalhatók előre.', 3, '25 Avenue du General Leclerc, 13003 Marseille, Franciaország', 'hotel2-min.jpg', 130000, 'félpanzió'),
 (3, 'MEININGER ', 'A Lyon városában, Az Ellenállás és Deportálás Emlékközponttól 200 méterre található a bárral, magánparkolóval, közös társalgóval és terasszal rendelkező MEININGER Hotel Lyon Centre Berthelot. A Fourvière negyed 3,1 km-re fekszik.', 4, 'Rue Professeur Zimmermann 7, Lyon VII. kerülete, 69007 Lyon, Franciaország', 'hotel4-min.jpg', 649000, 'All inclusive'),
