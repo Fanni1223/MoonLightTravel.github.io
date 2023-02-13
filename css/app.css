@@ -157,12 +157,14 @@ h2{
     float: left;
     width: 21%;
     padding: 10px;
+    
   }
   
   /* Style the images inside the grid */
   .column img {
     opacity: 0.8; 
     cursor: pointer; 
+    
   }
   
   
@@ -317,5 +319,22 @@ width: 600px;
   padding-right: 20px;
 }
 
-
-
+.demo {
+  width:450px;
+}
+ul {
+  list-style: none outside none;
+  padding-left: 0;
+  margin-bottom:0;
+}
+li {
+  display: block;
+  float: left;
+  margin-right: 6px;
+  cursor:pointer;
+}
+img {
+  display: block;
+  height: auto;
+  max-width: 100%;
+}
