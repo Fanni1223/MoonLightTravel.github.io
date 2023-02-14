@@ -21,23 +21,27 @@
 </div>  
 <div class="row">
   <div class="column">
-    <img src="../MoonLightTravel.github.io/img/srilanka1.jpg"  style="width:100%" onclick="myFunction(this);">
+    <img src="../MoonLightTravel.github.io/img/gorog_ut1.jpg" style="width:100%" onclick="myFunction(this);">
   </div>
   <div class="column">
-    <img src="../MoonLightTravel.github.io/img/srilanka2.jpg"  style="width:100%" onclick="myFunction(this);">
+    <img src="../MoonLightTravel.github.io/img/mobidik.png" style="width:100%" onclick="myFunction(this);">
   </div>
   <div class="column">
-    <img src="../MoonLightTravel.github.io/img/srilanka3.jpg"  style="width:100%" onclick="myFunction(this);">
+    <img src="../MoonLightTravel.github.io/img/gorog_ut3.jpg" style="width:100%" onclick="myFunction(this);">
   </div>
   <div class="column">
-    <img src="../MoonLightTravel.github.io/img/srilanka4.jpg"  style="width:100%" onclick="myFunction(this);">
+    <img src="../MoonLightTravel.github.io/img/gorog_ut4.jpg" style="width:100%" onclick="myFunction(this);">
   </div> 
 </div>
+
 <div class="container2">
-  <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
-  <img id="expandedImg" style="width:45%"> 
-  <div id="imgtext"></div> 
+  <span class="closebtn" onclick="this.parentElement.style.display='none'">&times;</span>
+  <img id="expandedImg" style="width:45%">
+  <div id="imgtext"></div>
 </div>
+
+
+
 
 <br>
 <h2>Zanzibár</h2>
@@ -56,23 +60,24 @@
 
 </div>  
 <div class="row">
-  <div class="column">
-    <img src="../MoonLightTravel.github.io/img/zanzibar.jpg"  style="width:100%" onclick="myFunction2(this);">
+  <div class="column2">
+    <img src="../MoonLightTravel.github.io/img/gorog_ut1.jpg" style="width:100%" onclick="myFunction2(this);">
   </div>
-  <div class="column">
-    <img src="../MoonLightTravel.github.io/img/zanzibar2.jpg"  style="width:100%" onclick="myFunction2(this);">
+  <div class="column2">
+    <img src="../MoonLightTravel.github.io/img/mobidik.png" style="width:100%" onclick="myFunction2(this);">
   </div>
-  <div class="column">
-    <img src="../MoonLightTravel.github.io/img/zanzibar3.jpg"  style="width:100%" onclick="myFunction2(this);">
+  <div class="column2">
+    <img src="../MoonLightTravel.github.io/img/gorog_ut3.jpg" style="width:100%" onclick="myFunction2(this);">
   </div>
-  <div class="column">
-    <img src="../MoonLightTravel.github.io/img/zanzibar4.jpg"  style="width:100%" onclick="myFunction2(this);">
+  <div class="column2">
+    <img src="../MoonLightTravel.github.io/img/gorog_ut4.jpg" style="width:100%" onclick="myFunction2(this);">
   </div> 
 </div>
+
 <div class="container3">
-  <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
-  <img id="expandedImg2" style="width:45%"> 
-  <div id="imgtext2"></div> 
+  <span class="closebtn" onclick="this.parentElement.style.display='none'">&times;</span>
+  <img id="expandedImg2" style="width:45%">
+  <div id="imgtext2"></div>
 </div>
 
 <br>
@@ -93,57 +98,79 @@
   <li>Phangnga-öböl</li>
 </div>  
 <div class="row">
-  <div class="column">
-    <img src="../MoonLightTravel.github.io/img/thaifold1.jpg" class ="elsokep" style="width:100% " onclick="myFunction3(this);">
+  <div class="column3">
+    <img src="../MoonLightTravel.github.io/img/gorog_ut1.jpg" style="width:100%" onclick="myFunction3(this);">
   </div>
-  <div class="column">
-    <img src="../MoonLightTravel.github.io/img/thaifold2.jpg"  style="width:100%" onclick="myFunction3(this);">
+  <div class="column3">
+    <img src="../MoonLightTravel.github.io/img/mobidik.png" style="width:100%" onclick="myFunction3(this);">
   </div>
-  <div class="column">
-    <img src="../MoonLightTravel.github.io/img/thaifold3.jpg"  style="width:100%" onclick="myFunction3(this);">
+  <div class="column3">
+    <img src="../MoonLightTravel.github.io/img/gorog_ut3.jpg" style="width:100%" onclick="myFunction3(this);">
   </div>
-  <div class="column">
-    <img src="../MoonLightTravel.github.io/img/thaifold4.jpg"  style="width:100%" onclick="myFunction3(this);">
+  <div class="column3">
+    <img src="../MoonLightTravel.github.io/img/gorog_ut4.jpg" style="width:100%" onclick="myFunction3(this);">
   </div> 
 </div>
+
 <div class="container4">
-  <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
-  <img id="expandedImg3" style="width:45%"> 
-  <div id="imgtext3"></div> 
+  <span class="closebtn" onclick="this.parentElement.style.display='none'">&times;</span>
+  <img id="expandedImg3" style="width:45%">
+  <div id="imgtext3"></div>
 </div>
 
 
+
+
+
+
+
+
+</div>
 <script>
-function myFunction(imgs) {
-  var expandImg = document.getElementById("expandedImg");
-  var imgText = document.getElementById("imgtext");
-  expandImg.src = imgs.src;
-  imgText.innerHTML = imgs.alt;
-  expandImg.parentElement.style.display = "block";
-}
+  function initGallery() {
+    var firstImg = document.querySelector(".column img");
+    myFunction(firstImg);
+  }
+  function initGallery2() {
+    var firstImg2 = document.querySelector(".column2 img");
+    myFunction(firstImg2);
+  }
+  function initGallery3() {
+    var firstImg3 = document.querySelector(".column3 img");
+    myFunction(firstImg3);
+  }
 
-function myFunction2(imgs) {
-  var expandImg2 = document.getElementById("expandedImg2");
-  var imgText2 = document.getElementById("imgtext2");
-  expandImg2.src = imgs.src;
-  imgText2.innerHTML = imgs.alt;
-  expandImg2.parentElement.style.display = "block";
-}
+  function myFunction(imgs) {
+    var expandImg = document.getElementById("expandedImg");
+    var imgText = document.getElementById("imgtext");
+    expandImg.src = imgs.src;
+    imgText.innerHTML = imgs.alt;
+    expandImg.parentElement.style.display = "block";
+  }
 
-function myFunction3(imgs) {
-  var expandImg3 = document.getElementById("expandedImg3");
-  var imgText3 = document.getElementById("imgtext3");
-  expandImg3.src = imgs.src;
-  imgText3.innerHTML = imgs.alt;
-  expandImg3.parentElement.style.display = "block";
-}
+  function myFunction2(imgs) {
+    var expandImg2 = document.getElementById("expandedImg2");
+    var imgText2 = document.getElementById("imgtext2");
+    expandImg2.src = imgs.src;
+    imgText2.innerHTML = imgs.alt;
+    expandImg2.parentElement.style.display = "block";
+  }
+
+  function myFunction3(imgs) {
+    var expandImg3 = document.getElementById("expandedImg3");
+    var imgText3 = document.getElementById("imgtext3");
+    expandImg3.src = imgs.src;
+    imgText3.innerHTML = imgs.alt;
+    expandImg3.parentElement.style.display = "block";
+  }
+  
+  // az első kép betöltése
+  initGallery();
+  initGallery2();
+  initGallery3();
 </script>
 
 
-
-
-
-</div>
 <!-- Footer -->
 <footer id="availability"
 class="container-fluid bg-light text-muted mt-5"

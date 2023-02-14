@@ -237,7 +237,7 @@
       method: "POST",
       data: {
         db: "moonlighttravel",
-        query: "SELECT `utak`.*, `szallas`.*, `utak_kepek`.* FROM `utak` INNER JOIN `szallas` ON `utak`.`szallas_id2` = `szallas`.`szallas_id` INNER JOIN `utak_kepek` ON `utak`.`ut_id` = `utak_kepek`.`ut_id3` WHERE `varos` = :nyaralas",
+        query: "SELECT `utak`.*, `szallas`.* FROM `utak` INNER JOIN `szallas` ON `utak`.`szallas_id2` = `szallas`.`szallas_id` WHERE `varos` = :nyaralas",
         params: {nyaralas: $scope.nyaralas},
         isAssoc: true,
       },
@@ -286,19 +286,6 @@
 
 })(window, angular);
 
-
-function myFunction(imgs) {
-  // Get the expanded image
-  var expandImg = document.getElementById("expandedImg");
-  // Get the image text
-  var imgText = document.getElementById("imgtext");
-  // Use the same src in the expanded image as the image being clicked on from the grid
-  expandImg.src = imgs.src;
-  // Use the value of the alt attribute of the clickable image as text inside the expanded image
-  imgText.innerHTML = imgs.alt;
-  // Show the container element (hidden with CSS)
-  expandImg.parentElement.style.display = "block";
-}
 
 
 
