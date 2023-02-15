@@ -172,6 +172,44 @@ h2{
     opacity: 1;
   }
   
+
+  .column2 {
+    float: left;
+    width: 21%;
+    padding: 10px;
+    
+  }
+  
+  /* Style the images inside the grid */
+  .column2 img {
+    opacity: 0.8; 
+    cursor: pointer; 
+    
+  }
+  
+  
+  .column2 img:hover {
+    opacity: 1;
+  }
+
+  .column3 {
+    float: left;
+    width: 21%;
+    padding: 10px;
+    
+  }
+  
+  /* Style the images inside the grid */
+  .column3 img {
+    opacity: 0.8; 
+    cursor: pointer; 
+    
+  }
+  
+  
+  .column3 img:hover {
+    opacity: 1;
+  }
   
   /* Clear floats after the columns */
   .row:after {
