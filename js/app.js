@@ -40,12 +40,12 @@
             ut: null
           }
         })
-        .state('utak', {
-          url: '/utak',
-          templateUrl: './html/utak.html',
-          controller: 'utakController',
+        .state('nyaralas', {
+          url: '/nyaralas',
+          templateUrl: './html/nyaralas.html',
+          controller: 'nyaralasController',
           params: {
-            utak: null
+            nyaralas: null
           }
         })
         .state('ajanlatok', {
@@ -215,8 +215,8 @@
     },
   ])
 
-// Utak controller
-.controller("utakController", [
+// Nyaralás controller
+.controller("nyaralasController", [
   '$state',
   "$scope",
   "$element",
@@ -226,8 +226,8 @@
   function ($state, $scope, $element, $timeout, http, $stateParams) {
 
 
-    $scope.utak = $stateParams.utak;
-    if (!$scope.utak) {
+    $scope.nyaralas = $stateParams.nyaralas;
+    if (!$scope.nyaralas) {
       $state.go('home');
       return;
     }
@@ -237,8 +237,8 @@
       method: "POST",
       data: {
         db: "moonlighttravel",
-        query: "SELECT `utak`.*, `szallas`.* FROM `utak` INNER JOIN `szallas` ON `utak`.`szallas_id2` = `szallas`.`szallas_id` WHERE `varos` = :utak",
-        params: {utak: $scope.utak},
+        query: "SELECT `utak`.*, `szallas`.*, `utak_kepek`.* FROM `utak` INNER JOIN `szallas` ON `utak`.`szallas_id2` = `szallas`.`szallas_id` INNER JOIN `utak_kepek` ON `utak`.`ut_id` = `utak_kepek`.`ut_id3` WHERE `varos` = :nyaralas",
+        params: {nyaralas: $scope.nyaralas},
         isAssoc: true,
       },
     })
@@ -252,7 +252,6 @@
 
  // Ajánlatok controller
  .controller("ajanlatokController", [
-  '$state',
   "$scope",
   "$element",
   "$timeout",
@@ -300,3 +299,8 @@ function myFunction(imgs) {
   // Show the container element (hidden with CSS)
   expandImg.parentElement.style.display = "block";
 }
+
+
+
+
+
