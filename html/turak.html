@@ -18,35 +18,43 @@ A magyar határhoz legközelebbi igazi alpesi óriás, már a Fertő-tótól fel
 </div>
 
 <div class="row">
-  
-  <div class="column" >
-    <img src="../MoonLightTravel.github.io/img/hegytura.jpg"  style="width:100%" onclick="myFunction(this);">
+  <div class="column2">
+    <img src="../MoonLightTravel.github.io/img/hegytura.jpg" style="width:100%" onclick="myFunction(this);">
   </div>
-  <div class="column">
-    <img src="../MoonLightTravel.github.io/img/hegytura2.jpg"  style="width:100%" onclick="myFunction(this);">
+  <div class="column2">
+    <img src="../MoonLightTravel.github.io/img/hegytura2.jpg" style="width:100%" onclick="myFunction(this);">
   </div>
-  <div class="column">
-    <img src="../MoonLightTravel.github.io/img/hegytura3.jpg"  style="width:100%" onclick="myFunction(this);">
+  <div class="column2">
+    <img src="../MoonLightTravel.github.io/img/hegytura3.jpg" style="width:100%" onclick="myFunction(this);">
   </div>
-  <div class="column">
-    <img src="../MoonLightTravel.github.io/img/hegytura4.jpg"  style="width:100%" onclick="myFunction(this);">
+  <div class="column2">
+    <img src="../MoonLightTravel.github.io/img/hegytura4.jpg" style="width:100%" onclick="myFunction(this);">
   </div> 
 </div>
-<div class="container2" class="col-12 md-8">
-  <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
-  <img id="expandedImg" style="width:45%"> 
-  <div id="imgtext"></div> 
+
+<div class="container2">
+  <span class="closebtn" onclick="this.parentElement.style.display='none'">&times;</span>
+  <img id="expandedImg" style="width:45%">
+  <div id="imgtext"></div>
 </div>
 
 
 <script>
-function myFunction(imgs) {
-  var expandImg = document.getElementById("expandedImg");
-  var imgText = document.getElementById("imgtext");
-  expandImg.src = imgs.src;
-  imgText.innerHTML = imgs.alt;
-  expandImg.parentElement.style.display = "block";
-}
+  function initGallery() {
+    var firstImg = document.querySelector(".column2 img");
+    myFunction(firstImg);
+  }
+
+  function myFunction(imgs) {
+    var expandImg = document.getElementById("expandedImg");
+    var imgText = document.getElementById("imgtext");
+    expandImg.src = imgs.src;
+    imgText.innerHTML = imgs.alt;
+    expandImg.parentElement.style.display = "block";
+  }
+  
+  // az első kép betöltése
+  initGallery();
 </script>
 
 
