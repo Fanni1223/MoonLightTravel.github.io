@@ -1,8 +1,48 @@
 <div ng-include src="'../MoonLightTravel.github.io/html/navigate.html'"></div>
 <div class="container">
   <br>
-<h1>Kalandtúrák</h1>
+<h1>Holdfény Liget Kalandpark</h1>
 <br>
+
+<div class="row">
+  <div class="column">
+    <img src="../MoonLightTravel.github.io/img/kalandpark.jpg" style="width:100%" onclick="myFunction(this);">
+  </div>
+  <div class="column">
+    <img src="../MoonLightTravel.github.io/img/kalandpark2.jpg" style="width:100%" onclick="myFunction(this);">
+  </div>
+  <div class="column">
+    <img src="../MoonLightTravel.github.io/img/kalandpark3.jpg" style="width:100%" onclick="myFunction(this);">
+  </div>
+  <div class="column">
+    <img src="../MoonLightTravel.github.io/img/kalandpark4.jpg" style="width:100%" onclick="myFunction(this);">
+  </div> 
+</div>
+
+<div class="container2">
+  <span class="closebtn" onclick="this.parentElement.style.display='none'">&times;</span>
+  <img id="expandedImg" style="width:45%">
+  <div id="imgtext"></div>
+</div>
+
+
+<script>
+  function initGallery() {
+    var firstImg = document.querySelector(".column img");
+    myFunction(firstImg);
+  }
+
+  function myFunction(imgs) {
+    var expandImg = document.getElementById("expandedImg");
+    var imgText = document.getElementById("imgtext");
+    expandImg.src = imgs.src;
+    imgText.innerHTML = imgs.alt;
+    expandImg.parentElement.style.display = "block";
+  }
+  
+  // az első kép betöltése
+  initGallery();
+</script>
 </div>
 <!-- Footer -->
 <footer id="availability"
