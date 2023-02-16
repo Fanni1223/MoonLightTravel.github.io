@@ -237,7 +237,7 @@
       method: "POST",
       data: {
         db: "moonlighttravel",
-        query: "SELECT `utak`.*, `szallas`.* FROM `utak` INNER JOIN `szallas` ON `utak`.`szallas_id2` = `szallas`.`szallas_id` WHERE `varos` = :nyaralas",
+        query: "SELECT `utak`.*, `szallas`.*, `utak_kepek`.*  FROM `utak` RIGHT JOIN `szallas` ON `utak`.`szallas_id2` = `szallas`.`szallas_id` RIGHT JOIN `utak_kepek` ON `utak`.`ut_id` = `utak_kepek`.`ut_id3` WHERE `varos` = :nyaralas",
         params: {nyaralas: $scope.nyaralas},
         isAssoc: true,
       },
@@ -283,6 +283,45 @@
     .catch((e) => console.log(e));
   },
 ])
+
+
+// Képek controller
+.controller("kepekController", [
+  "$scope",
+  "$element",
+  "$timeout",
+  "http",
+  "$stateParams",
+  function ($scope, $element, $timeout, http, $stateParams) {
+
+
+    $scope.kepek = $stateParams.kepek;
+    if (!$scope.kepek) {
+      $state.go('home');
+      return;
+    }
+
+    http.request({
+      url: "./php/get.php",
+      method: "POST",
+      data: {
+        db: "moonlighttravel",
+        query: "SELECT `utak`.*, `utak_kepek`.* FROM `utak` INNER JOIN `utak_kepek` ON `utak`.`ut_id` = `utak_kepek`.`ut_id3` WHERE `ut_id3` = `ut_id`",
+        params: {kepek: $scope.kepek},
+        isAssoc: true,
+      },
+    })
+    .then((data) => {
+      $scope.data = data;
+      $scope.$applyAsync();
+    })
+    .catch((e) => console.log(e));
+  },
+])
+
+
+
+
 
 })(window, angular);
 
