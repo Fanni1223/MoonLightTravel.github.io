@@ -1,23 +1,17 @@
 <!--Banner, menü-->
 <div ng-include src="'../MoonLightTravel.github.io/html/navigate.html'"></div>
 <div class="container">
-    <div class='row mt-5' ng-repeat="nyaralas in data track by $index">
-        <h1 class="text-center mt-5">{{nyaralas.nev}}</h1>
+    <div class='row mt-5' ng-if="data.length">
+        <h1 class="text-center mt-5">{{data[0].nev}}</h1>
     </div>
-
-    <div class="row" ng-repeat="kepek in data track by $index">
+    <!--ng-repeat="kepek in data track by $index"-->
+    <div class="row" ng-if="data.length">
         <div class="column">
-          <img ng-src="./img/{{kepek.utak_img}}" style="width:100%" onclick="myFunction(this);">
+          <img ng-src="./img/{{data[0].utak_img}}" style="width:100%" onclick="myFunction(this);">
         </div>
-        <div class="column">
+        <div class="column" ng-repeat="kepek in data track by $index">
           <img ng-src="./img/{{kepek.neve}}" style="width:100%" onclick="myFunction(this);">
         </div>
-        <div class="column">
-          <img ng-src="./img/{{kepek.neve}}" style="width:100%" onclick="myFunction(this);">
-        </div>
-        <div class="column">
-          <img ng-src="./img/{{kepek.neve}}" style="width:100%" onclick="myFunction(this);">
-        </div> 
       </div>
     
       <div class="container2">
