@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Gép: 127.0.0.1
--- Létrehozás ideje: 2023. Feb 16. 10:33
+-- Létrehozás ideje: 2023. Feb 16. 11:58
 -- Kiszolgáló verziója: 10.4.6-MariaDB
 -- PHP verzió: 7.3.8
 
@@ -35,7 +35,7 @@ CREATE TABLE `foglalas` (
   `email` varchar(50) COLLATE utf8_hungarian_ci NOT NULL,
   `fo` int(2) NOT NULL,
   `vegosszeg` int(6) NOT NULL,
-  `ut_id2` int(50) NOT NULL,
+  `foglalas_ut_id2` int(50) NOT NULL,
   `orszag2` varchar(100) COLLATE utf8_hungarian_ci NOT NULL,
   `iranyitoszam` int(10) NOT NULL,
   `varos2` varchar(100) COLLATE utf8_hungarian_ci NOT NULL,
@@ -46,15 +46,16 @@ CREATE TABLE `foglalas` (
   `honap` int(10) NOT NULL,
   `nap` int(10) NOT NULL,
   `oda_ora` int(10) NOT NULL,
-  `vissza_ora` int(10) NOT NULL
+  `vissza_ora` int(10) NOT NULL,
+  `ut_id2` int(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_hungarian_ci;
 
 --
 -- A tábla adatainak kiíratása `foglalas`
 --
 
-INSERT INTO `foglalas` (`foglalas_id`, `nev2`, `telefonsz`, `email`, `fo`, `vegosszeg`, `ut_id2`, `orszag2`, `iranyitoszam`, `varos2`, `utca`, `hazszam`, `kisagy`, `evszam`, `honap`, `nap`, `oda_ora`, `vissza_ora`) VALUES
-(1, 'kdhadkddf', 63, 'djfdsffdfhdfsdfsdf', 3, 12345, 1, 'gdfggf', 6900, 'fgdg', 'frgerter', 1, 2, '0000-00-00', 12, 1, 12, 12);
+INSERT INTO `foglalas` (`foglalas_id`, `nev2`, `telefonsz`, `email`, `fo`, `vegosszeg`, `foglalas_ut_id2`, `orszag2`, `iranyitoszam`, `varos2`, `utca`, `hazszam`, `kisagy`, `evszam`, `honap`, `nap`, `oda_ora`, `vissza_ora`, `ut_id2`) VALUES
+(1, 'kdhadkddf', 63, 'djfdsffdfhdfsdfsdf', 3, 12345, 1, 'gdfggf', 6900, 'fgdg', 'frgerter', 1, 2, '0000-00-00', 12, 1, 12, 12, 1);
 
 -- --------------------------------------------------------
 
@@ -198,7 +199,8 @@ INSERT INTO `utak_kepek` (`neve`, `darabszam`, `ut_id3`) VALUES
 --
 ALTER TABLE `foglalas`
   ADD PRIMARY KEY (`foglalas_id`),
-  ADD KEY `ut_id2` (`ut_id2`);
+  ADD KEY `ut_id2` (`foglalas_ut_id2`),
+  ADD KEY `ut_id2_2` (`ut_id2`);
 
 --
 -- A tábla indexei `szallas`
