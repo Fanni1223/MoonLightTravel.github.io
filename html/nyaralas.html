@@ -7,7 +7,7 @@
    
     <div class="row" ng-if="data.length">
         <div class="column">
-            <img ng-src="./img/{{data[0].utak_img}}" style="width:100%" onclick="myFunction(this);">
+            <img ng-src="./img/{{data[0].utak_img}}" style="width:100%" onload="initGallery()" onclick="myFunction(this);">
           </div>
         <div class="column" ng-repeat="kepek in data track by $index">
           <img ng-src="./img/{{kepek.neve}}" style="width:100%" onclick="myFunction(this);">
