@@ -4,6 +4,45 @@
   <br>
 <h1>Városlátogatás</h1>
 <br>
+<div class="row">
+  <div class="column">
+    <img src="../MoonLightTravel.github.io/img/madrid1.jpg" style="width:100%" onclick="myFunction(this);">
+  </div>
+  <div class="column">
+    <img src="../MoonLightTravel.github.io/img/madrid2.jpg" style="width:100%" onclick="myFunction(this);">
+  </div>
+  <div class="column">
+    <img src="../MoonLightTravel.github.io/img/madrid3.jpg" style="width:100%" onclick="myFunction(this);">
+  </div>
+  <div class="column">
+    <img src="../MoonLightTravel.github.io/img/madrid4.jpg" style="width:100%" onclick="myFunction(this);">
+  </div> 
+</div>
+
+<div class="container2">
+  <span class="closebtn" onclick="this.parentElement.style.display='none'">&times;</span>
+  <img id="expandedImg" style="width:45%">
+  <div id="imgtext"></div>
+</div>
+
+
+<script>
+  function initGallery() {
+    var firstImg = document.querySelector(".column img");
+    myFunction(firstImg);
+  }
+
+  function myFunction(imgs) {
+    var expandImg = document.getElementById("expandedImg");
+    var imgText = document.getElementById("imgtext");
+    expandImg.src = imgs.src;
+    imgText.innerHTML = imgs.alt;
+    expandImg.parentElement.style.display = "block";
+  }
+  
+  // az első kép betöltése
+  initGallery();
+</script>
 </div>
 <!-- Footer -->
 <footer id="availability"
