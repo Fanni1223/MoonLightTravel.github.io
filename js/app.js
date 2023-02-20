@@ -106,6 +106,11 @@
           templateUrl: './html/wellnes.html',
           controller: 'appController'
         })
+        .state('varoslatogatas', {
+          url: '/varoslatogatas',
+          templateUrl: './html/varoslatogatas.html',
+          controller: 'appController'
+        })
       $urlRouterProvider.otherwise('/');
     }
   ])
