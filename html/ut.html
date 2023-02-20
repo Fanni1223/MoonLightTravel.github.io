@@ -1,7 +1,9 @@
 <!--Banner, menü-->
 <div ng-include src="'../MoonLightTravel.github.io/html/navigate.html'"></div>
 <div class="container">
-  <h1 class="text-center mt-5"></h1>
+  <div class="row" ng-if="data.length">
+    <h1 class="text-center mt-5">{{data[0].kontinens}}</h1>
+  </div>
   <div class='row mt-2'>
     <div class='col-12 col-md-4' ng-repeat="ut in data">
       <div class='card my-3'>

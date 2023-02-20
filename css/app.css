@@ -359,7 +359,7 @@ width: 600px;
   padding-right: 20px;
 }
 
-/*bloghoz*/
+
 
 p {
   margin: 0 0 20px;
@@ -408,14 +408,18 @@ label:hover {
 input:checked + label {
   color: #555;
   border: 1px solid #ddd;
-  border-top: 2px solid orange;
+  border-top: 2px solid #B01E68;
   border-bottom: 1px solid #fff;
 }
 
 #tab1:checked ~ #content1,
 #tab2:checked ~ #content2,
 #tab3:checked ~ #content3,
-#tab4:checked ~ #content4 {
+#tab4:checked ~ #content4,
+#tab5:checked ~ #content5,
+#tab6:checked ~ #content6,
+#tab7:checked ~ #content7,
+#tab8:checked ~ #content8 {
   display: block;
 }
 
