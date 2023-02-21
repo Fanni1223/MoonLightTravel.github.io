@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Gép: 127.0.0.1
--- Létrehozás ideje: 2023. Feb 20. 11:52
+-- Létrehozás ideje: 2023. Feb 21. 14:38
 -- Kiszolgáló verziója: 10.4.6-MariaDB
 -- PHP verzió: 7.3.8
 
@@ -89,6 +89,33 @@ INSERT INTO `szallas` (`szallas_id`, `megnev`, `leiras2`, `tipus`, `elhelyezkede
 (8, 'Grand Nikko Tokyo Daiba', 'A Grand Nikko Tokyo Daiba az első Grand Nikko szálloda Japánban, 2016. július 1-jétől. Az Odaiba városában, a Tokiói-öbölben található szálláshely a legközelebbi városi üdülőszálló Tokió központjához, 20 perces egysínű vasúti és vonatútra. JR Tokió állomás. A wifi a szálláshely egész területén ingyenes.', 5, '135-8701 Tokió prefektúra, Minato-ku Daiba 2-6-1 , Japán', 'hotel9-min.jpg', 279000, 'All inclusive '),
 (9, 'Ramses Hilton ', 'Élvezze ki a szálláshely kínálta szabadidős létesítményeket és szolgáltatásokat, mint például a(z) éjszakai szórakozóhely és a(z) edzőterem, vagy ha úgy tartja kedve, próbálja ki szerencséjét a helyszíni kaszinóban. ', 5, '1115 Corniche El Nile, Kairó, Egyiptom', 'hotel3-min.jpg', 77000, 'teljes ellátás '),
 (10, 'Mercure Gold Coast Resort', 'Lazuljon el, és enegedje, hogy testét, lelkét kényeztessék a teljes körű szolgáltatást nyújtó wellnessfürdőben, ahol masszázs és arckezelés is várja a pihenni vágyókat. Élvezze ki a szálláshely kínálta szabadidős létesítményeket és szolgáltatásokat, mint például a(z) 2 szabadtéri medence, a(z) szabadtéri teniszpálya és a(z) edzőterem.', 4, 'Palm Meadows Drive, Carrara, 4211 Gold Coast, Ausztrália', 'hotel10-min.jpg', 110000, 'All inclusive ');
+
+-- --------------------------------------------------------
+
+--
+-- Tábla szerkezet ehhez a táblához `szolgaltatas`
+--
+
+CREATE TABLE `szolgaltatas` (
+  `szolgaltatas_id` int(50) NOT NULL,
+  `szolgaltatas_neve` varchar(100) COLLATE utf8_hungarian_ci NOT NULL,
+  `ikon` varchar(100) COLLATE utf8_hungarian_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_hungarian_ci;
+
+--
+-- A tábla adatainak kiíratása `szolgaltatas`
+--
+
+INSERT INTO `szolgaltatas` (`szolgaltatas_id`, `szolgaltatas_neve`, `ikon`) VALUES
+(1, 'wifi', 'wifi.svg'),
+(2, 'kilátás', 'kilatas.svg'),
+(3, 'kisállat', 'kisallat.svg'),
+(4, 'légkondícionálás', 'legkondi.svg'),
+(5, 'medence', 'medence.svg'),
+(6, 'dohányzás', 'no_smoking.svg'),
+(7, 'parkoló', 'parkolas.svg'),
+(8, 'étterem', 'restaurant.svg'),
+(9, 'wellness', 'wellness.svg');
 
 -- --------------------------------------------------------
 
