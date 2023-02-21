@@ -214,7 +214,7 @@ h2{
   }
   
   
-  .row:after {
+  .kepgallery:after {
     content: "";
     display: table;
     clear: both;
@@ -225,6 +225,7 @@ h2{
     position: relative;
     display: none;
   }
+  
   .container3 {
     position: relative;
     display: none;
@@ -287,17 +288,9 @@ h2{
     float: right;
 }
 
-.text{
-float: right;
-text-align: justify;
-position:right;
-margin: right;
-padding: right;
-display: inline-block;
-width: 600px;
-
+p{
+  text-align: justify;
 }
-
 .adatok{
   border: 1px solid black;
 }

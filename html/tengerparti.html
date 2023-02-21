@@ -2,9 +2,51 @@
 <div class="container">
     
   <br>
-<h1>Tengerparti</h1>
+<h1>Tengerparti ajánlatok</h1>
 <br>
+<div class="text" class="col-12 md-4">
+  <p><i>Spanyolország  10 legszebb tengerpartja</i></p>
+  <p>Spanyolország egyik legnepszerűbb úti cél </p>
+</div>
+<div class="row">
+  <div class="column2">
+    <img src="../MoonLightTravel.github.io/img/spanyol_tenger1.jpg" style="width:100%" onclick="myFunction(this);">
+  </div>
+  <div class="column2">
+    <img src="../MoonLightTravel.github.io/img/spanyol_tenger2.jpg" style="width:100%" onclick="myFunction(this);">
+  </div>
+  <div class="column2">
+    <img src="../MoonLightTravel.github.io/img/spanyol_tenger3.jpg" style="width:100%" onclick="myFunction(this);">
+  </div>
+  <div class="column2">
+    <img src="../MoonLightTravel.github.io/img/spanyol_tenger4.jpg" style="width:100%" onclick="myFunction(this);">
+  </div> 
+</div>
 
+<div class="container2">
+  <span class="closebtn" onclick="this.parentElement.style.display='none'">&times;</span>
+  <img id="expandedImg" style="width:45%">
+  <div id="imgtext"></div>
+</div>
+
+
+<script>
+  function initGallery() {
+    var firstImg = document.querySelector(".column2 img");
+    myFunction(firstImg);
+  }
+
+  function myFunction(imgs) {
+    var expandImg = document.getElementById("expandedImg");
+    var imgText = document.getElementById("imgtext");
+    expandImg.src = imgs.src;
+    imgText.innerHTML = imgs.alt;
+    expandImg.parentElement.style.display = "block";
+  }
+  
+  // az első kép betöltése
+  initGallery();
+</script>
 <!-- Footer -->
 <footer id="availability"
 class="container-fluid bg-light text-muted mt-5"
