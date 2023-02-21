@@ -311,7 +311,7 @@
       method: "POST",
       data: {
         db: "moonlighttravel",
-        query: "SELECT `utak`.*, `utak_kepek`.* FROM `utak` INNER JOIN `utak_kepek` ON `utak`.`ut_id` = `utak_kepek`.`ut_id3` WHERE `ut_id3` = `ut_id`",
+        query: "SELECT `utak`.*, `utak_kepek`.*, `szallas`.* FROM `utak` INNER JOIN `utak_kepek` ON `utak`.`ut_id` = `utak_kepek`.`ut_id3` INNER JOIN `szallas` ON `utak`.`szallas_id2` = `szallas`.`szallas_id` WHERE `ut_id3` = `ut_id`",
         params: {kepek: $scope.kepek},
         isAssoc: true,
       },
