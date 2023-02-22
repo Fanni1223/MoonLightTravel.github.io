@@ -242,7 +242,7 @@
       method: "POST",
       data: {
         db: "moonlighttravel",
-        query: "SELECT `utak`.*, `szallas`.*, `utak_kepek`.*  FROM `utak` RIGHT JOIN `szallas` ON `utak`.`szallas_id2` = `szallas`.`szallas_id` RIGHT JOIN `utak_kepek` ON `utak`.`ut_id` = `utak_kepek`.`ut_id3` WHERE `varos` = :nyaralas",
+        query: "SELECT `utak`.*, `szallas`.*, `utak_kepek`.*  FROM `utak` RIGHT JOIN `szallas` ON `utak`.`szallas_id2` = `szallas`.`szallas_id` RIGHT JOIN `utak_kepek` ON `utak`.`ut_id` = `utak_kepek`.`ut_id3`  WHERE `varos` = :nyaralas",
         params: {nyaralas: $scope.nyaralas},
         isAssoc: true,
       },
@@ -324,7 +324,39 @@
   },
 ])
 
+// Ikonok controller
+.controller("ikonokController", [
+  "$scope",
+  "$element",
+  "$timeout",
+  "http",
+  "$stateParams",
+  function ($scope, $element, $timeout, http, $stateParams) {
 
+
+    $scope.ikonok = $stateParams.ikonok;
+    if (!$scope.ikonok) {
+      $state.go('home');
+      return;
+    }
+
+    http.request({
+      url: "./php/get.php",
+      method: "POST",
+      data: {
+        db: "moonlighttravel",
+        query: "SELECT `szolgaltatas_kepek`.*, `szolgaltatasok`.*, `szallas`.* FROM `szolgaltatas` INNER JOIN `szolgaltatas_kepek.szolgaltatas_id` = `szolgaltatas`.`szolgaltatas_id` INNER JOIN `szolgaltatas_kepek.szallas_id` = `szallas`.`szallas_id` WHERE `szolgaltatas`.`szolgaltatas_id` = `szolgaltatas_kepek`.`szolgaltatas_id`",
+        params: {ikonok: $scope.ikonok},
+        isAssoc: true,
+      },
+    })
+    .then((data) => {
+      $scope.data = data;
+      $scope.$applyAsync();
+    })
+    .catch((e) => console.log(e));
+  },
+])
 
 
 
