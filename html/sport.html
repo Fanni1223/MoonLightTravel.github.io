@@ -1,50 +1,63 @@
 <div ng-include src="'../MoonLightTravel.github.io/html/navigate.html'"></div>
 <div class="container">
-  <br>
-<h1>Floorball</h1>
-<br>
-<div class="row">
-  <div class="column">
-    <img src="../MoonLightTravel.github.io/img/floorball1.jpg" style="width:100%" onclick="myFunction(this);">
+  <div class="row mt-5 text-center">
+    <h1>Floorball</h1>
   </div>
-  <div class="column">
-    <img src="../MoonLightTravel.github.io/img/floorball2.jpg" style="width:100%" onclick="myFunction(this);">
-  </div>
-  <div class="column">
-    <img src="../MoonLightTravel.github.io/img/floorball3.jpg" style="width:100%" onclick="myFunction(this);">
-  </div>
-  <div class="column">
-    <img src="../MoonLightTravel.github.io/img/floorball4.jpg" style="width:100%" onclick="myFunction(this);">
-  </div> 
-</div>
-
-<div class="container2">
-  <span class="closebtn" onclick="this.parentElement.style.display='none'">&times;</span>
-  <img id="expandedImg" style="width:45%">
-  <div id="imgtext"></div>
-</div>
-
-
-<script>
-  function initGallery() {
-    var firstImg = document.querySelector(".column img");
-    myFunction(firstImg);
-  }
-
-  function myFunction(imgs) {
-    var expandImg = document.getElementById("expandedImg");
-    var imgText = document.getElementById("imgtext");
-    expandImg.src = imgs.src;
-    imgText.innerHTML = imgs.alt;
-    expandImg.parentElement.style.display = "block";
-  }
+    <div class="row mt-5">
+      
+    <div class="col-12 col-md-8 kepgallery">
+      <div class="column2">
+        <img src="../MoonLightTravel.github.io/img/floorball1.jpg" style="width:100%" onclick="myFunction(this);">
+      </div>
+      <div class="column2">
+        <img src="../MoonLightTravel.github.io/img/floorball2.jpg" style="width:100%" onclick="myFunction(this);">
+      </div>
+      <div class="column2">
+        <img src="../MoonLightTravel.github.io/img/floorball3.jpg" style="width:100%" onclick="myFunction(this);">
+      </div>
+      <div class="column2">
+        <img src="../MoonLightTravel.github.io/img/floorball4.jpg" style="width:100%" onclick="myFunction(this);">
+      </div> 
+    
   
-  // az első kép betöltése
-  initGallery();
-</script>
-</div>
-<!-- Footer -->
-<footer id="availability"
-class="container-fluid bg-light text-muted mt-5"
-ng-include src="'../MoonLightTravel.github.io/html/footer.html'">
-</footer>
+    <div>
+      <span class="closebtn" onclick="this.parentElement.style.display='none'">&times;</span>
+      <img id="expandedImg" style="width:83%">
+      <div id="imgtext"></div>
+    </div>
+  </div>
+  
+  
+  <div class="col-12 col-md-4 mt-2">
+    <p>Két nemzet is a saját találmányának tartja ezt a játékot. Az 1960-as évek végén az Egyesült Államokban már játszották a floorhockey nevű játékot (a mostaniakhoz hasonló ütőkkel ). Svédországban is kitaláltak egy nagyon hasonló játékot, amit innebandynak neveztek el, Czitrom András személyében magyar is volt a kigondolók között. Céljuk az volt, hogy a hoki agresszivitásától tartózkodók számára, egy legalább ugyanolyan élvezetes, ám sokkal tisztább játékot hozzanak létre, ami tornateremben játszható. A svéd szövetség 1981-ben alakult meg, a játékszabályokat is ekkor rögzítették, a floorball név a Nemzetközi Floorball Szövetség (International Floorball Federation, IFF) megalakulásától, 1986-tól használatos.</p>
+    <p>Az első Floorball Európa-bajnokságot férfiak részére 1994-ben Finnországban, nők részére 1995-ben Svájcban rendezték, az első világbajnokságot férfiak részére 1996-ban Svédországban, nők részére 1997-ben Finnországban tartották.</p>
+    
+  </div>
+  </div>
+  </div>
+  
+  
+  
+  <!-- Footer -->
+  <footer id="availability"
+  class="container-fluid bg-light text-muted mt-5"
+  ng-include src="'../MoonLightTravel.github.io/html/footer.html'">
+  </footer>
+  
+  <script>
+    function initGallery() {
+      var firstImg = document.querySelector(".column2 img");
+      myFunction(firstImg);
+    }
+  
+    function myFunction(imgs) {
+      var expandImg = document.getElementById("expandedImg");
+      var imgText = document.getElementById("imgtext");
+      expandImg.src = imgs.src;
+      imgText.innerHTML = imgs.alt;
+      expandImg.parentElement.style.display = "block";
+    }
+    
+    // az első kép betöltése
+    initGallery();
+  </script>

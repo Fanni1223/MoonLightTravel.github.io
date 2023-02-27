@@ -1,58 +1,72 @@
 <div ng-include src="'../MoonLightTravel.github.io/html/navigate.html'"></div>
 <div class="container">
-  <br>
-<h1>Holicolor fesztivál</h1>
-<br>
-<div class="text" class="col-12 md-4">
-  <p><i>A világ egyik leglátványosabb és legszínesebb bulijai között emlegetik </i></p>
-  <p>Az elmúlt évek egyik #legsikeresebb és #leglátványosabb rendezvénysorozata, amely 2015 óta minden évben megrendezésre kerül! </p>
-
-  <p>2023. május 13-án újra színekbe borul a lakiteleki Tőserdő, újra megrendezik az Open Holi Color Fesztivált immáron 8. alkalommal. A megszokott hangulat, dekoráció várja az ide érkezőket, csak a fellépők listáján található nevek változnak. A rendezvény teljes ideje alatt vidámparkos játékok lesznek, mely még jobban fokozza az est hangulatát.</p>
-  <b>Részletes programkínálat 2023</b>
-</div>
-
-<div class="row">
-  <div class="column2">
-    <img src="../MoonLightTravel.github.io/img/holicolor1.jpg" style="width:100%" onclick="myFunction(this);">
+  <div class="row mt-5 text-center">
+    <h1>Holicolor fesztivál</h1>
   </div>
-  <div class="column2">
-    <img src="../MoonLightTravel.github.io/img/holicolor2.jpg" style="width:100%" onclick="myFunction(this);">
-  </div>
-  <div class="column2">
-    <img src="../MoonLightTravel.github.io/img/holicolor3.jpg" style="width:100%" onclick="myFunction(this);">
-  </div>
-  <div class="column2">
-    <img src="../MoonLightTravel.github.io/img/holicolor4.jpg" style="width:100%" onclick="myFunction(this);">
-  </div> 
-</div>
-
-<div class="container2">
-  <span class="closebtn" onclick="this.parentElement.style.display='none'">&times;</span>
-  <img id="expandedImg" style="width:45%">
-  <div id="imgtext"></div>
-</div>
-
-
-<script>
-  function initGallery() {
-    var firstImg = document.querySelector(".column2 img");
-    myFunction(firstImg);
-  }
-
-  function myFunction(imgs) {
-    var expandImg = document.getElementById("expandedImg");
-    var imgText = document.getElementById("imgtext");
-    expandImg.src = imgs.src;
-    imgText.innerHTML = imgs.alt;
-    expandImg.parentElement.style.display = "block";
-  }
+    <div class="row mt-5">
+      
+    <div class="col-12 col-md-8 kepgallery">
+      <div class="column2">
+        <img src="../MoonLightTravel.github.io/img/holicolor1.jpg" style="width:100%" onclick="myFunction(this);">
+      </div>
+      <div class="column2">
+        <img src="../MoonLightTravel.github.io/img/holicolor2.jpg" style="width:100%" onclick="myFunction(this);">
+      </div>
+      <div class="column2">
+        <img src="../MoonLightTravel.github.io/img/holicolor3.jpg" style="width:100%" onclick="myFunction(this);">
+      </div>
+      <div class="column2">
+        <img src="../MoonLightTravel.github.io/img/holicolor4.jpg" style="width:100%" onclick="myFunction(this);">
+      </div> 
+    
   
-  // az első kép betöltése
-  initGallery();
-</script>
-</div>
-<!-- Footer -->
-<footer id="availability"
-class="container-fluid bg-light text-muted mt-5"
-ng-include src="'../MoonLightTravel.github.io/html/footer.html'">
-</footer>
+    <div>
+      <span class="closebtn" onclick="this.parentElement.style.display='none'">&times;</span>
+      <img id="expandedImg" style="width:83%">
+      <div id="imgtext"></div>
+    </div>
+  </div>
+  
+  
+  <div class="col-12 col-md-4 mt-2">
+    <p><i>A világ egyik leglátványosabb és legszínesebb bulijai között emlegetik</i></p>
+    <p>Az elmúlt évek egyik #legsikeresebb és #leglátványosabb rendezvénysorozata, amely 2015 óta minden évben megrendezésre kerül!</p>
+    <p>2023. május 13-án újra színekbe borul a lakiteleki Tőserdő, újra megrendezik az Open Holi Color Fesztivált immáron 8. alkalommal. A megszokott hangulat, dekoráció várja az ide érkezőket, csak a fellépők listáján található nevek változnak. A rendezvény teljes ideje alatt vidámparkos játékok lesznek, mely még jobban fokozza az est hangulatát.</p>
+    <b>Részletes programkínálat 2023: </b>
+    <li>19:00 - Bombastic Warm Up Party</li>
+    <li>22:00 - Regán Lili</li>
+    <li>24:00 - Közöss Holi dobás</li>
+    <li>24:00 - Szecsei</li>
+    <li>01:00 - Katapult Dj.</li> 
+    <li>04:00 - Rendezvény zárása</li>
+
+    
+  </div>
+  </div>
+  </div>
+  
+  
+  
+  <!-- Footer -->
+  <footer id="availability"
+  class="container-fluid bg-light text-muted mt-5"
+  ng-include src="'../MoonLightTravel.github.io/html/footer.html'">
+  </footer>
+  
+  <script>
+    function initGallery() {
+      var firstImg = document.querySelector(".column2 img");
+      myFunction(firstImg);
+    }
+  
+    function myFunction(imgs) {
+      var expandImg = document.getElementById("expandedImg");
+      var imgText = document.getElementById("imgtext");
+      expandImg.src = imgs.src;
+      imgText.innerHTML = imgs.alt;
+      expandImg.parentElement.style.display = "block";
+    }
+    
+    // az első kép betöltése
+    initGallery();
+  </script>
