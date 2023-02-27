@@ -56,53 +56,49 @@
   
   </style>
 
-  <br>
-<h1>Wellnes</h1>
-
-<div class="text" class="col-12 md-4">
-  <p><i>Tartson velünk egy felejthetetlen hajó utazásra a Görög szigetekre és Athénba</i></p>
-  <p>Szórakoztató programokkal, tradicionális görög ételekkel várjuk, válogatott italkínálattal az étkezések során, melyet a görög vendégszeretet tesz egyedülállóvá. Ismerje meg Görögország ellenállhatatlan varázsát akár néhány nap alatt, látogasson el az Égei-tenger szigeteire, mesés strandjaira és merüljön el a görög kultúra szépségeiben a Mobidik hajóutazással.</p>
-  <br>
-  <b>Ellátás:</b> teljes<br>
-  <b>Hajó adatok:</b>
-  <li>9 utasfedélzet</li>
-  <li>Kb. 1700 utas</li>
-  <li>214 m hosszú</li>
-  <li>525 fős személyzet</li>
-  <br>
-  <b>Szolgálatások:</b>
-  <li>2 medence</li>
-  <li>3 étterem, 5 bár</li>
-  <li>fitneszterem</li>
-  <li>boltok</li>
-  <li>könyvtár</li>
-  <li>szépségszalon</li>
-  <li>szauna</li>
-  <br>
-  <br>
+<div class="row mt-5 text-center">
+  <h1>Wellnes</h1>
 </div>
-<br>
+  <div class="row mt-5">
+    
+  <div class="col-12 col-md-8 kepgallery">
+    <div class="column2">
+      <img src="../MoonLightTravel.github.io/img/wellness.jpg" style="width:100%" onclick="myFunction(this);">
+    </div>
+    <div class="column2">
+      <img src="../MoonLightTravel.github.io/img/wellnes2.jpg" style="width:100%" onclick="myFunction(this);">
+    </div>
+    <div class="column2">
+      <img src="../MoonLightTravel.github.io/img/wellnes3.jpg" style="width:100%" onclick="myFunction(this);">
+    </div>
+    <div class="column2">
+      <img src="../MoonLightTravel.github.io/img/wellnes4.jpg" style="width:100%" onclick="myFunction(this);">
+    </div> 
+  
 
-<div class="row">
-  <div class="column2">
-    <img src="../MoonLightTravel.github.io/img/wellness.jpg" style="width:100%" onclick="myFunction(this);">
+  <div>
+    <span class="closebtn" onclick="this.parentElement.style.display='none'">&times;</span>
+    <img id="expandedImg" style="width:83%">
+    <div id="imgtext"></div>
   </div>
-  <div class="column2">
-    <img src="../MoonLightTravel.github.io/img/wellnes2.jpg" style="width:100%" onclick="myFunction(this);">
-  </div>
-  <div class="column2">
-    <img src="../MoonLightTravel.github.io/img/wellnes3.jpg" style="width:100%" onclick="myFunction(this);">
-  </div>
-  <div class="column2">
-    <img src="../MoonLightTravel.github.io/img/wellnes4.jpg" style="width:100%" onclick="myFunction(this);">
-  </div> 
 </div>
 
-<div class="container2">
-  <span class="closebtn" onclick="this.parentElement.style.display='none'">&times;</span>
-  <img id="expandedImg" style="width:45%">
-  <div id="imgtext"></div>
+
+<div class="col-12 col-md-4 mt-2">
+  <p><i>Mi is a wellness és miért jó?</i></p>
+  <p>A wellness a jól-lét állapota, a testi-lelki-szellemi egyensúly megléte és fenntartása. Egészségtudatos programok és módszerek összessége, annak érdekében, hogy jól érezzük magunkat a bőrünkben. </p>
+  <p>Szolgáltatások: </p>
+  <li>Sky wellness </li>
+  <li>Sódézsa </li>
+  <li>Jégkamra</li>
+  <li>hangfürdő</li>
+  <li>Lebegőkabin</li>
+  <li>Szauna</li>
+
+
 </div>
+</div>
+
 <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
 
 <div class="cards">
@@ -123,6 +119,17 @@
   </div>
 </div>
 
+
+</div>
+
+
+
+<!-- Footer -->
+<footer id="availability"
+class="container-fluid bg-light text-muted mt-5"
+ng-include src="'../MoonLightTravel.github.io/html/footer.html'">
+</footer>
+
 <script>
   function initGallery() {
     var firstImg = document.querySelector(".column2 img");
@@ -140,12 +147,3 @@
   // az első kép betöltése
   initGallery();
 </script>
-<br>
-
-
-</div>
-<!-- Footer -->
-<footer id="availability"
-class="container-fluid bg-light text-muted mt-5"
-ng-include src="'../MoonLightTravel.github.io/html/footer.html'">
-</footer>
