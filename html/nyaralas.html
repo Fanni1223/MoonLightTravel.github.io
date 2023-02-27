@@ -77,9 +77,9 @@
       </section>
 
       <section id="content7">
-        <button type="button" class="btn btn-outline-secondary" disabled ng-if="data.length">
-        <img ng-src="./img/{{data[0].szolgaltatas_neve}}" alt="">
-      </button>
+        <div ng-repeat="szolgaltatasok in data">
+          <img ng-src="./img/ikonok/{{szolgaltatasok.neve}}" alt="" class="ikon">
+        </div>
       </section>
     <main>
   </div>

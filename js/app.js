@@ -324,8 +324,8 @@
   },
 ])
 
-// Ikonok controller
-.controller("ikonokController", [
+// szolgaltatasok controller
+.controller("szolgaltatasokController", [
   "$scope",
   "$element",
   "$timeout",
@@ -334,8 +334,8 @@
   function ($scope, $element, $timeout, http, $stateParams) {
 
 
-    $scope.ikonok = $stateParams.ikonok;
-    if (!$scope.ikonok) {
+    $scope.szolgaltatasok = $stateParams.szolgaltatasok;
+    if (!$scope.szolgaltatasok) {
       $state.go('home');
       return;
     }
@@ -345,8 +345,8 @@
       method: "POST",
       data: {
         db: "moonlighttravel",
-        query: "SELECT `szolgaltatas_kepek`.*, `szolgaltatasok`.*, `szallas`.* FROM `szolgaltatas` INNER JOIN `szolgaltatas_kepek.szolgaltatas_id` = `szolgaltatas`.`szolgaltatas_id` INNER JOIN `szolgaltatas_kepek.szallas_id` = `szallas`.`szallas_id` WHERE `szolgaltatas`.`szolgaltatas_id` = `szolgaltatas_kepek`.`szolgaltatas_id`",
-        params: {ikonok: $scope.ikonok},
+        query: "SELECT `utak`.*, `utak_kepek`.*, `szallas`.* FROM `utak` INNER JOIN `utak_kepek` ON `utak`.`ut_id` = `utak_kepek`.`ut_id3` INNER JOIN `szallas` ON `utak`.`szallas_id2` = `szallas`.`szallas_id` WHERE `ut_id3` = `ut_id` AND `neve` LIKE '%.svg%' LIMIT 2",
+        params: {szolgaltatasok: $scope.szolgaltatasok},
         isAssoc: true,
       },
     })
