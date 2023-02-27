@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Gép: 127.0.0.1
--- Létrehozás ideje: 2023. Feb 21. 14:38
+-- Létrehozás ideje: 2023. Feb 22. 14:29
 -- Kiszolgáló verziója: 10.4.6-MariaDB
 -- PHP verzió: 7.3.8
 
@@ -116,6 +116,25 @@ INSERT INTO `szolgaltatas` (`szolgaltatas_id`, `szolgaltatas_neve`, `ikon`) VALU
 (7, 'parkoló', 'parkolas.svg'),
 (8, 'étterem', 'restaurant.svg'),
 (9, 'wellness', 'wellness.svg');
+
+-- --------------------------------------------------------
+
+--
+-- Tábla szerkezet ehhez a táblához `szolgaltatas_kepek`
+--
+
+CREATE TABLE `szolgaltatas_kepek` (
+  `szallas_id` int(100) NOT NULL,
+  `szolgaltatas_id` int(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_hungarian_ci;
+
+--
+-- A tábla adatainak kiíratása `szolgaltatas_kepek`
+--
+
+INSERT INTO `szolgaltatas_kepek` (`szallas_id`, `szolgaltatas_id`) VALUES
+(1, 1),
+(1, 6);
 
 -- --------------------------------------------------------
 
@@ -238,6 +257,19 @@ ALTER TABLE `szallas`
   ADD PRIMARY KEY (`szallas_id`);
 
 --
+-- A tábla indexei `szolgaltatas`
+--
+ALTER TABLE `szolgaltatas`
+  ADD PRIMARY KEY (`szolgaltatas_id`);
+
+--
+-- A tábla indexei `szolgaltatas_kepek`
+--
+ALTER TABLE `szolgaltatas_kepek`
+  ADD PRIMARY KEY (`szallas_id`,`szolgaltatas_id`),
+  ADD KEY `szolgaltatas_id` (`szolgaltatas_id`);
+
+--
 -- A tábla indexei `utak`
 --
 ALTER TABLE `utak`
@@ -270,6 +302,13 @@ ALTER TABLE `szallas`
 --
 ALTER TABLE `foglalas`
   ADD CONSTRAINT `foglalas_ibfk_1` FOREIGN KEY (`ut_id2`) REFERENCES `utak` (`ut_id`);
+
+--
+-- Megkötések a táblához `szolgaltatas_kepek`
+--
+ALTER TABLE `szolgaltatas_kepek`
+  ADD CONSTRAINT `szolgaltatas_kepek_ibfk_1` FOREIGN KEY (`szallas_id`) REFERENCES `szallas` (`szallas_id`),
+  ADD CONSTRAINT `szolgaltatas_kepek_ibfk_2` FOREIGN KEY (`szolgaltatas_id`) REFERENCES `szolgaltatas` (`szolgaltatas_id`);
 
 --
 -- Megkötések a táblához `utak`
