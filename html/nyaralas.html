@@ -10,7 +10,9 @@
     <div class="column">
       <img class="img-fluid" ng-src="./img/{{data[0].utak_img}}" style="width:100%" onload="initGallery()" onclick="myFunction(this);">
     </div>
-    <div class="column" ng-repeat="kepek in data track by $index">
+    <div class="column" 
+         ng-repeat="kepek in data track by $index"
+         ng-if="!kepek.neve.includes('.svg')">
       <img class="img-fluid" ng-src="./img/{{kepek.neve}}" style="width:100%" onclick="myFunction(this);">
     </div>
   </div>
@@ -54,7 +56,7 @@
     </div>
     <div class="col-xl-2 col-lg-7 col-md-2" ng-if="data.length">
 
-      <img src="./img/ikonok/star.svg" class="ikon" style="width:100%" ng-repeat="x in [].constructor(data[0].tipus) track by $index">
+      <img src="./img/ikonok/star.svg" class="ikon" ng-repeat="x in [].constructor(data[0].tipus) track by $index">
     </div>
     <div class="col-md-3"></div>
   </div>
@@ -85,7 +87,8 @@
       </section>
 
       <section id="content7">
-        <div ng-repeat="szolgaltatasok in data">
+        <div ng-repeat="szolgaltatasok in data"
+             ng-if="szolgaltatasok.neve.includes('.svg')">
           <img ng-src="./img/ikonok/{{szolgaltatasok.neve}}" alt="" class="ikon">
         </div>
       </section>
