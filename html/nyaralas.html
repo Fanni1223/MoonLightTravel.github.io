@@ -4,19 +4,20 @@
   <div class='row mt-5' ng-if="data.length">
     <h1 class="text-center mt-5">{{data[0].nev}}</h1>
   </div>
+
 <!--Képgaléria-->
   <div class="row mt-5" ng-if="data.length">
     <div class="column">
-      <img ng-src="./img/{{data[0].utak_img}}" style="width:100%" onload="initGallery()" onclick="myFunction(this);">
+      <img class="img-fluid" ng-src="./img/{{data[0].utak_img}}" style="width:100%" onload="initGallery()" onclick="myFunction(this);">
     </div>
     <div class="column" ng-repeat="kepek in data track by $index">
-      <img ng-src="./img/{{kepek.neve}}" style="width:100%" onclick="myFunction(this);">
+      <img class="img-fluid" ng-src="./img/{{kepek.neve}}" style="width:100%" onclick="myFunction(this);">
     </div>
   </div>
 
   <div class="container2">
     <span class="closebtn" onclick="this.parentElement.style.display='none'">&times;</span>
-    <img id="expandedImg" style="width:55%">
+    <img id="expandedImg" style="width:55%" class="img-fluid">
     <div id="imgtext"></div>
   </div>
 
@@ -47,12 +48,17 @@
   </div>
 
 <!--Szállás kép-->
-  <div class="row col-12 col-md-7 mt-5" ng-if="data.length">
-    <img ng-src="./img/{{data[0].szallas_img}}" alt="Szállás" title="Szállás">
+  <div class="row mt-5">
+    <div class="col-xl-7 col-md-7" ng-if="data.length">
+      <img ng-src="./img/{{data[0].szallas_img}}" alt="Szállás" title="Szállás" class="img-fluid">
+    </div>
+    <div class="col-xl-2 col-md-2" ng-if="data.length">
+      <img src="./img/ikonok/star.svg" class="ikon" ng-repeat="x in [].constructor(data[0].tipus) track by $index">
+    </div>
   </div>
 
 <!--Tabok-->
-  <div class="row col-12 col-md-7 mt-2" ng-if="data.length">
+  <div class="row col-12 col-md-10 mt-2" ng-if="data.length">
     <main>
       <input id="tab4" type="radio" name="tabs" checked>
       <label for="tab4"><img src="../MoonLightTravel.github.io/img/ikonok/tartozkodasihely.svg" alt="ikon" class="ikon mx-2">Térkép</label>

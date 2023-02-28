@@ -311,7 +311,7 @@
       method: "POST",
       data: {
         db: "moonlighttravel",
-        query: "SELECT `utak`.*, `utak_kepek`.*, `szallas`.* FROM `utak` INNER JOIN `utak_kepek` ON `utak`.`ut_id` = `utak_kepek`.`ut_id3` INNER JOIN `szallas` ON `utak`.`szallas_id2` = `szallas`.`szallas_id` WHERE `ut_id3` = `ut_id`",
+        query: "SELECT `utak`.*, `utak_kepek`.*, `szallas`.* FROM `utak` INNER JOIN `utak_kepek` ON `utak`.`ut_id` = `utak_kepek`.`ut_id3` INNER JOIN `szallas` ON `utak`.`szallas_id2` = `szallas`.`szallas_id` WHERE `ut_id3` = `ut_id` AND `neve` LIKE '%.jpg%'",
         params: {kepek: $scope.kepek},
         isAssoc: true,
       },
@@ -345,7 +345,7 @@
       method: "POST",
       data: {
         db: "moonlighttravel",
-        query: "SELECT `utak`.*, `utak_kepek`.*, `szallas`.* FROM `utak` INNER JOIN `utak_kepek` ON `utak`.`ut_id` = `utak_kepek`.`ut_id3` INNER JOIN `szallas` ON `utak`.`szallas_id2` = `szallas`.`szallas_id` WHERE `ut_id3` = `ut_id` AND `neve` LIKE '%.svg%' LIMIT 2",
+        query: "SELECT `utak`.*, `utak_kepek`.*, `szallas`.* FROM `utak` INNER JOIN `utak_kepek` ON `utak`.`ut_id` = `utak_kepek`.`ut_id3` INNER JOIN `szallas` ON `utak`.`szallas_id2` = `szallas`.`szallas_id` WHERE `ut_id3` = `ut_id` AND `neve` LIKE '%.svg%'",
         params: {szolgaltatasok: $scope.szolgaltatasok},
         isAssoc: true,
       },
