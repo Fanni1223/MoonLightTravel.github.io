@@ -10,7 +10,9 @@
     <div class="column">
       <img class="img-fluid" ng-src="./img/{{data[0].utak_img}}" style="width:100%" onload="initGallery()" onclick="myFunction(this);">
     </div>
-    <div class="column" ng-repeat="kepek in data track by $index">
+    <div class="column" 
+         ng-repeat="kepek in data track by $index"
+         ng-if="!kepek.neve.includes('.svg')">
       <img class="img-fluid" ng-src="./img/{{kepek.neve}}" style="width:100%" onclick="myFunction(this);">
     </div>
   </div>
@@ -44,16 +46,18 @@
         <p class="mx-5"><img ng-src="./img/ikonok/{{data[0].kozlekedesi_eszkoz_img}}" alt="ikon" class="ikon mx-3">{{data[0].ido}}<p>
         <p class="mx-5">Indulás:<span class="mx-3">{{data[0].indulasi_hely}}</span></p>
       </section>
-    <main>
+    </main>
   </div>
 
 <!--Szállás kép-->
   <div class="row mt-5">
-    <div class="col-xl-7 col-md-7" ng-if="data.length">
+    <div class="col-xl-5 col-md-5" ng-if="data.length">
       <img ng-src="./img/{{data[0].szallas_img}}" alt="Szállás" title="Szállás" class="img-fluid">
     </div>
-    <div class="col-xl-2 col-md-2" ng-if="data.length">
+    <div class="col-xl-4 col-md-4" ng-if="data.length">
       <img src="./img/ikonok/star.svg" class="ikon" ng-repeat="x in [].constructor(data[0].tipus) track by $index">
+      <p class="fw-bold mx-1">{{data[0].megnev}}</p>
+      <p class="fw-bold mx-1"><img src="./img/ikonok/tartozkodasihely.svg" class="ikon" alt="Elhelyezkedés">{{data[0].elhelyezkedes}}</p>
     </div>
   </div>
 
@@ -83,7 +87,8 @@
       </section>
 
       <section id="content7">
-        <div ng-repeat="szolgaltatasok in data">
+        <div ng-repeat="szolgaltatasok in data"
+             ng-if="szolgaltatasok.neve.includes('.svg')">
           <img ng-src="./img/ikonok/{{szolgaltatasok.neve}}" alt="" class="ikon">
         </div>
       </section>

@@ -378,6 +378,7 @@ input {
   display: none;
 }
 
+
 label {
   display: inline-block;
   margin: 0 0 -1px;
@@ -447,3 +448,7 @@ input:checked + label {
   top: 0;
   position: absolute;
 }
+
+
+
+

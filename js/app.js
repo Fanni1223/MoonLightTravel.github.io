@@ -289,7 +289,7 @@
   },
 ])
 
-
+/*
 // Képek controller
 .controller("kepekController", [
   "$scope",
@@ -357,7 +357,7 @@
     .catch((e) => console.log(e));
   },
 ])
-
+*/
 
 
 })(window, angular);
