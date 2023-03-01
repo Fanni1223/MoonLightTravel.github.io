@@ -11,9 +11,9 @@
       <img class="img-fluid" ng-src="./img/{{data[0].utak_img}}" style="width:100%" onload="initGallery()" onclick="myFunction(this);">
     </div>
     <div class="column" 
-         ng-repeat="kepek in data track by $index"
-         ng-if="!kepek.neve.includes('.svg')">
-      <img class="img-fluid" ng-src="./img/{{kepek.neve}}" style="width:100%" onclick="myFunction(this);">
+         ng-repeat="nyaralas in data track by $index"
+         ng-if="!nyaralas.neve.includes('.svg')">
+      <img class="img-fluid" ng-src="./img/{{nyaralas.neve}}" style="width:100%" onclick="myFunction(this);">
     </div>
   </div>
 
@@ -24,14 +24,14 @@
   </div>
 
 <!--Tabok-->
-  <div class="row col-12 col-md-7 mt-2" ng-if="data.length">
+  <div class="row col-xl-6 col-md-6 mt-2" ng-if="data.length">
     <main>
-      <input id="tab1" type="radio" name="tabs" checked>
-      <label for="tab1"><img src="../MoonLightTravel.github.io/img/ikonok/tartozkodasihely.svg" alt="ikon" class="ikon mx-2">Térkép</label>
-      <input id="tab2" type="radio" name="tabs">
-      <label for="tab2"><img src="../MoonLightTravel.github.io/img/ikonok/leiras.svg" alt="ikon" class="ikon mx-2">Leírás</label>
-      <input id="tab3" type="radio" name="tabs">
-      <label for="tab3"><img src="../MoonLightTravel.github.io/img/ikonok/repulo.svg" alt="ikon" class="ikon mx-2">Közlekedés</label>
+      <input id="tab1" type="radio" name="tabs" checked class="input_tab">
+      <label for="tab1"><img src="../MoonLightTravel.github.io/img/ikonok/tartozkodasihely.svg" alt="ikon" title="ikon" class="ikon mx-2">Térkép</label>
+      <input id="tab2" type="radio" name="tabs" class="input_tab">
+      <label for="tab2"><img src="../MoonLightTravel.github.io/img/ikonok/leiras.svg" alt="ikon" title="ikon" class="ikon mx-2">Leírás</label>
+      <input id="tab3" type="radio" name="tabs" class="input_tab">
+      <label for="tab3"><img src="../MoonLightTravel.github.io/img/ikonok/repulo.svg" alt="ikon" title="ikon" class="ikon mx-2">Közlekedés</label>
     
       <section id="content1">
         <p></p>
@@ -43,7 +43,7 @@
       </section>
     
       <section id="content3">
-        <p class="mx-5"><img ng-src="./img/ikonok/{{data[0].kozlekedesi_eszkoz_img}}" alt="ikon" class="ikon mx-3">{{data[0].ido}}<p>
+        <p class="mx-5"><img ng-src="./img/ikonok/{{data[0].kozlekedesi_eszkoz_img}}" alt="ikon" title="ikon" class="ikon mx-3">{{data[0].ido}}<p>
         <p class="mx-5">Indulás:<span class="mx-3">{{data[0].indulasi_hely}}</span></p>
       </section>
     </main>
@@ -55,22 +55,22 @@
       <img ng-src="./img/{{data[0].szallas_img}}" alt="Szállás" title="Szállás" class="img-fluid">
     </div>
     <div class="col-xl-4 col-md-4" ng-if="data.length">
-      <img src="./img/ikonok/star.svg" class="ikon" ng-repeat="x in [].constructor(data[0].tipus) track by $index">
+      <img src="./img/ikonok/star.svg" class="ikon" alt="ikon" title="ikon" ng-repeat="x in [].constructor(data[0].tipus) track by $index">
       <p class="fw-bold mx-1">{{data[0].megnev}}</p>
       <p class="fw-bold mx-1"><img src="./img/ikonok/tartozkodasihely.svg" class="ikon" alt="Elhelyezkedés">{{data[0].elhelyezkedes}}</p>
     </div>
   </div>
 
 <!--Tabok-->
-  <div class="row col-12 col-md-10 mt-2" ng-if="data.length">
+  <div class="row col-xl-8 col-md-8 mt-2" ng-if="data.length">
     <main>
-      <input id="tab4" type="radio" name="tabs" checked>
+      <input id="tab4" type="radio" name="tabs" checked class="input_tab">
       <label for="tab4"><img src="../MoonLightTravel.github.io/img/ikonok/tartozkodasihely.svg" alt="ikon" class="ikon mx-2">Térkép</label>
-      <input id="tab5" type="radio" name="tabs">
+      <input id="tab5" type="radio" name="tabs" class="input_tab">
       <label for="tab5"><img src="../MoonLightTravel.github.io/img/ikonok/leiras.svg" alt="ikon" class="ikon mx-2">Leírás</label>
-      <input id="tab6" type="radio" name="tabs">
+      <input id="tab6" type="radio" name="tabs" class="input_tab">
       <label for="tab6"><img src="../MoonLightTravel.github.io/img/ikonok/ellatas.svg" alt="ikon" class="ikon mx-2">Ellátás</label>
-      <input id="tab7" type="radio" name="tabs">
+      <input id="tab7" type="radio" name="tabs" class="input_tab">
       <label for="tab7"><img src="../MoonLightTravel.github.io/img/ikonok/szolgaltatas.svg" alt="ikon" class="ikon mx-2">Szolgáltatások</label>
     
       <section id="content4">
@@ -87,14 +87,12 @@
       </section>
 
       <section id="content7">
-        <div ng-repeat="szolgaltatasok in data"
-             ng-if="szolgaltatasok.neve.includes('.svg')">
-          <img ng-src="./img/ikonok/{{szolgaltatasok.neve}}" alt="" class="ikon">
-        </div>
+          <button disabled ng-repeat="nyaralas in data" ng-if="nyaralas.neve.includes('.svg')" class="mx-2 border border-dark mt-2"><p class="mt-3 mx-1 text-black"><img  ng-src="./img/ikonok/{{nyaralas.neve}}" alt="ikon" class="ikon mx-2">{{nyaralas.neve2}}</p></button>
       </section>
-    <main>
+    </main>
   </div>
 
+<!--Kalkuláció-->
   
 </div> 
 

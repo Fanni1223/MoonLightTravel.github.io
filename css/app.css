@@ -374,10 +374,10 @@ section {
   border-top: 1px solid #ddd;
 }
 
-/*input {
+.input_tab{
   display: none;
 }
-*/
+
 
 label {
   display: inline-block;
@@ -405,6 +405,7 @@ input:checked + label {
   border: 1px solid #ddd;
   border-top: 2px solid #B01E68;
   border-bottom: 1px solid #fff;
+  
 }
 
 #tab1:checked ~ #content1,
