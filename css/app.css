@@ -584,13 +584,7 @@ h3 {
 
 
 
-p {
-	font-size: 14px;
-	font-weight: 100;
-	line-height: 20px;
-	letter-spacing: 0.5px;
-	margin: 20px 0 30px;
-}
+
 
 
 
@@ -823,7 +817,7 @@ float: center;
 	height: 40px;
 	width: 40px;
 }
-.row{
+.blok{
   justify-content: center;
 	align-items: center;
   display: flex;
