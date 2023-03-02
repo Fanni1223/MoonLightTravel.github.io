@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Gép: 127.0.0.1
--- Létrehozás ideje: 2023. Feb 27. 12:25
+-- Létrehozás ideje: 2023. Már 01. 15:33
 -- Kiszolgáló verziója: 10.4.6-MariaDB
 -- PHP verzió: 7.3.8
 
@@ -35,7 +35,6 @@ CREATE TABLE `foglalas` (
   `email` varchar(50) COLLATE utf8_hungarian_ci NOT NULL,
   `fo` int(2) NOT NULL,
   `vegosszeg` int(6) NOT NULL,
-  `foglalas_ut_id2` int(50) NOT NULL,
   `orszag2` varchar(100) COLLATE utf8_hungarian_ci NOT NULL,
   `iranyitoszam` int(10) NOT NULL,
   `varos2` varchar(100) COLLATE utf8_hungarian_ci NOT NULL,
@@ -54,8 +53,8 @@ CREATE TABLE `foglalas` (
 -- A tábla adatainak kiíratása `foglalas`
 --
 
-INSERT INTO `foglalas` (`foglalas_id`, `nev2`, `telefonsz`, `email`, `fo`, `vegosszeg`, `foglalas_ut_id2`, `orszag2`, `iranyitoszam`, `varos2`, `utca`, `hazszam`, `kisagy`, `evszam`, `honap`, `nap`, `oda_ora`, `vissza_ora`, `ut_id2`) VALUES
-(1, 'kdhadkddf', 63, 'djfdsffdfhdfsdfsdf', 3, 12345, 1, 'gdfggf', 6900, 'fgdg', 'frgerter', 1, 2, '0000-00-00', 12, 1, 12, 12, 1);
+INSERT INTO `foglalas` (`foglalas_id`, `nev2`, `telefonsz`, `email`, `fo`, `vegosszeg`, `orszag2`, `iranyitoszam`, `varos2`, `utca`, `hazszam`, `kisagy`, `evszam`, `honap`, `nap`, `oda_ora`, `vissza_ora`, `ut_id2`) VALUES
+(1, 'kdhadkddf', 63, 'djfdsffdfhdfsdfsdf', 3, 12345, 'gdfggf', 6900, 'fgdg', 'frgerter', 1, 2, '0000-00-00', 12, 1, 12, 12, 1);
 
 -- --------------------------------------------------------
 
@@ -143,56 +142,61 @@ INSERT INTO `utak` (`ut_id`, `kontinens`, `orszag`, `varos`, `utak_img`, `leiras
 CREATE TABLE `utak_kepek` (
   `neve` varchar(50) COLLATE utf8_hungarian_ci NOT NULL,
   `darabszam` int(50) NOT NULL,
-  `ut_id3` int(50) NOT NULL
+  `ut_id3` int(50) NOT NULL,
+  `neve2` varchar(50) COLLATE utf8_hungarian_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_hungarian_ci;
 
 --
 -- A tábla adatainak kiíratása `utak_kepek`
 --
 
-INSERT INTO `utak_kepek` (`neve`, `darabszam`, `ut_id3`) VALUES
-('paris2-min.jpg', 2, 1),
-('marseille2-min.jpg', 2, 2),
-('lyon2-min.jpg', 2, 3),
-('budapest2-min.jpg', 2, 4),
-('pecs2-min.jpg', 2, 5),
-('balaton2-min.jpg', 2, 6),
-('mexiko2-min.jpg', 2, 7),
-('tokio2-min.jpg', 2, 8),
-('egyiptom2-min.jpg', 2, 9),
-('sydney2-min.jpg', 2, 10),
-('paris3-min.jpg', 3, 1),
-('marseille3-min.jpg', 3, 2),
-('lyon3-min.jpg', 3, 3),
-('budapest3-min.jpg', 3, 4),
-('pecs3-min.jpg', 3, 5),
-('balaton3-min.jpg', 3, 6),
-('mexiko3-min.jpg', 3, 7),
-('tokio3-min.jpg', 3, 8),
-('egyiptom3-min.jpg', 3, 9),
-('sydney3-min.jpg', 3, 10),
-('paris4-min.jpg', 4, 1),
-('marseille4-min.jpg', 4, 2),
-('lyon4-min.jpg', 4, 3),
-('budapest4-min.jpg', 4, 4),
-('pecs4-min.jpg', 4, 5),
-('balaton4-min.jpg', 4, 6),
-('mexiko4-min.jpg', 4, 7),
-('tokio4-min.jpg', 4, 8),
-('egyiptom4-min.jpg', 4, 9),
-('sydney4-min.jpg', 4, 10),
-('paris5-min.jpg', 5, 1),
-('marseille5-min.jpg', 5, 2),
-('lyon5-min.jpg', 5, 3),
-('budapest5-min.jpg', 5, 4),
-('pecs5-min.jpg', 5, 5),
-('balaton5-min.jpg', 5, 6),
-('mexiko5-min.jpg', 5, 7),
-('tokio5-min.jpg', 5, 8),
-('egyiptom5-min.jpg', 5, 9),
-('sydney5-min.jpg', 5, 10),
-('wifi.svg', 6, 1),
-('no_smoking.svg', 7, 1);
+INSERT INTO `utak_kepek` (`neve`, `darabszam`, `ut_id3`, `neve2`) VALUES
+('paris2-min.jpg', 2, 1, ''),
+('marseille2-min.jpg', 2, 2, ''),
+('lyon2-min.jpg', 2, 3, ''),
+('budapest2-min.jpg', 2, 4, ''),
+('pecs2-min.jpg', 2, 5, ''),
+('balaton2-min.jpg', 2, 6, ''),
+('mexiko2-min.jpg', 2, 7, ''),
+('tokio2-min.jpg', 2, 8, ''),
+('egyiptom2-min.jpg', 2, 9, ''),
+('sydney2-min.jpg', 2, 10, ''),
+('paris3-min.jpg', 3, 1, ''),
+('marseille3-min.jpg', 3, 2, ''),
+('lyon3-min.jpg', 3, 3, ''),
+('budapest3-min.jpg', 3, 4, ''),
+('pecs3-min.jpg', 3, 5, ''),
+('balaton3-min.jpg', 3, 6, ''),
+('mexiko3-min.jpg', 3, 7, ''),
+('tokio3-min.jpg', 3, 8, ''),
+('egyiptom3-min.jpg', 3, 9, ''),
+('sydney3-min.jpg', 3, 10, ''),
+('paris4-min.jpg', 4, 1, ''),
+('marseille4-min.jpg', 4, 2, ''),
+('lyon4-min.jpg', 4, 3, ''),
+('budapest4-min.jpg', 4, 4, ''),
+('pecs4-min.jpg', 4, 5, ''),
+('balaton4-min.jpg', 4, 6, ''),
+('mexiko4-min.jpg', 4, 7, ''),
+('tokio4-min.jpg', 4, 8, ''),
+('egyiptom4-min.jpg', 4, 9, ''),
+('sydney4-min.jpg', 4, 10, ''),
+('paris5-min.jpg', 5, 1, ''),
+('marseille5-min.jpg', 5, 2, ''),
+('lyon5-min.jpg', 5, 3, ''),
+('budapest5-min.jpg', 5, 4, ''),
+('pecs5-min.jpg', 5, 5, ''),
+('balaton5-min.jpg', 5, 6, ''),
+('mexiko5-min.jpg', 5, 7, ''),
+('tokio5-min.jpg', 5, 8, ''),
+('egyiptom5-min.jpg', 5, 9, ''),
+('sydney5-min.jpg', 5, 10, ''),
+('wifi.svg', 6, 1, 'Wifi'),
+('no_smoking.svg', 7, 1, 'Dohányzás mentes'),
+('kisallat.svg', 8, 1, 'Kisállat vihető'),
+('legkondi.svg', 9, 1, 'Légkondícionálás'),
+('medence.svg', 10, 1, 'Medence'),
+('parkolas.svg', 11, 1, 'Ingyenes parkolás');
 
 --
 -- Indexek a kiírt táblákhoz
@@ -203,7 +207,6 @@ INSERT INTO `utak_kepek` (`neve`, `darabszam`, `ut_id3`) VALUES
 --
 ALTER TABLE `foglalas`
   ADD PRIMARY KEY (`foglalas_id`),
-  ADD KEY `ut_id2` (`foglalas_ut_id2`),
   ADD KEY `ut_id2_2` (`ut_id2`);
 
 --
