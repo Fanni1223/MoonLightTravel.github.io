@@ -469,11 +469,12 @@ input:checked + label {
 .login-box{
   position:relative;
   margin: 10px auto;
-  width: 1000px;
-  height: 380px;
+  width: 400px;
+  height: 290px;
   background-color: #fff;
   padding: 10px;
   border-radius: 3px;
+  float: left;
   -webkit-box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.33);
 -moz-box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.33);
 box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.33);
@@ -587,4 +588,256 @@ box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.33);
 
 
 
+/*Login*/
+h3 {
+	font-weight: bold;
+  color: #fff;
 
+}
+
+
+
+p {
+	font-size: 14px;
+	font-weight: 100;
+	line-height: 20px;
+	letter-spacing: 0.5px;
+	margin: 20px 0 30px;
+}
+
+
+
+.social {
+	color: #333;
+	font-size: 14px;
+	text-decoration: none;
+	margin: 15px 0;
+}
+
+.btn2{
+	border-radius: 20px;
+	border: 1px;
+	background-color: #FFB400;
+	color: #FFFFFF;
+	font-size: 12px;
+	font-weight: bold;
+	padding: 12px 45px;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+	transition: transform 80ms ease-in;
+}
+
+.btn2:active {
+	transform: scale(0.95);
+  border-radius: 20px;
+}
+
+.btn2:focus {
+	outline: none;
+  border-radius: 20px;
+}
+
+.ghost {
+	background-color:transparent;
+	border-color: #FFFFFF;
+  border-radius: 20px;
+  padding: 12px 45px;
+  color: #FFFFFF;
+	font-size: 12px;
+	font-weight: bold;
+	padding: 12px 45px;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+	transition: transform 100ms ease-in;
+}
+
+.login{
+	background-color: #FFFFFF;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	padding: 0 50px;
+	height: 100%;
+	text-align: center;
+  float: center;
+	
+}
+
+.beviteli {
+	background-color: #eee;
+	border: none;
+	padding: 12px 15px;
+	margin: 8px 0;
+	;
+	
+}
+.boritokep{
+  background-size:cover;
+  width: 100%;
+  
+}
+
+.bejelentkezes {
+	background-color: #fff;
+	border-radius: 10px;
+  	box-shadow: 0 14px 28px rgba(0,0,0,0.25), 
+			0 10px 10px rgba(0,0,0,0.22);
+	position:relative;
+	width: 840px;
+	max-width: 100%;
+	min-height: 480px;
+ 
+  
+  
+  
+
+	
+}
+
+.form-bejelentkezes {
+	position: absolute;
+	top: 0;
+	height: 100%;
+	transition: all 0.6s ease-in-out;
+  background-color: #FFFFFF;
+	display: block;
+	align-items: center;
+	justify-content: center;
+	
+	padding: 0 50px;
+	height: 100%;
+	text-align: center;
+	
+	
+}
+
+.sign-in-bejelentkezes {
+	left: 0;
+	width: 50%;
+	z-index: 2;
+  float: center;
+}
+
+.bejelentkezes.right-panel-active .sign-in-bejelentkezes {
+	transform: translateX(100%);
+}
+
+.sign-up-bejelentkezes {
+	left: 0;
+	width: 50%;
+	opacity: 0;
+	z-index: 1;
+float: center;
+}
+
+.bejelentkezes.right-panel-active .sign-up-bejelentkezes {
+	transform: translateX(100%);
+	opacity: 1;
+	z-index: 5;
+	animation: show 0.6s;
+}
+
+@keyframes show {
+	0%, 49.99% {
+		opacity: 0;
+		z-index: 1;
+	}
+	
+	50%, 100% {
+		opacity: 1;
+		z-index: 5;
+	}
+}
+
+.overlay-bejelentkezes {
+	position: absolute;
+	top: 0;
+	left: 50%;
+	width: 50%;
+	height: 100%;
+	overflow: hidden;
+	transition: transform 0.6s ease-in-out;
+	z-index: 100;
+  float: center;
+}
+
+.bejelentkezes.right-panel-active .overlay-bejelentkezes{
+	transform: translateX(-100%);
+}
+
+.overlay {
+	background: url('../MoonLightTravel.github.io/img/tajkep.jpg');
+	
+	
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position:center;
+	color: #FFFFFF;
+	position: relative;
+	left: -100%;
+	height: 100%;
+	width: 200%;
+  	transform: translateX(0);
+	transition: transform 0.6s ease-in-out;
+  float: center;
+}
+
+.bejelentkezes.right-panel-active .overlay {
+  	transform: translateX(50%);
+}
+
+.overlay-panel {
+	position: absolute;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	padding: 0 40px;
+	text-align: center;
+	top: 0;
+	height: 100%;
+	width: 50%;
+	transform: translateX(0);
+	transition: transform 0.6s ease-in-out;
+  float: center;
+}
+
+.overlay-left {
+	transform: translateX(-20%);
+}
+
+.bejelentkezes.right-panel-active .overlay-left {
+	transform: translateX(0);
+}
+
+.overlay-right {
+	right: 0;
+	transform: translateX(0);
+}
+
+.bejelentkezes.right-panel-active .overlay-right {
+	transform: translateX(20%);
+}
+
+.social-bejelentkezes {
+	margin: 20px 0;
+  
+
+}
+
+.social-bejelentkezes a {
+	border: 1px solid #DDDDDD;
+	border-radius: 50%;
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	margin: 0 5px;
+	height: 40px;
+	width: 40px;
+}
+.row{
+  justify-content: center;
+	align-items: center;
+  display: flex;
+}
