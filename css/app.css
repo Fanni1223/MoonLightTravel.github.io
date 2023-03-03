@@ -748,7 +748,7 @@ float: center;
 }
 
 .overlay {
-	background: url('../MoonLightTravel.github.io/img/tajkep.jpg');
+	background: url("../img/tajkep.jpg");
 	
 	
 	background-repeat: no-repeat;
@@ -817,7 +817,7 @@ float: center;
 	height: 40px;
 	width: 40px;
 }
-.row{
+.block{
   justify-content: center;
 	align-items: center;
   display: flex;
