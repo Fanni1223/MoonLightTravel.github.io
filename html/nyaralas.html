@@ -7,24 +7,88 @@
 
 <!--Képgaléria-->
   <div class="row mt-5" ng-if="data.length">
-    <div class="column">
-      <img class="img-fluid" ng-src="./img/{{data[0].utak_img}}" style="width:100%" onload="initGallery()" onclick="myFunction(this);">
+    <!--Szállás kép-->
+    <div class="col-xl-5 col-md-5" ng-if="data.length">
+      <img ng-src="./img/{{data[0].szallas_img}}" alt="Szállás" title="Szállás" class="img-fluid">
     </div>
-    <div class="column" 
-         ng-repeat="nyaralas in data track by $index"
-         ng-if="!nyaralas.neve.includes('.svg')">
-      <img class="img-fluid" ng-src="./img/{{nyaralas.neve}}" style="width:100%" onclick="myFunction(this);">
-    </div>
-  </div>
+  
+    
 
-  <div class="container2">
-    <span class="closebtn" onclick="this.parentElement.style.display='none'">&times;</span>
-    <img id="expandedImg" style="width:55%" class="img-fluid">
-    <div id="imgtext"></div>
-  </div>
+    <!--Foglalás-->
+<div class="col-xl-4 col-md-4">
+  <form id="foglalas_urlap" class="border border-grey">
+    
+      <h1 class="text-center mt-5">Foglalás</h1>
+      <h2 class="foglalas_cim">Adatok</h2>
+      <div class="input-group input-group-icon">
+        <input type="text" placeholder="Teljes név"/>
+        <div class="input-icon"><img src="../MoonLightTravel.github.io/img/ikonok/ember.svg" alt="ikon" class="ikon mx-4"></div>
+      </div>
+      <div class="input-group input-group-icon">
+        <input type="text" placeholder="Telefonszám"/>
+        <div class="input-icon"><i></i></div>
+      </div>
+      <div class="input-group input-group-icon">
+        <input type="email" placeholder="Email-cím"/>
+        <div class="input-icon"><i></i></div>
+      </div>
+    
+    
+      <h2 class="foglalas_cim">Lakcím</h2>
+      <div class="input-group input-group-icon">
+        <input type="email" placeholder="Email-cím"/>
+        <div class="input-icon"><i></i></div>
+      </div>
+      <div class="input-group input-group-icon">
+        <input type="email" placeholder="Email-cím"/>
+        <div class="input-icon"><i></i></div>
+      </div>
+      <div class="input-group input-group-icon">
+        <input type="email" placeholder="Email-cím"/>
+        <div class="input-icon"><i></i></div>
+      </div>
+      <div class="input-group input-group-icon">
+        <input type="email" placeholder="Email-cím"/>
+        <div class="input-icon"><i></i></div>
+      </div>
+      <div class="input-group input-group-icon">
+        <input type="email" placeholder="Email-cím"/>
+        <div class="input-icon"><i></i></div>
+      </div>
+      <h2 class="foglalas_cim">Mikor szeretne utazni?</h2>
+      <div class="input-group input-group-icon">
+        <input type="email" placeholder="Email-cím"/>
+        <div class="input-icon"><i></i></div>
+      </div>
+      <div class="input-group input-group-icon">
+        <input type="email" placeholder="Email-cím"/>
+        <div class="input-icon"><i></i></div>
+      </div>
+      <div class="input-group input-group-icon">
+        <input type="email" placeholder="Email-cím"/>
+        <div class="input-icon"><i></i></div>
+      </div>
+      <div class="col-half">
+        <div class="input-group">
+          <input id="gender-male" type="radio" name="gender" value="male"/>
+          <label for="gender-male">8:00</label>
+          <input id="gender-female" type="radio" name="gender" value="female"/>
+          <label for="gender-female">10:00</label>
+          <input id="gender-female" type="radio" name="gender" value="female"/>
+          <label for="gender-female">15:00</label>
+        </div>
+      </div>
+    
+    
+  </form>
+</div>
+</div>
+
+
+  
 
 <!--Tabok-->
-  <div class="row col-xl-6 col-md-6 mt-2" ng-if="data.length">
+  <div class="row col-xl-5 col-md-5 mt-2" ng-if="data.length">
     <main>
       <input id="tab1" type="radio" name="tabs" checked class="input_tab">
       <label for="tab1"><img src="../MoonLightTravel.github.io/img/ikonok/tartozkodasihely.svg" alt="ikon" title="ikon" class="ikon mx-2">Térkép</label>
@@ -67,7 +131,7 @@
   </div>
 
 <!--Tabok-->
-  <div class="row col-xl-7 col-md-7 mt-2" ng-if="data.length">
+  <div class="row col-xl-5 col-md-5 mt-2" ng-if="data.length">
     <main>
       <input id="tab4" type="radio" name="tabs" checked class="input_tab">
       <label for="tab4"><img src="../MoonLightTravel.github.io/img/ikonok/tartozkodasihely.svg" alt="ikon" class="ikon mx-2">Térkép</label>
@@ -99,40 +163,7 @@
       </section>
     </main>
   </div>
-
-<!--Kalkuláció-->
-  <div class="row mt-5 kalkulacio col-xl-5 col-md-5">
-    <div ng-if="data.length">
-      <h5 class="text-center mt-3">Számolja ki az árat előre! - Kalkulátor</h5>
-      <h6 class="mt-3">Az útnak az ára</h6>
-      <p class="fw-bold">{{data[0].varos}}<span class="mx-5 fw-bold">{{data[0].ut_ar}} Ft</span></p>
-      <h6 class="mt-3">A szállás ára</h6>
-      <p class="fw-bold">{{data[0].megnev}}<span class="mx-3 fw-bold">{{data[0].szallas_ar}}/ éjszaka</span></p>
-      <p>{{data[0].ut_ar + data[0].szallas_ar}}</p>
-      <button class="btn float-end my-2">Kalkuláció</button>
-    </div>
-  </div>
-  
-</div> 
-
-<script>
-  function initGallery() {
-    var firstImg = document.querySelector(".column img");
-    myFunction(firstImg);
-  }
-
-  function myFunction(imgs) {
-    var expandImg = document.getElementById("expandedImg");
-    var imgText = document.getElementById("imgtext");
-    expandImg.src = imgs.src;
-    imgText.innerHTML = imgs.alt;
-    expandImg.parentElement.style.display = "block";
-  }
-    
-  // az első kép betöltése
-  initGallery();
-</script>
-
+</div>
  <!-- Footer -->
  <footer id="availability"
  class="container-fluid bg-light text-muted mt-5"
