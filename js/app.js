@@ -292,6 +292,25 @@
   },
 ])
 
+//create data
+app.post('/felhasznalok',(req,res)=>{
+  console.log(req.body, 'creatdata');
+
+  let fullname = req.body.name;
+  let eMail = req.body.email;
+  let jElszo = req.body.jelszo ;
+
+  let qr = `insert into felhasznalok (nev, email, jelszo) values('$(fullname)','$(eMail)','$(jElszo)')`;
+
+  db.query(qr, (err,result)=>{
+    if(err){console.log(err);}
+    res.send({
+      message: 'data.inserted',
+    });
+  })
+})
+
+
 
 
 

@@ -295,14 +295,14 @@
   <div class="row blok">
   <div class="bejelentkezes col-xl-6 col-md-6 col-lg-6" id="bejelentkezes">
     <div class="form-bejelentkezes sign-up-bejelentkezes">
-      <form class="login" >
+      <form class="login" [formGroup]="userForm" (ngSubmit)="onSubmit()">
         <h1>Regisztráció</h1>
       <br>
-        <input type="text" class="beviteli" placeholder="Név"/>
-        <input type="email" class="beviteli" placeholder="Email"/>
-        <input type="password" class="beviteli" placeholder="Jelszó"/>
+        <input type="text" class="beviteli" placeholder="Név"  required [(ngModel)]="felhasznalok.name" name="nev"/>
+        <input type="email" class="beviteli" placeholder="Email" required [(ngModel)]="felhasznalok.email"  name="email"/>
+        <input type="password" class="beviteli" placeholder="Jelszó" required [(ngModel)]="felhasznalok.jelszo" name="jelszo"/>
         <br>
-        <button class="btn2">Regisztráció</button>
+        <button class="btn2" type="submit" [disabled]="!userForm.valid">Regisztráció</button>
       </form>
     </div>
     <div class="form-bejelentkezes sign-in-bejelentkezes">
@@ -312,7 +312,7 @@
         <input type="email" class="beviteli" placeholder="Email" />
         <input type="password" class="beviteli" placeholder="Jelszó" />
         <br>
-        <button class="btn2">Bejelentkezés</button>
+        <button class="btn2" >Bejelentkezés</button>
       </form>
     </div>
     <div class="overlay-bejelentkezes">
@@ -349,7 +349,18 @@
     
     signInButton.addEventListener('click', () => {
       container.classList.remove("right-panel-active");
-    });</script>
+    });
+    
+
+  
+</script>
+    
+    
+    
+    
+    
+    
+    </script>
 
  <!-- Footer -->
  <footer id="availability"
