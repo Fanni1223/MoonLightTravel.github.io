@@ -7,121 +7,126 @@
 
 <!--Képgaléria-->
   <div class="row mt-5" ng-if="data.length">
-    <!--Szállás kép-->
-    <div class="col-xl-5 col-md-5" ng-if="data.length">
-      <img ng-src="./img/{{data[0].szallas_img}}" alt="Szállás" title="Szállás" class="img-fluid">
+    <div class="col-xl-8 col-md-8" ng-if="data.length">
+      <img ng-src="./img/szalloda/{{data[0].szallas_img}}" alt="Szállás" title="Szállás" class="img-fluid">
+      
+<!--Tabok-->
+      <div class="col-xl-8 col-md-8 mt-2" ng-if="data.length">
+        <main>
+          <input id="tab1" type="radio" name="tabs" checked class="input_tab">
+          <label for="tab1"><img src="../MoonLightTravel.github.io/img/ikonok/tartozkodasihely.svg" alt="ikon" title="ikon" class="ikon mx-2">Térkép</label>
+          <input id="tab2" type="radio" name="tabs" class="input_tab">
+          <label for="tab2"><img src="../MoonLightTravel.github.io/img/ikonok/leiras.svg" alt="ikon" title="ikon" class="ikon mx-2">Leírás</label>
+          <input id="tab3" type="radio" name="tabs" class="input_tab">
+          <label for="tab3"><img src="../MoonLightTravel.github.io/img/ikonok/repulo.svg" alt="ikon" title="ikon" class="ikon mx-2">Közlekedés</label>
+          <!--Térkép-->
+          <section id="content1">
+            <p></p>
+            <p></p>
+          </section>
+          <!--Leírás-->
+          <section id="content2">
+            <h5>Látványosságok, leírás</h5>
+            <p class="mx-5 mt-3">{{data[0].leiras}}</p>
+            <h5>A nyaraláshoz szervezett programok</h5>
+            <p class="mx-5 mt-3">{{data[0].program}}</p>
+          </section>
+          <!--Közlekedés-->
+          <section id="content3">
+            <h5>Az utazás ideje átlagosan</h5>
+            <p class="mx-3 mt-3"><img ng-src="./img/ikonok/{{data[0].kozlekedesi_eszkoz_img}}" alt="ikon" title="ikon" class="ikon mx-3">{{data[0].ido}}<p>
+            <h5>Az indulás helye</h5>
+            <p class="mx-3 mt-3">{{data[0].indulasi_hely}}</P>
+          </section>
+        </main>
+      </div>
     </div>
   
     
-
-    <!--Foglalás-->
-<div class="col-xl-4 col-md-4">
-  <form id="foglalas_urlap" class="border border-grey">
-    
-      <h1 class="text-center mt-5">Foglalás</h1>
-      <h2 class="foglalas_cim">Adatok</h2>
-      <div class="input-group input-group-icon">
-        <input type="text" placeholder="Teljes név"/>
-        <div class="input-icon"><img src="../MoonLightTravel.github.io/img/ikonok/ember.svg" alt="ikon" class="ikon mx-4"></div>
-      </div>
-      <div class="input-group input-group-icon">
-        <input type="text" placeholder="Telefonszám"/>
-        <div class="input-icon"><i></i></div>
-      </div>
-      <div class="input-group input-group-icon">
-        <input type="email" placeholder="Email-cím"/>
-        <div class="input-icon"><i></i></div>
-      </div>
-    
-    
-      <h2 class="foglalas_cim">Lakcím</h2>
-      <div class="input-group input-group-icon">
-        <input type="email" placeholder="Email-cím"/>
-        <div class="input-icon"><i></i></div>
-      </div>
-      <div class="input-group input-group-icon">
-        <input type="email" placeholder="Email-cím"/>
-        <div class="input-icon"><i></i></div>
-      </div>
-      <div class="input-group input-group-icon">
-        <input type="email" placeholder="Email-cím"/>
-        <div class="input-icon"><i></i></div>
-      </div>
-      <div class="input-group input-group-icon">
-        <input type="email" placeholder="Email-cím"/>
-        <div class="input-icon"><i></i></div>
-      </div>
-      <div class="input-group input-group-icon">
-        <input type="email" placeholder="Email-cím"/>
-        <div class="input-icon"><i></i></div>
-      </div>
-      <h2 class="foglalas_cim">Mikor szeretne utazni?</h2>
-      <div class="input-group input-group-icon">
-        <input type="email" placeholder="Email-cím"/>
-        <div class="input-icon"><i></i></div>
-      </div>
-      <div class="input-group input-group-icon">
-        <input type="email" placeholder="Email-cím"/>
-        <div class="input-icon"><i></i></div>
-      </div>
-      <div class="input-group input-group-icon">
-        <input type="email" placeholder="Email-cím"/>
-        <div class="input-icon"><i></i></div>
-      </div>
-      <div class="col-half">
-        <div class="input-group">
-          <input id="gender-male" type="radio" name="gender" value="male"/>
-          <label for="gender-male">8:00</label>
-          <input id="gender-female" type="radio" name="gender" value="female"/>
-          <label for="gender-female">10:00</label>
-          <input id="gender-female" type="radio" name="gender" value="female"/>
-          <label for="gender-female">15:00</label>
+<!--Foglalás-->
+    <div class="foglalas_form col-xl-4 col-md-4">
+      <form id="foglalas">
+        <div class="row">
+          <h2 class="text-center mt-3">Foglalja le az utat most!</h2>
         </div>
-      </div>
+
+        <div class="row mt-3">
+          <h6>Adatok</h6>
+          <div class="input-group input-group-icon">
+            <input type="text" placeholder="Teljes név"/>
+            <div class="input-icon mx-3"><i class="fa fa-user"></i></div>
+          </div>
+          <div class="input-group input-group-icon">
+            <input type="text" placeholder="Telefonszám"/>
+            <div class="input-icon mx-3"><i class="fa fa-phone"></i></div>
+          </div>
+          <div class="input-group input-group-icon">
+            <input type="email" placeholder="Email-cím"/>
+            <div class="input-icon mx-3"><i class="fa fa-envelope"></i></div>
+          </div>
+        </div>
+
+        <div class="row mt-2">
+          <h6>Mikor szeretne utazni?</h6>
+          <div class="input-group">
+            <input type="text" style="width: 30%;" class="mx-1" placeholder="Évszám"/>
+            <input type="text" style="width: 30%;" class="mx-1" placeholder="Hónap"/>
+            <input type="text" style="width: 30%;" class="mx-1" placeholder="Nap"/>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="input-group">
+            <input id="ido1" type="radio" name="payment-method" checked="true"/>
+            <label for="ido1"><span>8:00</span></label>
+            <input id="ido2" type="radio" name="payment-method"/>
+            <label for="ido2"> <span>10:00</span></label>
+            <input id="ido3" type="radio" name="payment-method"/>
+            <label for="ido3"> <span>15:00</span></label>
+          </div>
+        </div>
+
+        <div class="row mt-2">
+          <h6>Hány órakor szeretne vissza utazni?</h6>
+          <div class="input-group">
+            <input id="ido4" type="radio" name="payment-method" checked="true"/>
+            <label for="ido4"><span>8:00</span></label>
+            <input id="ido5" type="radio" name="payment-method"/>
+            <label for="ido5"> <span>10:00</span></label>
+            <input id="ido6" type="radio" name="payment-method"/>
+            <label for="ido6"> <span>15:00</span></label>
+          </div>
+        </div>
     
-    
-  </form>
-</div>
-</div>
+        <div class="row mt-2">
+          <h6>Hány főre szeretne foglalni?</h6>
+          <div class="input-group input-group-icon">
+            <input type="text" placeholder="Fő" style="width: 40%"/>
+            <div class="input-icon mx-3"><i class="fa fa-user"></i></div>
+          </div>
+        </div>
 
-
-  
-
-<!--Tabok-->
-  <div class="row col-xl-5 col-md-5 mt-2" ng-if="data.length">
-    <main>
-      <input id="tab1" type="radio" name="tabs" checked class="input_tab">
-      <label for="tab1"><img src="../MoonLightTravel.github.io/img/ikonok/tartozkodasihely.svg" alt="ikon" title="ikon" class="ikon mx-2">Térkép</label>
-      <input id="tab2" type="radio" name="tabs" class="input_tab">
-      <label for="tab2"><img src="../MoonLightTravel.github.io/img/ikonok/leiras.svg" alt="ikon" title="ikon" class="ikon mx-2">Leírás</label>
-      <input id="tab3" type="radio" name="tabs" class="input_tab">
-      <label for="tab3"><img src="../MoonLightTravel.github.io/img/ikonok/repulo.svg" alt="ikon" title="ikon" class="ikon mx-2">Közlekedés</label>
-    <!--Térkép-->
-      <section id="content1">
-        <p></p>
-        <p></p>
-      </section>
-    <!--Leírás-->
-      <section id="content2">
-        <h5>Látványosságok, leírás</h5>
-        <p class="mx-5 mt-3">{{data[0].leiras}}</p>
-        <h5>A nyaraláshoz szervezett programok</h5>
-        <p class="mx-5 mt-3">{{data[0].program}}</p>
-      </section>
-    <!--Közlekedés-->
-      <section id="content3">
-        <h5>Az utazás ideje átlagosan</h5>
-        <p class="mx-3 mt-3"><img ng-src="./img/ikonok/{{data[0].kozlekedesi_eszkoz_img}}" alt="ikon" title="ikon" class="ikon mx-3">{{data[0].ido}}<p>
-        <h5>Az indulás helye</h5>
-        <p class="mx-3 mt-3">{{data[0].indulasi_hely}}</P>
-      </section>
-    </main>
+        <div class="row mt-2">
+          <h6>Szeretne kiságyat a szállásra?</h6>
+          <div class="input-group input-group-icon">
+            <div class="input-group">
+              <input id="igen" type="radio" name="payment-method" checked="true"/>
+              <label for="igen"><span>Igen</span></label>
+              <input id="nem" type="radio" name="payment-method"/>
+              <label for="nem"> <span>Nem</span></label>
+            </div>
+          </div>
+        </div>
+        
+          <button type="submit" class="btn float-end" style="width: 40%;">Foglalás</button>
+        
+      </form>
+    </div>
   </div>
-
 <!--Szállás kép-->
   <div class="row mt-5">
-    <div class="col-xl-5 col-md-5" ng-if="data.length">
-      <img ng-src="./img/{{data[0].szallas_img}}" alt="Szállás" title="Szállás" class="img-fluid">
+    <div class="col-xl-6 col-md-6" ng-if="data.length">
+      <img ng-src="./img/szalloda/{{data[0].szallas_img}}" alt="Szállás" title="Szállás" class="img-fluid">
     </div>
     <div class="col-xl-4 col-md-4" ng-if="data.length">
       <img src="./img/ikonok/star.svg" class="ikon" alt="ikon" title="ikon" ng-repeat="x in [].constructor(data[0].tipus) track by $index">
@@ -131,7 +136,7 @@
   </div>
 
 <!--Tabok-->
-  <div class="row col-xl-5 col-md-5 mt-2" ng-if="data.length">
+  <div class="row col-xl-7 col-md-7 mt-2" ng-if="data.length">
     <main>
       <input id="tab4" type="radio" name="tabs" checked class="input_tab">
       <label for="tab4"><img src="../MoonLightTravel.github.io/img/ikonok/tartozkodasihely.svg" alt="ikon" class="ikon mx-2">Térkép</label>
@@ -141,25 +146,25 @@
       <label for="tab6"><img src="../MoonLightTravel.github.io/img/ikonok/ellatas.svg" alt="ikon" class="ikon mx-2">Ellátás</label>
       <input id="tab7" type="radio" name="tabs" class="input_tab">
       <label for="tab7"><img src="../MoonLightTravel.github.io/img/ikonok/szolgaltatas.svg" alt="ikon" class="ikon mx-2">Szolgáltatások</label>
-    <!--Térkép-->
+  <!--Térkép-->
       <section id="content4">
         <p></p>
         <p></p>
       </section>
-    <!--Leírás-->
+  <!--Leírás-->
       <section id="content5">
         <h5>A szállásról röviden</h5>
         <p class="mx-3">{{data[0].leiras2}}</p>
       </section>
-    <!--Ellátás-->
+  <!--Ellátás-->
       <section id="content6">
         <h5>Az ellátás típusa</h5>
         <p class="mx-3">{{data[0].ellatas}}</p>
         <p class="mx-3">{{data[0].ellatas_leiras}}</p>
       </section>
-    <!--Szolgáltatás-->
+  <!--Szolgáltatás-->
       <section id="content7">
-          <button disabled ng-repeat="nyaralas in data" ng-if="nyaralas.neve.includes('.svg')" class="mx-2 border border-grey mt-2"><p class="mt-3 mx-1 text-black fw-bold"><img  ng-src="./img/ikonok/{{nyaralas.neve}}" alt="ikon" class="ikon mx-2">{{nyaralas.neve2}}</p></button>
+        <button disabled ng-repeat="nyaralas in data" ng-if="nyaralas.neve.includes('.svg')" class="mx-2 border border-grey mt-2"><p class="mt-3 mx-1 text-black fw-bold"><img  ng-src="./img/ikonok/{{nyaralas.neve}}" alt="ikon" class="ikon mx-2">{{nyaralas.neve2}}</p></button>
       </section>
     </main>
   </div>
