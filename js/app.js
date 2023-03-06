@@ -111,6 +111,9 @@
           templateUrl: './html/varoslatogatas.html',
           controller: 'appController'
         })
+        .state('regisztracio', {
+          controller: 'regisztracio'
+        })
       $urlRouterProvider.otherwise('/');
     }
   ])
@@ -289,75 +292,7 @@
   },
 ])
 
-/*
-// Képek controller
-.controller("kepekController", [
-  "$scope",
-  "$element",
-  "$timeout",
-  "http",
-  "$stateParams",
-  function ($scope, $element, $timeout, http, $stateParams) {
 
-
-    $scope.kepek = $stateParams.kepek;
-    if (!$scope.kepek) {
-      $state.go('home');
-      return;
-    }
-
-    http.request({
-      url: "./php/get.php",
-      method: "POST",
-      data: {
-        db: "moonlighttravel",
-        query: "SELECT `utak`.*, `utak_kepek`.*, `szallas`.* FROM `utak` INNER JOIN `utak_kepek` ON `utak`.`ut_id` = `utak_kepek`.`ut_id3` INNER JOIN `szallas` ON `utak`.`szallas_id2` = `szallas`.`szallas_id` WHERE `ut_id3` = `ut_id` AND `neve` LIKE '%.jpg%'",
-        params: {kepek: $scope.kepek},
-        isAssoc: true,
-      },
-    })
-    .then((data) => {
-      $scope.data = data;
-      $scope.$applyAsync();
-    })
-    .catch((e) => console.log(e));
-  },
-])
-
-// szolgaltatasok controller
-.controller("szolgaltatasokController", [
-  "$scope",
-  "$element",
-  "$timeout",
-  "http",
-  "$stateParams",
-  function ($scope, $element, $timeout, http, $stateParams) {
-
-
-    $scope.szolgaltatasok = $stateParams.szolgaltatasok;
-    if (!$scope.szolgaltatasok) {
-      $state.go('home');
-      return;
-    }
-
-    http.request({
-      url: "./php/get.php",
-      method: "POST",
-      data: {
-        db: "moonlighttravel",
-        query: "SELECT `utak`.*, `utak_kepek`.*, `szallas`.* FROM `utak` INNER JOIN `utak_kepek` ON `utak`.`ut_id` = `utak_kepek`.`ut_id3` INNER JOIN `szallas` ON `utak`.`szallas_id2` = `szallas`.`szallas_id` WHERE `ut_id3` = `ut_id` AND `neve` LIKE '%.svg%'",
-        params: {szolgaltatasok: $scope.szolgaltatasok},
-        isAssoc: true,
-      },
-    })
-    .then((data) => {
-      $scope.data = data;
-      $scope.$applyAsync();
-    })
-    .catch((e) => console.log(e));
-  },
-])
-*/
 
 
 })(window, angular);
