@@ -1,13 +1,14 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 4.9.0.1
 -- https://www.phpmyadmin.net/
 --
 -- Gép: 127.0.0.1
--- Létrehozás ideje: 2023. Már 02. 20:30
--- Kiszolgáló verziója: 10.4.27-MariaDB
--- PHP verzió: 8.2.0
+-- Létrehozás ideje: 2023. Már 06. 08:25
+-- Kiszolgáló verziója: 10.4.6-MariaDB
+-- PHP verzió: 7.3.8
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -24,20 +25,32 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Tábla szerkezet ehhez a táblához `felhasznalok`
+--
+
+CREATE TABLE `felhasznalok` (
+  `nev` varchar(100) COLLATE utf8_hungarian_ci NOT NULL,
+  `email` varchar(100) COLLATE utf8_hungarian_ci NOT NULL,
+  `jelszo` varchar(100) COLLATE utf8_hungarian_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_hungarian_ci;
+
+-- --------------------------------------------------------
+
+--
 -- Tábla szerkezet ehhez a táblához `foglalas`
 --
 
 CREATE TABLE `foglalas` (
   `foglalas_id` int(50) NOT NULL,
-  `nev2` varchar(50) NOT NULL,
+  `nev2` varchar(50) COLLATE utf8_hungarian_ci NOT NULL,
   `telefonsz` int(11) NOT NULL,
-  `email` varchar(50) NOT NULL,
+  `email` varchar(50) COLLATE utf8_hungarian_ci NOT NULL,
   `fo` int(2) NOT NULL,
   `vegosszeg` int(6) NOT NULL,
-  `orszag2` varchar(100) NOT NULL,
+  `orszag2` varchar(100) COLLATE utf8_hungarian_ci NOT NULL,
   `iranyitoszam` int(10) NOT NULL,
-  `varos2` varchar(100) NOT NULL,
-  `utca` varchar(100) NOT NULL,
+  `varos2` varchar(100) COLLATE utf8_hungarian_ci NOT NULL,
+  `utca` varchar(100) COLLATE utf8_hungarian_ci NOT NULL,
   `hazszam` int(10) NOT NULL,
   `kisagy` int(100) NOT NULL,
   `evszam` date NOT NULL,
@@ -63,14 +76,14 @@ INSERT INTO `foglalas` (`foglalas_id`, `nev2`, `telefonsz`, `email`, `fo`, `vego
 
 CREATE TABLE `szallas` (
   `szallas_id` int(100) NOT NULL,
-  `megnev` varchar(50) NOT NULL,
-  `leiras2` varchar(1000) NOT NULL,
+  `megnev` varchar(50) COLLATE utf8_hungarian_ci NOT NULL,
+  `leiras2` varchar(1000) COLLATE utf8_hungarian_ci NOT NULL,
   `tipus` tinyint(4) NOT NULL,
-  `elhelyezkedes` varchar(100) NOT NULL,
-  `szallas_img` varchar(50) NOT NULL,
+  `elhelyezkedes` varchar(100) COLLATE utf8_hungarian_ci NOT NULL,
+  `szallas_img` varchar(50) COLLATE utf8_hungarian_ci NOT NULL,
   `szallas_ar` int(7) NOT NULL,
-  `ellatas` varchar(50) NOT NULL,
-  `ellatas_leiras` varchar(1000) NOT NULL
+  `ellatas` varchar(50) COLLATE utf8_hungarian_ci NOT NULL,
+  `ellatas_leiras` varchar(1000) COLLATE utf8_hungarian_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_hungarian_ci;
 
 --
@@ -97,25 +110,25 @@ INSERT INTO `szallas` (`szallas_id`, `megnev`, `leiras2`, `tipus`, `elhelyezkede
 
 CREATE TABLE `utak` (
   `ut_id` int(100) NOT NULL,
-  `kontinens` varchar(50) NOT NULL,
-  `orszag` varchar(50) NOT NULL,
-  `varos` varchar(50) NOT NULL,
-  `utak_img` varchar(50) NOT NULL,
-  `leiras` varchar(5000) NOT NULL,
-  `kozlekedesi_eszkoz` varchar(20) NOT NULL,
-  `kozlekedesi_eszkoz_img` varchar(20) NOT NULL,
-  `kategoria` varchar(50) NOT NULL,
-  `nev` varchar(50) NOT NULL,
-  `idoszak` varchar(50) NOT NULL,
+  `kontinens` varchar(50) COLLATE utf8_hungarian_ci NOT NULL,
+  `orszag` varchar(50) COLLATE utf8_hungarian_ci NOT NULL,
+  `varos` varchar(50) COLLATE utf8_hungarian_ci NOT NULL,
+  `utak_img` varchar(50) COLLATE utf8_hungarian_ci NOT NULL,
+  `leiras` varchar(5000) COLLATE utf8_hungarian_ci NOT NULL,
+  `kozlekedesi_eszkoz` varchar(20) COLLATE utf8_hungarian_ci NOT NULL,
+  `kozlekedesi_eszkoz_img` varchar(20) COLLATE utf8_hungarian_ci NOT NULL,
+  `kategoria` varchar(50) COLLATE utf8_hungarian_ci NOT NULL,
+  `nev` varchar(50) COLLATE utf8_hungarian_ci NOT NULL,
+  `idoszak` varchar(50) COLLATE utf8_hungarian_ci NOT NULL,
   `szallas_id2` int(100) NOT NULL,
-  `url_kontinens` varchar(50) NOT NULL,
-  `url_orszag` varchar(50) NOT NULL,
-  `url_varos` varchar(50) NOT NULL,
-  `allapot` varchar(50) NOT NULL,
+  `url_kontinens` varchar(50) COLLATE utf8_hungarian_ci NOT NULL,
+  `url_orszag` varchar(50) COLLATE utf8_hungarian_ci NOT NULL,
+  `url_varos` varchar(50) COLLATE utf8_hungarian_ci NOT NULL,
+  `allapot` varchar(50) COLLATE utf8_hungarian_ci NOT NULL,
   `ut_ar` int(6) NOT NULL,
-  `ido` varchar(20) NOT NULL,
-  `indulasi_hely` varchar(100) NOT NULL,
-  `program` varchar(1000) NOT NULL
+  `ido` varchar(20) COLLATE utf8_hungarian_ci NOT NULL,
+  `indulasi_hely` varchar(100) COLLATE utf8_hungarian_ci NOT NULL,
+  `program` varchar(1000) COLLATE utf8_hungarian_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_hungarian_ci;
 
 --
@@ -141,10 +154,10 @@ INSERT INTO `utak` (`ut_id`, `kontinens`, `orszag`, `varos`, `utak_img`, `leiras
 --
 
 CREATE TABLE `utak_kepek` (
-  `neve` varchar(50) NOT NULL,
+  `neve` varchar(50) COLLATE utf8_hungarian_ci NOT NULL,
   `darabszam` int(50) NOT NULL,
   `ut_id3` int(50) NOT NULL,
-  `neve2` varchar(50) NOT NULL
+  `neve2` varchar(50) COLLATE utf8_hungarian_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_hungarian_ci;
 
 --
@@ -252,6 +265,12 @@ INSERT INTO `utak_kepek` (`neve`, `darabszam`, `ut_id3`, `neve2`) VALUES
 --
 -- Indexek a kiírt táblákhoz
 --
+
+--
+-- A tábla indexei `felhasznalok`
+--
+ALTER TABLE `felhasznalok`
+  ADD PRIMARY KEY (`email`);
 
 --
 -- A tábla indexei `foglalas`
