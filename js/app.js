@@ -292,6 +292,40 @@
   },
 ])
 
+// Foglalás controller
+.controller("foglalasController", [
+  "$scope",
+  "$element",
+  "$timeout",
+  "http",
+  "$stateParams",
+  function ($scope, $element, $timeout, http, $stateParams) {
+
+
+    $scope.foglalas = $stateParams.foglalas;
+    if (!$scope.foglalas) {
+      $state.go('home');
+      return;
+    }
+
+    http.request({
+      url: "./php/get.php",
+      method: "POST",
+      data: {
+        db: "moonlighttravel",
+        query: "INSERT INTO foglalas(nev2, telefonszam, email) VALUES(:nev2, :telefonszam, :email)",
+        params: {nev2: $scope.foglalas.nev, telefonszam: $scope.foglalas.telefon, email: $scope.foglalas.email},
+        isAssoc: true,
+      },
+    })
+    .then((data) => {
+      $scope.data = data;
+      $scope.$applyAsync();
+    })
+    .catch((e) => console.log(e));
+  },
+])
+
 //create data
 app.post('/felhasznalok',(req,res)=>{
   console.log(req.body, 'creatdata');
