@@ -7,13 +7,13 @@
 
 <!--Képgaléria-->
   <div class="row mt-5" ng-if="data.length">
-    <div class="col-xl-8 col-md-8" ng-if="data.length">
+    <div class="col-xl-8 col-md-10 col-sm-12 mt-3" ng-if="data.length">
       <img ng-src="./img/utak/{{data[0].utak_img}}" alt="Párizs" title="Párizs" id="nagy_kep" class="img-fluid clearfix">
-      <div class="col-xl-8 col-md-8 mt-2">
+      <div class="col-xl-8 col-md-10 col-sm-12 mt-2">
         <img ng-if="nyaralas.neve.includes('.jpg')"  ng-repeat="nyaralas in data" ng-src="./img/utak/{{nyaralas.neve}}" alt="Párizs" title="Párizs" width="134px" onclick="nagyit(this)" class="mt-1 mx-1">
       </div>
 <!--Tabok-->
-      <div class="col-xl-8 col-md-8 mt-2" ng-if="data.length">
+      <div class="col-xl-8 col-md-10 mt-2 col-sm-12" ng-if="data.length">
         <main>
           <input id="tab1" type="radio" name="tabs"  class="input_tab">
           <label for="tab1"><img src="../MoonLightTravel.github.io/img/ikonok/tartozkodasihely.svg" alt="ikon" title="ikon" class="ikon mx-2">Térkép</label>
@@ -46,7 +46,7 @@
   
     
 <!--Foglalás-->
-    <div class="foglalas_form col-xl-4 col-md-4">
+    <div class="foglalas_form col-xl-4 col-md-10 col-sm-10 col-lg-4 mt-3">
       <form id="foglalas">
         <div class="row">
           <h2 class="text-center mt-3">Foglalja le az utat most!</h2>
@@ -80,7 +80,7 @@
         <div class="row">
           <div class="input-group">
             <input id="ido1" type="radio" name="payment-method" checked="true"/>
-            <label for="ido1"><span>8:00</span></label>
+            <label for="ido1" class="ido"><span>8:00</span></label>
             <input id="ido2" type="radio" name="payment-method"/>
             <label for="ido2"> <span>10:00</span></label>
             <input id="ido3" type="radio" name="payment-method"/>
@@ -118,6 +118,11 @@
               <label for="nem"> <span>Nem</span></label>
             </div>
           </div>
+        </div>
+
+        <div class="row mt-2" ng-if="data.length">
+          <h6>Végösszeg</h6>
+          <h6 class="text-secondary mx-2">{{data[0].ut_ar + data[0].szallas_ar}} Ft</h6>
         </div>
         
           <button type="submit" class="btn float-end" style="width: 40%;">Foglalás</button>
