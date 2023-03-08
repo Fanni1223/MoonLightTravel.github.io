@@ -294,18 +294,25 @@
 ])
 
 // Foglalás controller
-.controller('foglalasController',function($scope,$http){	
-    $scope.insertData=function(){		
-    $http.post("insert.php", {
-		'teljesnev':$scope.teljesnev,
-		'telefonszam':$scope.telefonszam,
-		'email':$scope.email})
-    
-    .success(function(data,status,headers,config){
-    console.log("Data Inserted Successfully");
-    });
-        }
-         });
+  .controller('foglalasCtrl', function($scope, $http) {
+    $scope.insertData = function() {
+      $http.post('foglalas.php', {
+        'teljesnev': $scope.teljesnev,
+        'telefonszam': $scope.telefonszam,
+        'email': $scope.email,
+        'evszam': $scope.evszam,
+        'honap': $scope.honap,
+        'nap': $scope.nap,
+        'induloido': $('input[name="payment-method"]:checked', '#foglalas').next('label').text(),
+        'erkezoido': $('input[name="payment-method"]:checked', '#foglalas').nextAll('label').eq(2).text(),
+        'fogyszam': $('input[placeholder="Fő"]').val(),
+        'kisagy': $('input[name="payment-method"]:checked', '#foglalas').val()
+      }).then(function(response) {
+        $scope.data = response.data;
+      });
+    };
+  });
+
 
 /*
 //create data
