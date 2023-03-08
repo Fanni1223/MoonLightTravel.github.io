@@ -293,27 +293,19 @@
   },
 ])
 
+//regisztrácio controller
+.controller("registerController"),[
+  "$scope",
+  "http",
+  function ($scope,http){
+    $scope.model = {
+      nev : null,
+      email : null,
+      jelszo: null,
 
-
-// Foglalás controller
-  .controller('foglalasCtrl', function($scope, $http) {
-    $scope.insertData = function() {
-      $http.post('foglalas.php', {
-        'nev2': $scope.nev2,
-        'telefonsz': $scope.telefonsz,
-        'email': $scope.email,
-        'evszam': $scope.evszam,
-        'honap': $scope.honap,
-        'nap': $scope.nap,
-        'oda_ora': $('input[name="payment-method"]:checked', '#foglalas').next('label').text(),
-        'vissza_ora': $('input[name="payment-method"]:checked', '#foglalas').nextAll('label').eq(2).text(),
-        'fo': $('input[placeholder="Fő"]').val(),
-        'kisagy': $('input[name="payment-method"]:checked', '#foglalas').val()
-      }).then(function(response) {
-        $scope.data = response.data;
-      });
     };
-  });
+  }
+]
 
 
 

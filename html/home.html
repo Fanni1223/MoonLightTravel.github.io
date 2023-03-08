@@ -285,11 +285,11 @@
       <form class="login" [formGroup]="userForm" (ngSubmit)="onSubmit()">
         <h1>Regisztráció</h1>
       <br>
-        <input type="text" class="beviteli" placeholder="Név"  required [(ngModel)]="felhasznalok.name" name="nev"/>
-        <input type="email" class="beviteli" placeholder="Email" required [(ngModel)]="felhasznalok.email"  name="email"/>
-        <input type="password" class="beviteli" placeholder="Jelszó" required [(ngModel)]="felhasznalok.jelszo" name="jelszo"/>
+        <input type="text" class="beviteli" placeholder="Név" ng-model="model.nev"   name="nev"/>
+        <input type="email" class="beviteli" placeholder="Email" ng-model="model.email" name="email"/>
+        <input type="password" class="beviteli" placeholder="Jelszó" ng-model="model.jelszo"  name="jelszo"/>
         <br>
-        <button class="btn2" type="submit" [disabled]="!userForm.valid">Regisztráció</button>
+        <button class="btn2" type="submit" ng-click="register()">Regisztráció</button>
       </form>
     </div>
     <div class="form-bejelentkezes sign-in-bejelentkezes">
