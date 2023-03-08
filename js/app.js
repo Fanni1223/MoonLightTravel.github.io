@@ -292,6 +292,20 @@
   },
 ])
 
+//regisztrácio controller
+.controller("registerController"),[
+  "$scope",
+  "http",
+  function ($scope,http){
+    $scope.model = {
+      nev : null,
+      email : null,
+      jelszo: null,
+
+    };
+  }
+]
+
 //create data
 app.post('/felhasznalok',(req,res)=>{
   console.log(req.body, 'creatdata');
