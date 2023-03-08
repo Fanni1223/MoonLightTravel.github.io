@@ -44,7 +44,7 @@
           url: '/nyaralas',
           templateUrl: './html/nyaralas.html',
           controller: 'nyaralasController',
-          contoller: 'foglalasController',
+          
           params: {
             nyaralas: null
           }
