@@ -1,8 +1,10 @@
 <?php
+
+
 $servername = "localhost";
 $username = "username";
 $password = "password";
-$dbname = "database";
+$dbname = "moonlighttravel";
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
@@ -13,24 +15,26 @@ if ($conn->connect_error) {
 }
 
 // Get the form data
-$teljesnev = $_POST['teljesnev'];
-$telefonszam = $_POST['telefonszam'];
+$nev2 = $_POST['nev2'];
+$telefonsz = $_POST['telefonsz'];
 $email = $_POST['email'];
 $evszam = $_POST['evszam'];
 $honap = $_POST['honap'];
 $nap = $_POST['nap'];
-$induloido = $_POST['induloido'];
-$erkezoido = $_POST['erkezoido'];
-$fogyszam = $_POST['fogyszam'];
+$oda_ora = $_POST['oda_ora'];
+$vissza_ora = $_POST['vissza_ora'];
+$fo = $_POST['fo'];
 $kisagy = $_POST['kisagy'];
+
 
 // Calculate the total price
 $ut_ar = 10000;
-$szallas_ar = $fogyszam * 5000;
+$szallas_ar = $foszam * 5000;
 $total_ar = $ut_ar + $szallas_ar;
 
 // Insert the data into the database
-$sql = "INSERT INTO foglalas (teljesnev, telefonszam, email, evszam, honap, nap, induloido, erkezoido, fogyszam, kisagy, total_ar) VALUES ('$teljesnev', '$telefonszam', '$email', '$evszam', '$honap', '$nap', '$induloido', '$erkezoido', '$fogyszam', '$kisagy', '$total_ar')";
+
+$sql = "INSERT INTO foglalas (nev2, telefonsz, email, evszam, honap, nap, oda_ora, vissza_ora, fo, kisagy) VALUES ('$nev2', '$telefonsz', '$email', '$evszam', '$honap', '$nap', '$oda_ora', '$vissza_ora', '$fo', '$kisagy')";
 
 if ($conn->query($sql) === TRUE) {
   $last_id = $conn->insert_id;
@@ -43,4 +47,10 @@ if ($conn->query($sql) === TRUE) {
 }
 
 $conn->close();
+
+
+
+
+
+
 ?>

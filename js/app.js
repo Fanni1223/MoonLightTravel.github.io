@@ -293,19 +293,21 @@
   },
 ])
 
+
+
 // Foglalás controller
   .controller('foglalasCtrl', function($scope, $http) {
     $scope.insertData = function() {
       $http.post('foglalas.php', {
-        'teljesnev': $scope.teljesnev,
-        'telefonszam': $scope.telefonszam,
+        'nev2': $scope.nev2,
+        'telefonsz': $scope.telefonsz,
         'email': $scope.email,
         'evszam': $scope.evszam,
         'honap': $scope.honap,
         'nap': $scope.nap,
-        'induloido': $('input[name="payment-method"]:checked', '#foglalas').next('label').text(),
-        'erkezoido': $('input[name="payment-method"]:checked', '#foglalas').nextAll('label').eq(2).text(),
-        'fogyszam': $('input[placeholder="Fő"]').val(),
+        'oda_ora': $('input[name="payment-method"]:checked', '#foglalas').next('label').text(),
+        'vissza_ora': $('input[name="payment-method"]:checked', '#foglalas').nextAll('label').eq(2).text(),
+        'fo': $('input[placeholder="Fő"]').val(),
         'kisagy': $('input[name="payment-method"]:checked', '#foglalas').val()
       }).then(function(response) {
         $scope.data = response.data;
@@ -314,7 +316,7 @@
   });
 
 
-/*
+
 //create data
 app.post('/felhasznalok',(req,res)=>{
   console.log(req.body, 'creatdata');
@@ -332,7 +334,7 @@ app.post('/felhasznalok',(req,res)=>{
     });
   })
 })
-*/
+
 
 
 
