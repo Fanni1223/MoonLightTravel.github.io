@@ -46,8 +46,8 @@
   
     
 <!--Foglalás-->
-    <div class="foglalas_form col-xl-4 col-md-10 col-sm-10 col-lg-4 mt-3">
-      <form id="foglalas" ng-if="data.length">
+    <div class="foglalas_form col-xl-4 col-md-10 col-sm-10 col-lg-4 mt-3"  ng-module="myApp">
+      <form id="foglalas">
         <div class="row">
           <h2 class="text-center mt-3">Foglalja le az utat most!</h2>
         </div>
@@ -55,15 +55,15 @@
         <div class="row mt-3">
           <h6>Adatok</h6>
           <div class="input-group input-group-icon">
-            <input type="text" placeholder="Teljes név" name="nev2" value="{{foglalas.nev2}}"/>
+            <input type="text" placeholder="Teljes név" ng-model=" teljesnev "/>
             <div class="input-icon mx-3"><i class="fa fa-user"></i></div>
           </div>
           <div class="input-group input-group-icon">
-            <input type="text" placeholder="Telefonszám"/>
+            <input type="text" placeholder="Telefonszám" ng-model=" telefonszam "/>
             <div class="input-icon mx-3"><i class="fa fa-phone"></i></div>
           </div>
           <div class="input-group input-group-icon">
-            <input type="email" placeholder="Email-cím"/>
+            <input type="email" placeholder="Email-cím" ng-model=" email "/>
             <div class="input-icon mx-3"><i class="fa fa-envelope"></i></div>
           </div>
         </div>
@@ -125,7 +125,7 @@
           <h6 class="text-secondary mx-2">{{data[0].ut_ar + data[0].szallas_ar}} Ft</h6>
         </div>
         
-          <button type="submit" class="btn float-end" style="width: 40%;" ng-click="">Foglalás</button>
+          <button type="button" class="btn float-end" style="width: 40%;" ng-click="insertData()">Foglalás</button>
         
       </form>
     </div>

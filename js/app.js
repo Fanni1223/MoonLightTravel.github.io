@@ -44,6 +44,7 @@
           url: '/nyaralas',
           templateUrl: './html/nyaralas.html',
           controller: 'nyaralasController',
+          contoller: 'foglalasController',
           params: {
             nyaralas: null
           }
@@ -293,39 +294,20 @@
 ])
 
 // Foglalás controller
-.controller("foglalasController", [
-  "$scope",
-  "$element",
-  "$timeout",
-  "http",
-  "$stateParams",
-  function ($scope, $element, $timeout, http, $stateParams) {
+.controller('foglalasController',function($scope,$http){	
+    $scope.insertData=function(){		
+    $http.post("insert.php", {
+		'teljesnev':$scope.teljesnev,
+		'telefonszam':$scope.telefonszam,
+		'email':$scope.email})
+    
+    .success(function(data,status,headers,config){
+    console.log("Data Inserted Successfully");
+    });
+        }
+         });
 
-
-    $scope.foglalas = $stateParams.foglalas;
-    if (!$scope.foglalas) {
-      $state.go('home');
-      return;
-    }
-
-    http.request({
-      url: "./php/get.php",
-      method: "POST",
-      data: {
-        db: "moonlighttravel",
-        query: "INSERT INTO foglalas(nev2, telefonszam, email) VALUES(:nev2, :telefonszam, :email)",
-        params: {nev2: $scope.foglalas.nev, telefonszam: $scope.foglalas.telefon, email: $scope.foglalas.email},
-        isAssoc: true,
-      },
-    })
-    .then((data) => {
-      $scope.data = data;
-      $scope.$applyAsync();
-    })
-    .catch((e) => console.log(e));
-  },
-])
-
+/*
 //create data
 app.post('/felhasznalok',(req,res)=>{
   console.log(req.body, 'creatdata');
@@ -343,7 +325,7 @@ app.post('/felhasznalok',(req,res)=>{
     });
   })
 })
-
+*/
 
 
 
