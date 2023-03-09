@@ -61,26 +61,31 @@
           templateUrl: './html/hajosblog.html',
           controller: 'appController'
         })
+
         .state('programok', {
           url: '/programok',
           templateUrl: './html/programok.html',
           controller: 'appController'
         })
+
         .state('utazasiInformaciok', {
           url: '/utazasiInformaciok',
           templateUrl: './html/utazasiInformaciok.html',
           controller: 'appController'
         })
+
         .state('tengerpartiNyaralasok', {
           url: '/tengerpartiNyaralasok',
           templateUrl: './html/tengerpartiNyaralasok.html',
           controller: 'appController'
         })
+
         .state('turak', {
           url: '/turak',
           templateUrl: './html/turak.html',
           controller: 'appController'
         })
+
         .state('tengerparti', {
           url: '/tengerparti',
           templateUrl: './html/tengerparti.html',
@@ -91,26 +96,31 @@
           templateUrl: './html/kalandturak.html',
           controller: 'appController'
         })
+
         .state('sport', {
           url: '/sport',
           templateUrl: './html/sport.html',
           controller: 'appController'
         })
+
         .state('fesztivalok', {
           url: '/fesztivalok',
           templateUrl: './html/fesztivalok.html',
           controller: 'appController'
         })
+
         .state('wellnes', {
           url: '/wellnes',
           templateUrl: './html/wellnes.html',
           controller: 'appController'
         })
+
         .state('varoslatogatas', {
           url: '/varoslatogatas',
           templateUrl: './html/varoslatogatas.html',
           controller: 'appController'
         })
+
         .state('regisztracio', {
           controller: 'regisztracio'
         })
@@ -140,7 +150,7 @@
 
       // Set global variables
       $rootScope.state = { id: null, prev: null };
-      $rootScope.user = { id: null, type: null, name: null };
+      $rootScope.user = { id: null, nev: null };
 
       // Get Flies
       http
@@ -184,6 +194,65 @@
           })
           .catch(e => console.log(e));
         }
+      };
+
+      $scope.model = {
+        login: {
+          email : null,
+          jelszo: null
+        },
+        register: {
+          nev : null,
+          email : null,
+          jelszo: null
+        }
+      };
+
+      $scope.register = function() {
+        http.request({
+          url: "./php/register.php", 
+          method: "POST", 
+          data: $scope.model.register
+        })
+        .then(data => {
+          if (data.affectedRows) {
+            $rootScope.user = { 
+              id: parseInt(data.lastInsertId), 
+              nev: $scope.model.register.nev 
+            };
+          } else {
+            alert('A regisztráció nem sikerült!');
+          }
+          $scope.model.register = {
+            nev : null,
+            email : null,
+            jelszo: null
+          };
+          $scope.$applyAsync();
+        })
+      };
+
+      $scope.login = function() {
+        http.request({
+          url: "./php/login.php", 
+          method: "POST", 
+          data: $scope.model.login
+        })
+        .then(data => {
+          $scope.model.login = {
+            email : null,
+            jelszo: null
+          };
+          $scope.$applyAsync();
+          if (data.length) {
+            $rootScope.user = { 
+              id: data[0].id, 
+              nev: data[0].nev 
+            };
+          } else {
+            alert('Hibás email, vagy jelszó!');
+          }
+        })
       };
     }
   ])
@@ -292,22 +361,9 @@
   },
 ])
 
-//regisztrácio controller
-.controller("registerController"),[
-  "$scope",
-  "http",
-  function ($scope,http){
-    $scope.model = {
-      nev : null,
-      email : null,
-      jelszo: null,
-
-    };
-  }
-]
 
 
-
+/*
 //create data
 app.post('/felhasznalok',(req,res)=>{
   console.log(req.body, 'creatdata');
@@ -325,7 +381,7 @@ app.post('/felhasznalok',(req,res)=>{
     });
   })
 })
-
+*/
 
 
 
