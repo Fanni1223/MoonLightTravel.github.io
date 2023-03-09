@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Gép: 127.0.0.1
--- Létrehozás ideje: 2023. Már 08. 15:37
+-- Létrehozás ideje: 2023. Már 09. 13:44
 -- Kiszolgáló verziója: 10.4.6-MariaDB
 -- PHP verzió: 7.3.8
 
@@ -29,10 +29,19 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `felhasznalok` (
+  `id` int(11) NOT NULL,
   `nev` varchar(100) COLLATE utf8_hungarian_ci NOT NULL,
   `email` varchar(100) COLLATE utf8_hungarian_ci NOT NULL,
   `jelszo` varchar(100) COLLATE utf8_hungarian_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_hungarian_ci;
+
+--
+-- A tábla adatainak kiíratása `felhasznalok`
+--
+
+INSERT INTO `felhasznalok` (`id`, `nev`, `email`, `jelszo`) VALUES
+(1, 'Regina', 'regina@citromail.hu', 'a'),
+(2, 'Fanni', 'fanni@citromail.hu', 'a');
 
 -- --------------------------------------------------------
 
@@ -278,8 +287,9 @@ INSERT INTO `utak_kepek` (`neve`, `darabszam`, `ut_id3`, `neve2`) VALUES
 -- A tábla indexei `felhasznalok`
 --
 ALTER TABLE `felhasznalok`
-  ADD PRIMARY KEY (`email`),
-  ADD UNIQUE KEY `EMAIL` (`email`);
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `EMAIL` (`email`),
+  ADD UNIQUE KEY `LOGIN` (`email`,`jelszo`);
 
 --
 -- A tábla indexei `foglalas`
@@ -311,6 +321,12 @@ ALTER TABLE `utak_kepek`
 --
 -- A kiírt táblák AUTO_INCREMENT értéke
 --
+
+--
+-- AUTO_INCREMENT a táblához `felhasznalok`
+--
+ALTER TABLE `felhasznalok`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT a táblához `foglalas`
