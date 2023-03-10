@@ -52,11 +52,15 @@
           <a class="nav-link" ui-sref="rolunk">Rólunk</a>
         </li>
       </ul>
+   
       <form class="d-flex">
+       
         <input class="form-control me-2" type="search" 
                placeholder="Keresés" ng-model="place">
         <button class='btn' type='button' ng-click="searchForPlace(place)">Keresés</button>
       </form>
+      <div class="login-kep"> <img src="../MoonLightTravel.github.io/img/ikonok/ember.svg"  class="log-picture" alt=""></div>
+      <div class="text-rigth">{{user.nev}}</div>
     </div>
   </div>
 </nav>

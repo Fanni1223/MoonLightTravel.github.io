@@ -815,14 +815,20 @@ float: center;
 	height: 40px;
 	width: 40px;
 }
+
+
+/*Bejelntkezés és Regisztáció középre igazítása*/
 .block{
   justify-content: center;
 	align-items: center;
   display: flex;
 }
-
-
-
+#bejelentkezes {
+  justify-content: center;
+	align-items: center;
+  display: flex;
+ margin: auto;
+}
 
 
 
@@ -1045,8 +1051,10 @@ float: center;
 
 
 
-
-
+.log-picture{
+  width: 30px;
+  height: 30px;
+}
 
 
 
