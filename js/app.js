@@ -45,7 +45,8 @@
           templateUrl: './html/nyaralas.html',
           controller: 'nyaralasController',
           params: {
-            nyaralas: null
+            nyaralas: null,
+            ut_id: null
           }
         })
         .state('ajanlatok', {
@@ -321,9 +322,56 @@
     })
     .then((data) => {
       $scope.data = data;
+      $scope.model = {
+        nev2: null,
+        telefonsz: null,
+        email: null,
+        fo: null,
+        vegosszeg: $scope.data[0].ut_ar + $scope.data[0].szallas_ar,
+        kisagy: null,
+        evszam: null,
+        honap: null,
+        nap: null,
+        oda_ora: null,
+        vissza_ora: null,
+        ut_id2: $stateParams.ut_id
+      };
       $scope.$applyAsync();
     })
     .catch((e) => console.log(e));
+
+    $scope.changed = function(key) {
+      /*
+      let foglalas    = document.getElementById('foglalas-btn'),
+          isDisabled  = true;
+      Object.keys($scope.model).every( function(key) {
+        switch(key) {
+          case 'nev2':
+            if ($scope.model[key].length)
+            break;
+          case 'telefonsz': 
+            isDisabled = false;
+            break;
+          case 'email': 
+            break;
+          case 'fo': 
+            break;
+          case 'evszam': 
+            break;
+          case 'honap': 
+            break;
+          case 'nap': 
+            break;
+        }
+        if (isDisabled) return false;
+      });
+      foglalas.disabled = isDisabled;
+      */
+    };
+
+    $scope.insertData = function() {
+      console.log($scope.model);
+    };
   },
 ])
 
