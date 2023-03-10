@@ -3,7 +3,6 @@
 <div class="container">
 
   <!--Top ajánlatok-->
-  <h1 class="text-center mt-5">{{user.nev}}</h1>
 
   <h1 class="text-center mt-5">Top ajánlatok</h1>
   <ul class="cards">
@@ -281,10 +280,10 @@
 </div>
   <br>
   <br>
-  <div class="row blok">
-  <div class="bejelentkezes col-xl-6 col-md-6 col-lg-6" id="bejelentkezes">
+  <div class="row">
+  <div class="bejelentkezes col-xl-6 col-md-6 col-lg-6 centered-form"  id="bejelentkezes">
     <div class="form-bejelentkezes sign-up-bejelentkezes">
-      <form class="login" [formGroup]="userForm" (ngSubmit)="onSubmit()">
+      <form class="login">
         <h1>Regisztráció</h1>
       <br>
         <input type="text" class="beviteli" placeholder="Név" ng-model="model.register.nev"   name="nev"/>
