@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Gép: 127.0.0.1
--- Létrehozás ideje: 2023. Már 09. 13:44
+-- Létrehozás ideje: 2023. Már 10. 09:45
 -- Kiszolgáló verziója: 10.4.6-MariaDB
 -- PHP verzió: 7.3.8
 
@@ -120,7 +120,7 @@ INSERT INTO `szallas` (`szallas_id`, `megnev`, `leiras2`, `tipus`, `elhelyezkede
 --
 
 CREATE TABLE `utak` (
-  `ut_id` int(100) NOT NULL,
+  `ut_id` int(11) NOT NULL,
   `kontinens` varchar(50) COLLATE utf8_hungarian_ci NOT NULL,
   `orszag` varchar(50) COLLATE utf8_hungarian_ci NOT NULL,
   `varos` varchar(50) COLLATE utf8_hungarian_ci NOT NULL,
@@ -341,26 +341,20 @@ ALTER TABLE `szallas`
   MODIFY `szallas_id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
--- Megkötések a kiírt táblákhoz
+-- AUTO_INCREMENT a táblához `utak`
 --
+ALTER TABLE `utak`
+  MODIFY `ut_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
--- Megkötések a táblához `foglalas`
+-- Megkötések a kiírt táblákhoz
 --
-ALTER TABLE `foglalas`
-  ADD CONSTRAINT `foglalas_ibfk_1` FOREIGN KEY (`ut_id2`) REFERENCES `utak` (`ut_id`);
 
 --
 -- Megkötések a táblához `utak`
 --
 ALTER TABLE `utak`
   ADD CONSTRAINT `utak_ibfk_1` FOREIGN KEY (`szallas_id2`) REFERENCES `szallas` (`szallas_id`);
-
---
--- Megkötések a táblához `utak_kepek`
---
-ALTER TABLE `utak_kepek`
-  ADD CONSTRAINT `utak_kepek_ibfk_1` FOREIGN KEY (`ut_id3`) REFERENCES `utak` (`ut_id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
