@@ -55,15 +55,15 @@
         <div class="row mt-3">
           <h6>Adatok</h6>
           <div class="input-group input-group-icon">
-            <input type="text" placeholder="Teljes név" name="nev2" value="{{foglalas.nev2}}"/>
+            <input type="text" placeholder="Teljes név" ng-model="model.nev2" ng-change="changed('nev2')"/>
             <div class="input-icon mx-3"><i class="fa fa-user"></i></div>
           </div>
           <div class="input-group input-group-icon">
-            <input type="text" placeholder="Telefonszám"/>
+            <input type="text" placeholder="Telefonszám" ng-model="model.telefonsz" ng-change="changed('telefonsz')"/>
             <div class="input-icon mx-3"><i class="fa fa-phone"></i></div>
           </div>
           <div class="input-group input-group-icon">
-            <input type="email" placeholder="Email-cím"/>
+            <input type="email" placeholder="Email-cím" ng-model="model.email" ng-change="changed('email')"/>
             <div class="input-icon mx-3"><i class="fa fa-envelope"></i></div>
           </div>
         </div>
@@ -71,9 +71,12 @@
         <div class="row mt-2">
           <h6>Mikor szeretne utazni?</h6>
           <div class="input-group">
-            <input type="text" style="width: 30%;" class="mx-1" placeholder="Évszám"/>
-            <input type="text" style="width: 30%;" class="mx-1" placeholder="Hónap"/>
-            <input type="text" style="width: 30%;" class="mx-1" placeholder="Nap"/>
+            <input type="text" style="width: 30%;" class="mx-1" placeholder="Évszám" ng-model="model.evszam"
+                   ng-change="changed('evszam')"/>
+            <input type="text" style="width: 30%;" class="mx-1" placeholder="Hónap" ng-model="model.honap"
+                   ng-change="changed('honap')"/>
+            <input type="text" style="width: 30%;" class="mx-1" placeholder="Nap" ng-model="model.nap"
+                   ng-change="changed('nap')"/>
           </div>
         </div>
 
@@ -103,7 +106,8 @@
         <div class="row mt-2">
           <h6>Hány főre szeretne foglalni?</h6>
           <div class="input-group input-group-icon">
-            <input type="text" placeholder="Fő" style="width: 40%"/>
+            <input type="text" placeholder="Fő" style="width: 40%" ng-model="model.fo"
+                   ng-change="changed('fo')"/>
             <div class="input-icon mx-3"><i class="fa fa-user"></i></div>
           </div>
         </div>
@@ -122,10 +126,13 @@
 
         <div class="row mt-2" ng-if="data.length">
           <h6>Végösszeg</h6>
-          <h6 class="text-secondary mx-2">{{data[0].ut_ar + data[0].szallas_ar}} Ft</h6>
+          <h6 class="text-secondary mx-2">{{model.vegosszeg}} Ft</h6>
         </div>
         
-          <button type="submit" class="btn float-end" style="width: 40%;" ng-click="">Foglalás</button>
+        <button id="foglalas-btn" type="button" class="btn float-end" style="width: 40%;" 
+                ng-click="insertData()">
+          Foglalás
+        </button>
         
       </form>
     </div>

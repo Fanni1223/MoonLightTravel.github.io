@@ -2,7 +2,8 @@
 <div ng-include src="'../MoonLightTravel.github.io/html/navigate.html'"></div>
 <div class="container">
 
-<!--Top ajánlatok-->
+  <!--Top ajánlatok-->
+
   <h1 class="text-center mt-5">Top ajánlatok</h1>
   <ul class="cards">
     <li>
@@ -52,7 +53,7 @@
   </ul>
 
 
-<!--Cikkek-->
+  <!--Cikkek-->
   <h1 class="text-center mt-5">Legfrissebb cikkeink</h1>
   <div class="row mt-5">
     <div class="col-12 col-md-6 mt-2">
@@ -68,10 +69,10 @@
   </div>
 
 
-<!--Információk-->
+  <!--Információk-->
   <h1 class="text-center mt-5">Hasznos információk utazás előtt</h1>
   <div class="row mt-5">
-    <div class="col-12 col-md-3 thumbex mt-4 mx-5">
+    <div class="col-md- col-xl-3 col-sm-10 thumbex mt-4 mx-5">
       <div class="thumbnail">
         <a data-bs-toggle="modal" data-bs-target="#staticBackdrop1">
           <img src="../MoonLightTravel.github.io/img/turista-min.jpg" alt="Utasbiztosítás" title="Utasbiztosítás">
@@ -80,7 +81,7 @@
       </div>
     </div>
 
-    <div class="col-12 col-md-3 thumbex mt-4 mx-5">
+    <div class="col-md-6 col-xl-3 col-sm-10  thumbex mt-4 mx-5">
       <div class="thumbnail">
         <a data-bs-toggle="modal" data-bs-target="#staticBackdrop2">
           <img src="../MoonLightTravel.github.io/img/repulo-min.jpg" alt="Közlekedési eszközök" title="Közlekedési eszközök">
@@ -89,7 +90,7 @@
       </div>
     </div>
 
-    <div class="col-12 col-md-3 thumbex mt-4 mx-5">
+    <div class="col-md-3 col-xl-3 col-sm-10 col-mb-3 thumbex mt-4 mx-5">
       <div class="thumbnail">
         <a data-bs-toggle="modal" data-bs-target="#staticBackdrop3">
           <img src="../MoonLightTravel.github.io/img/kartya-min.jpg" alt="Árak" title="Árak">
@@ -98,7 +99,7 @@
       </div>
     </div>
   
-    <div class="col-12 col-md-3 thumbex mt-4 mx-5">
+    <div class="col-md-3 col-xl-3 col-sm-10 col-mb-3 thumbex mt-4 mx-5">
       <div class="thumbnail">
         <a data-bs-toggle="modal" data-bs-target="#staticBackdrop4">
           <img src="../MoonLightTravel.github.io/img/valuta-min.jpg" alt="Valutaváltás" title="Valutaváltás">
@@ -107,7 +108,7 @@
       </div>
     </div>
 
-    <div class="col-12 col-md-3 thumbex mt-4 mx-5">
+    <div class="col-md-3 col-xl-3 col-sm-10 col-mb-3 thumbex mt-4 mx-5">
       <div class="thumbnail">
         <a data-bs-toggle="modal" data-bs-target="#staticBackdrop5">
           <img src="../MoonLightTravel.github.io/img/parkolo.jpg" alt="Parkolás" title="Parkolás">
@@ -116,7 +117,7 @@
       </div>
     </div>
 
-    <div class="col-12 col-md-3 thumbex mt-4 mx-5">
+    <div class="col-md-3 col-xl-3 col-sm-10 col-mb-3 thumbex mt-4 mx-5">
       <div class="thumbnail">
         <a data-bs-toggle="modal" data-bs-target="#staticBackdrop6">
           <img src="../MoonLightTravel.github.io/img/parkolo.jpg" alt="Okmányok" title="Okmányok">
@@ -128,7 +129,7 @@
 
 
 <!-- Modal1 -->
-<div class="modal fade"  data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"   aria-labelledby="staticBackdropLabel" aria-hidden="true">
+<div class="modal fade" id="staticBackdrop1" data-bs-backdrop="static"   data-bs-keyboard="false" tabindex="-1"   aria-labelledby="staticBackdropLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
@@ -279,27 +280,27 @@
 </div>
   <br>
   <br>
-  <div class="row blok">
-  <div class="bejelentkezes col-xl-6 col-md-6 col-lg-6" id="bejelentkezes">
+  <div class="row">
+  <div class="bejelentkezes col-xl-6 col-md-6 col-lg-6 centered-form"  id="bejelentkezes">
     <div class="form-bejelentkezes sign-up-bejelentkezes">
-      <form class="login" [formGroup]="userForm" (ngSubmit)="onSubmit()">
+      <form class="login">
         <h1>Regisztráció</h1>
       <br>
-        <input type="text" class="beviteli" placeholder="Név" ng-model="model.nev"   name="nev"/>
-        <input type="email" class="beviteli" placeholder="Email" ng-model="model.email" name="email"/>
-        <input type="password" class="beviteli" placeholder="Jelszó" ng-model="model.jelszo"  name="jelszo"/>
+        <input type="text" class="beviteli" placeholder="Név" ng-model="model.register.nev"   name="nev"/>
+        <input type="email" class="beviteli" placeholder="Email" ng-model="model.register.email" name="email"/>
+        <input type="password" class="beviteli" placeholder="Jelszó" ng-model="model.register.jelszo"  name="jelszo"/>
         <br>
-        <button class="btn2" type="submit" ng-click="register()">Regisztráció</button>
+        <button class="btn2" type="button" ng-click="register()">Regisztráció</button>
       </form>
     </div>
     <div class="form-bejelentkezes sign-in-bejelentkezes">
       <form class="login" >
         <h1>Bejelentkezés</h1>
        <br>
-        <input type="email" class="beviteli" placeholder="Email" />
-        <input type="password" class="beviteli" placeholder="Jelszó" />
+        <input type="email" class="beviteli" placeholder="Email" ng-model="model.login.email"/>
+        <input type="password" class="beviteli" placeholder="Jelszó" ng-model="model.login.jelszo"/>
         <br>
-        <button class="btn2" >Bejelentkezés</button>
+        <button class="btn2" ng-click="login()">Bejelentkezés</button>
       </form>
     </div>
     <div class="overlay-bejelentkezes">
