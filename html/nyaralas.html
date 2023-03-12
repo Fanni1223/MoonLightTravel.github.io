@@ -15,30 +15,31 @@
 <!--Tabok-->
       <div class="col-xl-8 col-md-10 mt-2 col-sm-12" ng-if="data.length">
         <main>
-          <input id="tab1" type="radio" name="tabs"  class="input_tab">
-          <label for="tab1"><img src="../MoonLightTravel.github.io/img/ikonok/tartozkodasihely.svg" alt="ikon" title="ikon" class="ikon mx-2">Térkép</label>
-          <input id="tab2" type="radio" name="tabs" checked class="input_tab">
-          <label for="tab2"><img src="../MoonLightTravel.github.io/img/ikonok/leiras.svg" alt="ikon" title="ikon" class="ikon mx-2">Leírás</label>
+          <input id="tab1" type="radio" name="tabs" checked class="input_tab">
+          <label for="tab1"><img src="../MoonLightTravel.github.io/img/ikonok/leiras.svg" alt="ikon" title="ikon" class="ikon mx-2">Leírás</label>
+          <input id="tab2" type="radio" name="tabs" class="input_tab">
+          <label for="tab2"><img src="../MoonLightTravel.github.io/img/ikonok/repulo.svg" alt="ikon" title="ikon" class="ikon mx-2">Közlekedés</label>
           <input id="tab3" type="radio" name="tabs" class="input_tab">
-          <label for="tab3"><img src="../MoonLightTravel.github.io/img/ikonok/repulo.svg" alt="ikon" title="ikon" class="ikon mx-2">Közlekedés</label>
-          <!--Térkép-->
-          <section id="content1">
-            <p></p>
-            <p></p>
-          </section>
+          <label for="tab3"><img src="../MoonLightTravel.github.io/img/ikonok/ar.svg" alt="ikon" title="ikon" class="ikon mx-2">Ár</label>
           <!--Leírás-->
-          <section id="content2">
+          <section id="content1">
             <h5>Látványosságok, leírás</h5>
             <p class="mx-5 mt-3">{{data[0].leiras}}</p>
             <h5>A nyaraláshoz szervezett programok</h5>
             <p class="mx-5 mt-3">{{data[0].program}}</p>
           </section>
           <!--Közlekedés-->
-          <section id="content3">
+          <section id="content2">
             <h5>Az utazás ideje átlagosan</h5>
             <p class="mx-3 mt-3"><img ng-src="./img/ikonok/{{data[0].kozlekedesi_eszkoz_img}}" alt="ikon" title="ikon" class="ikon mx-3">{{data[0].ido}}<p>
             <h5>Az indulás helye</h5>
             <p class="mx-3 mt-3">{{data[0].indulasi_hely}}</P>
+          </section>
+           <!--Ár-->
+           <section id="content3">
+            <h5>Az utazás ára</h5>
+            <p class="mx-3 mt-3"><img ng-src="./img/ikonok/{{data[0].kozlekedesi_eszkoz_img}}" alt="ikon" title="ikon" class="ikon mx-3">{{data[0].ut_ar}} Ft<p>
+            <h5>Az összeg tartalmazza a jegyet és az utazás árát.</h5>
           </section>
         </main>
       </div>
@@ -152,32 +153,34 @@
 <!--Tabok-->
   <div class="row col-xl-7 col-md-7 mt-2" ng-if="data.length">
     <main>
-      <input id="tab4" type="radio" name="tabs2" checked class="input_tab">
-      <label for="tab4"><img src="../MoonLightTravel.github.io/img/ikonok/tartozkodasihely.svg" alt="ikon" class="ikon mx-2">Térkép</label>
+      <input id="tab4" type="radio" name="tabs2" class="input_tab">
+      <label for="tab4"><img src="../MoonLightTravel.github.io/img/ikonok/leiras.svg" alt="ikon" class="ikon mx-2">Leírás</label>
       <input id="tab5" type="radio" name="tabs2" class="input_tab">
-      <label for="tab5"><img src="../MoonLightTravel.github.io/img/ikonok/leiras.svg" alt="ikon" class="ikon mx-2">Leírás</label>
+      <label for="tab5"><img src="../MoonLightTravel.github.io/img/ikonok/ellatas.svg" alt="ikon" class="ikon mx-2">Ellátás</label>
       <input id="tab6" type="radio" name="tabs2" class="input_tab">
-      <label for="tab6"><img src="../MoonLightTravel.github.io/img/ikonok/ellatas.svg" alt="ikon" class="ikon mx-2">Ellátás</label>
+      <label for="tab6"><img src="../MoonLightTravel.github.io/img/ikonok/szolgaltatas.svg" alt="ikon" class="ikon mx-2">Szolgáltatások</label>
       <input id="tab7" type="radio" name="tabs2" class="input_tab">
-      <label for="tab7"><img src="../MoonLightTravel.github.io/img/ikonok/szolgaltatas.svg" alt="ikon" class="ikon mx-2">Szolgáltatások</label>
-  <!--Térkép-->
-      <section id="content4">
-       
-      </section>
+      <label for="tab7"><img src="../MoonLightTravel.github.io/img/ikonok/ar.svg" alt="ikon" class="ikon mx-2">Ár</label>
   <!--Leírás-->
-      <section id="content5">
+      <section id="content4">
         <h5>A szállásról röviden</h5>
         <p class="mx-3">{{data[0].leiras2}}</p>
       </section>
   <!--Ellátás-->
-      <section id="content6">
+      <section id="content5">
         <h5>Az ellátás típusa</h5>
         <p class="mx-3">{{data[0].ellatas}}</p>
         <p class="mx-3">{{data[0].ellatas_leiras}}</p>
       </section>
   <!--Szolgáltatás-->
-      <section id="content7">
+      <section id="content6">
         <button disabled ng-repeat="nyaralas in data" ng-if="nyaralas.neve.includes('.svg')" class="mx-2 border border-grey mt-2"><p class="mt-3 mx-1 text-black fw-bold"><img  ng-src="./img/ikonok/{{nyaralas.neve}}" alt="ikon" class="ikon mx-2">{{nyaralas.neve2}}</p></button>
+      </section>
+      <!--Ár-->
+      <section id="content7">
+        <h5>A szállás ára</h5>
+        <p class="mx-3 mt-3"><img ng-src="./img/ikonok/hotel.svg" alt="ikon" title="ikon" class="ikon mx-3">{{data[0].szallas_ar}} Ft<p>
+        <h5>Az összeg tartalmazza a szállást és a hozzá tartozó szolgáltatásokat is.</h5>
       </section>
     </main>
   </div>

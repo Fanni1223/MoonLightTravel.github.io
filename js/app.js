@@ -121,6 +121,11 @@
           templateUrl: './html/varoslatogatas.html',
           controller: 'appController'
         })
+        .state('foglalasok', {
+          url: '/foglalasok',
+          templateUrl: './html/foglalasok.html',
+          controller: 'appController'
+        })
 
         .state('regisztracio', {
           controller: 'regisztracio'
