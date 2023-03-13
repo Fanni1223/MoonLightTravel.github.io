@@ -10,7 +10,7 @@
         <img ng-src="./img/utak/{{ut.utak_img}}">
         <div class='card-body'>
           <h5 class='card-title'>{{ut.nev}}</h5>
-          <h5 class='card-title'>{{ut.megnev}}<img src="./img/ikonok/hotel.svg" class="ikon"></h5> 
+          <h5 class='card-title'>{{ut.megnev}}<img src="./img/ikonok/hotel.svg" class="ikon mx-1"></h5> 
           <img src="./img/ikonok/star.svg" class="ikon" ng-repeat="x in [].constructor(ut.tipus) track by $index">
           <img ng-src="./img/ikonok/{{ut.kozlekedesi_eszkoz_img}}" class="ikon mx-5 float-end">
           <br>
@@ -30,10 +30,10 @@
 
 
  <!-- Footer -->
- <footer id="availability"
- class="container-fluid bg-light text-muted"
- ng-include src="'../MoonLightTravel.github.io/html/footer.html'"></footer>
+ <footer ng-include src="'../MoonLightTravel.github.io/html/footer.html'"></footer>
 
 
+
+ 
 
   

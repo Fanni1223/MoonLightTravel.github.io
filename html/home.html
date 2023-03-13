@@ -1,5 +1,5 @@
 <!--Banner, menü-->
-<div ng-include src="'../MoonLightTravel.github.io/html/navigate.html'"></div>
+<div ng-include src="'../MoonLightTravel.github.io/html/home-navigate.html'"></div>
 <div class="container">
 
   <!--Top ajánlatok-->
@@ -71,8 +71,8 @@
 
   <!--Információk-->
   <h1 class="text-center mt-5">Hasznos információk utazás előtt</h1>
-  <div class="row mt-5">
-    <div class="col-md- col-xl-3 col-sm-10 thumbex mt-4 mx-5">
+  <div class="row mt-5 m-5 mx-5">
+    <div class="col-md-4 col-xl-3 col-sm-10 thumbex mt-4 m-5">
       <div class="thumbnail">
         <a data-bs-toggle="modal" data-bs-target="#staticBackdrop1">
           <img src="../MoonLightTravel.github.io/img/turista-min.jpg" alt="Utasbiztosítás" title="Utasbiztosítás">
@@ -81,7 +81,7 @@
       </div>
     </div>
 
-    <div class="col-md-6 col-xl-3 col-sm-10  thumbex mt-4 mx-5">
+    <div class="col-md-4 col-xl-3 col-sm-10  thumbex mt-4 m-5">
       <div class="thumbnail">
         <a data-bs-toggle="modal" data-bs-target="#staticBackdrop2">
           <img src="../MoonLightTravel.github.io/img/repulo-min.jpg" alt="Közlekedési eszközök" title="Közlekedési eszközök">
@@ -90,7 +90,7 @@
       </div>
     </div>
 
-    <div class="col-md-3 col-xl-3 col-sm-10 col-mb-3 thumbex mt-4 mx-5">
+    <div class="col-md-4 col-xl-3 col-sm-10 thumbex mt-4 m-5">
       <div class="thumbnail">
         <a data-bs-toggle="modal" data-bs-target="#staticBackdrop3">
           <img src="../MoonLightTravel.github.io/img/kartya-min.jpg" alt="Árak" title="Árak">
@@ -99,7 +99,7 @@
       </div>
     </div>
   
-    <div class="col-md-3 col-xl-3 col-sm-10 col-mb-3 thumbex mt-4 mx-5">
+    <div class="col-md-4 col-xl-3 col-sm-10 thumbex mt-4 m-5">
       <div class="thumbnail">
         <a data-bs-toggle="modal" data-bs-target="#staticBackdrop4">
           <img src="../MoonLightTravel.github.io/img/valuta-min.jpg" alt="Valutaváltás" title="Valutaváltás">
@@ -108,7 +108,7 @@
       </div>
     </div>
 
-    <div class="col-md-3 col-xl-3 col-sm-10 col-mb-3 thumbex mt-4 mx-5">
+    <div class="col-md-4 col-xl-3 col-sm-10 thumbex mt-4 m-5">
       <div class="thumbnail">
         <a data-bs-toggle="modal" data-bs-target="#staticBackdrop5">
           <img src="../MoonLightTravel.github.io/img/parkolo.jpg" alt="Parkolás" title="Parkolás">
@@ -117,7 +117,7 @@
       </div>
     </div>
 
-    <div class="col-md-3 col-xl-3 col-sm-10 col-mb-3 thumbex mt-4 mx-5">
+    <div class="col-md-4 col-xl-3 col-sm-10 thumbex mt-4 m-5">
       <div class="thumbnail">
         <a data-bs-toggle="modal" data-bs-target="#staticBackdrop6">
           <img src="../MoonLightTravel.github.io/img/parkolo.jpg" alt="Okmányok" title="Okmányok">
@@ -290,7 +290,7 @@
         <input type="email" class="beviteli" placeholder="Email" ng-model="model.register.email" name="email"/>
         <input type="password" class="beviteli" placeholder="Jelszó" ng-model="model.register.jelszo"  name="jelszo"/>
         <br>
-        <button class="btn2" type="button" ng-click="register()">Regisztráció</button>
+        <button class="btn2"  ng-click="register()">Regisztráció</button>
       </form>
     </div>
     <div class="form-bejelentkezes sign-in-bejelentkezes">
@@ -352,7 +352,6 @@
 
  <!-- Footer -->
  <footer id="availability"
-         class="container-fluid bg-light text-muted mt-5"
          ng-include src="'../MoonLightTravel.github.io/html/footer.html'">
 </footer>
 

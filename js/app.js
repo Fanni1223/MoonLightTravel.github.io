@@ -25,12 +25,10 @@
         .state('blog', {
           url: '/blog',
           templateUrl: './html/blog.html',
-          controller: 'appController'
         })
         .state('rolunk', {
           url: '/rolunk',
           templateUrl: './html/rolunk.html',
-          controller: 'appController'
         })
         .state('ut', {
           url: '/ut',
@@ -60,70 +58,64 @@
         .state('hajosblog', {
           url: '/hajosblog',
           templateUrl: './html/hajosblog.html',
-          controller: 'appController'
         })
 
         .state('programok', {
           url: '/programok',
           templateUrl: './html/programok.html',
-          controller: 'appController'
         })
 
         .state('utazasiInformaciok', {
           url: '/utazasiInformaciok',
           templateUrl: './html/utazasiInformaciok.html',
-          controller: 'appController'
         })
 
         .state('tengerpartiNyaralasok', {
           url: '/tengerpartiNyaralasok',
           templateUrl: './html/tengerpartiNyaralasok.html',
-          controller: 'appController'
         })
 
         .state('turak', {
           url: '/turak',
           templateUrl: './html/turak.html',
-          controller: 'appController'
         })
 
         .state('tengerparti', {
           url: '/tengerparti',
           templateUrl: './html/tengerparti.html',
-          controller: 'appController'
         })
         .state('kalandturak', {
           url: '/kalandturak',
           templateUrl: './html/kalandturak.html',
-          controller: 'appController'
         })
 
         .state('sport', {
           url: '/sport',
           templateUrl: './html/sport.html',
-          controller: 'appController'
         })
 
         .state('fesztivalok', {
           url: '/fesztivalok',
           templateUrl: './html/fesztivalok.html',
-          controller: 'appController'
         })
 
         .state('wellnes', {
           url: '/wellnes',
           templateUrl: './html/wellnes.html',
-          controller: 'appController'
         })
 
         .state('varoslatogatas', {
           url: '/varoslatogatas',
           templateUrl: './html/varoslatogatas.html',
-          controller: 'appController'
         })
         .state('foglalasok', {
           url: '/foglalasok',
           templateUrl: './html/foglalasok.html',
+          controller: 'appController'
+        })
+        .state('kedvencek', {
+          url: '/kedvencek',
+          templateUrl: './html/kedvencek.html',
           controller: 'appController'
         })
 
