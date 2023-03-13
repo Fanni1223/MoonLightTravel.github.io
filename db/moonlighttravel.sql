@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.0.1
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
 -- Gép: 127.0.0.1
--- Létrehozás ideje: 2023. Már 10. 09:45
+-- Létrehozás ideje: 2023. Már 10. 12:28
 -- Kiszolgáló verziója: 10.4.6-MariaDB
 -- PHP verzió: 7.3.8
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -51,9 +50,9 @@ INSERT INTO `felhasznalok` (`id`, `nev`, `email`, `jelszo`) VALUES
 
 CREATE TABLE `foglalas` (
   `foglalas_id` int(50) NOT NULL,
-  `nev2` varchar(50) COLLATE utf8_hungarian_ci NOT NULL,
+  `teljes_nev` varchar(50) NOT NULL,
   `telefonsz` int(11) NOT NULL,
-  `email` varchar(50) COLLATE utf8_hungarian_ci NOT NULL,
+  `email` varchar(50) NOT NULL,
   `fo` int(2) NOT NULL,
   `vegosszeg` int(6) NOT NULL,
   `kisagy` int(100) NOT NULL,
@@ -69,7 +68,7 @@ CREATE TABLE `foglalas` (
 -- A tábla adatainak kiíratása `foglalas`
 --
 
-INSERT INTO `foglalas` (`foglalas_id`, `nev2`, `telefonsz`, `email`, `fo`, `vegosszeg`, `kisagy`, `evszam`, `honap`, `nap`, `oda_ora`, `vissza_ora`, `ut_id2`) VALUES
+INSERT INTO `foglalas` (`foglalas_id`, `teljes_nev`, `telefonsz`, `email`, `fo`, `vegosszeg`, `kisagy`, `evszam`, `honap`, `nap`, `oda_ora`, `vissza_ora`, `ut_id2`) VALUES
 (1, 'kdhadkddf', 63, 'djfdsffdfhdfsdfsdf', 3, 12345, 2, '0000-00-00', 12, 1, 12, 12, 1);
 
 -- --------------------------------------------------------
@@ -80,14 +79,14 @@ INSERT INTO `foglalas` (`foglalas_id`, `nev2`, `telefonsz`, `email`, `fo`, `vego
 
 CREATE TABLE `szallas` (
   `szallas_id` int(100) NOT NULL,
-  `megnev` varchar(50) COLLATE utf8_hungarian_ci NOT NULL,
-  `leiras2` varchar(1000) COLLATE utf8_hungarian_ci NOT NULL,
+  `megnev` varchar(50) NOT NULL,
+  `leiras2` varchar(1000) NOT NULL,
   `tipus` tinyint(4) NOT NULL,
-  `elhelyezkedes` varchar(100) COLLATE utf8_hungarian_ci NOT NULL,
-  `szallas_img` varchar(50) COLLATE utf8_hungarian_ci NOT NULL,
+  `elhelyezkedes` varchar(100) NOT NULL,
+  `szallas_img` varchar(50) NOT NULL,
   `szallas_ar` int(7) NOT NULL,
-  `ellatas` varchar(50) COLLATE utf8_hungarian_ci NOT NULL,
-  `ellatas_leiras` varchar(1000) COLLATE utf8_hungarian_ci NOT NULL
+  `ellatas` varchar(50) NOT NULL,
+  `ellatas_leiras` varchar(1000) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_hungarian_ci;
 
 --
@@ -132,14 +131,14 @@ CREATE TABLE `utak` (
   `nev` varchar(50) COLLATE utf8_hungarian_ci NOT NULL,
   `idoszak` varchar(50) COLLATE utf8_hungarian_ci NOT NULL,
   `szallas_id2` int(100) NOT NULL,
-  `url_kontinens` varchar(50) COLLATE utf8_hungarian_ci NOT NULL,
-  `url_orszag` varchar(50) COLLATE utf8_hungarian_ci NOT NULL,
-  `url_varos` varchar(50) COLLATE utf8_hungarian_ci NOT NULL,
-  `allapot` varchar(50) COLLATE utf8_hungarian_ci NOT NULL,
+  `url_kontinens` varchar(50) NOT NULL,
+  `url_orszag` varchar(50) NOT NULL,
+  `url_varos` varchar(50) NOT NULL,
+  `allapot` varchar(50) NOT NULL,
   `ut_ar` int(6) NOT NULL,
-  `ido` varchar(20) COLLATE utf8_hungarian_ci NOT NULL,
-  `indulasi_hely` varchar(100) COLLATE utf8_hungarian_ci NOT NULL,
-  `program` varchar(1000) COLLATE utf8_hungarian_ci NOT NULL
+  `ido` varchar(20) NOT NULL,
+  `indulasi_hely` varchar(100) NOT NULL,
+  `program` varchar(1000) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_hungarian_ci;
 
 --
@@ -157,12 +156,12 @@ INSERT INTO `utak` (`ut_id`, `kontinens`, `orszag`, `varos`, `utak_img`, `leiras
 (8, 'Ázsia', 'Japán', 'Tokió', 'tokio1-min.jpg', 'A Meidzsi-szentély egy sintószentély a tokiói Sibujában, amit az 1912-ben elhunyt Meidzsi császár és 1914-ben elhunyt felesége, Sóken császárné tiszteletére emeltek. A Tokyo Metropolitan Art Museum egy művészeti múzeum Tokióban, Japánban. Ez egyike Japán számos múzeumának, amelyet a prefektusi kormány támogat. A Hibiya Park egy park Chiyoda Cityben, Tokióban, Japánban. A Sumida akváriumot 2012 májusában hozták létre egy bevásárlóközpontban, a Tokió SKYTREE-ben, mely 634 méteres magasságával a legmagasabb mesterséges alkotás Japánban. A Tokyo Dome City Attractions egy vidámpark a tokiói Tokyo Dome baseballstadion mellett Bunkjóban. A Mount Mitake egy hegy a Chichibu Tama Kai Nemzeti Parkban, Tokió közelében, Japánban. A Yomiuriland egy vidámpark Inagiban , Tokióban , Japánban , amelyet először 1964-ben nyitottak meg. A Rainbow Bridge egy függőhíd, amely a Tokiói-öböl északi részét keresztezi a Shibaura móló és az Odaiba vízparti fejlesztés között, Minatoban, Tokióban, Japánban.\r\n\r\n\r\n', 'repülő', 'repulo.svg', 'külföldi', 'Felkelő nap országának városa', '10 nap', 8, 'Azsia', 'Japan', 'Tokio', 'last minute', 800000, '1 nap 2 óra', 'Magyarország, Budapest, 1185 Nemzetközi Repülőtér', 'Meidzsi-szentély\r\nTokyo Metropolitan Art Museum\r\nHibiya Park\r\nSumida Aquarium\r\nTokyo Dome City\r\nMount Mitake\r\nYomiuri Land\r\nRainbow Bridge'),
 (9, 'Afrika', 'Egyiptom', 'Kairó', 'egyiptom1-min.jpg', 'Az Egyiptomi Régiségek Múzeuma, melyet gyakran csak Egyiptomi Múzeum néven említenek, Egyiptom fővárosában, Kairóban, a Tahrír téren áll, és legendás lazac színű épülete rejti a világ leggazdagabb egyiptológiai gyűjteményét. A Kairói Citadella vagy Szaladin fellegvára egy középkori iszlám kori erődítmény Kairóban, Egyiptomban, amelyet Salah ad-Din épített, és a későbbi egyiptomi uralkodók fejlesztettek tovább. Az Amr Ibn al-Ász mecset Kairó történelmi kerületében található, Egyiptomban. Gízai piramisok néven három piramist értünk: az egyiptomi óbirodalmi Hufu, Hafré és Menkauré fáraók piramisait. Maga a teljes piramismező a három nagy piramison kívül magába foglalja a hozzájuk tartozó halotti templomokat, kisebb piramisokat \r\n\r\n\r\n', 'repülő', 'repulo.svg', 'külföldi', 'Piramisok városa, Kairó', '6 nap', 9, 'Afrika', 'Egyiptom', 'Kairo', 'last minute', 500000, '3 óra 25 perc', 'Magyarország, Budapest, 1185 Nemzetközi Repülőtér', 'Egyiptomi Régiségek Múzeuma\r\nCitadella\r\nAmr Ibn al-Ász mecset\r\nGízai piramismező'),
 (10, 'Ausztrália', 'Ausztrália', 'Sydney', 'sydney1-min.jpg', 'A Sydney-i Királyi Botanikus Kert egy műemléki védettségű, 30 hektáros botanikus kert, rendezvényhelyszín és nyilvános rekreációs terület. A Sydney-torony Sydney legmagasabb építménye, Ausztrália, és a második legmagasabb kilátó a déli féltekén. A BridgeClimb Sydney egy ausztrál turistalátványosság. A BridgeClimb elkalauzolja a vendégeket a Sydney Harbour Bridge megmászására. A Wild Life Sydney Zoo egy vadaspark a Darling Harbor körzetben, Sydney központi üzleti negyedének nyugati szélén, Sydneyben, Új-Dél-Walesben, Ausztráliában. A Hornby Lighthouse, más néven South Head Lower Light vagy South Head Signal Station, egy műemléki védelem alatt álló aktív világítótorony, amely South Head csúcsán, Új-Dél-Walesben, Ausztráliában található.\r\n\r\n\r\n', 'repülő', 'repulo.svg', 'külföldi', 'Nyaralás Sydney tengerpartján', '5 nap', 10, 'Ausztralia', 'Ausztralia', 'Sydney', 'tengerparti nyaralás', 900000, '1 nap 18 óra', 'Magyarország, Budapest, 1185 Nemzetközi Repülőtér', 'Royal Botanic Garden\r\nSydney Tower Eye\r\nBridgeClimb\r\nWILD LIFE Sydney\r\nHornby Lighthouse'),
-(11, 'Amerika', 'Kanada', 'Torontó', 'kanada.png', '', 'repülő', 'repulo.svg', 'kulfoldi', 'Helyek ,amelyeket láttnia kell Torontóban !', '5 nap', 11, 'Amerika', 'Kanada', 'Torontó', 'varoslatogatas', 6000000, '21 óra 29 perc', 'Budapest', 'CN Tower, Royal Ontario Museum, CF Toronto Eaton Centre,  Nathan Phillips Square, Casa Loma'),
-(12, 'Amerika', 'Egyesült Államok', 'New York', 'NewYork.png', '', 'repülő', 'repulo.svg', 'kulfoldi', 'New York kihagyhatatlan programjai', '6 nap', 12, 'Amerika', 'Egyesült Államok', 'New York', 'lastminute', 7000000, '13 óra 5perc', 'Budapest', 'Central Park, Empire State Building , Times Square, Szabadság-szobor, High Line Park, Modern Művészeti Múzeum'),
-(13, 'Amerika', 'Texas', 'Houston', 'Texas.png', '', 'repülő', 'repulo.svg', 'kulfoldi', 'A világ legnagyobb angol nyelvű városa', '7 nap', 13, 'Amerika', 'Texas', 'Houston', 'lastminute', 10000000, '18 óra 25 perc', 'Budapest', 'Space Central Houston, Discovery Green, Houstoni Természettudományi Múzeum, Hermann Park, San Jacinto Museum of History, Miller Outdoor Theatre, Houston Zoo'),
-(14, 'Amerika', 'Kalifornia', 'San Diego', 'kalifornia.png', '', 'repülő', 'repulo.svg', 'kulfoldi', 'Napfényes Kaliforniai utazás', '5 nap', 14, 'Amerika', 'Kalifornia', 'San Diego', 'varoslatogatas', 6000000, '21 óra 50 perc', 'Budapest', 'Seaport Village, Balboa Park, Birch Aquarium at Scripps Institution of Oceanography, USS Midway Museum, San Diego Állatkert'),
-(15, 'Amerika', 'Nevada', 'Las Vegas', 'nevada.png', '', 'repülő', 'repulo.svg', 'kulfoldi', 'Las Vegas a világ legfényesebb városa', '3 nap', 15, 'Amerika', 'Nevada', 'Las Vegas', 'lastminute', 12000000, '19 óra 50 perc', 'Budapest', 'Caesars Palace, High Roller, The STRAT Hotel, Casino & SkyPod, The Mirage'),
-(16, 'Amerika', 'Egyesült Államok', 'Grand Canyon', 'grand-canyon.png', '', 'repülő', 'repulo.svg', 'kulfoldi', 'Grand-canyon a kortalan szépség', '3 nap', 16, 'Amerika', 'Egyesült Államok', 'Grand Canyon', 'lastminute', 5000000, '7 óra', 'Las Vegas', 'Geológiai Múzeum, Hermit Road Drive,Desert View Őrtorony, Bright Angel túraútvonal');
+(11, 'Amerika', 'Kanada', 'Torontó', 'kanada.png', 'A CN Towert 1973 és 1976 között építették a kanadai Torontóban, az ottani ipar erejének demonstrálása végett. A Royal Ontario Museum egy művészeti, világkultúra és természettörténeti múzeum Torontóban, Ontario államban, Kanadában. A Toronto Eaton Center egy bevásárlóközpont és irodakomplexum a kanadai Ontario állam Toronto belvárosában. A Nathan Phillips Square egy városi tér Torontóban, Ontario államban, Kanadában. A Casa Loma egy gótikus, újjászületett kastély stílusú kastély és kert a kanadai Ontario állambeli Toronto belvárosában, amely ma történelmi házmúzeum és nevezetesség.', 'repülő', 'repulo.svg', 'kulfoldi', 'Helyek ,amelyeket láttnia kell Torontóban !', '5 nap', 11, 'Amerika', 'Kanada', 'Torontó', 'varoslatogatas', 600000, '21 óra 29 perc', 'Magyarország, Budapest, 1185 Nemzetközi Repülőtér', 'CN Tower, Royal Ontario Museum, CF Toronto Eaton Centre,  Nathan Phillips Square, Casa Loma'),
+(12, 'Amerika', 'Egyesült Államok', 'New York', 'NewYork.png', 'A Central Park egy 3,41 km² területű nyilvános park Manhattan szívében, New York városában. Az Empire State Building New York város 102 emeletes, 381 méter magas épülete és egyik jelképe, 42 évig volt az USA legmagasabb épülete. A Times Square New Yorkban, Manhattan városrész egyik negyede. Egyike a legismertebb amerikai negyedeknek, a napi látogatószáma eléri a 330 ezret. A Szabadság megvilágosítja a világot, ismertebb nevén a Szabadság-szobor New York előtt, a Liberty Islanden található, a Hudson folyó torkolatánál. A High Line Park, vagy ahogy szintén ismert, a High Line, egy 1,6 km² területű nyilvános, lineáris park Manhattan nyugati részén, New Yorkban. A New York-i Modern Művészeti Múzeum egyike a világ legjelentősebb kortárs gyűjteménnyel rendelkező művészeti múzeumainak. ', 'repülő', 'repulo.svg', 'kulfoldi', 'New York kihagyhatatlan programjai', '6 nap', 12, 'Amerika', 'Egyesült Államok', 'New York', 'lastminute', 4000000, '13 óra 5perc', 'Magyarország, Budapest, 1185 Nemzetközi Repülőtér', 'Central Park, Empire State Building , Times Square, Szabadság-szobor, High Line Park, Modern Művészeti Múzeum'),
+(13, 'Amerika', 'Texas', 'Houston', 'Texas.png', 'Space Center Houston egy tudományos múzeum, amely a NASA Johnson Space Center hivatalos látogatóközpontjaként szolgál Houstonban. A Discovery Green egy 11,78 hektáros nyilvános városi park Houston belvárosában, Texas államban, amelyet nyugaton a La Branch Street, északon a McKinney Street, keleten az Avenida de las Americas és délen a Lamar Street határol. A Houstoni Természettudományi Múzeum egy természettudományi múzeum, amely a Hermann Park északi határán található Houstonban, Texas államban, az Egyesült Államokban. A Hermann Park egy 445 hektáros városi park Houstonban, Texasban, a Múzeumi negyed déli végén. A San Jacinto Monument egy 567,31 láb magas oszlop a Houston Ship Channel csatornán, a jogi személyiség nélküli Harris megyében, Texas államban, körülbelül 16 mérföldre keletre Houston belvárosától. A Miller Outdoor Theatre egy szabadtéri előadóművészeti színház Houstonban, Texasban. A Houston Zoo egy 55 hektáros állatkert, amely a Hermann Parkban található Houstonban, Texas államban, az Egyesült Államokban.', 'repülő', 'repulo.svg', 'kulfoldi', 'A világ legnagyobb angol nyelvű városa', '7 nap', 13, 'Amerika', 'Texas', 'Houston', 'lastminute', 1000000, '18 óra 25 perc', 'Magyarország, Budapest, 1185 Nemzetközi Repülőtér', 'Space Central Houston, Discovery Green, Houstoni Természettudományi Múzeum, Hermann Park, San Jacinto Museum of History, Miller Outdoor Theatre, Houston Zoo'),
+(14, 'Amerika', 'Kalifornia', 'San Diego', 'kalifornia.png', 'A Seaport Village egy vízparti bevásárló- és étkezőkomplexum a San Diego-öböl szomszédságában, San Diego belvárosában, Kaliforniában. A Balboa Park egy 1200 hektáros történelmi városi kulturális park San Diego-ban, Kaliforniában, az Egyesült Államokban. A Birch Aquarium at Scripps egy akvárium és a San Diego-i Kaliforniai Egyetem Scripps Oceanográfiai Intézetének nyilvános információs központja. A USS Midway Museum egy történelmi haditengerészeti repülőgép-hordozó múzeum, amely a kaliforniai San Diego belvárosában, a Navy Piernél található. A San Diego-i Állatkert egy állatkert Kaliforniában, San Diégóban. A világ egyik leghíresebb állatkertje. Több mint 650 faj, kb. 3700 egyede él itt. Területe 40 hektár.', 'repülő', 'repulo.svg', 'kulfoldi', 'Napfényes Kaliforniai utazás', '5 nap', 14, 'Amerika', 'Kalifornia', 'San Diego', 'varoslatogatas', 200000, '21 óra 50 perc', 'Magyarország, Budapest, 1185 Nemzetközi Repülőtér', 'Seaport Village, Balboa Park, Birch Aquarium at Scripps Institution of Oceanography, USS Midway Museum, San Diego Állatkert'),
+(15, 'Amerika', 'Nevada', 'Las Vegas', 'nevada.png', 'A High Roller egy 550 láb magas, 520 láb átmérőjű óriási óriáskerék a Las Vegas Strip-en, Paradise-ban. Az elegáns kaszinóhotelekkel szegélyezett, neonfénnyel átitatott Strip Las Vegas elválaszthatatlan része. A kaszinókhoz hasonlóan a hatalmas hotelkomplexumokban is számos különböző bolt és étterem – az általánostól a luxusig – áll a vendégek rendelkezésére, és koncerteket, vígjátékokat, cirkuszi bemutatókat felvonultató színpadok kínálnak szórakozási lehetőséget. A szökőkút egy 3,2 hektáros, mesterséges tavon található, és bár a városi legendák szerint a hotel szennyvizét vezetik el ide, ez nem igaz. A tavat egy édesvizű kút táplálja, amit akkoriban fúrtak, amikor a területen még egy golfpálya működött – ezzel locsolták a füvet. ', 'repülő', 'repulo.svg', 'kulfoldi', 'Las Vegas a világ legfényesebb városa', '3 nap', 15, 'Amerika', 'Nevada', 'Las Vegas', 'lastminute', 3000000, '19 óra 50 perc', 'Magyarország, Budapest, 1185 Nemzetközi Repülőtér', 'Caesars Palace, High Roller, The STRAT Hotel, Casino & SkyPod, The Mirage'),
+(16, 'Amerika', 'Egyesült Államok', 'Grand Canyon', 'grand-canyon.png', 'A Yavapai Pointnál, a kanyon peremének szélén található Yavapai Geológiai Múzeum az egyik legjobb kilátópontot kínálja a Grand Canyon geológiájának áttekintésére. A festői Remete út a falu történelmi negyedének nyugati oldalán kezdődik. Az út a kanyon peremét követi 11 km-en keresztül a Hermits Rest-hez és a Remete-ösvényhez. A Desert View park keleti bejárata a nap 24 órájában, a hét minden napján nyitva tart. ', 'repülő', 'repulo.svg', 'kulfoldi', 'Grand-canyon a kortalan szépség', '3 nap', 16, 'Amerika', 'Egyesült Államok', 'Grand Canyon', 'lastminute', 3000000, '7 óra', 'Magyarország, Budapest, 1185 Nemzetközi Repülőtér', 'Geológiai Múzeum, Hermit Road Drive,Desert View Őrtorony, Bright Angel túraútvonal');
 
 -- --------------------------------------------------------
 
@@ -171,10 +170,10 @@ INSERT INTO `utak` (`ut_id`, `kontinens`, `orszag`, `varos`, `utak_img`, `leiras
 --
 
 CREATE TABLE `utak_kepek` (
-  `neve` varchar(50) COLLATE utf8_hungarian_ci NOT NULL,
+  `neve` varchar(50) NOT NULL,
   `darabszam` int(50) NOT NULL,
   `ut_id3` int(50) NOT NULL,
-  `neve2` varchar(50) COLLATE utf8_hungarian_ci NOT NULL
+  `neve2` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_hungarian_ci;
 
 --

@@ -44,7 +44,6 @@
           url: '/nyaralas',
           templateUrl: './html/nyaralas.html',
           controller: 'nyaralasController',
-          
           params: {
             nyaralas: null,
             ut_id: null
@@ -120,6 +119,11 @@
         .state('varoslatogatas', {
           url: '/varoslatogatas',
           templateUrl: './html/varoslatogatas.html',
+          controller: 'appController'
+        })
+        .state('foglalasok', {
+          url: '/foglalasok',
+          templateUrl: './html/foglalasok.html',
           controller: 'appController'
         })
 
