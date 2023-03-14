@@ -65,10 +65,17 @@
                  placeholder="Keresés" ng-model="place">
           <button class='btn' type='button' ng-click="searchForPlace(place) ">Keresés</button>
         </form>
+        <button class="btn mx-3"onclick="scrollFunc1()">Bejelentkezés\Regisztráció</button>
         <div class="login-kep mx-2"> <img src="../MoonLightTravel.github.io/img/ikonok/ember.svg"  class="log-picture" alt=""></div>
         <div class="text-rigth">{{user.nev}}</div>
       </div>
     </div>
+    <script>
+      function scrollFunc1() {
+        let btn1 = document.getElementById("bejelentkezes");
+        btn1.scrollIntoView(false); 
+      }
+        </script>
   </nav>
   
   
