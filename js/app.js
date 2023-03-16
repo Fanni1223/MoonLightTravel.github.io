@@ -297,8 +297,9 @@
   "$element",
   "$timeout",
   "http",
+  "util",
   "$stateParams",
-  function ($state, $scope, $element, $timeout, http, $stateParams) {
+  function ($state, $scope, $element, $timeout, http, util, $stateParams) {
 
 
     $scope.nyaralas = $stateParams.nyaralas;
@@ -323,51 +324,74 @@
         nev2: null,
         telefonsz: null,
         email: null,
-        fo: null,
+        fo: 1,
         vegosszeg: $scope.data[0].ut_ar + $scope.data[0].szallas_ar,
-        kisagy: null,
         evszam: null,
         honap: null,
         nap: null,
-        oda_ora: null,
-        vissza_ora: null,
+        oda_ora: 8,
+        vissza_ora: 8,
+        kisagy: 0,
         ut_id2: $stateParams.ut_id
       };
       $scope.$applyAsync();
     })
     .catch((e) => console.log(e));
 
-    $scope.changed = function(key) {
-      /*
+    // Validálás
+    $scope.changed = function() {
       let foglalas    = document.getElementById('foglalas-btn'),
+          isDisabled  = false,
+          keys        = Object.keys($scope.model);
+      keys.every( function(key) {
+        let value = $scope.model[key];
+        if (value === null) {
           isDisabled  = true;
-      Object.keys($scope.model).every( function(key) {
+          return false;
+        }
         switch(key) {
           case 'nev2':
-            if ($scope.model[key].length)
-            break;
           case 'telefonsz': 
-            isDisabled = false;
+            isDisabled = !value.length;
             break;
-          case 'email': 
+          case 'email':
+            isDisabled = !util.isEmail(value);
             break;
-          case 'fo': 
+          case 'fo':
+            value = parseInt(value);
+            isDisabled = isNaN(value) || value < 1;
             break;
-          case 'evszam': 
+          case 'evszam':
+            value = parseInt(value);
+            isDisabled = value < 2023 || value > 9999;
             break;
           case 'honap': 
+            value = parseInt(value);
+            isDisabled = value < 1 || value > 12;
             break;
-          case 'nap': 
+          case 'nap':
+            value = parseInt(value);
+            isDisabled = value < 1 || value > 31;
             break;
         }
-        if (isDisabled) return false;
+        return !isDisabled;
       });
       foglalas.disabled = isDisabled;
-      */
     };
 
+    // Foglalás
     $scope.insertData = function() {
-      console.log($scope.model);
+      http.request({
+        url: "./php/foglalas.php",
+        method: "POST",
+        data: $scope.model,
+      })
+      .then((data) => {
+        console.log(data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
     };
   },
 ])
