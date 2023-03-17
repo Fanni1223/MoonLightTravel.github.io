@@ -392,6 +392,7 @@
       .catch((error) => {
         console.log(error);
       });
+      alert("Sikeresen lefoglalta az utat! Foglalását megtekintheti a foglalások menüpontban a bejelentkezés után.")
     };
   },
 ])
