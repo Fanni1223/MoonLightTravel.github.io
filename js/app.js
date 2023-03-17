@@ -343,14 +343,44 @@
       let foglalas    = document.getElementById('foglalas-btn'),
           isDisabled  = false,
           keys        = Object.keys($scope.model);
+
+      // When date has not valid property
+      if (!$scope.model.evszam || !$scope.model.honap || !$scope.model.nap) {
+        
+        // Set button enable/disable
+        foglalas.disabled = true;
+        return;
+      }
+
+      // Crete date
+      let now  =  moment().startOf('day'),
+          date =  moment($scope.model.evszam + "-" + 
+                  $scope.model.honap + "-" + 
+                  $scope.model.nap, 'YYYY-MM-DD'),
+          diff = now.diff(date, 'days');
+      if (!date.isValid() || diff >= 0) {
+
+        let a = now.diff(date);
+        
+        // Set button enable/disable
+        foglalas.disabled = true;
+        return;
+      }
+
+      // Each keys
       keys.every( function(key) {
+
+        // Get/Check value
         let value = $scope.model[key];
         if (value === null) {
           isDisabled  = true;
           return false;
         }
+
         switch(key) {
           case 'nev2':
+            isDisabled = !value.length;
+            break;
           case 'telefonsz': 
             isDisabled = !value.length;
             break;
@@ -376,6 +406,8 @@
         }
         return !isDisabled;
       });
+
+      // Set button enable/disable
       foglalas.disabled = isDisabled;
     };
 

@@ -5,15 +5,18 @@
     <h1 class="text-center mt-5">{{data[0].nev}}</h1>
   </div>
 
-<!--Képgaléria-->
+  <!--Képgaléria-->
   <div class="row mt-5" ng-if="data.length">
+
     <div class="col-xl-8 col-md-10 col-sm-12 mt-3" ng-if="data.length">
       <img ng-src="./img/utak/{{data[0].utak_img}}" alt="{{data[0].varos}}" title="{{data[0].varos}}" id="nagy_kep" class="img-fluid clearfix">
+      
       <div class="col-xl-8 col-md-10 col-sm-12 mt-2">
         <img ng-if="nyaralas.neve.includes('.jpg')"  ng-repeat="nyaralas in data" ng-src="./img/utak/{{nyaralas.neve}}" alt="{{data[0].varos}}" title="{{data[0].varos}}" width="134px" onclick="nagyit(this)" class="mt-1 mx-1">
       </div>
-<!--Tabok-->
-      <div class="col-xl-8 col-md-10 mt-2 col-sm-12 col-lg-8" ng-if="data.length">
+
+      <!--Tabok-->
+      <div class="col-xl-8 col-md-10 mt-2 col-sm-12 col-lg-7" ng-if="data.length">
         <main>
           <input id="tab1" type="radio" name="tabs" checked class="input_tab">
           <label for="tab1"><img src="../MoonLightTravel.github.io/img/ikonok/leiras.svg" alt="ikon" title="ikon" class="ikon mx-2">Leírás</label>
@@ -45,9 +48,8 @@
       </div>
     </div>
   
-    
     <!--Foglalás-->
-    <div class="foglalas_form col-xl-4 col-md-10 col-lg-4 col-sm-10 mt-3">
+    <div class="foglalas_form col-sm-10 col-md-10 col-lg-5 col-xl-4 mt-3">
       <form id="foglalas" ng-if="data.length">
         <div class="row">
           <h2 class="text-center mt-3">Foglalja le az utat most!</h2>
@@ -138,7 +140,8 @@
       </form>
     </div>
   </div>
-<!--Szállás kép-->
+
+  <!--Szállás kép-->
   <div class="row mt-5">
     <div class="col-xl-6 col-md-6" ng-if="data.length">
       <img ng-src="./img/szalloda/{{data[0].szallas_img}}" alt="Szállás" title="Szállás" class="img-fluid">
