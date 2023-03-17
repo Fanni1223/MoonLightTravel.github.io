@@ -5,15 +5,18 @@
     <h1 class="text-center mt-5">{{data[0].nev}}</h1>
   </div>
 
-<!--Képgaléria-->
+  <!--Képgaléria-->
   <div class="row mt-5" ng-if="data.length">
+
     <div class="col-xl-8 col-md-10 col-sm-12 mt-3" ng-if="data.length">
       <img ng-src="./img/utak/{{data[0].utak_img}}" alt="{{data[0].varos}}" title="{{data[0].varos}}" id="nagy_kep" class="img-fluid clearfix">
+      
       <div class="col-xl-8 col-md-10 col-sm-12 mt-2">
         <img ng-if="nyaralas.neve.includes('.jpg')"  ng-repeat="nyaralas in data" ng-src="./img/utak/{{nyaralas.neve}}" alt="{{data[0].varos}}" title="{{data[0].varos}}" width="134px" onclick="nagyit(this)" class="mt-1 mx-1">
       </div>
-<!--Tabok-->
-      <div class="col-xl-8 col-md-10 mt-2 col-sm-12" ng-if="data.length">
+
+      <!--Tabok-->
+      <div class="col-xl-8 col-md-10 mt-2 col-sm-12 col-lg-7" ng-if="data.length">
         <main>
           <input id="tab1" type="radio" name="tabs" checked class="input_tab">
           <label for="tab1"><img src="../MoonLightTravel.github.io/img/ikonok/leiras.svg" alt="ikon" title="ikon" class="ikon mx-2">Leírás</label>
@@ -45,9 +48,8 @@
       </div>
     </div>
   
-    
-<!--Foglalás-->
-    <div class="foglalas_form col-xl-4 col-md-10 col-sm-10 col-lg-4 mt-3">
+    <!--Foglalás-->
+    <div class="foglalas_form col-sm-10 col-md-10 col-lg-5 col-xl-4 mt-3">
       <form id="foglalas" ng-if="data.length">
         <div class="row">
           <h2 class="text-center mt-3">Foglalja le az utat most!</h2>
@@ -56,15 +58,15 @@
         <div class="row mt-3">
           <h6>Adatok</h6>
           <div class="input-group input-group-icon">
-            <input type="text" placeholder="Teljes név" ng-model="model.nev2" ng-change="changed('nev2')"/>
+            <input type="text" placeholder="Teljes név" ng-model="model.nev2" ng-change="changed()"/>
             <div class="input-icon mx-3"><i class="fa fa-user"></i></div>
           </div>
           <div class="input-group input-group-icon">
-            <input type="text" placeholder="Telefonszám" ng-model="model.telefonsz" ng-change="changed('telefonsz')"/>
+            <input type="text" placeholder="Telefonszám" ng-model="model.telefonsz" ng-change="changed()"/>
             <div class="input-icon mx-3"><i class="fa fa-phone"></i></div>
           </div>
           <div class="input-group input-group-icon">
-            <input type="email" placeholder="Email-cím" ng-model="model.email" ng-change="changed('email')"/>
+            <input type="text" placeholder="Email-cím" ng-model="model.email" ng-change="changed()"/>
             <div class="input-icon mx-3"><i class="fa fa-envelope"></i></div>
           </div>
         </div>
@@ -73,21 +75,21 @@
           <h6>Mikor szeretne utazni?</h6>
           <div class="input-group">
             <input type="text" style="width: 30%;" class="mx-1" placeholder="Évszám" ng-model="model.evszam"
-                   ng-change="changed('evszam')"/>
+                   ng-change="changed()"/>
             <input type="text" style="width: 30%;" class="mx-1" placeholder="Hónap" ng-model="model.honap"
-                   ng-change="changed('honap')"/>
+                   ng-change="changed()"/>
             <input type="text" style="width: 30%;" class="mx-1" placeholder="Nap" ng-model="model.nap"
-                   ng-change="changed('nap')"/>
+                   ng-change="changed()"/>
           </div>
         </div>
 
         <div class="row">
           <div class="input-group">
-            <input id="ido1" type="radio" name="payment-method" checked="true"/>
+            <input id="ido1" type="radio" name="oda_ora" ng-value="8" ng-model="model.oda_ora"/>
             <label for="ido1" class="ido"><span>8:00</span></label>
-            <input id="ido2" type="radio" name="payment-method"/>
+            <input id="ido2" type="radio" name="oda_ora" ng-value="10" ng-model="model.oda_ora"/>
             <label for="ido2"> <span>10:00</span></label>
-            <input id="ido3" type="radio" name="payment-method"/>
+            <input id="ido3" type="radio" name="oda_ora" ng-value="15" ng-model="model.oda_ora"/>
             <label for="ido3"> <span>15:00</span></label>
           </div>
         </div>
@@ -95,11 +97,11 @@
         <div class="row mt-2">
           <h6>Hány órakor szeretne vissza utazni?</h6>
           <div class="input-group">
-            <input id="ido4" type="radio" name="payment-method" checked="true"/>
+            <input id="ido4" type="radio" name="vissza_ora" ng-value="8" ng-model="model.vissza_ora"/>
             <label for="ido4"><span>8:00</span></label>
-            <input id="ido5" type="radio" name="payment-method"/>
+            <input id="ido5" type="radio" name="vissza_ora" ng-value="10" ng-model="model.vissza_ora"/>
             <label for="ido5"> <span>10:00</span></label>
-            <input id="ido6" type="radio" name="payment-method"/>
+            <input id="ido6" type="radio" name="vissza_ora" ng-value="15" ng-model="model.vissza_ora"/>
             <label for="ido6"> <span>15:00</span></label>
           </div>
         </div>
@@ -108,7 +110,7 @@
           <h6>Hány főre szeretne foglalni?</h6>
           <div class="input-group input-group-icon">
             <input type="text" placeholder="Fő" style="width: 40%" ng-model="model.fo"
-                   ng-change="changed('fo')"/>
+                   ng-change="changed()"/>
             <div class="input-icon mx-3"><i class="fa fa-user"></i></div>
           </div>
         </div>
@@ -117,9 +119,9 @@
           <h6>Szeretne kiságyat a szállásra?</h6>
           <div class="input-group input-group-icon">
             <div class="input-group">
-              <input id="igen" type="radio" name="payment-method" checked="true"/>
+              <input id="igen" type="radio" name="kisagy" ng-value="1" ng-model="model.kisagy"/>
               <label for="igen"><span>Igen</span></label>
-              <input id="nem" type="radio" name="payment-method"/>
+              <input id="nem" type="radio" name="kisagy" ng-value="0" ng-model="model.kisagy"/>
               <label for="nem"> <span>Nem</span></label>
             </div>
           </div>
@@ -131,14 +133,15 @@
         </div>
         
         <button id="foglalas-btn" type="button" class="btn float-end" style="width: 40%;" 
-                ng-click="insertData()">
+                ng-click="insertData()" disabled>
           Foglalás
         </button>
         
       </form>
     </div>
   </div>
-<!--Szállás kép-->
+
+  <!--Szállás kép-->
   <div class="row mt-5">
     <div class="col-xl-6 col-md-6" ng-if="data.length">
       <img ng-src="./img/szalloda/{{data[0].szallas_img}}" alt="Szállás" title="Szállás" class="img-fluid">

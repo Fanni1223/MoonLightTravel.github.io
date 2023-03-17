@@ -297,8 +297,9 @@
   "$element",
   "$timeout",
   "http",
+  "util",
   "$stateParams",
-  function ($state, $scope, $element, $timeout, http, $stateParams) {
+  function ($state, $scope, $element, $timeout, http, util, $stateParams) {
 
 
     $scope.nyaralas = $stateParams.nyaralas;
@@ -323,51 +324,107 @@
         nev2: null,
         telefonsz: null,
         email: null,
-        fo: null,
+        fo: 1,
         vegosszeg: $scope.data[0].ut_ar + $scope.data[0].szallas_ar,
-        kisagy: null,
         evszam: null,
         honap: null,
         nap: null,
-        oda_ora: null,
-        vissza_ora: null,
+        oda_ora: 8,
+        vissza_ora: 8,
+        kisagy: 0,
         ut_id2: $stateParams.ut_id
       };
       $scope.$applyAsync();
     })
     .catch((e) => console.log(e));
 
-    $scope.changed = function(key) {
-      /*
+    // Validálás
+    $scope.changed = function() {
       let foglalas    = document.getElementById('foglalas-btn'),
+          isDisabled  = false,
+          keys        = Object.keys($scope.model);
+
+      // When date has not valid property
+      if (!$scope.model.evszam || !$scope.model.honap || !$scope.model.nap) {
+        
+        // Set button enable/disable
+        foglalas.disabled = true;
+        return;
+      }
+
+      // Crete date
+      let now  =  moment().startOf('day'),
+          date =  moment($scope.model.evszam + "-" + 
+                  $scope.model.honap + "-" + 
+                  $scope.model.nap, 'YYYY-MM-DD'),
+          diff = now.diff(date, 'days');
+      if (!date.isValid() || diff >= 0) {
+
+        let a = now.diff(date);
+        
+        // Set button enable/disable
+        foglalas.disabled = true;
+        return;
+      }
+
+      // Each keys
+      keys.every( function(key) {
+
+        // Get/Check value
+        let value = $scope.model[key];
+        if (value === null) {
           isDisabled  = true;
-      Object.keys($scope.model).every( function(key) {
+          return false;
+        }
+
         switch(key) {
           case 'nev2':
-            if ($scope.model[key].length)
+            isDisabled = !value.length;
             break;
           case 'telefonsz': 
-            isDisabled = false;
+            isDisabled = !value.length;
             break;
-          case 'email': 
+          case 'email':
+            isDisabled = !util.isEmail(value);
             break;
-          case 'fo': 
+          case 'fo':
+            value = parseInt(value);
+            isDisabled = isNaN(value) || value < 1;
             break;
-          case 'evszam': 
+          case 'evszam':
+            value = parseInt(value);
+            isDisabled = value < 2023 || value > 9999;
             break;
           case 'honap': 
+            value = parseInt(value);
+            isDisabled = value < 1 || value > 12;
             break;
-          case 'nap': 
+          case 'nap':
+            value = parseInt(value);
+            isDisabled = value < 1 || value > 31;
             break;
         }
-        if (isDisabled) return false;
+        return !isDisabled;
       });
+
+      // Set button enable/disable
       foglalas.disabled = isDisabled;
-      */
     };
 
+    // Foglalás
     $scope.insertData = function() {
-      console.log($scope.model);
+      http.request({
+        url: "./php/foglalas.php",
+        method: "POST",
+        data: $scope.model,
+      })
+      .then((data) => {
+        console.log(data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+      alert("Sikeresen lefoglalta az utat! Foglalását megtekintheti a foglalások menüpontban a bejelentkezés után.")
     };
   },
 ])
