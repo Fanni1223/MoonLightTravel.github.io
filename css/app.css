@@ -1243,3 +1243,12 @@ float: center;
   color: white;
 }
 
+.btn5{
+text-transform: none;
+writing-mode: horizontal-tb !important;
+border-image: initial;
+border: none;
+text-shadow: none;
+transform-origin: 0px 0px;
+text-indent: 0px;
+}
