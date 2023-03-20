@@ -262,8 +262,9 @@
     "$element",
     "$timeout",
     "http",
+    "util",
     "$stateParams",
-    function ($state, $scope, $element, $timeout, http, $stateParams) {
+    function ($state, $scope, $element, $timeout, http, util, $stateParams) {
 
 
       $scope.ut = $stateParams.ut;
@@ -284,12 +285,34 @@
       })
       .then((data) => {
         $scope.data = data;
+        $scope.model = {
+          proba: null
+        };
         $scope.$applyAsync();
       })
       .catch((e) => console.log(e));
+  
+  
+      // Foglalás
+      $scope.kedvencgomb = function() {
+        http.request({
+          url: "./php/kedvencek.php",
+          method: "POST",
+          data: $scope.model,
+        })
+        .then((data) => {
+          console.log(data);
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+        alert("Sikerült")
+      };
     },
   ])
+  
 
+  
 // Nyaralás controller
 .controller("nyaralasController", [
   '$state',

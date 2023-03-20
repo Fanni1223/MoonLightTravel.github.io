@@ -1252,3 +1252,15 @@ text-shadow: none;
 transform-origin: 0px 0px;
 text-indent: 0px;
 }
+
+.kedvenc button{
+  background-color: white;
+  color: black;
+  border: 1px solid black;
+}
+
+.sziv{
+  width: 20px;
+  height: 20px;
+}
+ 

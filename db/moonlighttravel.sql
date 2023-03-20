@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Gép: 127.0.0.1
--- Létrehozás ideje: 2023. Már 17. 10:07
+-- Létrehozás ideje: 2023. Már 20. 11:23
 -- Kiszolgáló verziója: 10.4.6-MariaDB
 -- PHP verzió: 7.3.8
 
@@ -54,13 +54,13 @@ INSERT INTO `felhasznalok` (`id`, `nev`, `email`, `jelszo`) VALUES
 
 CREATE TABLE `foglalas` (
   `foglalas_id` int(50) NOT NULL,
-  `teljes_nev` varchar(50) COLLATE utf8_hungarian_ci NOT NULL,
+  `nev2` varchar(50) COLLATE utf8_hungarian_ci NOT NULL,
   `telefonsz` int(11) NOT NULL,
   `email` varchar(50) COLLATE utf8_hungarian_ci NOT NULL,
   `fo` int(2) NOT NULL,
   `vegosszeg` int(6) NOT NULL,
   `kisagy` int(100) NOT NULL,
-  `evszam` date NOT NULL,
+  `evszam` year(4) NOT NULL,
   `honap` int(10) NOT NULL,
   `nap` int(10) NOT NULL,
   `oda_ora` int(10) NOT NULL,
@@ -72,8 +72,21 @@ CREATE TABLE `foglalas` (
 -- A tábla adatainak kiíratása `foglalas`
 --
 
-INSERT INTO `foglalas` (`foglalas_id`, `teljes_nev`, `telefonsz`, `email`, `fo`, `vegosszeg`, `kisagy`, `evszam`, `honap`, `nap`, `oda_ora`, `vissza_ora`, `ut_id2`) VALUES
-(1, 'kdhadkddf', 63, 'djfdsffdfhdfsdfsdf', 3, 12345, 2, '0000-00-00', 12, 1, 12, 12, 1);
+INSERT INTO `foglalas` (`foglalas_id`, `nev2`, `telefonsz`, `email`, `fo`, `vegosszeg`, `kisagy`, `evszam`, `honap`, `nap`, `oda_ora`, `vissza_ora`, `ut_id2`) VALUES
+(1, 'kdhadkddf', 63, 'djfdsffdfhdfsdfsdf', 3, 12345, 2, 0000, 12, 1, 12, 12, 1),
+(2, 'dfffd', 213232, 'sfdf@gmail.com', 1, 670000, 0, 2023, 12, 12, 8, 8, 1),
+(3, 'gfg', 4545, 'xsfd@gmail.com', 1, 670000, 0, 2023, 12, 12, 8, 8, 1);
+
+-- --------------------------------------------------------
+
+--
+-- Tábla szerkezet ehhez a táblához `kedvencek`
+--
+
+CREATE TABLE `kedvencek` (
+  `ut_id4` int(11) NOT NULL,
+  `proba` int(2) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_hungarian_ci;
 
 -- --------------------------------------------------------
 
@@ -350,7 +363,7 @@ ALTER TABLE `felhasznalok`
 -- AUTO_INCREMENT a táblához `foglalas`
 --
 ALTER TABLE `foglalas`
-  MODIFY `foglalas_id` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `foglalas_id` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT a táblához `szallas`
