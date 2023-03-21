@@ -20,11 +20,9 @@
           <a ui-sref="nyaralas({nyaralas:'{{ut.varos}}', ut_id: {{ut.ut_id}}})">
             <button type='submit' class='btn'>Tovább>></button>
           </a>
-          <a class="kedvenc">
-            <button type='submit' class='btn float-end'>Kedvenc<img src="./img/ikonok/sziv.svg" class="sziv m-1"></button>
+          <a class="kedvenc" ui-sref="ut_id: {{ut.ut_id}}})">
+            <button type='submit' class='btn float-end' ng-click="kedvencgomb()">Kedvenc<img src="./img/ikonok/sziv.svg" class="sziv m-1"></button>
           </a>
-         
-          
           </div>
         </div>
       </div>
