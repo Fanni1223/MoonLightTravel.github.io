@@ -49,9 +49,6 @@
           <a class="nav-link" ui-sref="foglalasok">Foglalások</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" ui-sref="kedvencek">Kedvencek</a>
-        </li>
-        <li class="nav-item">
           <a class="nav-link" ui-sref="blog">Blog</a>
         </li>
         <li class="nav-item">
@@ -61,20 +58,18 @@
    
      
       
-      <button class="btn mx-3" onclick="scrollFunc1()">Bejelentkezés\Regisztráció</button>
+      <button class="btn mx-3" ui-sref="home">Bejelentkezés\Regisztráció</button>
+      <button  class ="btn mx-2" id ="logout"onclick="Logout()">Kijelentkezés<i class='fa fa-sign-out mx-1' style='font-size:12px'></i></button>
      
       <div class="login-kep "> <img src="../MoonLightTravel.github.io/img/ikonok/ember.svg"  class="log-picture" alt=""></div>
       <div class="text-rigth ">{{user.nev}}</div>
     </div>
-  </div>
-  <script>
-    function scrollFunc1() {
-      let btn1 = document.getElementById("bejelentkezes");
-      btn1.scrollIntoView(false); 
-    }
-      </script>
-    
+  </div>  
 </nav>
 
-
+<script>
+  function Logout(){
+        location.reload();
+      }
+</script>
 

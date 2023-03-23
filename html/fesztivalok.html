@@ -4,31 +4,20 @@
     <h1>Holicolor fesztivál</h1>
   </div>
     <div class="row mt-5">
-      
-    <div class="col-12 col-md-8 kepgallery">
-      <div class="column2">
-        <img src="../MoonLightTravel.github.io/img/blog/holicolor1.jpg" style="width:100%" onclick="myFunction(this);">
+      <div class="col-xl-8 col-md-10 col-sm-12 mt-3">
+        <img src="../MoonLightTravel.github.io/img/blog/holicolor1.jpg" alt="Blog" title="Blog" id="nagy_kep" class="img-fluid clearfix">
+        
+        <div class="col-xl-9 col-md-10 col-sm-12 mt-2">
+          <img src="../MoonLightTravel.github.io/img/blog/holicolor2.jpg" alt="Blog" title="Blog" width="134px" onclick="nagyit(this)" class="mt-1 mx-1">
+          <img src="../MoonLightTravel.github.io/img/blog/holicolor3.jpg" alt="Blog" title="Blog" width="134px" onclick="nagyit(this)" class="mt-1 mx-1">
+          <img src="../MoonLightTravel.github.io/img/blog/holicolor4.jpg" alt="Blog" title="Blog" width="134px" onclick="nagyit(this)" class="mt-1 mx-1">
+          <img src="../MoonLightTravel.github.io/img/blog/holicolor1.jpg" alt="Blog" title="Blog" width="134px" onclick="nagyit(this)" class="mt-1 mx-1">
+        </div>
+
       </div>
-      <div class="column2">
-        <img src="../MoonLightTravel.github.io/img/blog/holicolor2.jpg" style="width:100%" onclick="myFunction(this);">
-      </div>
-      <div class="column2">
-        <img src="../MoonLightTravel.github.io/img/blog/holicolor3.jpg" style="width:100%" onclick="myFunction(this);">
-      </div>
-      <div class="column2">
-        <img src="../MoonLightTravel.github.io/img/blog/holicolor4.jpg" style="width:100%" onclick="myFunction(this);">
-      </div> 
-    
-  
-    <div>
-      <span class="closebtn" onclick="this.parentElement.style.display='none'">&times;</span>
-      <img id="expandedImg" style="width:83%">
-      <div id="imgtext"></div>
-    </div>
-  </div>
   
   
-  <div class="col-12 col-md-4 mt-2">
+  <div class="col-12 col-md-4 col-sm-10 mt-2">
     <p><i>A világ egyik leglátványosabb és legszínesebb bulijai között emlegetik</i></p>
     <p>Az elmúlt évek egyik #legsikeresebb és #leglátványosabb rendezvénysorozata, amely 2015 óta minden évben megrendezésre kerül!</p>
     <p>2023. május 13-án újra színekbe borul a lakiteleki Tőserdő, újra megrendezik az Open Holi Color Fesztivált immáron 8. alkalommal. A megszokott hangulat, dekoráció várja az ide érkezőket, csak a fellépők listáján található nevek változnak. A rendezvény teljes ideje alatt vidámparkos játékok lesznek, mely még jobban fokozza az est hangulatát.</p>
@@ -42,10 +31,10 @@
 
     
   </div>
-  </div>
+  
   </div>
   
-  
+  </div>
   
   <!-- Footer -->
   <footer id="availability"
@@ -53,19 +42,9 @@
   </footer>
   
   <script>
-    function initGallery() {
-      var firstImg = document.querySelector(".column2 img");
-      myFunction(firstImg);
-    }
-  
-    function myFunction(imgs) {
-      var expandImg = document.getElementById("expandedImg");
-      var imgText = document.getElementById("imgtext");
-      expandImg.src = imgs.src;
-      imgText.innerHTML = imgs.alt;
-      expandImg.parentElement.style.display = "block";
-    }
-    
-    // az első kép betöltése
-    initGallery();
+   function nagyit(elem) {
+    var nagy_kep_elem = document.getElementById("nagy_kep");
+    nagy_kep_elem.src = elem.src;
+    nagy_kep_elem.alt = elem.alt;
+  }
   </script>

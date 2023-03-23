@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Gép: 127.0.0.1
--- Létrehozás ideje: 2023. Már 20. 12:52
+-- Létrehozás ideje: 2023. Már 22. 15:03
 -- Kiszolgáló verziója: 10.4.6-MariaDB
 -- PHP verzió: 7.3.8
 
@@ -221,6 +221,7 @@ INSERT INTO `utak_kepek` (`neve`, `darabszam`, `ut_id3`, `neve2`) VALUES
 ('tokio2-min.jpg', 2, 8, ''),
 ('egyiptom2-min.jpg', 2, 9, ''),
 ('sydney2-min.jpg', 2, 10, ''),
+('kanada.jpg', 2, 11, ''),
 ('paris3-min.jpg', 3, 1, ''),
 ('marseille3-min.jpg', 3, 2, ''),
 ('lyon3-min.jpg', 3, 3, ''),
