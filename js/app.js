@@ -1,6 +1,6 @@
 ;(function(window, angular) {
 
-  'use strict';
+  //'use strict';
 
   // Application module
   angular.module('app', ['ui.router', 'app.common'])
@@ -113,11 +113,6 @@
           templateUrl: './html/foglalasok.html',
           controller: 'appController'
         })
-        .state('kedvencek', {
-          url: '/kedvencek',
-          templateUrl: './html/kedvencek.html',
-          controller: 'appController'
-        })
 
         .state('regisztracio', {
           controller: 'regisztracio'
@@ -133,39 +128,32 @@
     "$timeout",
     "http",
     function ($rootScope, $transitions, $timeout, http) {
-      // On before transaction
-      let isFirstRun = true;
-      $transitions.onBefore({}, function (transition) {
-        return $timeout(function () {
-          if (isFirstRun) {
-            isFirstRun = false;
-            if (transition.to().name !== "home")
-              return transition.router.stateService.target("home");
-          }
-          return true;
-        }).catch((e) => console.log(e));
-      });
 
       // Set global variables
       $rootScope.state = { id: null, prev: null };
       $rootScope.user = { id: null, nev: null };
 
-      // Get Flies
-      http
-        .request({
-          url: "./php/get.php",
-          method: "POST",
-          data: {
-            db: "moonlighttravel",
-            query: "SELECT * FROM `utak` WHERE varos = 'Kairó';",
-            isAssoc: true,
-          },
-        })
-        .then((data) => {
-          $rootScope.page2 = data;
-          $rootScope.$applyAsync();
-        })
-        .catch((e) => console.log(e));
+      // On before transaction
+      $transitions.onBefore({}, function (transition) {
+        return $timeout(function () {
+          if ($rootScope.state.id === null) {
+            if (transition.to().name !== "home")
+              return transition.router.stateService.target("home");
+          }
+          $rootScope.state.prev = $rootScope.state.id;
+          $rootScope.state.id   = transition.to().name;
+          console.log($rootScope.state.id);
+          return true;
+        }).catch((e) => console.log(e));
+      });
+
+      
+
+      $rootScope.logout = () => {
+        location.reload();
+      };
+
+     
     },
   ])
 
@@ -176,6 +164,8 @@
     '$state',
     'http',
     function($rootScope, $scope, $state, http) {
+
+      // Search
       $scope.place = "";
       $scope.searchForPlace = (place) => {
         place = place.trim();
@@ -251,6 +241,11 @@
             alert('Hibás email, vagy jelszó!');
           }
         })
+      };
+
+      $scope.scrollTo = (elementId, align=false) => {
+        let element = document.getElementById(elementId);
+        if (element) element.scrollIntoView(align);
       };
     }
   ])
@@ -468,27 +463,6 @@
   },
 ])
 
-
-
-/*
-//create data
-app.post('/felhasznalok',(req,res)=>{
-  console.log(req.body, 'creatdata');
-
-  let fullname = req.body.name;
-  let eMail = req.body.email;
-  let jElszo = req.body.jelszo ;
-
-  let qr = `insert into felhasznalok (nev, email, jelszo) values('$(fullname)','$(eMail)','$(jElszo)')`;
-
-  db.query(qr, (err,result)=>{
-    if(err){console.log(err);}
-    res.send({
-      message: 'data.inserted',
-    });
-  })
-})
-*/
 
 
 
