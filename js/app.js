@@ -147,7 +147,12 @@
         }).catch((e) => console.log(e));
       });
 
-      
+       // Add nagyit function to $rootScope
+    $rootScope.nagyit = function(elem) {
+      var nagy_kep_elem = document.getElementById("nagy_kep");
+      nagy_kep_elem.src = elem.src;
+      nagy_kep_elem.alt = elem.alt;
+    };
 
       $rootScope.logout = () => {
         location.reload();
