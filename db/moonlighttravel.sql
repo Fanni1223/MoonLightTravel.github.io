@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Gép: 127.0.0.1
--- Létrehozás ideje: 2023. Már 20. 12:52
+-- Létrehozás ideje: 2023. Már 24. 12:27
 -- Kiszolgáló verziója: 10.4.6-MariaDB
 -- PHP verzió: 7.3.8
 
@@ -54,13 +54,13 @@ INSERT INTO `felhasznalok` (`id`, `nev`, `email`, `jelszo`) VALUES
 
 CREATE TABLE `foglalas` (
   `foglalas_id` int(50) NOT NULL,
-  `nev2` varchar(50) COLLATE utf8_hungarian_ci NOT NULL,
+  `teljes_nev` varchar(50) COLLATE utf8_hungarian_ci NOT NULL,
   `telefonsz` int(11) NOT NULL,
   `email` varchar(50) COLLATE utf8_hungarian_ci NOT NULL,
   `fo` int(2) NOT NULL,
   `vegosszeg` int(6) NOT NULL,
   `kisagy` int(100) NOT NULL,
-  `evszam` year(4) NOT NULL,
+  `evszam` date NOT NULL,
   `honap` int(10) NOT NULL,
   `nap` int(10) NOT NULL,
   `oda_ora` int(10) NOT NULL,
@@ -72,21 +72,8 @@ CREATE TABLE `foglalas` (
 -- A tábla adatainak kiíratása `foglalas`
 --
 
-INSERT INTO `foglalas` (`foglalas_id`, `nev2`, `telefonsz`, `email`, `fo`, `vegosszeg`, `kisagy`, `evszam`, `honap`, `nap`, `oda_ora`, `vissza_ora`, `ut_id2`) VALUES
-(1, 'kdhadkddf', 63, 'djfdsffdfhdfsdfsdf', 3, 12345, 2, 0000, 12, 1, 12, 12, 1),
-(2, 'dfffd', 213232, 'sfdf@gmail.com', 1, 670000, 0, 2023, 12, 12, 8, 8, 1),
-(3, 'gfg', 4545, 'xsfd@gmail.com', 1, 670000, 0, 2023, 12, 12, 8, 8, 1);
-
--- --------------------------------------------------------
-
---
--- Tábla szerkezet ehhez a táblához `kedvencek`
---
-
-CREATE TABLE `kedvencek` (
-  `ut_id4` int(11) NOT NULL,
-  `proba` int(2) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_hungarian_ci;
+INSERT INTO `foglalas` (`foglalas_id`, `teljes_nev`, `telefonsz`, `email`, `fo`, `vegosszeg`, `kisagy`, `evszam`, `honap`, `nap`, `oda_ora`, `vissza_ora`, `ut_id2`) VALUES
+(1, 'kdhadkddf', 63, 'djfdsffdfhdfsdfsdf', 3, 12345, 2, '0000-00-00', 12, 1, 12, 12, 1);
 
 -- --------------------------------------------------------
 
@@ -121,19 +108,24 @@ INSERT INTO `szallas` (`szallas_id`, `megnev`, `leiras2`, `tipus`, `elhelyezkede
 (8, 'Grand Nikko Tokyo Daiba', 'A Grand Nikko Tokyo Daiba az első Grand Nikko szálloda Japánban, 2016. július 1-jétől. Az Odaiba városában, a Tokiói-öbölben található szálláshely a legközelebbi városi üdülőszálló Tokió központjához, 20 perces egysínű vasúti és vonatútra. JR Tokió állomás. A wifi a szálláshely egész területén ingyenes.', 5, '135-8701 Tokió prefektúra, Minato-ku Daiba 2-6-1 , Japán', 'hotel8-min.jpg', 279000, 'UAI (Ultra All Inclusive)', 'Ugyanaz, mint az All Inclusive, de az alkoholos italok (főleg a nemzetköziek) szélesebb választékával. Hoteltől függően magában foglalhat további szolgáltatásokat – pl. masszázsok, spa, szaunák.'),
 (9, 'Ramses Hilton ', 'Élvezze ki a szálláshely kínálta szabadidős létesítményeket és szolgáltatásokat, mint például a(z) éjszakai szórakozóhely és a(z) edzőterem, vagy ha úgy tartja kedve, próbálja ki szerencséjét a helyszíni kaszinóban. ', 5, '1115 Corniche El Nile, Kairó, Egyiptom', 'hotel9-min.jpg', 110000, 'HB (Half Board)', 'Azon kívül, hogy a hotelben aludhatunk, az árban reggeli és vacsora is benne van.'),
 (10, 'Mercure Gold Coast Resort', 'Lazuljon el, és enegedje, hogy testét, lelkét kényeztessék a teljes körű szolgáltatást nyújtó wellnessfürdőben, ahol masszázs és arckezelés is várja a pihenni vágyókat. Élvezze ki a szálláshely kínálta szabadidős létesítményeket és szolgáltatásokat, mint például a(z) 2 szabadtéri medence, a(z) szabadtéri teniszpálya és a(z) edzőterem.', 4, 'Palm Meadows Drive, Carrara, 4211 Gold Coast, Ausztrália', 'hotel10-min.jpg', 110000, 'AI (All Inclusive)', 'A legnépszerűbb étkeztetési mód, különösen azok körében, akik a szabadságukat a tengerparton szeretnénk tölteni, közel a hotelhez. Teljes ellátást foglal magában (napi három-hat étkezés, plusz a ropogtatnivalók), valamint az alkoholmentes italok és a helyi készítésű alkoholok korlátlan mennyiségű fogyasztását.'),
-(11, 'Chelsea Hotel, Toronto', '', 4, '33 Gerrard Street West, M5G 1Z4, Toronto, Kanada', 'hotel11-min.jpg', 86604, 'AI (All Inclusive)', 'A legnépszerűbb étkeztetési mód, különösen azok körében, akik a szabadságukat a tengerparton szeretnénk tölteni, közel a hotelhez. Teljes ellátást foglal magában (napi három-hat étkezés, plusz a ropogtatnivalók), valamint az alkoholmentes italok és a helyi készítésű alkoholok korlátlan mennyiségű fogyasztását.'),
-(12, 'Paramount Hotel Times Square', '', 4, '235 West 46th Street, Times Square, New York, Amerikai Egyesült Államok', 'hotel12-min.jpg', 99628, 'BB (Bed and Breakfast)', 'A szállás árában benne van a reggeli.'),
-(13, 'Super 8 By Wyndham Houston/Nasa/Webster Area', '', 2, 'Super 8 By Wyndham Houston/Nasa/Webster Area', 'hotel13-min.jpg', 24182, 'OV', 'Ezért nem jár semmilyen étkezés a hotelben. Ezt az aktív turisták választják, akik idejük nagy részét a hotelen kívül töltik.'),
-(14, 'Days Inn by Wyndham San Diego Hotel Circle Near SeaWorld', '', 3, 'Days Inn by Wyndham San Diego Hotel Circle Near SeaWorld', 'hotel24-min.jpg', 39219, 'BB (Bed and Breakfast)', 'A szállás árában benne van a reggeli.'),
-(15, 'Gold Dust West', '', 3, ' 2171 E William Street, Carson City, NV 89701, Amerika', 'hotel19-min.jpg', 46565, 'FB (Full Board)', 'Reggeli, ebéd és vacsora is benne van az árban. Azoknak ajánlott, akik nem terveznek három óránál hosszabb kirándulásokat, ugyanakkor nem akarnak étterembe menni.'),
-(16, 'YAVAPAI LODGE INSIDE THE PARK ', '', 2, 'Grand Canyon National Park - Grand Canyon Village', 'hotel20-min.jpg', 105521, 'OV', 'Ezért nem jár semmilyen étkezés a hotelben. Ezt az aktív turisták választják, akik idejük nagy részét a hotelen kívül töltik.'),
-(17, 'Kirowy Gościniec', '', 1, 'Groń 6, 34-511 Kościelisko, Lengyelország', 'hotel21-min.jpg', 23055, 'SC (Self Catering)', 'Önellátás. Étkezések nincsenek az árban, de a vendégek használhatják a konyhát vagy főzősarkot, ahol maguknak elkészíthetik az ételüket. Ez a legjobb választás, ha egy kis pénzt akar megtakarítani vagy szigorú diétát folytat.'),
-(18, 'Granbell Hotel Colombo', '', 4, '282/5, Kollupitiya Road, Kollupitiya, 00300 Colombo, Srí Lanka', 'hotel22-min.jpg', 0, 'AI (All Inclusive)', 'A legnépszerűbb étkeztetési mód, különösen azok körében, akik a szabadságukat a tengerparton szeretnénk tölteni, közel a hotelhez. Teljes ellátást foglal magában (napi három-hat étkezés, plusz a ropogtatnivalók), valamint az alkoholmentes italok és a helyi készítésű alkoholok korlátlan mennyiségű fogyasztását.'),
-(19, 'Prince Palace Hotel - SHA Extra Plus', '', 4, '488/800 Bo Bae Tower, Damrongrak Road, Mahanak, Pomprab Sattrupai, 10100 Bangkok,', 'hotel23-min.jpg', 0, 'PP', 'Az ételeket az utazás programjához illesztve szolgálják fel. Általában a szabadidőben szervezett kirándulások határozzák meg.'),
-(20, 'Mizingani Seafront Hotel', '', 4, 'Mizingani Road, StoneTown, Zanzibár, Tanzánia', 'hotel25-min.jpg', 40895, 'AI (All Inclusive)', 'A legnépszerűbb étkeztetési mód, különösen azok körében, akik a szabadságukat a tengerparton szeretnénk tölteni, közel a hotelhez. Teljes ellátást foglal magában (napi három-hat étkezés, plusz a ropogtatnivalók), valamint az alkoholmentes italok és a helyi készítésű alkoholok korlátlan mennyiségű fogyasztását.'),
-(21, 'Lazure Hotel & Marina', '', 5, 'Braće Pedišića 10, 85340 Herceg Novi, Montenegró', 'hotel28-min.jpg', 65660, 'UAI (Ultra All Inclusive)', 'Ugyanaz, mint az All Inclusive, de az alkoholos italok (főleg a nemzetköziek) szélesebb választékával. Hoteltől függően magában foglalhat további szolgáltatásokat – pl. masszázsok, spa, szaunák.'),
-(22, 'Extended Stay America Suites - Houston - Galleria - Westheimer', '', 2, '4701 Westheimer Road, Houston, TX 77027, Amerika ', 'hotel26-min.jpg', 33450, 'OV', 'Ezért nem jár semmilyen étkezés a hotelben. Ezt az aktív turisták választják, akik idejük nagy részét a hotelen kívül töltik.'),
-(24, 'Hotel Tirolerhof', '', 4, 'Hofgasse 214, 5542 Flachau, Ausztria', 'hotel29-min.jpg', 25500, 'BB (Bed and Breakfast)', 'A szállás árában benne van a reggeli.');
+(11, 'Chelsea Hotel, Toronto', 'A College metróállomástól kevesebb mint 300 méterre található szálloda helyszíni étkezési lehetőséggel, valamint fitneszközponttal és 2 fedett medencével is várja vendégeit. A Toronto Eaton Centre bevásárlóközpont 600 méterre fekszik.', 4, '33 Gerrard Street West, M5G 1Z4, Toronto, Kanada', 'hotel11-min.jpg', 86604, 'AI (All Inclusive)', 'A legnépszerűbb étkeztetési mód, különösen azok körében, akik a szabadságukat a tengerparton szeretnénk tölteni, közel a hotelhez. Teljes ellátást foglal magában (napi három-hat étkezés, plusz a ropogtatnivalók), valamint az alkoholmentes italok és a helyi készítésű alkoholok korlátlan mennyiségű fogyasztását.'),
+(12, 'Paramount Hotel Times Square', 'A 605 szobás butikhotel, a Paramount Hotel épülete New Yorkban, a Színháznegyedben helyezkedik el, a Times Square-től 170 méterre.', 4, '235 West 46th Street, Times Square, New York, Amerikai Egyesült Államok', 'hotel12-min.jpg', 99628, 'BB (Bed and Breakfast)', 'A szállás árában benne van a reggeli.'),
+(13, 'Super 8 By Wyndham Houston/Nasa/Webster Area', 'A Super 8 Houston/NASA/Webster Websterben található, 5 perces autóútra a NASA Űrközponttól. A szálláshely szabadtéri medencével és üzleti központtal várja vendégeit.', 2, 'Super 8 By Wyndham Houston/Nasa/Webster Area', 'hotel13-min.jpg', 24182, 'OV', 'Ezért nem jár semmilyen étkezés a hotelben. Ezt az aktív turisták választják, akik idejük nagy részét a hotelen kívül töltik.'),
+(14, 'Days Inn by Wyndham San Diego Hotel Circle Near SeaWorld', 'A Days Inn by Wyndham San Diego Hotel Circle tágas szobákat kínál ingyenes wifivel a SeaWorld San Diego élménypark közelében, a San Diego nemzetközi repülőtértől 8 km-re. A vendégeket egész évben fűtött, kültéri medence, pezsgőfürdő és helyszíni étterem várja.', 3, 'Days Inn by Wyndham San Diego Hotel Circle Near SeaWorld', 'hotel24-min.jpg', 39219, 'BB (Bed and Breakfast)', 'A szállás árában benne van a reggeli.'),
+(15, 'Gold Dust West', 'A Carson Cityben található Gold Dust West 24 órás kaszinót kínál több mint 400 legújabb játékkal. Egy szabadtéri medence és egy gyógyfürdő is rendelkezésre áll. A Reno-Tahoe nemzetközi repülőtér 36 km-re található.', 3, ' 2171 E William Street, Carson City, NV 89701, Amerika', 'hotel19-min.jpg', 46565, 'FB (Full Board)', 'Reggeli, ebéd és vacsora is benne van az árban. Azoknak ajánlott, akik nem terveznek három óránál hosszabb kirándulásokat, ugyanakkor nem akarnak étterembe menni.'),
+(16, 'YAVAPAI LODGE INSIDE THE PARK ', 'A Yavapai Lodge®-ban a természet szépsége találkozik a kényelem varázslatával. A Grand Canyon Nemzeti Parkban található szálloda kiváló helyen, a déli peremen található. A szállás rövid sétára vagy buszútra található a déli peremtől, és pár lépésre a piactól, a banktól és a postától. Természetesen ez több, mint a tökéletes hely a kaland elindításához. Fő szállása remek hely a kikapcsolódásra és feltöltődésre, köszönhetően a hangulatos ülősaroknak és a szabadtéri terasznak.', 2, 'Grand Canyon National Park - Grand Canyon Village', 'hotel20-min.jpg', 105521, 'OV', 'Ezért nem jár semmilyen étkezés a hotelben. Ezt az aktív turisták választják, akik idejük nagy részét a hotelen kívül töltik.'),
+(17, 'Kirowy Gościniec', 'A Kis-Lengyelország régióban, Kościeliskóban található Kirowy Gościniec ingyenes wifivel, grillezési lehetőséggel, fitneszközponttal és ingyenes parkolási lehetőséggel várja vendégeit. A fontos helyek távolsága a létesítménytől: Gubałówka - 8,5 km.', 1, 'Groń 6, 34-511 Kościelisko, Lengyelország', 'hotel21-min.jpg', 23055, 'SC (Self Catering)', 'Önellátás. Étkezések nincsenek az árban, de a vendégek használhatják a konyhát vagy főzősarkot, ahol maguknak elkészíthetik az ételüket. Ez a legjobb választás, ha egy kis pénzt akar megtakarítani vagy szigorú diétát folytat.'),
+(18, 'Granbell Hotel Colombo', 'A Colombóban, a Kollupitiya strandtól 90 méterre található Granbell Hotel Colombo szabadtéri úszómedencével, ingyenes parkolási lehetőséggel, fitneszközponttal és terasszal várja vendégeit. Az étteremmel, bárral, szaunával és pezsgőfürdővel rendelkező szálláshelyen A szálláshely szobaszervizt, 24 órás recepciót és pénzváltót kínál vendégeinek.', 4, '282/5, Kollupitiya Road, Kollupitiya, 00300 Colombo, Srí Lanka', 'hotel22-min.jpg', 150000, 'AI (All Inclusive)', 'A legnépszerűbb étkeztetési mód, különösen azok körében, akik a szabadságukat a tengerparton szeretnénk tölteni, közel a hotelhez. Teljes ellátást foglal magában (napi három-hat étkezés, plusz a ropogtatnivalók), valamint az alkoholmentes italok és a helyi készítésű alkoholok korlátlan mennyiségű fogyasztását.'),
+(19, 'Prince Palace Hotel - SHA Extra Plus', 'A Prince Palace Hotel épülete Bangkok óvárosában, közvetlenül a Bo Bae Tower divatáruház felett található. A Mahanak-csatornára kilátást nyújtó szálloda szabadtéri medencét és 7 különböző étkezési lehetőséget kínál. A közös helyiségekben ingyenes wifi áll rendelkezésre.', 4, '488/800 Bo Bae Tower, Damrongrak Road, Mahanak, Pomprab Sattrupai, 10100 Bangkok,', 'hotel23-min.jpg', 160000, 'PP', 'Az ételeket az utazás programjához illesztve szolgálják fel. Általában a szabadidőben szervezett kirándulások határozzák meg.'),
+(20, 'Mizingani Seafront Hotel', 'A Mizingani Seafront Hotel mindössze 2 perces sétára helyezkedik el Zanzibár kompkikötőjétől. A szálloda étteremmel, szabadtéri medencével és éjjel-nappal nyitva tartó recepcióval várja vendégeit. A helyszíni magánparkoló díjmentesen használható.', 4, 'Mizingani Road, StoneTown, Zanzibár, Tanzánia', 'hotel25-min.jpg', 40895, 'AI (All Inclusive)', 'A legnépszerűbb étkeztetési mód, különösen azok körében, akik a szabadságukat a tengerparton szeretnénk tölteni, közel a hotelhez. Teljes ellátást foglal magában (napi három-hat étkezés, plusz a ropogtatnivalók), valamint az alkoholmentes italok és a helyi készítésű alkoholok korlátlan mennyiségű fogyasztását.'),
+(21, 'Lazure Hotel & Marina', 'A Kotori-öbölre néző Lazure Hotel & Marina luxus szállást kínál 2 km-re Herceg Novi városától. Az üdülőhelyen 2 étterem, valamint szezonális strandbár és lobbibár található. Ingyenes Wi-Fi és ingyenes privát parkoló – garázsok – biztosítottak.', 5, 'Braće Pedišića 10, 85340 Herceg Novi, Montenegró', 'hotel28-min.jpg', 65660, 'UAI (Ultra All Inclusive)', 'Ugyanaz, mint az All Inclusive, de az alkoholos italok (főleg a nemzetköziek) szélesebb választékával. Hoteltől függően magában foglalhat további szolgáltatásokat – pl. masszázsok, spa, szaunák.'),
+(22, 'Hotel Tirolerhof\r\n', 'A Zillertal 3000 síterülethez vezető Rastkogel és Eggalm felvonók között, a Zillertal-völgyben, Tux faluban található Hotel Tirolerhof 4 Sterne Superior alpesi stílusú szobákkal, tipikus tiroli konyhával, hangulatos társalgóval, kandallóval és wellnessrészleggel várja vendégeit.', 4, 'Hofgasse 214, 5542 Flachau, Ausztria', 'hotel29-min.jpg', 25500, 'BB (Bed and Breakfast)', 'A szállás árában benne van a reggeli.'),
+(23, 'Hotel Milton Roma', 'A 18. századi épületben kialakított Hotel Milton Roma elegáns szobákat kínál parkettás padlóval és 300 Mbit adatforgalomig ingyenes nagy sebességű wifivel, valamint kerti bárral várja vendégeit mindössze néhány méterre a római Manzoni metróállomástól. A Colosseum 12 perces sétával elérhető.', 4, 'Via Emanuele Filiberto 155, a római központi pályaudvar, 00185 Róma, Olaszország', 'hotel26-min.jpg', 275460, 'BB (Bed and Breakfast)', 'A szállás árában benne van a reggeli.'),
+(24, 'Athens Golden City Hotel', 'Az Athens Golden City Hotel a Metaxourgeio metróállomástól mindössze 400 méterre várja vendégeit, akik a Wi-Fi-t ingyen használhatják a közös helyiségekben. Az Athén városára panorámás kilátást nyújtó tetőtéri étteremben görög ételeket szolgálnak fel reggelire és vacsorára.', 3, 'Marnis 46, Athén, 10432, Görögország ', 'hotel30.jpg', 37765, 'OV', 'Ezért nem jár semmilyen étkezés a hotelben. Ezt az aktív turisták választják, akik idejük nagy részét a hotelen kívül töltik.'),
+(25, 'Svalbard Hotell | The Vault', 'A Longyearbyenben, a Svalbard-templomtól 800 méterre található Svalbard Hotell | A Vault bárral, díjmentes magánparkolóval, közös társalgóval és terasszal rendelkezik. A 3 csillagos szálloda jegyirodai szolgáltatást és poggyászmegőrzőt is biztosít. A szálláshely éjjel-nappali recepciót, utazásszervezői pultot, reptéri transzfert és egész területén ingyenes wifit kínál vendégeinek.', 3, '500 / 503, 9170 Longyearbyen, Norvégia ', 'hotel31.jpg', 218815, 'BB (Bed and Breakfast)', 'A szállás árában benne van a reggeli.'),
+(26, 'InterContinental Shanghai Wonderland, an IHG Hotel', 'Az InterContinental Shanghai Wonderland Songjiangban, Sanghaj gyökerében található, a sanghaji Hongqiao negyed közelében, 40 percre a Shanghai Hongqiao nemzetközi repülőtértől, a sanghaji pályaudvartól és a Sanghaji Nemzeti Kiállítási és Kongresszusi Központtól. Kína mérföldkőjének számít, 88 méterrel közelebb a Föld szívéhez. A szálloda az építészeti és formatervezési innovációk megtestesítője a mérnöki áttörésekkel, egy félelmetes úti cél, amely összehozza a gazdag utazókat', 4, '5888 Chenhua Road, Shanghai 201619 China', 'hotel32.jpg', 118219, 'BB (Bed and Breakfast)', 'A szállás árában benne van a reggeli.'),
+(27, 'Busan Business Hotel', 'Kezdje tökéletesen utazását! A szálláshelyen az ingyenes wifi minden szobában a megtalálható a szolgáltatások között. A szálláshely Soemyeon területén található. Stratégiai elhelyezkedésének köszönhetően, innen könnyedén felfedezhetjük a helyi látványosságokat. Mindenképpen illessze bele programjába a híres Haeundae Beach meglátogatását. E 4 csillagos szálláshelyen az étterem is megtalálható a szolgáltatások között, így a tartózkodása még kényelmesebb és emlékezetesebb lehet!', 4, '67,Bujeon-ro, Buanjin-gu, Soemyeon, Busan, Dél-Korea, 47284 ', 'hotel33.jpg', 20963, 'AI (All Inclusive)', 'A legnépszerűbb étkeztetési mód, különösen azok körében, akik a szabadságukat a tengerparton szeretnénk tölteni, közel a hotelhez. Teljes ellátást foglal magában (napi három-hat étkezés, plusz a ropogtatnivalók), valamint az alkoholmentes italok és a helyi készítésű alkoholok korlátlan mennyiségű fogyasztását.'),
+(28, 'ISG Sabiha Gökçen Airport Hotel', 'A szálloda modern szobákat kínál az isztambuli Sabiha Gokcen repülőtér területén. A poggyász szállításáról is gondoskodó szálloda vendégei online is bejelentkezhetnek járataikra a recepción.', 4, 'Istanbul Sabiha Gokcen Uluslararasi Havalimani Pendik, 34912 Isztambul,', 'hotel24.jpg', 35000, 'AI (All Inclusive)', 'A legnépszerűbb étkeztetési mód, különösen azok körében, akik a szabadságukat a tengerparton szeretnénk tölteni, közel a hotelhez. Teljes ellátást foglal magában (napi három-hat étkezés, plusz a ropogtatnivalók), valamint az alkoholmentes italok és a helyi készítésű alkoholok korlátlan mennyiségű fogyasztását.');
 
 -- --------------------------------------------------------
 
@@ -180,18 +172,23 @@ INSERT INTO `utak` (`ut_id`, `kontinens`, `orszag`, `varos`, `utak_img`, `leiras
 (9, 'Afrika', 'Egyiptom', 'Kairó', 'egyiptom1-min.jpg', 'Az Egyiptomi Régiségek Múzeuma, melyet gyakran csak Egyiptomi Múzeum néven említenek, Egyiptom fővárosában, Kairóban, a Tahrír téren áll, és legendás lazac színű épülete rejti a világ leggazdagabb egyiptológiai gyűjteményét. A Kairói Citadella vagy Szaladin fellegvára egy középkori iszlám kori erődítmény Kairóban, Egyiptomban, amelyet Salah ad-Din épített, és a későbbi egyiptomi uralkodók fejlesztettek tovább. Az Amr Ibn al-Ász mecset Kairó történelmi kerületében található, Egyiptomban. Gízai piramisok néven három piramist értünk: az egyiptomi óbirodalmi Hufu, Hafré és Menkauré fáraók piramisait. Maga a teljes piramismező a három nagy piramison kívül magába foglalja a hozzájuk tartozó halotti templomokat, kisebb piramisokat \r\n\r\n\r\n', 'repülő', 'repulo.svg', 'külföldi', 'Piramisok városa, Kairó', '6 nap', 9, 'Afrika', 'Egyiptom', 'Kairo', 'last minute', 500000, '3 óra 25 perc', 'Magyarország, Budapest, 1185 Nemzetközi Repülőtér', 'Egyiptomi Régiségek Múzeuma\r\nCitadella\r\nAmr Ibn al-Ász mecset\r\nGízai piramismező'),
 (10, 'Ausztrália', 'Ausztrália', 'Sydney', 'sydney1-min.jpg', 'A Sydney-i Királyi Botanikus Kert egy műemléki védettségű, 30 hektáros botanikus kert, rendezvényhelyszín és nyilvános rekreációs terület. A Sydney-torony Sydney legmagasabb építménye, Ausztrália, és a második legmagasabb kilátó a déli féltekén. A BridgeClimb Sydney egy ausztrál turistalátványosság. A BridgeClimb elkalauzolja a vendégeket a Sydney Harbour Bridge megmászására. A Wild Life Sydney Zoo egy vadaspark a Darling Harbor körzetben, Sydney központi üzleti negyedének nyugati szélén, Sydneyben, Új-Dél-Walesben, Ausztráliában. A Hornby Lighthouse, más néven South Head Lower Light vagy South Head Signal Station, egy műemléki védelem alatt álló aktív világítótorony, amely South Head csúcsán, Új-Dél-Walesben, Ausztráliában található.\r\n\r\n\r\n', 'repülő', 'repulo.svg', 'külföldi', 'Nyaralás Sydney tengerpartján', '5 nap', 10, 'Ausztralia', 'Ausztralia', 'Sydney', 'tengerparti nyaralás', 900000, '1 nap 18 óra', 'Magyarország, Budapest, 1185 Nemzetközi Repülőtér', 'Royal Botanic Garden\r\nSydney Tower Eye\r\nBridgeClimb\r\nWILD LIFE Sydney\r\nHornby Lighthouse'),
 (11, 'Amerika', 'Kanada', 'Torontó', 'kanada.jpg', 'A CN Towert 1973 és 1976 között építették a kanadai Torontóban, az ottani ipar erejének demonstrálása végett. A Royal Ontario Museum egy művészeti, világkultúra és természettörténeti múzeum Torontóban, Ontario államban, Kanadában. A Toronto Eaton Center egy bevásárlóközpont és irodakomplexum a kanadai Ontario állam Toronto belvárosában. A Nathan Phillips Square egy városi tér Torontóban, Ontario államban, Kanadában. A Casa Loma egy gótikus, újjászületett kastély stílusú kastély és kert a kanadai Ontario állambeli Toronto belvárosában, amely ma történelmi házmúzeum és nevezetesség.', 'repülő', 'repulo.svg', 'kulfoldi', 'Helyek ,amelyeket láttnia kell Torontóban', '5 nap', 11, 'Amerika', 'Kanada', 'Torontó', 'varoslatogatas', 600000, '21 óra 29 perc', 'Magyarország, Budapest, 1185 Nemzetközi Repülőtér', 'CN Tower, Royal Ontario Museum, CF Toronto Eaton Centre,  Nathan Phillips Square, Casa Loma'),
-(12, 'Amerika', 'Egyesült Államok', 'New York', 'NewYork.jpg', 'A Central Park egy 3,41 km² területű nyilvános park Manhattan szívében, New York városában. Az Empire State Building New York város 102 emeletes, 381 méter magas épülete és egyik jelképe, 42 évig volt az USA legmagasabb épülete. A Times Square New Yorkban, Manhattan városrész egyik negyede. Egyike a legismertebb amerikai negyedeknek, a napi látogatószáma eléri a 330 ezret. A Szabadság megvilágosítja a világot, ismertebb nevén a Szabadság-szobor New York előtt, a Liberty Islanden található, a Hudson folyó torkolatánál. A High Line Park, vagy ahogy szintén ismert, a High Line, egy 1,6 km² területű nyilvános, lineáris park Manhattan nyugati részén, New Yorkban. A New York-i Modern Művészeti Múzeum egyike a világ legjelentősebb kortárs gyűjteménnyel rendelkező művészeti múzeumainak. ', 'repülő', 'repulo.svg', 'kulfoldi', 'New York kihagyhatatlan programjai', '6 nap', 12, 'Amerika', 'Egyesült Államok', 'New York', 'lastminute', 4000000, '13 óra 5perc', 'Magyarország, Budapest, 1185 Nemzetközi Repülőtér', 'Central Park, Empire State Building , Times Square, Szabadság-szobor, High Line Park, Modern Művészeti Múzeum'),
-(13, 'Amerika', 'Texas', 'Houston', 'Texas.jpg', 'Space Center Houston egy tudományos múzeum, amely a NASA Johnson Space Center hivatalos látogatóközpontjaként szolgál Houstonban. A Discovery Green egy 11,78 hektáros nyilvános városi park Houston belvárosában, Texas államban, amelyet nyugaton a La Branch Street, északon a McKinney Street, keleten az Avenida de las Americas és délen a Lamar Street határol. A Houstoni Természettudományi Múzeum egy természettudományi múzeum, amely a Hermann Park északi határán található Houstonban, Texas államban, az Egyesült Államokban. A Hermann Park egy 445 hektáros városi park Houstonban, Texasban, a Múzeumi negyed déli végén. A San Jacinto Monument egy 567,31 láb magas oszlop a Houston Ship Channel csatornán, a jogi személyiség nélküli Harris megyében, Texas államban, körülbelül 16 mérföldre keletre Houston belvárosától. A Miller Outdoor Theatre egy szabadtéri előadóművészeti színház Houstonban, Texasban. A Houston Zoo egy 55 hektáros állatkert, amely a Hermann Parkban található Houstonban, Texas államban, az Egyesült Államokban.', 'repülő', 'repulo.svg', 'kulfoldi', 'A világ legnagyobb angol nyelvű városa', '7 nap', 13, 'Amerika', 'Texas', 'Houston', 'lastminute', 1000000, '18 óra 25 perc', 'Magyarország, Budapest, 1185 Nemzetközi Repülőtér', 'Space Central Houston, Discovery Green, Houstoni Természettudományi Múzeum, Hermann Park, San Jacinto Museum of History, Miller Outdoor Theatre, Houston Zoo'),
-(14, 'Amerika', 'Kalifornia', 'San Diego', 'kalifornia.jpg', 'A Seaport Village egy vízparti bevásárló- és étkezőkomplexum a San Diego-öböl szomszédságában, San Diego belvárosában, Kaliforniában. A Balboa Park egy 1200 hektáros történelmi városi kulturális park San Diego-ban, Kaliforniában, az Egyesült Államokban. A Birch Aquarium at Scripps egy akvárium és a San Diego-i Kaliforniai Egyetem Scripps Oceanográfiai Intézetének nyilvános információs központja. A USS Midway Museum egy történelmi haditengerészeti repülőgép-hordozó múzeum, amely a kaliforniai San Diego belvárosában, a Navy Piernél található. A San Diego-i Állatkert egy állatkert Kaliforniában, San Diégóban. A világ egyik leghíresebb állatkertje. Több mint 650 faj, kb. 3700 egyede él itt. Területe 40 hektár.', 'repülő', 'repulo.svg', 'kulfoldi', 'Napfényes Kaliforniai utazás', '5 nap', 14, 'Amerika', 'Kalifornia', 'San Diego', 'varoslatogatas', 200000, '21 óra 50 perc', 'Magyarország, Budapest, 1185 Nemzetközi Repülőtér', 'Seaport Village, Balboa Park, Birch Aquarium at Scripps Institution of Oceanography, USS Midway Museum, San Diego Állatkert'),
-(15, 'Amerika', 'Nevada', 'Las Vegas', 'nevada.jpg', 'A High Roller egy 550 láb magas, 520 láb átmérőjű óriási óriáskerék a Las Vegas Strip-en, Paradise-ban. Az elegáns kaszinóhotelekkel szegélyezett, neonfénnyel átitatott Strip Las Vegas elválaszthatatlan része. A kaszinókhoz hasonlóan a hatalmas hotelkomplexumokban is számos különböző bolt és étterem – az általánostól a luxusig – áll a vendégek rendelkezésére, és koncerteket, vígjátékokat, cirkuszi bemutatókat felvonultató színpadok kínálnak szórakozási lehetőséget. A szökőkút egy 3,2 hektáros, mesterséges tavon található, és bár a városi legendák szerint a hotel szennyvizét vezetik el ide, ez nem igaz. A tavat egy édesvizű kút táplálja, amit akkoriban fúrtak, amikor a területen még egy golfpálya működött – ezzel locsolták a füvet. ', 'repülő', 'repulo.svg', 'kulfoldi', 'Las Vegas a világ legfényesebb városa', '3 nap', 15, 'Amerika', 'Nevada', 'Las Vegas', 'lastminute', 3000000, '19 óra 50 perc', 'Magyarország, Budapest, 1185 Nemzetközi Repülőtér', 'Caesars Palace, High Roller, The STRAT Hotel, Casino & SkyPod, The Mirage'),
-(16, 'Amerika', 'Egyesült Államok', 'Grand Canyon', 'grand-canyon.jpg', 'A Yavapai Pointnál, a kanyon peremének szélén található Yavapai Geológiai Múzeum az egyik legjobb kilátópontot kínálja a Grand Canyon geológiájának áttekintésére. A festői Remete út a falu történelmi negyedének nyugati oldalán kezdődik. Az út a kanyon peremét követi 11 km-en keresztül a Hermits Rest-hez és a Remete-ösvényhez. A Desert View park keleti bejárata a nap 24 órájában, a hét minden napján nyitva tart. ', 'repülő', 'repulo.svg', 'kulfoldi', 'Grand-canyon a kortalan szépség', '3 nap', 16, 'Amerika', 'Egyesült Államok', 'Grand Canyon', 'lastminute', 3000000, '7 óra', 'Magyarország, Budapest, 1185 Nemzetközi Repülőtér', 'Geológiai Múzeum, Hermit Road Drive,Desert View Őrtorony, Bright Angel túraútvonal'),
-(17, 'Európa', 'Lengyelország', 'Kiry', 'lengyel5-min.jpg', 'Lengyelország természeti adottságai miatt tökéletes a túrázás illetve hegymászás kedvelőinek. Az emberi környezet szennyezés által nem érintett természet csodái minden felé megtalálhatóak. ', 'autó', 'auto.svg', 'külföldi', '5 napos nyaralás a friss hegyi levegőben Lengyelor', '5 nap', 17, 'Európa', 'Lengyelorzsag', 'Kiry', 'lastminute', 48000, '7 óra', 'Makó posta utca 4-6', 'Túrák illetve hegymászások'),
-(18, 'Ázsia', 'Szigetország', 'Srí Lanka', 'srilanka1.jpg', '', 'repülő', 'repulo.svg', 'kulfoldi', 'Fedezze fel a az India-óceánban elterülő, könnycsepp alakú kis szigetet!', '5 nap', 18, 'Ázsia', 'Szigetország', 'Srí Lanka', 'tengerparti', 6000000, '12 óra 55 perc', 'Budapest', 'Pinnawala Elefántrezervátum, Nuwara Eliya, Arugam-öböl, Yala Nemzeti Park, Érintetlen szigetvilág'),
-(19, 'Ázsia', 'Thaiföld', 'Bangkok', 'thaifold.jpg', '', 'repülő', 'repulo.svg', 'kulfoldi', 'Látogasd meg Thaiföld misztikus, ősi műemlékeit  ', '7 nap', 19, 'Ázsia', 'Thaiföld', 'Bangkok', 'lastminute', 12000000, '15 óra 30 perc', 'Budapest', 'Grand Palace, Wat Pho – A fekvő Buddha temploma, Wat Arun – A Hajnal, Wat Traimit - Az arany Buddha temploma, Bankoki Nemzeti Múzeum, Jim Thomspon Ház, Úszópiacok'),
-(20, 'Afrika', 'Tanzánia', 'Zanzibár', 'zanzibar.jpg', '', 'repülő', 'repulo.svg', 'kulfoldi', 'Pálmafákkal teli homokos partra vágysz? Írány Zanzibár!', '7 nap', 20, 'Afrika', 'Tanzánia', 'Zanzibár', 'tengerparti', 7500000, '1 nap 6 óra', 'Budapest', 'Stone Town, Old Fort,  Forodhani kert, Csodák háza, Freddy Mercury Múzeum, Anglikán katedrális, Rabszolgapiac emlékmű'),
-(21, 'Európa ', 'Montenegró', 'Herceg novi', 'montenegro5.jpg', '', 'repülő', 'repulo.svg', 'kulfoldi', 'Unod az egyszerű nyaralásokat? Gyere és fedezd fel a Balkán-félszigetet!', '5 nap', 21, 'Európa ', 'Montenegró', 'Herceg novi', 'tengerparti', 7000000, '19 óra 45 perc', 'Budapest', 'Kanli kula, Forte Mare, Old Town, Durmitor, Savina Monastery, Montenegro'),
-(22, 'Amerika', 'Texas', 'Houston', 'Houston2.jpg', '', 'repülő', 'repulo.svg', 'kulfoldi', 'Látogass el az Amerikai Egyesült Államok negyedik legnépesebb városába', '7 nap', 22, 'Amerika', 'Texas', 'Houston', 'lastminute', 10000000, '18 óra 25 perc', 'Budapest', 'Space Central Houston, Discovery Green, Houstoni Természettudományi Múzeum, Hermann Park, San Jacinto Museum of History, Miller Outdoor Theatre, Houston Zoo'),
-(24, 'Európa ', 'Ausztria', 'Schneebergdörfl', 'hegytura4.jpg', '', 'repülő', 'repulo.svg', 'kulfoldi', 'Szeret túrázni ? Másszon fel Alsó-Ausztria legmagasabb hegycsúcsára ,a  Schneebergre!', '3 nap', 24, 'Európa ', 'Ausztria', 'Schneebergdörfl', 'lastminute', 500000, '4 óra 55 perc', 'Budapest', 'Hegymászás');
+(12, 'Amerika', 'Egyesült Államok', 'New York', 'NewYork.jpg', 'A Central Park egy 3,41 km² területű nyilvános park Manhattan szívében, New York városában. Az Empire State Building New York város 102 emeletes, 381 méter magas épülete és egyik jelképe, 42 évig volt az USA legmagasabb épülete. A Times Square New Yorkban, Manhattan városrész egyik negyede. Egyike a legismertebb amerikai negyedeknek, a napi látogatószáma eléri a 330 ezret. A Szabadság megvilágosítja a világot, ismertebb nevén a Szabadság-szobor New York előtt, a Liberty Islanden található, a Hudson folyó torkolatánál. A High Line Park, vagy ahogy szintén ismert, a High Line, egy 1,6 km² területű nyilvános, lineáris park Manhattan nyugati részén, New Yorkban. A New York-i Modern Művészeti Múzeum egyike a világ legjelentősebb kortárs gyűjteménnyel rendelkező művészeti múzeumainak. ', 'repülő', 'repulo.svg', 'kulfoldi', 'New York kihagyhatatlan programjai', '6 nap', 12, 'Amerika', 'Egyesült Államok', 'New York', 'last minute', 4000000, '13 óra 5perc', 'Magyarország, Budapest, 1185 Nemzetközi Repülőtér', 'Central Park, Empire State Building , Times Square, Szabadság-szobor, High Line Park, Modern Művészeti Múzeum'),
+(13, 'Amerika', 'Texas', 'Houston', 'Texas.jpg', 'Space Center Houston egy tudományos múzeum, amely a NASA Johnson Space Center hivatalos látogatóközpontjaként szolgál Houstonban. A Discovery Green egy 11,78 hektáros nyilvános városi park Houston belvárosában, Texas államban, amelyet nyugaton a La Branch Street, északon a McKinney Street, keleten az Avenida de las Americas és délen a Lamar Street határol. A Houstoni Természettudományi Múzeum egy természettudományi múzeum, amely a Hermann Park északi határán található Houstonban, Texas államban, az Egyesült Államokban. A Hermann Park egy 445 hektáros városi park Houstonban, Texasban, a Múzeumi negyed déli végén. A San Jacinto Monument egy 567,31 láb magas oszlop a Houston Ship Channel csatornán, a jogi személyiség nélküli Harris megyében, Texas államban, körülbelül 16 mérföldre keletre Houston belvárosától. A Miller Outdoor Theatre egy szabadtéri előadóművészeti színház Houstonban, Texasban. A Houston Zoo egy 55 hektáros állatkert, amely a Hermann Parkban található Houstonban, Texas államban, az Egyesült Államokban.', 'repülő', 'repulo.svg', 'kulfoldi', 'A világ legnagyobb angol nyelvű városa', '7 nap', 13, 'Amerika', 'Texas', 'Houston', 'last minute', 1000000, '18 óra 25 perc', 'Magyarország, Budapest, 1185 Nemzetközi Repülőtér', 'Space Central Houston, Discovery Green, Houstoni Természettudományi Múzeum, Hermann Park, San Jacinto Museum of History, Miller Outdoor Theatre, Houston Zoo'),
+(14, 'Amerika', 'Kalifornia', 'San Diego', 'kalifornia.jpg', 'A Seaport Village egy vízparti bevásárló- és étkezőkomplexum a San Diego-öböl szomszédságában, San Diego belvárosában, Kaliforniában. A Balboa Park egy 1200 hektáros történelmi városi kulturális park San Diego-ban, Kaliforniában, az Egyesült Államokban. A Birch Aquarium at Scripps egy akvárium és a San Diego-i Kaliforniai Egyetem Scripps Oceanográfiai Intézetének nyilvános információs központja. A USS Midway Museum egy történelmi haditengerészeti repülőgép-hordozó múzeum, amely a kaliforniai San Diego belvárosában, a Navy Piernél található. A San Diego-i Állatkert egy állatkert Kaliforniában, San Diégóban. A világ egyik leghíresebb állatkertje. Több mint 650 faj, kb. 3700 egyede él itt. Területe 40 hektár.', 'repülő', 'repulo.svg', 'kulfoldi', 'Napfényes Kaliforniai utazás', '5 nap', 14, 'Amerika', 'Kalifornia', 'San Diego', 'városlátogatás', 200000, '21 óra 50 perc', 'Magyarország, Budapest, 1185 Nemzetközi Repülőtér', 'Seaport Village, Balboa Park, Birch Aquarium at Scripps Institution of Oceanography, USS Midway Museum, San Diego Állatkert'),
+(15, 'Amerika', 'Nevada', 'Las Vegas', 'nevada.jpg', 'A High Roller egy 550 láb magas, 520 láb átmérőjű óriási óriáskerék a Las Vegas Strip-en, Paradise-ban. Az elegáns kaszinóhotelekkel szegélyezett, neonfénnyel átitatott Strip Las Vegas elválaszthatatlan része. A kaszinókhoz hasonlóan a hatalmas hotelkomplexumokban is számos különböző bolt és étterem – az általánostól a luxusig – áll a vendégek rendelkezésére, és koncerteket, vígjátékokat, cirkuszi bemutatókat felvonultató színpadok kínálnak szórakozási lehetőséget. A szökőkút egy 3,2 hektáros, mesterséges tavon található, és bár a városi legendák szerint a hotel szennyvizét vezetik el ide, ez nem igaz. A tavat egy édesvizű kút táplálja, amit akkoriban fúrtak, amikor a területen még egy golfpálya működött – ezzel locsolták a füvet. ', 'repülő', 'repulo.svg', 'kulfoldi', 'Las Vegas a világ legfényesebb városa', '3 nap', 15, 'Amerika', 'Nevada', 'Las Vegas', 'last minute', 3000000, '19 óra 50 perc', 'Magyarország, Budapest, 1185 Nemzetközi Repülőtér', 'Caesars Palace, High Roller, The STRAT Hotel, Casino & SkyPod, The Mirage'),
+(16, 'Amerika', 'Egyesült Államok', 'Grand Canyon', 'grand-canyon.jpg', 'A Yavapai Pointnál, a kanyon peremének szélén található Yavapai Geológiai Múzeum az egyik legjobb kilátópontot kínálja a Grand Canyon geológiájának áttekintésére. A festői Remete út a falu történelmi negyedének nyugati oldalán kezdődik. Az út a kanyon peremét követi 11 km-en keresztül a Hermits Rest-hez és a Remete-ösvényhez. A Desert View park keleti bejárata a nap 24 órájában, a hét minden napján nyitva tart. ', 'repülő', 'repulo.svg', 'kulfoldi', 'Grand-canyon a kortalan szépség', '3 nap', 16, 'Amerika', 'Egyesült Államok', 'Grand Canyon', 'last minute', 3000000, '7 óra', 'Magyarország, Budapest, 1185 Nemzetközi Repülőtér', 'Geológiai Múzeum, Hermit Road Drive,Desert View Őrtorony, Bright Angel túraútvonal'),
+(17, 'Európa', 'Lengyelország', 'Kiry', 'lengyel1-min.jpg', 'Lengyelország természeti adottságai miatt tökéletes a túrázás illetve hegymászás kedvelőinek. Az emberi környezet szennyezés által nem érintett természet csodái minden felé megtalálhatóak. ', 'autó', 'auto.svg', 'külföldi', '5 napos nyaralás a friss hegyi levegőben Lengyelor', '5 nap', 17, 'Európa', 'Lengyelorzsag', 'Kiry', 'last minute', 48000, '7 óra', 'Makó posta utca 4-6', 'Túrák illetve hegymászások'),
+(18, 'Ázsia', 'Szigetország', 'Srí Lanka', 'srilanka1.jpg', ' Természetes szépségei és kulturális öröksége miatt Srí Lanka az egyik legkedveltebb utazási célpont a turisták körében.Korábbi nevén Ceylon az Indiai-óceán északi részén található szigetország. A Pinnawala Elephant Orphanage egy vad ázsiai elefántok fogságban tenyésztésére és megőrzésére szolgáló intézet, amely Pinnawala faluban található.Nuwara Eliya egy város Srí Lanka központi tartományának dombvidékén.A gyönyörű Arugam-öböl, egy hold alakú, aranyszínű homokos fodrozódás, ahol egy híres szörfös pont található, amelyet sokan az ország legjobb szörfös helyének tartanak. A Yala Nemzeti Park Srí Lanka leglátogatottabb és második legnagyobb nemzeti parkja.', 'repülő', 'repulo.svg', 'külföldi', 'Fedezze fel a az India-óceánban elterülő, könnycsepp alakú kis szigetet!', '5 nap', 18, 'Ázsia', 'Szigetország', 'Srí Lanka', 'tengerparti nyaralás', 6000000, '12 óra 55 perc', 'Budapest', 'Pinnawala Elefántrezervátum, Nuwara Eliya, Arugam-öböl, Yala Nemzeti Park, Érintetlen szigetvilág'),
+(19, 'Ázsia', 'Thaiföld', 'Bangkok', 'thaifold.jpg', 'Bangkok vagy thai nyelven Krung Thep Thaiföld fővárosa, s egyben legnagyobb városa is.\r\nWat Pho, Fekvő Buddha Temploma, Bangkok egyik legrégebbi temploma, amely már azelőtt létezett, hogy I. Ráma király fővárosként megalapította. A Wat Arun, közismert nevén a “Hajnal temploma”, egyike az első osztályú királyi templomok legmagasabb osztályába tartozó hat templomnak, és ezért Thaiföld egyik legtiszteletreméltóbb temploma. Az Arany Buddha, Wat Traimit Wittharayam Worawiharn templom Bangkok kínai negyedében, a Yaowarat út mellett található, ahol a világ legnagyobb tömör arany Buddha ábrázolását láthatjuk. A Nemzeti Múzeum három kiállítótérből áll. A díszes Siwamokhaphiman teremben látható a Ram Khamhaeng felirat, az első thai írásos nyelvemlék. A Jim Thompson Ház egy múzeum Bangkok központjában , Thaiföldön , és Jim Thompson amerikai üzletember és építész , a múzeum tervezője és egykori tulajdonosa művészeti gyűjteményének ad otthont . ', 'repülő', 'repulo.svg', 'kulfoldi', 'Látogasd meg Thaiföld misztikus, ősi műemlékeit  ', '7 nap', 19, 'Ázsia', 'Thaiföld', 'Bangkok', 'last minute', 12000000, '15 óra 30 perc', 'Budapest', 'Grand Palace, Wat Pho – A fekvő Buddha temploma, Wat Arun – A Hajnal, Wat Traimit - Az arany Buddha temploma, Bankoki Nemzeti Múzeum, Jim Thomspon Ház, Úszópiacok'),
+(20, 'Afrika', 'Tanzánia', 'Zanzibár', 'zanzibar.jpg', 'Zanzibár Tanzániához tartozó szigetcsoport Afrika keleti partjainál. Lakossága 1,07 millió fő. Stone Town az egyik legérdekesebb program a szigeten, maga a főváros. Számos láttnivalót találhatunk itt. Az Old Fort egy régi erőd (szuahéliül: Boma la Kale la Zanzibar), más néven arab erőd és más néven egy erődítmény, amely Zanzibár fővárosában, Stone Townban található. Az erőddel szemben van a Forodhani kert, amely népszerű park a városrészben. Nem kell nagy területűre gondolni, de sok kifőzdénél kóstolhatjuk meg a helyi finomságokat. A Csodák háza Zanzibár szultánjainak a palotája volt, most a Művészeti Múzeum otthona. Sokan nem tudják, de Zanzibáron született Freddy Mercury. Emlékét a Stone Town-ban található Freddy Mercury Múzeum ápolja, ahol rengeteg fénykép, videó és személyes tárgy látható. Az egyházi épületek közül az Anglikán katedrális a legszebb. A templom belül is nagyon szép, érdemes az oltárát megcsodálni.Zanzibár a régió egyik legnagyobb rabszolgatartó helye volt. Ezt örökíti meg a Rabszolgapiac emlékmű (Slave Chambers) és a mellette lévő épület. A föld alatt rabszolgakamrák is vannak.', 'repülő', 'repulo.svg', 'kulfoldi', 'Pálmafákkal teli homokos partra vágysz? Írány Zanzibár!', '7 nap', 20, 'Afrika', 'Tanzánia', 'Zanzibár', 'tengerparti nyaralás', 7500000, '1 nap 6 óra', 'Budapest', 'Stone Town, Old Fort,  Forodhani kert, Csodák háza, Freddy Mercury Múzeum, Anglikán katedrális, Rabszolgapiac emlékmű'),
+(21, 'Európa ', 'Montenegró', 'Herceg novi', 'montenegro.jpg', 'Herceg Novi város és község Montenegróban, az Adriai-tenger partján. A mintegy 16 000 lakosú község Európa-szerte ismert és népszerű üdülőhely. A Kanli Kula (Véres torony) erődöt 1487-ben a törökök építették, Herceg Novi városnak a legészakibb részén foglal helyet és a város összetett várrendszerének az egyik eleme, ami védelmi szerepet töltött be és börtönként is használták. A Tengeri erődöt (Forte Mare) a 14. században építették, később a törökök, majd az osztrákok is átépítették. Ma szabadtéri színház működik benne, augusztus elején filmfesztiválnak ad helyet.A Durmitor hegyei Montenegró északi részén húzódnak, a határhoz közel. A Durmitor legmagasabb csúcsa, a Bobotov Kuk. A Savina kolostor egy szerb ortodox kolostor, amely három templomból áll Herceg Novi város közelében, a Kotori-öbölben, sűrű mediterrán növényzetben, az egyik legszélesebb körben. ', 'repülő', 'repulo.svg', 'kulfoldi', 'Unod az egyszerű nyaralásokat? Gyere és fedezd fel a Balkán-félszigetet!', '5 nap', 21, 'Európa ', 'Montenegró', 'Herceg novi', 'tengerparti nyaralás', 7000000, '19 óra 45 perc', 'Budapest', 'Kanli kula, Forte Mare, Old Town, Durmitor, Savina Monastery, Montenegro'),
+(22, 'Európa ', 'Ausztria', 'Schneebergdörfl', 'hegytura.jpg', 'A Schneeberg Alsó-Ausztria legmagasabb hegycsúcsa az Alpok hegységben, egyben az Alpok fő vonulatának utolsó keleti tagja, amely magasságával meghaladja a 2000 métert. A hegység látképe Észak-Burgenlandból, Bécsből és az Alpokalja tájegységről is könnyen megfigyelhető Kőszegtől Sopronig. Magassága 2076m. Schneeberg közeli távolsága miatt számos egynapos túrázás célpontja, csakúgy, mint az Alpok. Az egyik legnépszerűbb program, hogy egy hétvége keretében járják be mindkét célpontot a kirándulni vágyók.', 'repülő', 'repulo.svg', 'kulfoldi', 'Szeret túrázni ? Másszon fel Alsó-Ausztria legmagasabb hegycsúcsára ,a  Schneebergre!', '3 nap', 22, 'Európa ', 'Ausztria', 'Schneebergdörfl', 'last minute', 500000, '4 óra 55 perc', 'Budapest', 'Hegymászás'),
+(23, 'Európa', 'Olaszország', 'Róma', 'romai.jpg', 'Róma Olaszország fővárosa, Lazio régió központja, a hajdani Római Birodalom központja. Az ország legnagyobb és legnépesebb városa 1285,3 km²-en mintegy 2,8 millió lakossal, az Európai Unió harmadik legnépesebb városa.A firenzei dóm, olaszul Cattedrale di Santa Maria del Fiore, a Firenzei főegyházmegye főtemploma. A vatikáni Szent Péter-bazilika a római katolikus egyház első számú szentélye, a négy nagy bazilika egyike. A Colosseum az ókori Róma hatalmas amfiteátruma, ma pedig nevezetes látványossága a városnak. A Trevi-kút Róma egyik legnagyobb és világszinten legismertebb szökőkútja. A barokk szökőkutat a 17. században építette Niccolò Salvi a Poli-palota déli homlokzatán. ', 'repülő', 'repulo.svg', 'külföldi', 'Róma az örök város', '5 nap', 23, 'Európa', 'Olaszország', 'Róma', 'tengerparti nyaralás', 6000000, '5 óra 40 perc', 'Budapest', 'Firenzei dóm, Szent Péter-bazilika, Vatikán, Colosseum, Trevi-kút'),
+(24, 'Európa ', 'Görögország', 'Athén', 'gorogorszag.jpg', 'Athén Görögország fővárosa. A modern Athén hatalmas, kozmopolita jellegű város; az ókori Athén nagy hatalmú városállam és jelentős tudományos központ volt. Az athéni Akropolisz Görögországban található, az ókorból származó épületegyüttes, az európai civilizáció és demokrácia jelképe, az emberi alkotógéniusz egyik legnagyobb alkotása. A Nemzeti Kert egy 15,5 hektáros nyilvános park a görög főváros, Athén központjában. A Kolonaki és Pangrati kerületek között található, közvetlenül a görög parlament épülete mögött, és dél felé halad a Zappeion területére, szemben az 1896-os Olimpiai Játékok Panathenaiko vagy Kalimarmaro Olimpiai Stadionjával. Az Athéni Nemzeti Obszervatórium egy kutatóintézet Athénban, Görögországban. Az 1842-ben alapított intézmény Görögország legrégebbi kutatási alapja. Az athéni Stadiou utcában található régi Parlament épülete 1875 és 1935 között a görög parlamentnek adott otthont. Jelenleg az ország Nemzeti Történeti Múzeumának ad otthont.  ', 'autó', 'auto.svg', 'külföldi', 'Az ókori világ központja', '5 nap', 24, 'Európa ', 'Görögország', 'Athén', 'tengerparti nyaralás', 7500000, '2 óra 5 perc', 'Budapest', 'Akropolisz, Acropolis Museum, Nemzeti Kert, National Observatory of Athens, Old Parliament'),
+(25, 'Európa', 'Norvégia', 'Flatbostad', 'norvegia1-min.jpg', ' Viosen egy idilli hely, amely gyönyörűen fekszik a Snåsavatnet-tó legvégén. A strand és az út között gyönyörű homokos strand, nyári kávézó, hangulatos épületek és egy szép nyírfa fasor található. Múzeum\r\nGjerstadhuset Joralf Gjerstad gyermekkori otthona, amely 2012-ben nyitotta meg kapuit a nagyközönség előtt. A megjelenés gyakorlatilag megegyezik azzal, ahogyan egész gyermekkorában kinézett. A ház Berg Nedre városából származik az 1800-as évek közepéről, de 1924-ben költöztették át jelenlegi helyére.                          ', 'repülő', 'repulo.svg', 'külföldi', 'Norvégia felejthetetlen látnivalói', '4 nap', 25, 'Európa', 'Norvégia', 'Flatbostad', 'tengerparti nyaralás', 7000000, '12 óra 55 perc', 'Budapest', 'Park ved Semskaia, Viosen, Gjerstadhuset,'),
+(26, 'Ázsia', 'Kina', 'Sanghaj', 'Sanghaj-min.jpg', 'Sanghaj Kína legnagyobb ipari városa, a Távol-Kelet egyik gazdasági központja, tartományi jogú város a kelet-kínai tengerpart középső részén, a Jangce torkolatvidékén, a folyam Huangpu nevű kis mellékfolyójának két partján található. A Yu garden komplexum egyik központi épülete a Huxinting teaház. Kína legrégebbi teaháza fa oszlopokon áll egy mesterséges tó közepén és egy cikk-cakkos hídon közelíthető meg, mely a kínai hiedelmek szerint távol tartja a pavilontól a szellemeket. A bár a Captain Hostel lobbyjából közelíthető meg, lifttel a legfelső emeletre, majd még 1-2 emelet lépcsőn és megérkezünk a tetőteraszra. A hostel a Bund második épület sorában helyezkedik el, de szerencsére nem takarja semmi a kilátást a folyó és Pudong felhőkarcolói felé.\r\nAz East Nanjing sétálóutcában ehetünk utcáról, kézben pálcikás húst (chuan), vehetünk gyönyörű mangót és más friss gyümölcsöket, remek a bao felhozatal, az alagsorban pedig van pár leülős hely is, ahol kiszolgálnak. Nagy a pörgés, minden frissen készül, 20-40 yuanból (800-1500 Ft) ehetünk ellenőrzött körülmények között készült gusztusos street foodot. \r\nA Jing’an Sangaj talán legismertebb buddhista temploma, illetve a legtöbbet fotózott épülete, hiszen nagyon látványosan ékelődik be a környező toronyházak közé.  A Pudong városrészben található a legnépszerűbb Ritz Carlton tetőterasz, Inenn rá lehet láttni a Oriental Pearl Tower-re.', 'repülő', 'repulo.svg', 'külföldi', 'Tekintsd meg  a világ egyik legnagyobb városát, Sanghait!', '5 nap', 26, 'Ázsia', 'Kina', 'Sanghaj', 'varoslatogatas', 180000, '1 nap 2 óra', 'Budapest', 'Huxinting teaház, The Captain bar, East Nanjing road food court, Jing’an templom, Ritz-Carlton Pudong'),
+(27, 'Ázsia', 'Korea', 'Busan', 'Busan-min.jpg', 'A Busan Puszan Dél-Korea második legnagyobb városa, mely a Koreai-félsziget délkeleti részén, a Japán-tenger partján található. A Gamcheon Culture Village festői látványosság színes házakkal, \r\nfalfestményekkel, üzletekkel és kávézókkal. A Busani Művészeti Múzeum a művészeti tevékenységeket népszerűsíti kulturális területén annak érdekében, hogy növelje a város polgárainak figyelmét a művészet és a kultúra iránt. Hozzájárul az ország kulturális színterének fejlődéséhez, és sokféle műalkotást\r\n és művészi tevékenységet támogat, hogy a közönség könnyen hozzáférhessen a művészetekhez, valamint bővíti a művészbázist, élénkíti a művészetalkotást. A Beomeosa (a nirvánai hal temploma) a Koreai Buddhizmus Jogye Rendjének főtemploma Cheongnyong-dongban, Geumjeong-gu-ban, Busanban, Dél-Koreában. Geumjeongsan lejtőin épült, ez az ország egyik legismertebb városi temploma. A Sea Life Busan Aquarium egy akvárium a dél-koreai Haeundae Beach területén. A Yongdusan Park egy park a dél-koreai Busan állambeli Jung-gu városában. Itt található a 120 méter magas Busan-torony.', 'repülő', 'repulo.svg', 'külföldi', 'A filmfesztiválók hazája ', '5 nap', 27, 'Ázsia', 'Korea', 'Busan', 'lastminute', 200000, '15 óra 10 perc ', 'Budapest', 'Gamcheon Culture Village,  Busan Museum of Art , Beomeosa, SEALIFE Busan Aquarium, Yongdusan Park'),
+(28, 'Ázsia', 'Törökország', 'Isztambul', 'Isztambul.jpg', 'Isztambul 15 milliós agglomerációs lakosságával a Föld egyik legnépesebb, és Törökország legnépesebb települése. Az Hagia Szophia bizánci építésű hajdani ortodox bazilika Isztambulban, Törökországban. 1453-tól, Konstantinápoly oszmán kézre kerülésétől kezdve 1934-ig mecsetként használták, 1934 és 2020 között múzeumként volt látogatható. A Galata-torony az Aranyszarv-öböltől északra, Beyoğluban található. Isztambul egyik meghatározó épülete. Krisztus-torony néven is ismert. A Szulejmán-mecset a második legnagyobb mecset Isztambulban. A híres török építész, Szinán építette I. Szulejmán szultán parancsára Isztambul harmadik hegyére. Az építkezés 1550-ben kezdődött, és 7 évig tartott. Az Elsüllyedt Palota vagy Bazilika Ciszterna az egyik legnagyobb a több száz hajdani víztározó közül, melyek ma is ott fekszenek Isztambul alatt. A Topkapı palota Isztambulban található, 1465 és 1853 között az Oszmán Birodalom adminisztratív központja volt. Építésére II. Mehmed szultán  adott utasítást 1459-ben és 1465-ben fejezték be. A palota az Aranyszarv-öböl és a Márvány-tenger között fekszik az ún. Szeráj Csúcson.', 'repülő', 'repulo.svg', 'külföldi', 'Csodák városa - Isztambul', '5 nap', 28, 'Ázsia', 'Törökország', 'Isztambul', 'lastminute', 230000, '5 óra 50 perc ', 'Budapest', 'Hagia Szophia, Galata-torony, Szulejmán-mecset, Elsüllyedt Palota, Topkapı palota');
 
 -- --------------------------------------------------------
 
@@ -211,6 +208,7 @@ CREATE TABLE `utak_kepek` (
 --
 
 INSERT INTO `utak_kepek` (`neve`, `darabszam`, `ut_id3`, `neve2`) VALUES
+('Isztambul2.jpg', 0, 0, ''),
 ('paris2-min.jpg', 2, 1, ''),
 ('marseille2-min.jpg', 2, 2, ''),
 ('lyon2-min.jpg', 2, 3, ''),
@@ -221,6 +219,24 @@ INSERT INTO `utak_kepek` (`neve`, `darabszam`, `ut_id3`, `neve2`) VALUES
 ('tokio2-min.jpg', 2, 8, ''),
 ('egyiptom2-min.jpg', 2, 9, ''),
 ('sydney2-min.jpg', 2, 10, ''),
+('kanada2.jpg', 2, 11, ''),
+('NewYork2.jpg', 2, 12, ''),
+('Texas2.jpg', 2, 13, ''),
+('kalifornia2.jpg', 2, 14, ''),
+('nevada2.jpg', 2, 15, ''),
+('grand-canyon2.jpg', 2, 16, ''),
+('lengyel2-min.jpg', 2, 17, ''),
+('srilanka2.jpg', 2, 18, ''),
+('thaifold2.jpg', 2, 19, ''),
+('zanzibar2.jpg', 2, 20, ''),
+('montenegro2.jpg', 2, 21, ''),
+('hegytura2.jpg', 2, 22, ''),
+('olaszorszag2.jpg', 2, 23, ''),
+('gorogorszag2.jpg', 2, 24, ''),
+('norvegia2-min.jpg', 2, 25, ''),
+('Isztambul2.jpg', 2, 26, ''),
+('Busan2-min.jpg', 2, 27, ''),
+('Isztambul2.jpg', 2, 28, ''),
 ('paris3-min.jpg', 3, 1, ''),
 ('marseille3-min.jpg', 3, 2, ''),
 ('lyon3-min.jpg', 3, 3, ''),
@@ -231,6 +247,24 @@ INSERT INTO `utak_kepek` (`neve`, `darabszam`, `ut_id3`, `neve2`) VALUES
 ('tokio3-min.jpg', 3, 8, ''),
 ('egyiptom3-min.jpg', 3, 9, ''),
 ('sydney3-min.jpg', 3, 10, ''),
+('kanada3.jpg', 3, 11, ''),
+('NewYork3.jpg', 3, 12, ''),
+('Texas3.jpg', 3, 13, ''),
+('kalifornia3.jpg', 3, 14, ''),
+('nevada3.jpg', 3, 15, ''),
+('grand-canyon3.jpg', 3, 16, ''),
+('lengyel3-min.jpg', 3, 17, ''),
+('srilanka3.jpg', 3, 18, ''),
+('thaifold3.jpg', 3, 19, ''),
+('zanzibar3.jpg', 3, 20, ''),
+('montenegro3.jpg', 3, 21, ''),
+('hegytura3.jpg', 3, 22, ''),
+('olaszorszag3.jpg', 3, 23, ''),
+('gorogorszag3.jpg', 3, 24, ''),
+('norvegia3-min.jpg', 3, 25, ''),
+('Isztambul3.jpg', 3, 26, ''),
+('Busan3-min.jpg', 3, 27, ''),
+('Isztambul3.jpg', 3, 28, ''),
 ('paris4-min.jpg', 4, 1, ''),
 ('marseille4-min.jpg', 4, 2, ''),
 ('lyon4-min.jpg', 4, 3, ''),
@@ -241,6 +275,24 @@ INSERT INTO `utak_kepek` (`neve`, `darabszam`, `ut_id3`, `neve2`) VALUES
 ('tokio4-min.jpg', 4, 8, ''),
 ('egyiptom4-min.jpg', 4, 9, ''),
 ('sydney4-min.jpg', 4, 10, ''),
+('kanada4.jpg', 4, 11, ''),
+('NewYork4.jpg', 4, 12, ''),
+('Texas4.jpg', 4, 13, ''),
+('kalifornia4.jpg', 4, 14, ''),
+('nevada4.jpg', 4, 15, ''),
+('grand-canyon4.jpg', 4, 16, ''),
+('lengyel4-min.jpg', 4, 17, ''),
+('srilanka4.jpg', 4, 18, ''),
+('thaifold4.jpg', 4, 19, ''),
+('zanzibar4.jpg', 4, 20, ''),
+('montenegro4.jpg', 4, 21, ''),
+('hegytura4.jpg', 4, 22, ''),
+('olaszorszag4.jpg', 4, 23, ''),
+('gorogorszag4.jpg', 4, 24, ''),
+('norvegia4-min.jpg', 4, 25, ''),
+('Isztambul4.jpg', 4, 26, ''),
+('Busan4-min.jpg', 4, 27, ''),
+('Isztambul4.jpg', 4, 28, ''),
 ('paris5-min.jpg', 5, 1, ''),
 ('marseille5-min.jpg', 5, 2, ''),
 ('lyon5-min.jpg', 5, 3, ''),
@@ -251,6 +303,20 @@ INSERT INTO `utak_kepek` (`neve`, `darabszam`, `ut_id3`, `neve2`) VALUES
 ('tokio5-min.jpg', 5, 8, ''),
 ('egyiptom5-min.jpg', 5, 9, ''),
 ('sydney5-min.jpg', 5, 10, ''),
+('kanada5jpg', 5, 11, ''),
+('NewYork5.jpg', 5, 12, ''),
+('Texas5.jpg', 5, 13, ''),
+('kalifornia5.jpg', 5, 14, ''),
+('nevada5.jpg', 5, 15, ''),
+('grand-canyon5.jpg', 5, 16, ''),
+('lengyel5-min.jpg', 5, 17, ''),
+('montenegro5.jpg', 5, 21, ''),
+('olaszorszag5.jpg', 5, 23, ''),
+('gorogorszag5.jpg', 5, 24, ''),
+('norvegia5-min.jpg', 5, 25, ''),
+('Isztambul5.jpg', 5, 26, ''),
+('Busan5-min.jpg', 5, 27, ''),
+('Isztambul5.jpg', 5, 28, ''),
 ('wifi.svg', 6, 1, 'Wifi'),
 ('wifi.svg', 6, 2, 'Wifi'),
 ('wifi.svg', 6, 3, 'Wifi'),
@@ -261,6 +327,21 @@ INSERT INTO `utak_kepek` (`neve`, `darabszam`, `ut_id3`, `neve2`) VALUES
 ('wifi.svg', 6, 8, 'Wifi'),
 ('wifi.svg', 6, 9, 'Wifi'),
 ('wifi.svg', 6, 10, 'Wifi'),
+('wifi.svg', 6, 11, 'Wifi'),
+('wifi.svg', 6, 12, 'Wifi'),
+('wifi.svg', 6, 13, 'Wifi'),
+('wifi.svg', 6, 14, 'Wifi'),
+('wifi.svg', 6, 15, 'Wifi'),
+('wifi.svg', 6, 16, 'Wifi'),
+('wifi.svg', 6, 17, 'Wifi'),
+('wifi.svg', 6, 18, 'Wifi'),
+('wifi.svg', 6, 19, 'Wifi'),
+('wifi.svg', 6, 20, 'Wifi'),
+('wifi.svg', 6, 21, 'Wifi'),
+('wifi.svg', 6, 22, 'Wifi'),
+('wifi.svg', 6, 23, 'Wifi'),
+('wifi.svg', 6, 24, 'Wifi'),
+('wifi.svg', 6, 25, 'Wifi'),
 ('no_smoking.svg', 7, 1, 'Dohányzás mentes'),
 ('no_smoking.svg', 7, 2, 'Dohányzás mentes'),
 ('parkolas.svg', 7, 3, 'Fizetős parkoló'),
@@ -271,6 +352,23 @@ INSERT INTO `utak_kepek` (`neve`, `darabszam`, `ut_id3`, `neve2`) VALUES
 ('parkolas.svg', 7, 8, 'Fizetős parkoló'),
 ('parkolas.svg', 7, 9, 'Fizetős parkoló'),
 ('parkolas.svg', 7, 10, 'Fizetős parkoló'),
+('no_smoking.svg', 7, 11, 'Dohányzás mentes'),
+('no_smoking.svg', 7, 12, 'Dohányzás mentes'),
+('parkolas.svg', 7, 13, 'Ingyenes parkolás'),
+('parkolas.svg', 7, 14, 'Ingyenes parkolás'),
+('no_smoking.svg', 7, 15, 'Dohányzás mentes'),
+('no_smoking.svg', 7, 16, 'Dohányzás mentes'),
+('legkondi.svg', 7, 17, 'Légkondícionálás'),
+('legkondi.svg', 7, 18, 'Légkondícionálás'),
+('	 no_smoking.svg', 7, 19, 'Dohányzás mentes'),
+('	 no_smoking.svg', 7, 20, 'Dohányzás mentes'),
+('legkondi.svg', 7, 21, 'Légkondícionálás'),
+('legkondi.svg', 7, 22, 'Légkondícionálás'),
+('legkondi.svg', 7, 23, 'Légkondícionálás'),
+('no_smoking.svg', 7, 24, 'Dohányzás mentes'),
+('kisallat.svg', 7, 25, 'Kisállat vihető'),
+('wifi.svg', 7, 26, 'Wifi'),
+('wifi.svg', 7, 27, 'Wifi'),
 ('kisallat.svg', 8, 1, 'Kisállat vihető'),
 ('restaurant.svg', 8, 2, 'Saját étterem'),
 ('restaurant.svg', 8, 3, 'Saját étterem'),
@@ -281,6 +379,18 @@ INSERT INTO `utak_kepek` (`neve`, `darabszam`, `ut_id3`, `neve2`) VALUES
 ('no_smoking.svg', 8, 8, 'Dohányzás mentes'),
 ('restaurant.svg', 8, 9, 'Saját étterem'),
 ('restaurant.svg', 8, 10, 'Saját étterem'),
+('parkolas.svg', 8, 11, 'Ingyenes parkolás'),
+('parkolas.svg', 8, 12, 'Ingyenes parkolás'),
+('legkondi.svg', 8, 13, 'Légkondícionálás'),
+('legkondi.svg', 8, 14, 'Légkondícionálás'),
+('parkolas.svg', 8, 15, 'Ingyenes parkolás'),
+('parkolas.svg', 8, 16, 'Ingyenes parkolás'),
+('restaurant.svg', 8, 18, 'Saját étterem'),
+('parkolas.svg', 8, 19, 'Ingyenes parkolás'),
+('parkolas.svg', 8, 20, 'Ingyenes parkolás'),
+('parkolas.svg', 8, 23, 'Ingyenes parkolás'),
+('legkondi.svg', 8, 24, 'Légkondícionálás'),
+('restaurant.svg', 8, 25, 'Saját étterem'),
 ('legkondi.svg', 9, 1, 'Légkondícionálás'),
 ('kilatas.svg', 9, 2, 'Terasz'),
 ('medence.svg', 9, 3, 'Medence'),
@@ -291,6 +401,18 @@ INSERT INTO `utak_kepek` (`neve`, `darabszam`, `ut_id3`, `neve2`) VALUES
 ('kilatas.svg', 9, 8, 'Terasz'),
 ('legkondi.svg', 9, 9, 'Légkondícionálás'),
 ('legkondi.svg', 9, 10, 'Légkondícionálás'),
+('legkondi.svg', 9, 11, 'Légkondícionálás'),
+('legkondi.svg', 9, 12, 'Légkondícionálás'),
+('kisallat.svg', 9, 13, 'Kisállat vihető'),
+('kisallat.svg', 9, 14, 'Kisállat vihető'),
+('legkondi.svg', 9, 15, 'Légkondícionálás'),
+('legkondi.svg', 9, 16, 'Légkondícionálás'),
+('kilatas.svg', 9, 18, 'Terasz'),
+('legkondi.svg', 9, 19, 'Légkondícionálás'),
+('legkondi.svg', 9, 20, 'Légkondícionálás'),
+('kisallat.svg', 9, 23, 'Kisállat vihető'),
+('kilatas.svg', 9, 24, 'Terasz'),
+('legkondi.svg', 9, 25, 'Légkondícionálás'),
 ('medence.svg', 10, 1, 'Medence'),
 ('wellness.svg', 10, 2, 'Wellness lehetőség'),
 ('no_smoking.svg', 10, 3, 'Dohányzás mentes'),
@@ -299,14 +421,33 @@ INSERT INTO `utak_kepek` (`neve`, `darabszam`, `ut_id3`, `neve2`) VALUES
 ('restaurant.svg', 10, 8, 'Saját étterem'),
 ('kisallat.svg', 10, 9, 'Kisállat vihető'),
 ('kisallat.svg', 10, 10, 'Kisállat vihető'),
+('kilatas.svg', 10, 11, 'Terasz'),
+('kilatas.svg', 10, 12, 'Terasz'),
+('restaurant.svg', 10, 14, 'Saját étterem'),
+('kilatas.svg', 10, 15, 'Terasz'),
+('kilatas.svg', 10, 16, 'Terasz'),
+('no_smoking.svg', 10, 18, 'Dohányzás mentes'),
+('kilatas.svg', 10, 19, 'Terasz'),
+('kilatas.svg', 10, 20, 'Terasz'),
+('kilatas.svg', 10, 23, 'Terasz'),
+('parkolas.svg', 10, 24, 'Ingyenes parkolás'),
+('parkolas.svg', 10, 25, 'Ingyenes parkolás'),
 ('parkolas.svg', 11, 1, 'Ingyenes parkolás'),
 ('kilatas.svg', 11, 3, 'Terasz'),
 ('kilatas.svg', 11, 7, 'Terasz'),
 ('wellness.svg', 11, 8, 'Wellness lehetőség'),
 ('wellness.svg', 11, 9, 'Wellness lehetőség'),
 ('no_smoking.svg', 11, 10, 'Dohányzás mentes'),
+('restaurant.svg', 11, 11, 'Saját étterem'),
+('kisallat.svg', 11, 15, 'Kisállat vihető'),
+('kisallat.svg', 11, 16, 'Kisállat vihető'),
+('parkolas.svg', 11, 18, 'Ingyenes parkolás'),
+('restaurant.svg', 11, 19, 'Saját étterem'),
+('wellness.svg', 11, 23, 'Wellness lehetőség'),
+('restaurant.svg', 11, 24, 'Saját étterem'),
 ('kilatas.svg', 12, 9, 'Terasz'),
-('wellness.svg', 12, 10, 'Wellness lehetőség');
+('wellness.svg', 12, 10, 'Wellness lehetőség'),
+('medence.svg', 12, 23, 'Medence');
 
 --
 -- Indexek a kiírt táblákhoz
@@ -361,19 +502,19 @@ ALTER TABLE `felhasznalok`
 -- AUTO_INCREMENT a táblához `foglalas`
 --
 ALTER TABLE `foglalas`
-  MODIFY `foglalas_id` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `foglalas_id` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT a táblához `szallas`
 --
 ALTER TABLE `szallas`
-  MODIFY `szallas_id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+  MODIFY `szallas_id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
 
 --
 -- AUTO_INCREMENT a táblához `utak`
 --
 ALTER TABLE `utak`
-  MODIFY `ut_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+  MODIFY `ut_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
 
 --
 -- Megkötések a kiírt táblákhoz
