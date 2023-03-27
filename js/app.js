@@ -55,6 +55,13 @@
             ajanlatok: null
           }
         })
+
+        .state('foglalasok', {
+          url: '/foglalasok',
+          templateUrl: './html/foglalasok.html',
+          controller: 'foglalasokController',
+          
+        })
         .state('hajosblog', {
           url: '/hajosblog',
           templateUrl: './html/hajosblog.html',
@@ -108,14 +115,7 @@
           url: '/varoslatogatas',
           templateUrl: './html/varoslatogatas.html',
         })
-        .state('foglalasok', {
-          url: '/foglalasok',
-          templateUrl: './html/foglalasok.html',
-          controller: 'nyaralasController',
-          params: {
-            foglalasok: null
-          }
-        })
+        
 
         .state('regisztracio', {
           controller: 'regisztracio'
@@ -485,41 +485,39 @@
   },
 ])
 
-  //Foglalások contoller
+ // Foglalások controller
+ .controller("foglalasokController", [
+  "$scope",
+  "$element",
+  "$timeout",
+  "http",
+  "$stateParams",
+  function ($scope, $element, $timeout, http, $stateParams) {
 
-  .controller("foglalasokController", [
-    "$scope",
-    "$element",
-    "$timeout",
-    "http",
-    "$stateParams",
-    function ($scope, $element, $timeout, http, $stateParams) {
-  
-  
-      $scope.foglalasok = $stateParams.foglalasok;
-      if (!$scope.foglalasok) {
-        $state.go('home');
-        return;
-      }
-  
-      http.request({
-        url: "./php/get.php",
-        method: "POST",
-        data: {
-          db: "moonlighttravel",
-          query: "SELECT `foglalasok`.*, `utak`.* FROM `foglalas` inner join `utak` on `utak`.`ut_id` = `foglalas`.`ut_id2` = :foglalasok",
-          params: {foglalasok: $scope.foglalasok},
-          isAssoc: true,
-        },
-      })
-      .then((data) => {
-        $scope.data = data;
-        $scope.$applyAsync();
-      })
-      .catch((e) => console.log(e));
-    },
-  ])
 
+    $scope.foglalasok = $stateParams.foglalasok;
+    if (!$scope.foglalasok) {
+      $state.go('home');
+      return;
+    }
+
+    http.request({
+      url: "./php/get.php",
+      method: "POST",
+      data: {
+        db: "moonlighttravel",
+        query: "SELECT `utak`.* FROM `utak`",
+        params: {foglalasok: $scope.foglalasok},
+        isAssoc: true,
+      },
+    })
+    .then((data) => {
+      $scope.data = data;
+      $scope.$applyAsync();
+    })
+    .catch((e) => console.log(e));
+  },
+])
 
 
 
