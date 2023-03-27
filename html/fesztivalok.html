@@ -8,10 +8,10 @@
         <img src="../MoonLightTravel.github.io/img/blog/holicolor1.jpg" alt="Blog" title="Blog" id="nagy_kep" class="img-fluid clearfix">
         
         <div class="col-xl-9 col-md-10 col-sm-12 mt-2">
-          <img src="../MoonLightTravel.github.io/img/blog/holicolor2.jpg" alt="Blog" title="Blog" width="134px" onclick="nagyit(this)" class="mt-1 mx-1">
-          <img src="../MoonLightTravel.github.io/img/blog/holicolor3.jpg" alt="Blog" title="Blog" width="134px" onclick="nagyit(this)" class="mt-1 mx-1">
-          <img src="../MoonLightTravel.github.io/img/blog/holicolor4.jpg" alt="Blog" title="Blog" width="134px" onclick="nagyit(this)" class="mt-1 mx-1">
-          <img src="../MoonLightTravel.github.io/img/blog/holicolor1.jpg" alt="Blog" title="Blog" width="134px" onclick="nagyit(this)" class="mt-1 mx-1">
+          <img src="../MoonLightTravel.github.io/img/blog/holicolor2.jpg" alt="Blog" title="Blog" width="134px" ng-click="nagyit($event.target)"  class="mt-1 mx-1">
+          <img src="../MoonLightTravel.github.io/img/blog/holicolor3.jpg" alt="Blog" title="Blog" width="134px" ng-click="nagyit($event.target)"  class="mt-1 mx-1">
+          <img src="../MoonLightTravel.github.io/img/blog/holicolor4.jpg" alt="Blog" title="Blog" width="134px" ng-click="nagyit($event.target)"  class="mt-1 mx-1">
+          <img src="../MoonLightTravel.github.io/img/blog/holicolor1.jpg" alt="Blog" title="Blog" width="134px" ng-click="nagyit($event.target)"  class="mt-1 mx-1">
         </div>
 
       </div>
@@ -41,10 +41,4 @@
   ng-include src="'../MoonLightTravel.github.io/html/footer.html'">
   </footer>
   
-  <script>
-   function nagyit(elem) {
-    var nagy_kep_elem = document.getElementById("nagy_kep");
-    nagy_kep_elem.src = elem.src;
-    nagy_kep_elem.alt = elem.alt;
-  }
-  </script>
+  

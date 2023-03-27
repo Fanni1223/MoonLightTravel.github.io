@@ -108,24 +108,20 @@
           url: '/varoslatogatas',
           templateUrl: './html/varoslatogatas.html',
         })
-        .state('kedvencek', {
-          url: '/kedvencek',
-          templateUrl: './html/kedvencek.html',
-          controller: 'appController'
+        .state('foglalasok', {
+          url: '/foglalasok',
+          templateUrl: './html/foglalasok.html',
+          controller: 'nyaralasController',
+          params: {
+            foglalasok: null
+          }
         })
 
         .state('regisztracio', {
           controller: 'regisztracio'
         })
         
-        .state('foglalasok', {
-          url: '/foglalasok',
-          templateUrl: './html/foglalasok.html',
-          controller: 'foglalasokController',
-          params: {
-            foglalasok: null
-          }
-        })
+      
       $urlRouterProvider.otherwise('/');
     }
   ])
@@ -156,11 +152,18 @@
         }).catch((e) => console.log(e));
       });
 
-      
+       // Add nagyit function to $rootScope
+    $rootScope.nagyit = function(elem) {
+      var nagy_kep_elem = document.getElementById("nagy_kep");
+      nagy_kep_elem.src = elem.src;
+      nagy_kep_elem.alt = elem.alt;
+    };
 
       $rootScope.logout = () => {
         location.reload();
       };
+
+     
     },
   ])
 
@@ -492,7 +495,7 @@
         method: "POST",
         data: {
           db: "moonlighttravel",
-          query: "SELECT `nev2`, `telefonsz`, `email`, `fo`, `evszam`, `honap`, `nap`, `vegosszeg` FROM `foglalas` inner join utak on utak.ut_id = foglalas.ut_id2  :foglalasok",
+          query: "SELECT `foglalasok`.*, `utak`.* FROM `foglalas` inner join `utak` on `utak`.`ut_id` = `foglalas`.`ut_id2` = :foglalasok",
           params: {foglalasok: $scope.foglalasok},
           isAssoc: true,
         },
@@ -504,27 +507,6 @@
       .catch((e) => console.log(e));
     },
   ])
-
-
-/*
-//create data
-app.post('/felhasznalok',(req,res)=>{
-  console.log(req.body, 'creatdata');
-
-  let fullname = req.body.name;
-  let eMail = req.body.email;
-  let jElszo = req.body.jelszo ;
-
-  let qr = `insert into felhasznalok (nev, email, jelszo) values('$(fullname)','$(eMail)','$(jElszo)')`;
-
-  db.query(qr, (err,result)=>{
-    if(err){console.log(err);}
-    res.send({
-      message: 'data.inserted',
-    });
-  })
-})
-*/
 
 
 

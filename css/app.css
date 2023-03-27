@@ -1,9 +1,10 @@
-/*Menü*/
+/*Menü lenyílása*/
 .dropdown {
   position: relative;
   display: inline-block;
 }
 
+ /*Menü lenyíló tartalom*/
 .dropdown-content {
   display: none;
   position: absolute;
@@ -13,7 +14,7 @@
   padding: 12px 16px;
   z-index: 1;
 }
-  
+/*Menü rámutatásnál lenyílik*/
 .dropdown:hover .dropdown-content {
   display: block;
 }
@@ -21,26 +22,23 @@
 nav{
   background-color: #B01E68;
 }
+
 a.nav-link{
   color: white !important;
 }
+
+#kereses{
+  max-width: 45%;
+}
+
+#kereses button{
+  max-height: 40px;
+}
  
+
 /*Gomb*/
 .btn{
   background-color: #FFB400;
-}
-
-/*Lábléc*/
-footer .logo {
-  width: 74px;
-  height: 80px;
-  background-image: url(../media/image/logo/keri.webp);
-}
-footer i {
-  width: 16px !important;
-}
-.fs-075 {
-  font-size:0.75rem  !important;
 }
 
 /*Címek, szövegek*/
@@ -58,11 +56,13 @@ h5{
 
 p{
   color: #1A385A;
+  text-align: justify;
 }
 
 .foglalas_cim{
   color: #FFB400;
 }
+
 
 /*Top ajánlatok*/
 .cards {
@@ -159,107 +159,7 @@ p{
   --surface-color: #ff2000;
   --curve: 40;
 }
-  
-/*Blog képgaléria*/
-*{
-    box-sizing: border-box;
-}  
 
-.column {
-  float: left;
-  width: 11%;
-  padding: 10px;
-}
-
-.column img {
-  opacity: 0.8; 
-  cursor: pointer;  
-}
-  
-.column img:hover {
-  opacity: 1;
-}
-
-.column2 {
-  float: left;
-  width: 21%;
-  padding: 10px; 
-}
-  
-.column2 img {
-  opacity: 0.8; 
-  cursor: pointer;  
-}
-   
-.column2 img:hover {
-  opacity: 1;
-}
-
-.column3 {
-  float: left;
-  width: 21%;
-  padding: 10px; 
-}
-
-.column3 img {
-   opacity: 0.8; 
-  cursor: pointer; 
-}
-  
-.column3 img:hover {
-  opacity: 1;
-}
-  
-.kepgallery:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-  
-.container2 {
-  position: relative;
-  display: none;
-}
-
-.container3 {
-  position: relative;
-  display: none;
-}
-.container4 {
-  position: relative;
-  display: none;
-}
-  
-#imgtext {
-  position: absolute;
-  bottom: 15px;
-  left: 15px;
-  color: white;
-  font-size: 20px;
-}
- 
-.closebtn {
-    position: absolute;
-    top: 10px;
-    right: 15px;
-    color: white;
-    font-size: 35px;
-    cursor: pointer;
-  }
-  .bs-callout-warning {
-    border-left-color: orange !important;
-  }
-  .bs-callout {
-    border: 1px solid #eee;
-    border-left-width: 5px;
-    border-radius: 3px;
-    margin: 20px 0;
-    padding: 20px;
-  }
-  .destination-description {
-    color: #004990;
-    font-size: 1.2rem;
-  }
 
 /*Utak kártyák*/
   .szoveg{
@@ -287,13 +187,7 @@ p{
     float: right;
 }
 
-p{
-  text-align: justify;
-}
 
-.adatok{
-  border: 1px solid black;
-}
 
 /*Főoldal modal*/
 .thumbex {
@@ -343,23 +237,11 @@ p{
   opacity: 0;
 }
 
-.text-block {
-  position: absolute;
-  bottom: 20px;
-  right: 20px;
-  background-color: black;
-  color: white;
-  padding-left: 20px;
-  padding-right: 20px;
-}
 
 
 
-p {
-  margin: 0 0 20px;
-  line-height: 1.5;
-}
 
+/*Tabok a nyaralás oldalon*/
 .main {
   min-width: 320px;
   max-width: 800px;
@@ -377,7 +259,6 @@ section {
 .input_tab{
   display: none;
 }
-
 
 label {
   display: inline-block;
@@ -435,7 +316,8 @@ main input:checked + label {
   }
 }
 
-/*rolunk oldalhoz*/
+
+/*Rólunk oldal*/
 
 .google-map {
   padding-bottom: 50%;
@@ -452,7 +334,7 @@ main input:checked + label {
 
 
 
-/*Bejelentkezés*/
+/*Bejelentkezés/Regisztráció*/
 .login-box{
   position:relative;
   margin: 10px auto;
@@ -579,11 +461,6 @@ h3 {
 
 }
 
-
-
-
-
-
 .social {
 	color: #333;
 	font-size: 14px;
@@ -664,12 +541,6 @@ h3 {
 	width: 840px;
 	max-width: 100%;
 	min-height: 480px;
- 
-  
-  
-  
-
-	
 }
 
 .form-bejelentkezes {
@@ -830,7 +701,7 @@ float: center;
 
 
 
-
+/*Foglalás*/
 #foglalas h2{
   color: #1A385A;
 }
@@ -1042,24 +913,21 @@ float: center;
   box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px;
 }
 
-
 .ido{
   min-height: 40px;
 }
 
 
 
+/*??*/
 .log-picture{
   width: 30px;
-  height: 30px;
-  
+  height: 30px;  
 }
 
 
 
-
-
-
+/*Lábléc*/
 .footer-distributed{
 	background: #B01E68 !important;
 	box-sizing: border-box;
@@ -1076,13 +944,9 @@ float: center;
 	vertical-align: top;
 }
 
-/* Footer left */
-
 .footer-distributed .footer-left{
 	width: 40%;
 }
-
-/* The company logo */
 
 .footer-distributed h3{
 	color:  #ffffff;
@@ -1093,8 +957,6 @@ float: center;
 .footer-distributed h3 span{
 	color:  lightseagreen;
 }
-
-/* Footer links */
 
 .footer-distributed .footer-links{
 	color:  #ffffff;
@@ -1117,7 +979,6 @@ float: center;
 	margin: 0;
 }
 
-/* Footer Center */
 
 .footer-distributed .footer-center{
 	width: 35%;
@@ -1135,8 +996,6 @@ float: center;
 	margin: 10px 15px;
 	vertical-align: middle;
 }
-
-
 
 .footer-distributed .footer-center p{
 	display: inline-block;
@@ -1172,7 +1031,6 @@ float: center;
   content: none;
 }
 
-/* Footer Right */
 
 .footer-distributed .footer-right{
 	width: 20%;
@@ -1215,7 +1073,6 @@ float: center;
 	margin-bottom: 5px;
 }
 
-/* If you don't want the footer to be responsive, remove these media queries */
 
 @media (max-width: 880px) {
 
@@ -1243,24 +1100,164 @@ float: center;
   color: white;
 }
 
-.btn5{
-text-transform: none;
-writing-mode: horizontal-tb !important;
-border-image: initial;
-border: none;
-text-shadow: none;
-transform-origin: 0px 0px;
-text-indent: 0px;
+
+
+
+/*Blog*/
+.blog *, *:after, *:before {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+img {
+  height: auto;
+  max-width: 100%;
+}
+.kep{
+  height: 300px;
+}
+.kep2{
+  height: 600px;
 }
 
-.kedvenc button{
-  background-color: white;
+a {
+ 
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+.site__wrapper {
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+  overflow: hidden;
+  padding-top: 1.5em;
+  padding-bottom: 1.5em;
+}
+.site__info {
+  clear: both;
+  display: block;
+  font-variant: small-caps;
+  letter-spacing: 2px;
+  padding-top: 1.5em;
+  padding-bottom: 1.5em;
+  text-align: center;
+}
+.grid {
+  float: none;
+  width: 100%;
+  padding-left: 0.2em;
+  padding-right: 0.2em;
+  padding-bottom: 0.4em;
+  
+}
+@media screen and (min-width: 40.063em) {
+  .grid {
+    float: left;
+    width: 33.333%;
+  }
+}
+.card2__image {
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  display: block;
+  min-height: 240px;
+  overflow: hidden;
+  position: relative;
+}
+.card2__image > img {
+  display: block;
+  margin-bottom: 0;
+  -webkit-transition: all 0.25s ease-in-out;
+  -moz-transition: all 0.25s ease-in-out;
+  -ms-transition: all 0.25s ease-in-out;
+  -o-transition: all 0.25s ease-in-out;
+  transition: all 0.25s ease-in-out;
+}
+.card2__image:hover > img {
+  -webkit-transform: scale(1.2);
+  -moz-transform: scale(1.2);
+  -ms-transform: scale(1.2);
+  -o-transform: scale(1.2);
+  transform: scale(1.2);
+}
+.card2__title {
+  color: white;
+  display: inline-block;
+  font-family: "Montserrat";
+  font-size: 1.5em;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 0.75em;
+  text-decoration: none;
+  -webkit-transition: all 0.3s ease-out;
+  -moz-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
+}
+.card2__title:hover {
+ 
+  text-decoration: none;
   color: black;
-  border: 1px solid black;
+}
+.card2__overlay {
+  content: "";
+  bottom: 0;
+  display: block;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+}
+.card2__overlay--indigo {
+  background-image: linear-gradient(to bottom, rgba(92, 107, 192, 0.1), rgba(92, 107, 192, 0.8));
+  z-index: 2;
+}
+.card2__overlay--blue {
+  background-image: linear-gradient(to bottom, rgba(41, 182, 246, 0.1), rgba(41, 182, 246, 0.8));
+  z-index: 2;
+}
+.card2__overlay-content {
+  position: absolute;
+  bottom: 0;
+  padding: 1.5em;
+  z-index: 3;
+}
+.card2__meta {
+  margin: 0;
+  margin-right: -1em;
+  margin-bottom: 0.75em;
+}
+.card2__meta.card2__meta--last {
+  margin-bottom: 0;
+}
+.card2__meta li {
+  color: #f8f8f8;
+  display: inline;
+  list-style-type: none;
+  margin-bottom: 0;
+  padding-right: 1em;
+  font-size: 0.85em;
+  font-variant: small-caps;
+  letter-spacing: 1px;
+}
+.card2__meta li:not(:last-child):after {
+  content: "\25cf";
+  font-style: normal;
+  position: relative;
+  color: rgba(255, 255, 255, 0.25);
+  right: -0.6em;
+}
+.card2__meta li > a {
+  color: #f8f8f8;
 }
 
-.sziv{
-  width: 20px;
-  height: 20px;
-}
+
+
  

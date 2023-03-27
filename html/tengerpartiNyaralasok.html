@@ -6,13 +6,13 @@
 
   <div class="row mt-5"> 
     <div class="col-xl-8 col-md-10 col-sm-12 mt-3">
-      <img src="../MoonLightTravel.github.io/img/blog/srilanka1.jpg" alt="Blog" title="Blog" id="nagy_kep" class="img-fluid clearfix">
+      <img src="../MoonLightTravel.github.io/img/blog/srilanka1.jpg" alt="Blog" title="Blog" id="nagykep" class="img-fluid clearfix">
         
       <div class="col-xl-9 col-md-10 col-sm-12 mt-2">
-        <img src="../MoonLightTravel.github.io/img/blog/srilanka2.jpg" alt="Blog" title="Blog" width="134px" onclick="nagyit(this)" class="mt-1 mx-1">
-        <img src="../MoonLightTravel.github.io/img/blog/srilanka3.jpg" alt="Blog" title="Blog" width="134px" onclick="nagyit(this)" class="mt-1 mx-1">
-        <img src="../MoonLightTravel.github.io/img/blog/srilanka4.jpg" alt="Blog" title="Blog" width="134px" onclick="nagyit(this)" class="mt-1 mx-1">
-        <img src="../MoonLightTravel.github.io/img/blog/srilanka1.jpg" alt="Blog" title="Blog" width="134px" onclick="nagyit(this)" class="mt-1 mx-1">
+        <img src="../MoonLightTravel.github.io/img/blog/srilanka2.jpg" alt="Blog" title="Blog" width="134px" ng-click="nagyit($event.target)"  class="mt-1 mx-1">
+        <img src="../MoonLightTravel.github.io/img/blog/srilanka3.jpg" alt="Blog" title="Blog" width="134px" ng-click="nagyit($event.target)"  class="mt-1 mx-1">
+        <img src="../MoonLightTravel.github.io/img/blog/srilanka4.jpg" alt="Blog" title="Blog" width="134px" ng-click="nagyit($event.target)"  class="mt-1 mx-1">
+        <img src="../MoonLightTravel.github.io/img/blog/srilanka1.jpg" alt="Blog" title="Blog" width="134px" ng-click="nagyit($event.target)"  class="mt-1 mx-1">
       </div>
     </div>
   
@@ -124,11 +124,6 @@
   
   <script>
    
-    function nagyit(elem) {
-    var nagy_kep_elem = document.getElementById("nagy_kep");
-    nagy_kep_elem.src = elem.src;
-    nagy_kep_elem.alt = elem.alt;
-  }
   function nagyit2(elem) {
     var nagy_kep_elem = document.getElementById("nagy_kep2");
     nagy_kep_elem.src = elem.src;

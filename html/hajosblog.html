@@ -4,28 +4,20 @@
   <h1>Utazás a görög szigetekre</h1>
 </div>
   <div class="row mt-5">
-    
-  <div class="col-12 col-md-8 kepgallery">
-    <div class="column2">
-      <img src="../MoonLightTravel.github.io/img/blog/gorog_ut1.jpg" style="width:100%" onclick="myFunction(this);">
-    </div>
-    <div class="column2">
-      <img src="../MoonLightTravel.github.io/img/blog/gorog_ut2.jpg" style="width:100%" onclick="myFunction(this);">
-    </div>
-    <div class="column2">
-      <img src="../MoonLightTravel.github.io/img/blog/gorog_ut3.jpg" style="width:100%" onclick="myFunction(this);">
-    </div>
-    <div class="column2">
-      <img src="../MoonLightTravel.github.io/img/blog/gorog_ut4.jpg" style="width:100%" onclick="myFunction(this);">
-    </div> 
-  
 
-  <div>
-    <span class="closebtn" onclick="this.parentElement.style.display='none'">&times;</span>
-    <img id="expandedImg" style="width:83%">
-    <div id="imgtext"></div>
+<div class="col-xl-8 col-md-10 col-sm-12 mt-3">
+  <img src="../MoonLightTravel.github.io/img/blog/gorog_ut1.jpg" alt="Blog" title="Blog" id="nagy_kep" class="img-fluid clearfix">
+  
+  <div class="col-xl-9 col-md-10 col-sm-12 mt-2">
+    <img src="../MoonLightTravel.github.io/img/blog/gorog_ut2.jpg" alt="Blog" title="Blog" width="134px" ng-click="nagyit($event.target)"  class="mt-1 mx-1">
+    <img src="../MoonLightTravel.github.io/img/blog/gorog_ut3.jpg" alt="Blog" title="Blog" width="134px" ng-click="nagyit($event.target)"  class="mt-1 mx-1">
+    <img src="../MoonLightTravel.github.io/img/blog/gorog_ut4.jpg" alt="Blog" title="Blog" width="134px" ng-click="nagyit($event.target)"  class="mt-1 mx-1">
+    <img src="../MoonLightTravel.github.io/img/blog/gorog_ut1.jpg" alt="Blog" title="Blog" width="134px" ng-click="nagyit($event.target)"  class="mt-1 mx-1">
   </div>
+
 </div>
+
+ 
 
 
 <div class="col-12 col-md-4 mt-2">
@@ -61,20 +53,4 @@
 ng-include src="'../MoonLightTravel.github.io/html/footer.html'">
 </footer>
 
-<script>
-  function initGallery() {
-    var firstImg = document.querySelector(".column2 img");
-    myFunction(firstImg);
-  }
 
-  function myFunction(imgs) {
-    var expandImg = document.getElementById("expandedImg");
-    var imgText = document.getElementById("imgtext");
-    expandImg.src = imgs.src;
-    imgText.innerHTML = imgs.alt;
-    expandImg.parentElement.style.display = "block";
-  }
-  
-  // az első kép betöltése
-  initGallery();
-</script>
