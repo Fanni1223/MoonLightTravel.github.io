@@ -117,6 +117,7 @@
         .state('regisztracio', {
           controller: 'regisztracio'
         })
+        
         .state('foglalasok', {
           url: '/foglalasok',
           templateUrl: './html/foglalasok.html',
