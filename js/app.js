@@ -153,6 +153,18 @@
       nagy_kep_elem.src = elem.src;
       nagy_kep_elem.alt = elem.alt;
     };
+    $rootScope.nagyit2 = function(elem) {
+      var nagy_kep_elem = document.getElementById("nagy_kep2");
+      nagy_kep_elem.src = elem.src;
+      nagy_kep_elem.alt = elem.alt;
+    };
+    $rootScope.nagyit3 = function(elem) {
+      var nagy_kep_elem = document.getElementById("nagy_kep3");
+      nagy_kep_elem.src = elem.src;
+      nagy_kep_elem.alt = elem.alt;
+    };
+
+
 
       $rootScope.logout = () => {
         location.reload();

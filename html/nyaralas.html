@@ -12,7 +12,7 @@
       <img ng-src="./img/utak/{{data[0].utak_img}}" alt="{{data[0].varos}}" title="{{data[0].varos}}" id="nagy_kep" class="img-fluid clearfix">
       
       <div class="col-xl-8 col-md-10 col-sm-12 mt-2">
-        <img ng-if="nyaralas.neve.includes('.jpg')"  ng-repeat="nyaralas in data" ng-src="./img/utak/{{nyaralas.neve}}" alt="{{data[0].varos}}" title="{{data[0].varos}}" width="134px" onclick="nagyit(this)" class="mt-1 mx-1">
+        <img ng-if="nyaralas.neve.includes('.jpg')"  ng-repeat="nyaralas in data" ng-src="./img/utak/{{nyaralas.neve}}" alt="{{data[0].varos}}" title="{{data[0].varos}}" width="134px" ng-click="nagyit($event.target)" class="mt-1 mx-1">
       </div>
 
       <!--Tabok-->
@@ -192,10 +192,3 @@
  <footer id="availability"
  ng-include src="'../MoonLightTravel.github.io/html/footer.html'"></footer>
 
- <script>
-  function nagyit(elem) {
-    var nagy_kep_elem = document.getElementById("nagy_kep");
-    nagy_kep_elem.src = elem.src;
-    nagy_kep_elem.alt = elem.alt;
-  }
-  </script>

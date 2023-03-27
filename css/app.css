@@ -192,7 +192,6 @@ p{
 /*Főoldal modal*/
 .thumbex {
   overflow: hidden;
-  outline: 2px solid white;
   outline-offset: -15px;
   box-shadow: 5px 10px 40px 5px rgba(0, 0, 0, 0.5);
 }
@@ -1258,6 +1257,57 @@ a:hover {
   color: #f8f8f8;
 }
 
+#wellneskartya .cards {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+#wellneskartya .card {
+  margin: 40px;
+  position: relative;
+  max-width: 250px;
+  max-height: 350px;
+  box-shadow: 0 40px 60px -6px black;
+}
+
+#wellneskartya .card-title {
+  display: block;
+  text-align: center;
+  color: #fff;
+  background-color: #6184a8;
+  padding: 2%;
+  border-top-right-radius: 4px;
+  border-top-left-radius: 4px;
+}
+
+#wellneskartya .card img {
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+  display: block;
+  position: relative;
+}
+
+#wellneskartya .card-desc {
+  display: block;
+  font-size: 1.2rem;
+  position: absolute;
+  height: 0;
+  top: 0;
+  opacity: 0;
+  padding: 18px 8%;
+  background-color: white;
+  overflow-y: scroll;
+  transition: 0.8s ease;
+}
+
+#wellneskartya .card:hover .card-desc {
+  opacity: 1;
+  height: 300px;
+  width: 300px;
+}
 
 
  
