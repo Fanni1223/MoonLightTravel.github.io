@@ -108,11 +108,6 @@
           url: '/varoslatogatas',
           templateUrl: './html/varoslatogatas.html',
         })
-        .state('foglalasok', {
-          url: '/foglalasok',
-          templateUrl: './html/foglalasok.html',
-          controller: 'appController'
-        })
         .state('kedvencek', {
           url: '/kedvencek',
           templateUrl: './html/kedvencek.html',
@@ -121,6 +116,14 @@
 
         .state('regisztracio', {
           controller: 'regisztracio'
+        })
+        .state('foglalasok', {
+          url: '/foglalasok',
+          templateUrl: './html/foglalasok.html',
+          controller: 'foglalasokController',
+          params: {
+            foglalasok: null
+          }
         })
       $urlRouterProvider.otherwise('/');
     }
@@ -466,6 +469,40 @@
   },
 ])
 
+  //Foglalások contoller
+
+  .controller("foglalasokController", [
+    "$scope",
+    "$element",
+    "$timeout",
+    "http",
+    "$stateParams",
+    function ($scope, $element, $timeout, http, $stateParams) {
+  
+  
+      $scope.foglalasok = $stateParams.foglalasok;
+      if (!$scope.foglalasok) {
+        $state.go('home');
+        return;
+      }
+  
+      http.request({
+        url: "./php/get.php",
+        method: "POST",
+        data: {
+          db: "moonlighttravel",
+          query: "SELECT `nev2`, `telefonsz`, `email`, `fo`, `evszam`, `honap`, `nap`, `vegosszeg` FROM `foglalas` inner join utak on utak.ut_id = foglalas.ut_id2  :foglalasok",
+          params: {foglalasok: $scope.foglalasok},
+          isAssoc: true,
+        },
+      })
+      .then((data) => {
+        $scope.data = data;
+        $scope.$applyAsync();
+      })
+      .catch((e) => console.log(e));
+    },
+  ])
 
 
 /*
