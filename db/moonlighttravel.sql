@@ -364,7 +364,7 @@ INSERT INTO `utak_kepek` (`neve`, `darabszam`, `ut_id3`, `neve2`) VALUES
 ('legkondi.svg', 7, 17, 'Légkondícionálás'),
 ('legkondi.svg', 7, 18, 'Légkondícionálás'),
 ('	 no_smoking.svg', 7, 19, 'Dohányzás mentes'),
-('	 no_smoking.svg', 7, 20, 'Dohányzás mentes'),
+('no_smoking.svg', 7, 20, 'Dohányzás mentes'),
 ('legkondi.svg', 7, 21, 'Légkondícionálás'),
 ('legkondi.svg', 7, 22, 'Légkondícionálás'),
 ('legkondi.svg', 7, 23, 'Légkondícionálás'),
@@ -532,6 +532,12 @@ ALTER TABLE `utak`
 --
 -- Megkötések a kiírt táblákhoz
 --
+
+--
+-- Megkötések a táblához `foglalas`
+--
+ALTER TABLE `foglalas`
+  ADD CONSTRAINT `foglalas_ibfk_1` FOREIGN KEY (`ut_id2`) REFERENCES `utak` (`ut_id`);
 
 --
 -- Megkötések a táblához `utak`
