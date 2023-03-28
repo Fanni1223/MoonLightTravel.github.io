@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.0.1
+-- version 4.7.4
 -- https://www.phpmyadmin.net/
 --
 -- Gép: 127.0.0.1
--- Létrehozás ideje: 2023. Már 24. 12:27
--- Kiszolgáló verziója: 10.4.6-MariaDB
--- PHP verzió: 7.3.8
+-- Létrehozás ideje: 2023. Már 28. 07:34
+-- Kiszolgáló verziója: 10.1.29-MariaDB
+-- PHP verzió: 7.2.0
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -234,7 +234,7 @@ INSERT INTO `utak_kepek` (`neve`, `darabszam`, `ut_id3`, `neve2`) VALUES
 ('olaszorszag2.jpg', 2, 23, ''),
 ('gorogorszag2.jpg', 2, 24, ''),
 ('norvegia2-min.jpg', 2, 25, ''),
-('Isztambul2.jpg', 2, 26, ''),
+('Sanghaj2-min.jpg', 2, 26, ''),
 ('Busan2-min.jpg', 2, 27, ''),
 ('Isztambul2.jpg', 2, 28, ''),
 ('paris3-min.jpg', 3, 1, ''),
@@ -262,7 +262,7 @@ INSERT INTO `utak_kepek` (`neve`, `darabszam`, `ut_id3`, `neve2`) VALUES
 ('olaszorszag3.jpg', 3, 23, ''),
 ('gorogorszag3.jpg', 3, 24, ''),
 ('norvegia3-min.jpg', 3, 25, ''),
-('Isztambul3.jpg', 3, 26, ''),
+('Sanghaj3-min.jpg', 3, 26, ''),
 ('Busan3-min.jpg', 3, 27, ''),
 ('Isztambul3.jpg', 3, 28, ''),
 ('paris4-min.jpg', 4, 1, ''),
@@ -290,7 +290,7 @@ INSERT INTO `utak_kepek` (`neve`, `darabszam`, `ut_id3`, `neve2`) VALUES
 ('olaszorszag4.jpg', 4, 23, ''),
 ('gorogorszag4.jpg', 4, 24, ''),
 ('norvegia4-min.jpg', 4, 25, ''),
-('Isztambul4.jpg', 4, 26, ''),
+('Sanghaj4-min.jpg', 4, 26, ''),
 ('Busan4-min.jpg', 4, 27, ''),
 ('Isztambul4.jpg', 4, 28, ''),
 ('paris5-min.jpg', 5, 1, ''),
@@ -314,7 +314,7 @@ INSERT INTO `utak_kepek` (`neve`, `darabszam`, `ut_id3`, `neve2`) VALUES
 ('olaszorszag5.jpg', 5, 23, ''),
 ('gorogorszag5.jpg', 5, 24, ''),
 ('norvegia5-min.jpg', 5, 25, ''),
-('Isztambul5.jpg', 5, 26, ''),
+('Sanghaj5-min.jpg', 5, 26, ''),
 ('Busan5-min.jpg', 5, 27, ''),
 ('Isztambul5.jpg', 5, 28, ''),
 ('wifi.svg', 6, 1, 'Wifi'),
@@ -342,6 +342,9 @@ INSERT INTO `utak_kepek` (`neve`, `darabszam`, `ut_id3`, `neve2`) VALUES
 ('wifi.svg', 6, 23, 'Wifi'),
 ('wifi.svg', 6, 24, 'Wifi'),
 ('wifi.svg', 6, 25, 'Wifi'),
+('wifi.svg', 6, 26, 'Wifi'),
+('wifi.svg', 6, 27, 'Wifi'),
+('wifi.svg', 6, 28, 'Wifi'),
 ('no_smoking.svg', 7, 1, 'Dohányzás mentes'),
 ('no_smoking.svg', 7, 2, 'Dohányzás mentes'),
 ('parkolas.svg', 7, 3, 'Fizetős parkoló'),
@@ -367,8 +370,9 @@ INSERT INTO `utak_kepek` (`neve`, `darabszam`, `ut_id3`, `neve2`) VALUES
 ('legkondi.svg', 7, 23, 'Légkondícionálás'),
 ('no_smoking.svg', 7, 24, 'Dohányzás mentes'),
 ('kisallat.svg', 7, 25, 'Kisállat vihető'),
-('wifi.svg', 7, 26, 'Wifi'),
-('wifi.svg', 7, 27, 'Wifi'),
+('parkolas.svg', 7, 26, 'Ingyenes parkolás'),
+('parkolas.svg', 7, 27, 'Ingyenes parkolás '),
+('parkolas.svg', 7, 28, 'Ingyenes parkolás'),
 ('kisallat.svg', 8, 1, 'Kisállat vihető'),
 ('restaurant.svg', 8, 2, 'Saját étterem'),
 ('restaurant.svg', 8, 3, 'Saját étterem'),
@@ -391,6 +395,9 @@ INSERT INTO `utak_kepek` (`neve`, `darabszam`, `ut_id3`, `neve2`) VALUES
 ('parkolas.svg', 8, 23, 'Ingyenes parkolás'),
 ('legkondi.svg', 8, 24, 'Légkondícionálás'),
 ('restaurant.svg', 8, 25, 'Saját étterem'),
+('legkondi.svg', 8, 26, 'Légkondícionálás'),
+('kisallat.svg', 8, 27, 'Kisállat vihető'),
+('legkondi.svg', 8, 28, 'Légkondícionálás'),
 ('legkondi.svg', 9, 1, 'Légkondícionálás'),
 ('kilatas.svg', 9, 2, 'Terasz'),
 ('medence.svg', 9, 3, 'Medence'),
@@ -413,6 +420,9 @@ INSERT INTO `utak_kepek` (`neve`, `darabszam`, `ut_id3`, `neve2`) VALUES
 ('kisallat.svg', 9, 23, 'Kisállat vihető'),
 ('kilatas.svg', 9, 24, 'Terasz'),
 ('legkondi.svg', 9, 25, 'Légkondícionálás'),
+('no_smoking.svg', 9, 26, 'Dohányzás mentes'),
+('kilatas.svg', 9, 27, 'Terasz'),
+('kisallat.svg', 9, 28, 'Kisállat vihető'),
 ('medence.svg', 10, 1, 'Medence'),
 ('wellness.svg', 10, 2, 'Wellness lehetőség'),
 ('no_smoking.svg', 10, 3, 'Dohányzás mentes'),
@@ -432,6 +442,9 @@ INSERT INTO `utak_kepek` (`neve`, `darabszam`, `ut_id3`, `neve2`) VALUES
 ('kilatas.svg', 10, 23, 'Terasz'),
 ('parkolas.svg', 10, 24, 'Ingyenes parkolás'),
 ('parkolas.svg', 10, 25, 'Ingyenes parkolás'),
+('kilatas.svg', 10, 26, 'Terasz'),
+('medence.svg', 10, 27, 'Medence'),
+('kilatas.svg', 10, 28, 'Terasz'),
 ('parkolas.svg', 11, 1, 'Ingyenes parkolás'),
 ('kilatas.svg', 11, 3, 'Terasz'),
 ('kilatas.svg', 11, 7, 'Terasz'),
