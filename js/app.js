@@ -506,7 +506,7 @@
       method: "POST",
       data: {
         db: "moonlighttravel",
-        query: "SELECT `utak`.* FROM `utak`",
+        query: "SELECT `utak`.* FROM `foglalas`",
         params: {foglalasok: $scope.foglalasok},
         isAssoc: true,
       },
