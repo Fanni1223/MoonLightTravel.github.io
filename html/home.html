@@ -308,12 +308,12 @@
         <div class="overlay-panel overlay-left">
           <h3>Jelentkezz be itt!</h3>
           <br>
-          <button class="ghost" id="signIn" class="btn2">Bejelentkezés</button>
+          <button class="ghost" id="signIn" class="btn2" ng-click="changeActive($event)">Bejelentkezés</button>
         </div>
         <div class="overlay-panel overlay-right">
           <h3>Regisztrálj itt!</h3>
           <br>
-          <button class="ghost" id="signUp" class="btn2">Regisztráció</button>
+          <button class="ghost" id="signUp" class="btn2" ng-click="changeActive($event)">Regisztráció</button>
         </div>
       </div>
     </div>
@@ -323,33 +323,6 @@
 
 
 </div>
-
-  
-  
-
-  <script>
-    const signUpButton = document.getElementById('signUp');
-    const signInButton = document.getElementById('signIn');
-    const container = document.getElementById('bejelentkezes');
-    
-    signUpButton.addEventListener('click', () => {
-      container.classList.add("right-panel-active");
-    });
-    
-    signInButton.addEventListener('click', () => {
-      container.classList.remove("right-panel-active");
-    });
-    
-
-  
-</script>
-    
-    
-    
-    
-    
-    
-    </script>
 
  <!-- Footer -->
  <footer id="availability"

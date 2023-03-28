@@ -269,6 +269,17 @@
         let element = document.getElementById(elementId);
         if (element) element.scrollIntoView(align);
       };
+
+      // Login/Register change active
+      $scope.changeActive = (event) => {
+        let elementId = event.currentTarget.id,
+            container = document.getElementById('bejelentkezes');
+        if (elementId === 'signUp') {
+          container.classList.add("right-panel-active");
+        } else {
+          container.classList.remove("right-panel-active");
+        }
+      }
     }
   ])
 
