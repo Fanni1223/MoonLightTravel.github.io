@@ -1,87 +1,21 @@
 <div ng-include src="'../MoonLightTravel.github.io/html/navigate.html'"></div>
 <div class="container">
-  <style>
-  .cards {
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-  }
-  
-  .card {
-    margin: 40px;
-    position: relative;
-    max-width: 250px;
-    max-height: 350px;
-    box-shadow: 0 40px 60px -6px black;
-  }
-  
-  .card-title {
-    display: block;
-    text-align: center;
-    color: #fff;
-    background-color: #6184a8;
-    padding: 2%;
-    border-top-right-radius: 4px;
-    border-top-left-radius: 4px;
-  }
-  
-  .card img {
-    width: 300px;
-    height: 300px;
-    object-fit: cover;
-    display: block;
-    position: relative;
-  }
-  
-  .card-desc {
-    display: block;
-    font-size: 1.2rem;
-    position: absolute;
-    height: 0;
-    top: 0;
-    opacity: 0;
-    padding: 18px 8%;
-    background-color: white;
-    overflow-y: scroll;
-    transition: 0.8s ease;
-  }
-  
-  .card:hover .card-desc {
-    opacity: 1;
-    height: 300px;
-    width: 300px;
-  }
-  
-  
-  </style>
-
 <div class="row mt-5 text-center">
   <h1>Wellnes</h1>
 </div>
   <div class="row mt-5">
     
-  <div class="col-12 col-md-8 kepgallery">
-    <div class="column2">
-      <img src="../MoonLightTravel.github.io/img/blog/wellness.jpg" style="width:100%" onclick="myFunction(this);">
-    </div>
-    <div class="column2">
-      <img src="../MoonLightTravel.github.io/img/blog/wellnes2.jpg" style="width:100%" onclick="myFunction(this);">
-    </div>
-    <div class="column2">
-      <img src="../MoonLightTravel.github.io/img/blog/wellnes3.jpg" style="width:100%" onclick="myFunction(this);">
-    </div>
-    <div class="column2">
-      <img src="../MoonLightTravel.github.io/img/blog/wellnes4.jpg" style="width:100%" onclick="myFunction(this);">
-    </div> 
-  
+    <div class="col-xl-8 col-md-10 col-sm-12 mt-3">
+      <img src="../MoonLightTravel.github.io/img/blog/wellnes2.jpg" alt="Blog" title="Blog" id="nagy_kep" class="img-fluid clearfix">
+      
+      <div class="col-xl-9 col-md-10 col-sm-12 mt-2">
+        <img src="../MoonLightTravel.github.io/img/blog/wellnes3.jpg" alt="Blog" title="Blog" width="134px" ng-click="nagyit($event.target)"  class="mt-1 mx-1">
+        <img src="../MoonLightTravel.github.io/img/blog/wellnes4.jpg" alt="Blog" title="Blog" width="134px" ng-click="nagyit($event.target)"  class="mt-1 mx-1">
+        <img src="../MoonLightTravel.github.io/img/blog/wellness5.jpg" alt="Blog" title="Blog" width="134px" ng-click="nagyit($event.target)"  class="mt-1 mx-1">
+        <img src="../MoonLightTravel.github.io/img/blog/wellnes2.jpg" alt="Blog" title="Blog" width="134px" ng-click="nagyit($event.target)"  class="mt-1 mx-1">
+      </div>
 
-  <div>
-    <span class="closebtn" onclick="this.parentElement.style.display='none'">&times;</span>
-    <img id="expandedImg" style="width:83%">
-    <div id="imgtext"></div>
-  </div>
-</div>
+    </div>
 
 
 <div class="col-12 col-md-4 mt-2">
@@ -99,29 +33,29 @@
 </div>
 </div>
 
-<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
 
+<div id="wellneskartya">
 <div class="cards">
   <div class="card">
     
-    <img src="../MoonLightTravel.github.io/img/blog/aromaterapia.jpg" alt="">
+    <img src="../MoonLightTravel.github.io/img/blog/aromaterapia.jpg" alt="Blog" title="Blog">
     <p class="card-desc">Az aromaterápia a legáltalánosabb meghatározás szerint az illóolajos növények, a belőlük kinyert kivonatok és az illóolajok használatán alapuló gyógyeljárások összessége.</p>
   </div>
   <div class="card">
     
-    <img src="../MoonLightTravel.github.io/img/blog/soterapia.jpg" alt="">
+    <img src="../MoonLightTravel.github.io/img/blog/soterapia.jpg" alt="Blog" title="Blog">
     <p class="card-desc">A terápián résztvevők belélegzik a levegő molekuláihoz tapadt parányi sószemcséket és ezek eljutnak a legkisebb hörgőcskékig is. Ott a nyálkahártyához érve feloldódnak és kifejtik gyulladáscsökkentő hatásukat. A száraz sóterápia legfontosabb előnye a nedves sóterápiával szemben, hogy a sórészecskék nem telítődnek nedvességgel, emiatt nem akadnak el a felső légutak nyálkahártyáin és eljutnak a tüdő legtávolabbi részéhez, a hörgőkig.</p>
   </div>
   <div class="card">
   
-    <img src="../MoonLightTravel.github.io/img/blog/kovesterapia.jpg" alt="">
+    <img src="../MoonLightTravel.github.io/img/blog/kovesterapia.jpg" alt="Blog" title="Blog">
     <p class="card-desc">A forró kövekkel végzett masszázs egy különleges eljárás, mely a vér- és nyirokrendszer aktivizálása mellett képes a tudatot mélyen lenyugtatni, így már masszázs közben teljes pihenést biztosít. A ritmikusan ismétlődő lassú, körkörös és simító mozdulatok a meleg kő hatásával egyesülve rendkívül lazítóak.</p>
   </div>
 </div>
 
 
 </div>
-
+</div>
 
 
 <!-- Footer -->
@@ -129,20 +63,3 @@
 ng-include src="'../MoonLightTravel.github.io/html/footer.html'">
 </footer>
 
-<script>
-  function initGallery() {
-    var firstImg = document.querySelector(".column2 img");
-    myFunction(firstImg);
-  }
-
-  function myFunction(imgs) {
-    var expandImg = document.getElementById("expandedImg");
-    var imgText = document.getElementById("imgtext");
-    expandImg.src = imgs.src;
-    imgText.innerHTML = imgs.alt;
-    expandImg.parentElement.style.display = "block";
-  }
-  
-  // az első kép betöltése
-  initGallery();
-</script>

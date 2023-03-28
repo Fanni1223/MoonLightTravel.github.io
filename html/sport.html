@@ -5,28 +5,17 @@
   </div>
     <div class="row mt-5">
       
-    <div class="col-12 col-md-8 kepgallery">
-      <div class="column2">
-        <img src="../MoonLightTravel.github.io/img/blog/floorball1.jpg" style="width:100%" onclick="myFunction(this);">
-      </div>
-      <div class="column2">
-        <img src="../MoonLightTravel.github.io/img/blog/floorball2.jpg" style="width:100%" onclick="myFunction(this);">
-      </div>
-      <div class="column2">
-        <img src="../MoonLightTravel.github.io/img/blog/floorball3.jpg" style="width:100%" onclick="myFunction(this);">
-      </div>
-      <div class="column2">
-        <img src="../MoonLightTravel.github.io/img/blog/floorball4.jpg" style="width:100%" onclick="myFunction(this);">
-      </div> 
-    
+      <div class="col-xl-8 col-md-10 col-sm-12 mt-3">
+        <img src="../MoonLightTravel.github.io/img/blog/floorball1.jpg" alt="Blog" title="Blog" id="nagy_kep" class="img-fluid clearfix">
+        
+        <div class="col-xl-9 col-md-10 col-sm-12 mt-2">
+          <img src="../MoonLightTravel.github.io/img/blog/floorball2.jpg" alt="Blog" title="Blog" width="134px" ng-click="nagyit($event.target)"  class="mt-1 mx-1">
+          <img src="../MoonLightTravel.github.io/img/blog/floorball3.jpg" alt="Blog" title="Blog" width="134px" ng-click="nagyit($event.target)"  class="mt-1 mx-1">
+          <img src="../MoonLightTravel.github.io/img/blog/floorball4.jpg" alt="Blog" title="Blog" width="134px" ng-click="nagyit($event.target)"  class="mt-1 mx-1">
+          <img src="../MoonLightTravel.github.io/img/blog/floorball1.jpg" alt="Blog" title="Blog" width="134px" ng-click="nagyit($event.target)"  class="mt-1 mx-1">
+        </div>
   
-    <div>
-      <span class="closebtn" onclick="this.parentElement.style.display='none'">&times;</span>
-      <img id="expandedImg" style="width:83%">
-      <div id="imgtext"></div>
-    </div>
-  </div>
-  
+      </div>
   
   <div class="col-12 col-md-4 mt-2">
     <p>Két nemzet is a saját találmányának tartja ezt a játékot. Az 1960-as évek végén az Egyesült Államokban már játszották a floorhockey nevű játékot (a mostaniakhoz hasonló ütőkkel ). Svédországban is kitaláltak egy nagyon hasonló játékot, amit innebandynak neveztek el, Czitrom András személyében magyar is volt a kigondolók között. Céljuk az volt, hogy a hoki agresszivitásától tartózkodók számára, egy legalább ugyanolyan élvezetes, ám sokkal tisztább játékot hozzanak létre, ami tornateremben játszható. A svéd szövetség 1981-ben alakult meg, a játékszabályokat is ekkor rögzítették, a floorball név a Nemzetközi Floorball Szövetség (International Floorball Federation, IFF) megalakulásától, 1986-tól használatos.</p>
@@ -43,20 +32,3 @@
   ng-include src="'../MoonLightTravel.github.io/html/footer.html'">
   </footer>
   
-  <script>
-    function initGallery() {
-      var firstImg = document.querySelector(".column2 img");
-      myFunction(firstImg);
-    }
-  
-    function myFunction(imgs) {
-      var expandImg = document.getElementById("expandedImg");
-      var imgText = document.getElementById("imgtext");
-      expandImg.src = imgs.src;
-      imgText.innerHTML = imgs.alt;
-      expandImg.parentElement.style.display = "block";
-    }
-    
-    // az első kép betöltése
-    initGallery();
-  </script>

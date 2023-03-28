@@ -55,6 +55,13 @@
             ajanlatok: null
           }
         })
+
+        .state('foglalasok', {
+          url: '/foglalasok',
+          templateUrl: './html/foglalasok.html',
+          controller: 'foglalasokController',
+          
+        })
         .state('hajosblog', {
           url: '/hajosblog',
           templateUrl: './html/hajosblog.html',
@@ -108,20 +115,13 @@
           url: '/varoslatogatas',
           templateUrl: './html/varoslatogatas.html',
         })
-        .state('foglalasok', {
-          url: '/foglalasok',
-          templateUrl: './html/foglalasok.html',
-          controller: 'appController'
-        })
-        .state('kedvencek', {
-          url: '/kedvencek',
-          templateUrl: './html/kedvencek.html',
-          controller: 'appController'
-        })
+        
 
         .state('regisztracio', {
           controller: 'regisztracio'
         })
+        
+      
       $urlRouterProvider.otherwise('/');
     }
   ])
@@ -152,11 +152,30 @@
         }).catch((e) => console.log(e));
       });
 
-      
+       // Add nagyit function to $rootScope
+    $rootScope.nagyit = function(elem) {
+      var nagy_kep_elem = document.getElementById("nagy_kep");
+      nagy_kep_elem.src = elem.src;
+      nagy_kep_elem.alt = elem.alt;
+    };
+    $rootScope.nagyit2 = function(elem) {
+      var nagy_kep_elem = document.getElementById("nagy_kep2");
+      nagy_kep_elem.src = elem.src;
+      nagy_kep_elem.alt = elem.alt;
+    };
+    $rootScope.nagyit3 = function(elem) {
+      var nagy_kep_elem = document.getElementById("nagy_kep3");
+      nagy_kep_elem.src = elem.src;
+      nagy_kep_elem.alt = elem.alt;
+    };
+
+
 
       $rootScope.logout = () => {
         location.reload();
       };
+
+     
     },
   ])
 
@@ -466,28 +485,39 @@
   },
 ])
 
+ // Foglalások controller
+ .controller("foglalasokController", [
+  "$scope",
+  "$element",
+  "$timeout",
+  "http",
+  "$stateParams",
+  function ($scope, $element, $timeout, http, $stateParams) {
 
 
-/*
-//create data
-app.post('/felhasznalok',(req,res)=>{
-  console.log(req.body, 'creatdata');
+    $scope.foglalasok = $stateParams.foglalasok;
+    if (!$scope.foglalasok) {
+      $state.go('home');
+      return;
+    }
 
-  let fullname = req.body.name;
-  let eMail = req.body.email;
-  let jElszo = req.body.jelszo ;
-
-  let qr = `insert into felhasznalok (nev, email, jelszo) values('$(fullname)','$(eMail)','$(jElszo)')`;
-
-  db.query(qr, (err,result)=>{
-    if(err){console.log(err);}
-    res.send({
-      message: 'data.inserted',
-    });
-  })
-})
-*/
-
+    http.request({
+      url: "./php/get.php",
+      method: "POST",
+      data: {
+        db: "moonlighttravel",
+        query: "SELECT `utak`.* FROM `foglalas`",
+        params: {foglalasok: $scope.foglalasok},
+        isAssoc: true,
+      },
+    })
+    .then((data) => {
+      $scope.data = data;
+      $scope.$applyAsync();
+    })
+    .catch((e) => console.log(e));
+  },
+])
 
 
 
