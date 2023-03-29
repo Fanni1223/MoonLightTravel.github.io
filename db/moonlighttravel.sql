@@ -44,7 +44,8 @@ INSERT INTO `felhasznalok` (`id`, `nev`, `email`, `jelszo`) VALUES
 (2, 'Fanni', 'fanni@citromail.hu', 'a'),
 (3, 'Turi Regina', 'turi.viktoriar-2018@keri.mako.hu', 'aa'),
 (4, 'Turi Regina', 'turiviki2003@gmail.com', 'aaa'),
-(5, 'Fanni', 'fanni@hotmail.com', 'a');
+(5, 'Fanni', 'fanni@hotmail.com', 'a'),
+(6, 'Félix', 'felix@freemail.hu', '123456');
 
 -- --------------------------------------------------------
 
@@ -54,6 +55,7 @@ INSERT INTO `felhasznalok` (`id`, `nev`, `email`, `jelszo`) VALUES
 
 CREATE TABLE `foglalas` (
   `foglalas_id` int(50) NOT NULL,
+  `felhasznalo_id` int(11) NOT NULL,
   `teljes_nev` varchar(50) COLLATE utf8_hungarian_ci NOT NULL,
   `telefonsz` int(11) NOT NULL,
   `email` varchar(50) COLLATE utf8_hungarian_ci NOT NULL,
@@ -72,8 +74,8 @@ CREATE TABLE `foglalas` (
 -- A tábla adatainak kiíratása `foglalas`
 --
 
-INSERT INTO `foglalas` (`foglalas_id`, `teljes_nev`, `telefonsz`, `email`, `fo`, `vegosszeg`, `kisagy`, `evszam`, `honap`, `nap`, `oda_ora`, `vissza_ora`, `ut_id2`) VALUES
-(1, 'kdhadkddf', 63, 'djfdsffdfhdfsdfsdf', 3, 12345, 2, '0000-00-00', 12, 1, 12, 12, 1);
+INSERT INTO `foglalas` (`foglalas_id`, `felhasznalo_id`, `teljes_nev`, `telefonsz`, `email`, `fo`, `vegosszeg`, `kisagy`, `evszam`, `honap`, `nap`, `oda_ora`, `vissza_ora`, `ut_id2`) VALUES
+(1, 6, 'kdhadkddf', 63, 'djfdsffdfhdfsdfsdf', 3, 12345, 2, '2023-03-28', 12, 1, 12, 12, 1);
 
 -- --------------------------------------------------------
 
@@ -115,8 +117,8 @@ INSERT INTO `szallas` (`szallas_id`, `megnev`, `leiras2`, `tipus`, `elhelyezkede
 (15, 'Gold Dust West', 'A Carson Cityben található Gold Dust West 24 órás kaszinót kínál több mint 400 legújabb játékkal. Egy szabadtéri medence és egy gyógyfürdő is rendelkezésre áll. A Reno-Tahoe nemzetközi repülőtér 36 km-re található.', 3, ' 2171 E William Street, Carson City, NV 89701, Amerika', 'hotel19-min.jpg', 46565, 'FB (Full Board)', 'Reggeli, ebéd és vacsora is benne van az árban. Azoknak ajánlott, akik nem terveznek három óránál hosszabb kirándulásokat, ugyanakkor nem akarnak étterembe menni.'),
 (16, 'YAVAPAI LODGE INSIDE THE PARK ', 'A Yavapai Lodge®-ban a természet szépsége találkozik a kényelem varázslatával. A Grand Canyon Nemzeti Parkban található szálloda kiváló helyen, a déli peremen található. A szállás rövid sétára vagy buszútra található a déli peremtől, és pár lépésre a piactól, a banktól és a postától. Természetesen ez több, mint a tökéletes hely a kaland elindításához. Fő szállása remek hely a kikapcsolódásra és feltöltődésre, köszönhetően a hangulatos ülősaroknak és a szabadtéri terasznak.', 2, 'Grand Canyon National Park - Grand Canyon Village', 'hotel20-min.jpg', 105521, 'OV', 'Ezért nem jár semmilyen étkezés a hotelben. Ezt az aktív turisták választják, akik idejük nagy részét a hotelen kívül töltik.'),
 (17, 'Kirowy Gościniec', 'A Kis-Lengyelország régióban, Kościeliskóban található Kirowy Gościniec ingyenes wifivel, grillezési lehetőséggel, fitneszközponttal és ingyenes parkolási lehetőséggel várja vendégeit. A fontos helyek távolsága a létesítménytől: Gubałówka - 8,5 km.', 1, 'Groń 6, 34-511 Kościelisko, Lengyelország', 'hotel21-min.jpg', 23055, 'SC (Self Catering)', 'Önellátás. Étkezések nincsenek az árban, de a vendégek használhatják a konyhát vagy főzősarkot, ahol maguknak elkészíthetik az ételüket. Ez a legjobb választás, ha egy kis pénzt akar megtakarítani vagy szigorú diétát folytat.'),
-(18, 'Granbell Hotel Colombo', 'A Colombóban, a Kollupitiya strandtól 90 méterre található Granbell Hotel Colombo szabadtéri úszómedencével, ingyenes parkolási lehetőséggel, fitneszközponttal és terasszal várja vendégeit. Az étteremmel, bárral, szaunával és pezsgőfürdővel rendelkező szálláshelyen A szálláshely szobaszervizt, 24 órás recepciót és pénzváltót kínál vendégeinek.', 4, '282/5, Kollupitiya Road, Kollupitiya, 00300 Colombo, Srí Lanka', 'hotel22-min.jpg', 150000, 'AI (All Inclusive)', 'A legnépszerűbb étkeztetési mód, különösen azok körében, akik a szabadságukat a tengerparton szeretnénk tölteni, közel a hotelhez. Teljes ellátást foglal magában (napi három-hat étkezés, plusz a ropogtatnivalók), valamint az alkoholmentes italok és a helyi készítésű alkoholok korlátlan mennyiségű fogyasztását.'),
-(19, 'Prince Palace Hotel - SHA Extra Plus', 'A Prince Palace Hotel épülete Bangkok óvárosában, közvetlenül a Bo Bae Tower divatáruház felett található. A Mahanak-csatornára kilátást nyújtó szálloda szabadtéri medencét és 7 különböző étkezési lehetőséget kínál. A közös helyiségekben ingyenes wifi áll rendelkezésre.', 4, '488/800 Bo Bae Tower, Damrongrak Road, Mahanak, Pomprab Sattrupai, 10100 Bangkok,', 'hotel23-min.jpg', 160000, 'PP', 'Az ételeket az utazás programjához illesztve szolgálják fel. Általában a szabadidőben szervezett kirándulások határozzák meg.'),
+(18, 'Granbell Hotel Colombo', 'A Colombóban, a Kollupitiya strandtól 90 méterre található Granbell Hotel Colombo szabadtéri úszómedencével, ingyenes parkolási lehetőséggel, fitneszközponttal és terasszal várja vendégeit. Az étteremmel, bárral, szaunával és pezsgőfürdővel rendelkező szálláshelyen A szálláshely szobaszervizt, 24 órás recepciót és pénzváltót kínál vendégeinek.', 4, '282/5, Kollupitiya Road, Kollupitiya, 00300 Colombo, Srí Lanka', 'hotel22-min.jpg', 0, 'AI (All Inclusive)', 'A legnépszerűbb étkeztetési mód, különösen azok körében, akik a szabadságukat a tengerparton szeretnénk tölteni, közel a hotelhez. Teljes ellátást foglal magában (napi három-hat étkezés, plusz a ropogtatnivalók), valamint az alkoholmentes italok és a helyi készítésű alkoholok korlátlan mennyiségű fogyasztását.'),
+(19, 'Prince Palace Hotel - SHA Extra Plus', 'A Prince Palace Hotel épülete Bangkok óvárosában, közvetlenül a Bo Bae Tower divatáruház felett található. A Mahanak-csatornára kilátást nyújtó szálloda szabadtéri medencét és 7 különböző étkezési lehetőséget kínál. A közös helyiségekben ingyenes wifi áll rendelkezésre.', 4, '488/800 Bo Bae Tower, Damrongrak Road, Mahanak, Pomprab Sattrupai, 10100 Bangkok,', 'hotel23-min.jpg', 0, 'PP', 'Az ételeket az utazás programjához illesztve szolgálják fel. Általában a szabadidőben szervezett kirándulások határozzák meg.'),
 (20, 'Mizingani Seafront Hotel', 'A Mizingani Seafront Hotel mindössze 2 perces sétára helyezkedik el Zanzibár kompkikötőjétől. A szálloda étteremmel, szabadtéri medencével és éjjel-nappal nyitva tartó recepcióval várja vendégeit. A helyszíni magánparkoló díjmentesen használható.', 4, 'Mizingani Road, StoneTown, Zanzibár, Tanzánia', 'hotel25-min.jpg', 40895, 'AI (All Inclusive)', 'A legnépszerűbb étkeztetési mód, különösen azok körében, akik a szabadságukat a tengerparton szeretnénk tölteni, közel a hotelhez. Teljes ellátást foglal magában (napi három-hat étkezés, plusz a ropogtatnivalók), valamint az alkoholmentes italok és a helyi készítésű alkoholok korlátlan mennyiségű fogyasztását.'),
 (21, 'Lazure Hotel & Marina', 'A Kotori-öbölre néző Lazure Hotel & Marina luxus szállást kínál 2 km-re Herceg Novi városától. Az üdülőhelyen 2 étterem, valamint szezonális strandbár és lobbibár található. Ingyenes Wi-Fi és ingyenes privát parkoló – garázsok – biztosítottak.', 5, 'Braće Pedišića 10, 85340 Herceg Novi, Montenegró', 'hotel28-min.jpg', 65660, 'UAI (Ultra All Inclusive)', 'Ugyanaz, mint az All Inclusive, de az alkoholos italok (főleg a nemzetköziek) szélesebb választékával. Hoteltől függően magában foglalhat további szolgáltatásokat – pl. masszázsok, spa, szaunák.'),
 (22, 'Hotel Tirolerhof\r\n', 'A Zillertal 3000 síterülethez vezető Rastkogel és Eggalm felvonók között, a Zillertal-völgyben, Tux faluban található Hotel Tirolerhof 4 Sterne Superior alpesi stílusú szobákkal, tipikus tiroli konyhával, hangulatos társalgóval, kandallóval és wellnessrészleggel várja vendégeit.', 4, 'Hofgasse 214, 5542 Flachau, Ausztria', 'hotel29-min.jpg', 25500, 'BB (Bed and Breakfast)', 'A szállás árában benne van a reggeli.'),
@@ -222,7 +224,6 @@ CREATE TABLE `utak_kepek` (
 --
 
 INSERT INTO `utak_kepek` (`neve`, `darabszam`, `ut_id3`, `neve2`) VALUES
-('Isztambul2.jpg', 0, 0, ''),
 ('paris2-min.jpg', 2, 1, ''),
 ('marseille2-min.jpg', 2, 2, ''),
 ('lyon2-min.jpg', 2, 3, ''),
@@ -590,7 +591,7 @@ ALTER TABLE `utak_kepek`
 -- AUTO_INCREMENT a táblához `felhasznalok`
 --
 ALTER TABLE `felhasznalok`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT a táblához `foglalas`

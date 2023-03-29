@@ -505,22 +505,10 @@
   "$stateParams",
   function ($scope, $element, $timeout, http, $stateParams) {
 
-
-    $scope.foglalasok = $stateParams.foglalasok;
-    if (!$scope.foglalasok) {
-      $state.go('home');
-      return;
-    }
-
     http.request({
-      url: "./php/get.php",
+      url: "./php/foglalas-leker.php",
       method: "POST",
-      data: {
-        db: "moonlighttravel",
-        query: "SELECT `utak`.* FROM `foglalas`",
-        params: {foglalasok: $scope.foglalasok},
-        isAssoc: true,
-      },
+      data: $scope.user.id,
     })
     .then((data) => {
       $scope.data = data;

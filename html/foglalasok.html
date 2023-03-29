@@ -1,4 +1,4 @@
-<div ng-include src="'../MoonLightTravel.github.io/html/navigate.html'"></div>
+<div ng-include src="'./html/navigate.html'"></div>
 <style>
   
 
@@ -30,7 +30,9 @@
 
  
 
-  <div class="card foglalas-kartya" style="width: 25rem;">   
+  <div class="card foglalas-kartya" 
+       ng-repeat="x in data"
+       style="width: 25rem;">   
 
 
     
@@ -39,7 +41,8 @@
     
     <div class="card-body">
       <p class="card-text">     telefonszam &emsp; </p>
-      
+      <p class="card-text">{{x.nev}}</p>
+      <p class="card-text">{{x.telefonsz}}</p>
 
 
     </div>
@@ -49,4 +52,4 @@
 
  <!-- Footer -->
  <footer id="availability"
- ng-include src="'../MoonLightTravel.github.io/html/footer.html'"></footer>
+ ng-include src="'./html/footer.html'"></footer>
