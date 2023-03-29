@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.4
+-- version 4.9.0.1
 -- https://www.phpmyadmin.net/
 --
 -- Gép: 127.0.0.1
--- Létrehozás ideje: 2023. Már 28. 07:34
--- Kiszolgáló verziója: 10.1.29-MariaDB
--- PHP verzió: 7.2.0
+-- Létrehozás ideje: 2023. Már 29. 14:02
+-- Kiszolgáló verziója: 10.4.6-MariaDB
+-- PHP verzió: 7.3.8
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -125,7 +125,14 @@ INSERT INTO `szallas` (`szallas_id`, `megnev`, `leiras2`, `tipus`, `elhelyezkede
 (25, 'Svalbard Hotell | The Vault', 'A Longyearbyenben, a Svalbard-templomtól 800 méterre található Svalbard Hotell | A Vault bárral, díjmentes magánparkolóval, közös társalgóval és terasszal rendelkezik. A 3 csillagos szálloda jegyirodai szolgáltatást és poggyászmegőrzőt is biztosít. A szálláshely éjjel-nappali recepciót, utazásszervezői pultot, reptéri transzfert és egész területén ingyenes wifit kínál vendégeinek.', 3, '500 / 503, 9170 Longyearbyen, Norvégia ', 'hotel31.jpg', 218815, 'BB (Bed and Breakfast)', 'A szállás árában benne van a reggeli.'),
 (26, 'InterContinental Shanghai Wonderland, an IHG Hotel', 'Az InterContinental Shanghai Wonderland Songjiangban, Sanghaj gyökerében található, a sanghaji Hongqiao negyed közelében, 40 percre a Shanghai Hongqiao nemzetközi repülőtértől, a sanghaji pályaudvartól és a Sanghaji Nemzeti Kiállítási és Kongresszusi Központtól. Kína mérföldkőjének számít, 88 méterrel közelebb a Föld szívéhez. A szálloda az építészeti és formatervezési innovációk megtestesítője a mérnöki áttörésekkel, egy félelmetes úti cél, amely összehozza a gazdag utazókat', 4, '5888 Chenhua Road, Shanghai 201619 China', 'hotel32.jpg', 118219, 'BB (Bed and Breakfast)', 'A szállás árában benne van a reggeli.'),
 (27, 'Busan Business Hotel', 'Kezdje tökéletesen utazását! A szálláshelyen az ingyenes wifi minden szobában a megtalálható a szolgáltatások között. A szálláshely Soemyeon területén található. Stratégiai elhelyezkedésének köszönhetően, innen könnyedén felfedezhetjük a helyi látványosságokat. Mindenképpen illessze bele programjába a híres Haeundae Beach meglátogatását. E 4 csillagos szálláshelyen az étterem is megtalálható a szolgáltatások között, így a tartózkodása még kényelmesebb és emlékezetesebb lehet!', 4, '67,Bujeon-ro, Buanjin-gu, Soemyeon, Busan, Dél-Korea, 47284 ', 'hotel33.jpg', 20963, 'AI (All Inclusive)', 'A legnépszerűbb étkeztetési mód, különösen azok körében, akik a szabadságukat a tengerparton szeretnénk tölteni, közel a hotelhez. Teljes ellátást foglal magában (napi három-hat étkezés, plusz a ropogtatnivalók), valamint az alkoholmentes italok és a helyi készítésű alkoholok korlátlan mennyiségű fogyasztását.'),
-(28, 'ISG Sabiha Gökçen Airport Hotel', 'A szálloda modern szobákat kínál az isztambuli Sabiha Gokcen repülőtér területén. A poggyász szállításáról is gondoskodó szálloda vendégei online is bejelentkezhetnek járataikra a recepción.', 4, 'Istanbul Sabiha Gokcen Uluslararasi Havalimani Pendik, 34912 Isztambul,', 'hotel24.jpg', 35000, 'AI (All Inclusive)', 'A legnépszerűbb étkeztetési mód, különösen azok körében, akik a szabadságukat a tengerparton szeretnénk tölteni, közel a hotelhez. Teljes ellátást foglal magában (napi három-hat étkezés, plusz a ropogtatnivalók), valamint az alkoholmentes italok és a helyi készítésű alkoholok korlátlan mennyiségű fogyasztását.');
+(28, 'ISG Sabiha Gökçen Airport Hotel', 'A szálloda modern szobákat kínál az isztambuli Sabiha Gokcen repülőtér területén. A poggyász szállításáról is gondoskodó szálloda vendégei online is bejelentkezhetnek járataikra a recepción.', 4, 'Istanbul Sabiha Gokcen Uluslararasi Havalimani Pendik, 34912 Isztambul,', 'hotel24.jpg', 35000, 'AI (All Inclusive)', 'A legnépszerűbb étkeztetési mód, különösen azok körében, akik a szabadságukat a tengerparton szeretnénk tölteni, közel a hotelhez. Teljes ellátást foglal magában (napi három-hat étkezés, plusz a ropogtatnivalók), valamint az alkoholmentes italok és a helyi készítésű alkoholok korlátlan mennyiségű fogyasztását.'),
+(29, 'San Marco Vip', 'Minden egységben zuhanyzós fürdőszoba, ingyenes piperecikkek, hajszárító és papucsok is rendelkezésre állnak.\r\nAz apartman pezsgőfürdőt kínál.\r\nA San Marco Vip apartmanban kerékpárkölcsönzés áll rendelkezésre.\r\n', 4, '40 Axenstrasse, 6454 Fluelen, Svájc', 'hotel29-min.jpg', 50000, 'AI (All Inclusive)', 'A legnépszerűbb étkeztetési mód, különösen azok körében, akik a szabadságukat a tengerparton szeretnénk tölteni, közel a hotelhez. Teljes ellátást foglal magában (napi három-hat étkezés, plusz a ropogtatnivalók), valamint az alkoholmentes italok és a helyi készítésű alkoholok korlátlan mennyiségű fogyasztását.'),
+(30, 'ODYSSEE Boutique Hotel Casablanca', 'A Casablanca központjában található ODYSSEE Boutique Hotel Casablanca légkondicionált szobákat kínál ingyenes wifivel, ingyenes privát parkolóval és szobaszervizzel. A különböző létesítmények között közös társalgó, étterem, valamint bár is található. A szálláshely üzleti központot, portaszolgálatot és valutaváltót biztosít a vendégek számára.', 5, 'Angle Rue Kamal Mohamed-Avenue des F.A.R, Sidi Belyout, 20000 Casablanca, Marokkó', 'hotel30-min.jpg', 70000, 'FB (Full Board)', 'Reggeli, ebéd és vacsora is benne van az árban. Azoknak ajánlott, akik nem terveznek három óránál hosszabb kirándulásokat, ugyanakkor nem akarnak étterembe menni.'),
+(31, 'Hotel Le Relais Normand', 'Az étteremmel rendelkező Hotel Le Relais Normand 500 méterre található a vasútállomástól és 100 méterre a Poste Petite Vitesse-től. és 5 perc sétára az Avenue de L\'Independance-tól. A Le Relais Normand vendégszobái síkképernyős TV-vel és széffel felszereltek. A saját fürdőszoba zuhanyzóval van felszerelve.', 3, 'Tsaralalana, 21 rue rainibetsimisaraka, 101 Antananarivo, Madagaszkár', 'hotel31-min.jpg', 20000, 'OV', 'Ezért nem jár semmilyen étkezés a hotelben. Ezt az aktív turisták választják, akik idejük nagy részét a hotelen kívül töltik.'),
+(32, 'Sousse Pearl Marriott Resort & Spa', 'A Pearl Resort & Spa saját stranddal és ingyenes wifivel rendelkező szálláshely Szúszában, a Nagymecsettől 2 km-re. Az 5 csillagos szálloda légkondicionált szobákkal és saját fürdőszobával várja vendégeit. A szálláshely 2,9 km-re fekszik a Dar Essid Múzeumtól és 3,1 km-re a Dar Am Taieb múzeumtól. Minden szoba ülősarokkal és síkképernyős műholdas TV-vel rendelkezik. A vízforralóval ellátott szobák egy részéhez terasz is tartozik. A szállásegységekben ruhásszekrény található.', 5, 'Boulevard Abdelhamid El Kadhi La corniche, 4000 Sousse, 4000 Szúsza, Tunézia', 'hotel32-min.jpg', 30000, 'BB (Bed and Breakfast)', 'A szállás árában benne van a reggeli.'),
+(33, 'The Table Bay Hotel', 'A Table Bay Hotel egy 5 csillagos luxusszálloda Fokvárosban, a V&A Waterfront partszakaszon. Gyönyörű kilátás nyílik a működő kikötőre, a Table Mountainre és az Atlanti-óceánra. A szálloda medencével és gyógyfürdővel várja vendégeit. Minden légkondicionált szoba minibárral, síkképernyős műholdas TV-vel, valamint tea- és kávéfőzési lehetőséggel rendelkezik. A saját fürdőszobában kád, zuhanyzó és ingyenes piperecikkek állnak rendelkezésre.', 5, 'Quay 6, Victoria & Alfred Waterfront , Waterfront, 8002 Fokváros, Dél-afrikai Köztársaság', 'hotel33-min.jpg', 90000, 'AI (All Inclusive)', 'A legnépszerűbb étkeztetési mód, különösen azok körében, akik a szabadságukat a tengerparton szeretnénk tölteni, közel a hotelhez. Teljes ellátást foglal magában (napi három-hat étkezés, plusz a ropogtatnivalók), valamint az alkoholmentes italok és a helyi készítésű alkoholok korlátlan mennyiségű fogyasztását.'),
+(34, 'Sofia Place Hotel by HMG', 'A központi elhelyezkedésű Sofia Place Hotel by HMG 7 perces sétára található a Szent Szófia-székesegyháztól és közel a Vitosha körút sétálóutcájához. Ingyenes internet-hozzáférést és 24 órás recepciót kínál. A Sofia Place Hotel by HMG légkondicionált szobái minibárral, síkképernyős kábel-TV-vel és ülősarokkal rendelkeznek. Minden szoba lágy krémszínekkel díszített, és íróasztallal és saját fürdőszobával rendelkezik.', 3, '29, Hristo Belchev Str., 1000 Szófia, Bulgária', 'hotel34-min.jpg', 40000, 'HB (Half Board)', 'Azon kívül, hogy a hotelben aludhatunk, az árban reggeli és vacsora is benne van.'),
+(35, 'Taj Hotel & Convention Centre Agra', 'A Taj Hotel & Convention Center Agra egy 4,5 hektáros területen található, mindössze 1 km-re a Tádzs Mahaltól. A szálláshely egészségklubbal, végtelenített medencével és gyógyfürdővel, valamint 5 étkezési lehetőséggel várja vendégeit. A légkondicionált szobák ingyenes Wi-Fi-vel és síkképernyős TV-vel rendelkeznek.\r\n\r\nA Taj Hotel & Convention Center Agra fapadlóval és földszínekkel díszített szobái minibárral, tea- és kávéfőzési lehetőséggel, valamint saját fürdőszobával rendelkeznek. 24 órás szobaszerviz áll rendelkezésre.', 5, 'Taj East Gate Road, Uttar Pradesh, 282001 Agra, India', 'hotel35-min.jpg', 60000, 'UAI (Ultra All Inclusive)', 'Ugyanaz, mint az All Inclusive, de az alkoholos italok (főleg a nemzetköziek) szélesebb választékával. Hoteltől függően magában foglalhat további szolgáltatásokat – pl. masszázsok, spa, szaunák.');
 
 -- --------------------------------------------------------
 
@@ -188,7 +195,14 @@ INSERT INTO `utak` (`ut_id`, `kontinens`, `orszag`, `varos`, `utak_img`, `leiras
 (25, 'Európa', 'Norvégia', 'Flatbostad', 'norvegia1-min.jpg', ' Viosen egy idilli hely, amely gyönyörűen fekszik a Snåsavatnet-tó legvégén. A strand és az út között gyönyörű homokos strand, nyári kávézó, hangulatos épületek és egy szép nyírfa fasor található. Múzeum\r\nGjerstadhuset Joralf Gjerstad gyermekkori otthona, amely 2012-ben nyitotta meg kapuit a nagyközönség előtt. A megjelenés gyakorlatilag megegyezik azzal, ahogyan egész gyermekkorában kinézett. A ház Berg Nedre városából származik az 1800-as évek közepéről, de 1924-ben költöztették át jelenlegi helyére.                          ', 'repülő', 'repulo.svg', 'külföldi', 'Norvégia felejthetetlen látnivalói', '4 nap', 25, 'Európa', 'Norvégia', 'Flatbostad', 'tengerparti nyaralás', 7000000, '12 óra 55 perc', 'Budapest', 'Park ved Semskaia, Viosen, Gjerstadhuset,'),
 (26, 'Ázsia', 'Kina', 'Sanghaj', 'Sanghaj-min.jpg', 'Sanghaj Kína legnagyobb ipari városa, a Távol-Kelet egyik gazdasági központja, tartományi jogú város a kelet-kínai tengerpart középső részén, a Jangce torkolatvidékén, a folyam Huangpu nevű kis mellékfolyójának két partján található. A Yu garden komplexum egyik központi épülete a Huxinting teaház. Kína legrégebbi teaháza fa oszlopokon áll egy mesterséges tó közepén és egy cikk-cakkos hídon közelíthető meg, mely a kínai hiedelmek szerint távol tartja a pavilontól a szellemeket. A bár a Captain Hostel lobbyjából közelíthető meg, lifttel a legfelső emeletre, majd még 1-2 emelet lépcsőn és megérkezünk a tetőteraszra. A hostel a Bund második épület sorában helyezkedik el, de szerencsére nem takarja semmi a kilátást a folyó és Pudong felhőkarcolói felé.\r\nAz East Nanjing sétálóutcában ehetünk utcáról, kézben pálcikás húst (chuan), vehetünk gyönyörű mangót és más friss gyümölcsöket, remek a bao felhozatal, az alagsorban pedig van pár leülős hely is, ahol kiszolgálnak. Nagy a pörgés, minden frissen készül, 20-40 yuanból (800-1500 Ft) ehetünk ellenőrzött körülmények között készült gusztusos street foodot. \r\nA Jing’an Sangaj talán legismertebb buddhista temploma, illetve a legtöbbet fotózott épülete, hiszen nagyon látványosan ékelődik be a környező toronyházak közé.  A Pudong városrészben található a legnépszerűbb Ritz Carlton tetőterasz, Inenn rá lehet láttni a Oriental Pearl Tower-re.', 'repülő', 'repulo.svg', 'külföldi', 'Tekintsd meg  a világ egyik legnagyobb városát, Sanghait!', '5 nap', 26, 'Ázsia', 'Kina', 'Sanghaj', 'varoslatogatas', 180000, '1 nap 2 óra', 'Budapest', 'Huxinting teaház, The Captain bar, East Nanjing road food court, Jing’an templom, Ritz-Carlton Pudong'),
 (27, 'Ázsia', 'Korea', 'Busan', 'Busan-min.jpg', 'A Busan Puszan Dél-Korea második legnagyobb városa, mely a Koreai-félsziget délkeleti részén, a Japán-tenger partján található. A Gamcheon Culture Village festői látványosság színes házakkal, \r\nfalfestményekkel, üzletekkel és kávézókkal. A Busani Művészeti Múzeum a művészeti tevékenységeket népszerűsíti kulturális területén annak érdekében, hogy növelje a város polgárainak figyelmét a művészet és a kultúra iránt. Hozzájárul az ország kulturális színterének fejlődéséhez, és sokféle műalkotást\r\n és művészi tevékenységet támogat, hogy a közönség könnyen hozzáférhessen a művészetekhez, valamint bővíti a művészbázist, élénkíti a művészetalkotást. A Beomeosa (a nirvánai hal temploma) a Koreai Buddhizmus Jogye Rendjének főtemploma Cheongnyong-dongban, Geumjeong-gu-ban, Busanban, Dél-Koreában. Geumjeongsan lejtőin épült, ez az ország egyik legismertebb városi temploma. A Sea Life Busan Aquarium egy akvárium a dél-koreai Haeundae Beach területén. A Yongdusan Park egy park a dél-koreai Busan állambeli Jung-gu városában. Itt található a 120 méter magas Busan-torony.', 'repülő', 'repulo.svg', 'külföldi', 'A filmfesztiválók hazája ', '5 nap', 27, 'Ázsia', 'Korea', 'Busan', 'lastminute', 200000, '15 óra 10 perc ', 'Budapest', 'Gamcheon Culture Village,  Busan Museum of Art , Beomeosa, SEALIFE Busan Aquarium, Yongdusan Park'),
-(28, 'Ázsia', 'Törökország', 'Isztambul', 'Isztambul.jpg', 'Isztambul 15 milliós agglomerációs lakosságával a Föld egyik legnépesebb, és Törökország legnépesebb települése. Az Hagia Szophia bizánci építésű hajdani ortodox bazilika Isztambulban, Törökországban. 1453-tól, Konstantinápoly oszmán kézre kerülésétől kezdve 1934-ig mecsetként használták, 1934 és 2020 között múzeumként volt látogatható. A Galata-torony az Aranyszarv-öböltől északra, Beyoğluban található. Isztambul egyik meghatározó épülete. Krisztus-torony néven is ismert. A Szulejmán-mecset a második legnagyobb mecset Isztambulban. A híres török építész, Szinán építette I. Szulejmán szultán parancsára Isztambul harmadik hegyére. Az építkezés 1550-ben kezdődött, és 7 évig tartott. Az Elsüllyedt Palota vagy Bazilika Ciszterna az egyik legnagyobb a több száz hajdani víztározó közül, melyek ma is ott fekszenek Isztambul alatt. A Topkapı palota Isztambulban található, 1465 és 1853 között az Oszmán Birodalom adminisztratív központja volt. Építésére II. Mehmed szultán  adott utasítást 1459-ben és 1465-ben fejezték be. A palota az Aranyszarv-öböl és a Márvány-tenger között fekszik az ún. Szeráj Csúcson.', 'repülő', 'repulo.svg', 'külföldi', 'Csodák városa - Isztambul', '5 nap', 28, 'Ázsia', 'Törökország', 'Isztambul', 'lastminute', 230000, '5 óra 50 perc ', 'Budapest', 'Hagia Szophia, Galata-torony, Szulejmán-mecset, Elsüllyedt Palota, Topkapı palota');
+(28, 'Ázsia', 'Törökország', 'Isztambul', 'Isztambul.jpg', 'Isztambul 15 milliós agglomerációs lakosságával a Föld egyik legnépesebb, és Törökország legnépesebb települése. Az Hagia Szophia bizánci építésű hajdani ortodox bazilika Isztambulban, Törökországban. 1453-tól, Konstantinápoly oszmán kézre kerülésétől kezdve 1934-ig mecsetként használták, 1934 és 2020 között múzeumként volt látogatható. A Galata-torony az Aranyszarv-öböltől északra, Beyoğluban található. Isztambul egyik meghatározó épülete. Krisztus-torony néven is ismert. A Szulejmán-mecset a második legnagyobb mecset Isztambulban. A híres török építész, Szinán építette I. Szulejmán szultán parancsára Isztambul harmadik hegyére. Az építkezés 1550-ben kezdődött, és 7 évig tartott. Az Elsüllyedt Palota vagy Bazilika Ciszterna az egyik legnagyobb a több száz hajdani víztározó közül, melyek ma is ott fekszenek Isztambul alatt. A Topkapı palota Isztambulban található, 1465 és 1853 között az Oszmán Birodalom adminisztratív központja volt. Építésére II. Mehmed szultán  adott utasítást 1459-ben és 1465-ben fejezték be. A palota az Aranyszarv-öböl és a Márvány-tenger között fekszik az ún. Szeráj Csúcson.', 'repülő', 'repulo.svg', 'külföldi', 'Csodák városa - Isztambul', '5 nap', 28, 'Ázsia', 'Törökország', 'Isztambul', 'lastminute', 230000, '5 óra 50 perc ', 'Budapest', 'Hagia Szophia, Galata-torony, Szulejmán-mecset, Elsüllyedt Palota, Topkapı palota'),
+(29, 'Európa', 'Svájc', 'Flüelen', 'fluelen1-min.jpg', 'Számos túra illetve hegymászási lehetőség található Flüelen területén. Luftseilbahn Oberaxen egy hegyi libegő, mely remek családi program lehet az utazás során. A Reuss Delta Badi and fireplaces Park egy állami Park Svájcban. A Reuss-delta állat- és növényvilága, azaz állat- és növényvilága rendkívül változatos. A seedorfi \"Schanz\" körzetben található tanösvény lehetővé teszi az érdeklődők számára, hogy minél közelebbről megtapasztalják és megfigyeljék az állat- és növényvilágot.', 'repülő', 'repulo.svg', 'külföldi', 'Flüelen számos túra lehetőséggel', '4 nap', 29, 'Europa', 'Svajc', 'Fluelen', 'last minute', 1000000, '5 óra 20 perc', 'Magyarország, Budapest, 1185 Nemzetközi Repülőtér', 'Túra illetve hegymászási lehetőség,\r\nReuss Delta Badi and fireplaces Park,\r\nLuftseilbahn Oberaxen,\r\nGitschen hegycsúcs'),
+(30, 'Afrika', 'Marokkó', 'Casablanca', 'casablanca1-min.jpg', 'Casablanca város Marokkó nyugati részén, az Atlanti-óceán partján. A város Marokkó gazdasági fővárosa; itt található az ország fő kikötője és haditengerészeti központja. A Place Mohamed V a Casablanca központja. A város számos fontos hivatalos épülete, köztük a főposta, az igazságügyi palota, a prefektúra, a francia konzulátus és a fő Marokkói Bank. A Casablanca\'s Corniche (tengerparti negyed) az Ain Diab külvárosában, a város örvénye azoknak, akik szeretnének látni és látni. A partok nagy része ma már luxus szállodák és éttermek otthona. A Casablanca nyüzsgő központi piacát olyan turisták számára kell elengedni, akik a városi élet közepén akarják magukat bevinni.', 'repülő', 'repulo.svg', 'külföldi', 'Marokkó mesés városa, Casablanca', '3 nap', 30, 'Afrika', 'Marokko', 'Casablanca', 'városlátogatás', 2000000, '7 óra 25 perc', 'Magyarország, Budapest, 1185 Nemzetközi Repülőtér', 'Place Mohamed V, Corniche, Központi piac'),
+(31, 'Afrika', 'Madagaszkár', 'Antananarivo', 'antananarivo1-min.jpg', 'Antananarivo Madagaszkár fővárosa, az azonos nevű megyében található. Rova, a Rova (királynői palotaegyüttes), melynek építését 1650 körül, Andrianjaka merina király kezdte. A Tsimbazaza Botanikus és Állatkert, a rövid Tsimbazaza Zoo egy állat- és botanikus kert a madagaszkári Antananarivo városában található Tsimbazaza szomszédságában, a Madagaszkári Nemzetgyűlés épületétől északra.', 'repülő', 'repulo.svg', 'külföldi', 'Madagaszkár fővárosa, Antananarivo', '2 nap', 31, 'Afrika', 'Madagaszkar', 'Antananarivo', 'last minute', 1500000, '2 nap 1 óra', 'Magyarország, Budapest, 1185 Nemzetközi Repülőtér', 'Rova, Tsimbazaza Zoo and Botanical Gardens'),
+(32, 'Afrika', 'Tunézia', 'Sousse', 'sousse1-min.jpg', 'Sousse egy város Tunéziában. Ez a kiváló múzeum tartalmazza a legnagyobb gyűjteménye antikvitás az országban után Tunisz \" Bardo Múzeum. Sousse erődje-szerű nagy mecsetje az AD 851-ben épült, néhány évvel az Aghlabids által a város újbóli megalapítása után. Ha kedveled a vásárlási helyet, és nem bánod a szórakoztató alkudozással, akkor a medina souk kerületének helye kell. Ez a célzott üdülőkomplexum, ahol sok látogató marad a napfényes és a tengerparton.', 'repülő', 'repulo.svg', 'külföldi', 'Pihenés Sousse városában', '1 hetes', 32, 'Afrika', 'Tunezia', 'Sousse', 'tengerparti nyaralás', 4000000, '10 óra 35 perc', 'Magyarország, Budapest, 1185 Nemzetközi Repülőtér', 'Sousse Régészeti Múzeum, Sousse Nagy Mecset, Souk kerület, Port el Kantaoui'),
+(33, 'Afrika', 'Dél-afrikai Köztársaság', 'Fokváros', 'fokvaros1-min.jpg', 'Fokváros a Dél-afrikai Köztársaság törvényhozási fővárosa és második legnépesebb települése, Nyugati Fokföld tartomány, a dél-afrikai parlament és sok más kormányhivatal székhelye. A Victoria & Alfred Waterfront Fokvárosban az Atlanti-óceán partján, a Table Bay kikötőben, Fokváros városában és a Table Mountainben található. A Kirstenbosch egy fontos botanikus kert, amely Fokvárosban, a Table Mountain keleti lábánál található. A Jóreménység foka egy sziklás földnyelv Dél-Afrikában az Atlanti-óceán partján. A Two Oceans Aquarium egy akvárium, amely a Victoria & Alfred vízparton található Fokvárosban, Western Cape-ban, Dél-Afrikában.', 'repülő', 'repulo.svg', 'külföldi', 'Fokváros felsőfokon', '4 nap', 33, 'Afrika', 'Del-afrikai Koztarsasag', 'Fokvaros', 'last minute', 3000000, '1 nap 3 óra', 'Magyarország, Budapest, 1185 Nemzetközi Repülőtér', 'V&A Waterfront, Kirstenbosch National Botanical Garden, Jóreménység foka, Two Oceans Aquarium'),
+(34, 'Európa', 'Bulgária', 'Szófia', 'bulgaria1-min.jpg', 'Szófia, Bulgária fővárosa, és egyben a legnépesebb városa. Az Alekszandr Nyevszkij-székesegyház egy bolgár ortodox templom Szófiában. A Bojana-templom középkori bolgár ortodox templom Szófiában, a Vitosa lábánál, a Bojana-negyedben. A Borisova gradina vagy Knyaz-Borisova gradina a legrégebbi és legismertebb park Szófiában, Bulgária fővárosában. A Bulgária fővárosában, Szófiában található Nemzeti Kultúrpalota Délkelet-Európa legnagyobb, többfunkciós konferencia- és kiállítási központja.', 'autó', 'auto.svg', 'külföldi', '5 napos nyaralás Szófiában', '5 nap', 34, 'Europa', 'Bulgaria', 'Szofia', 'városlátogatás', 1000000, '7 óra 20 perc', 'Magyarország, Budapest, 1185 Nemzetközi Repülőtér', 'Alekszandr Nyevszkij-székesegyház, Bojana-templom, Borisova Gradina Park, Nemzeti Kultúrpalota'),
+(35, 'Ázsia', 'India', 'Agra', 'agra1-min.jpg', 'Agra város India északi részén, a Jamuna folyó partján fekszik, Uttar Prades tagállamának nyugati részén. A Tádzs Mahal az indiai Agrában, a Jamuna folyó partján található muszlim mauzóleum elnevezése, amely valójában egy teljes épületkomplexumot takar, ennek része maga a fehér márvány síremlék is. A Vörös Erőd egy UNESCO-védelem alá tartozó világörökségi helyszín India Agra városában. I\'timād-ud-Daulah sírja egy mogul mauzóleum Agra városában, az indiai Uttar Pradesh államban. Akbar sírja Akbar mogul császár sírja.', 'repülő', 'repulo.svg', 'külföldi', 'Agra, a Tadzs Mahal városa', '3 nap', 35, 'Azsia', 'India', 'Agra', 'last minute', 900000, '10 óra 10 perc', 'Magyarország, Budapest, 1185 Nemzetközi Repülőtér', 'Tádzs Mahal, Vörös Erőd, Itmad-ud-Daula, Tomb of Akbar the Great');
 
 -- --------------------------------------------------------
 
@@ -237,6 +251,13 @@ INSERT INTO `utak_kepek` (`neve`, `darabszam`, `ut_id3`, `neve2`) VALUES
 ('Sanghaj2-min.jpg', 2, 26, ''),
 ('Busan2-min.jpg', 2, 27, ''),
 ('Isztambul2.jpg', 2, 28, ''),
+('fluelen2-min.jpg', 2, 29, ''),
+('casablanca2-min.jpg', 2, 30, ''),
+('antananarivo2-min.jpg', 2, 31, ''),
+('sousse2-min.jpg', 2, 32, ''),
+('fokvaros2-min.jpg', 2, 33, ''),
+('szofia2-min.jpg', 2, 34, ''),
+('agra2-min.jpg', 2, 35, ''),
 ('paris3-min.jpg', 3, 1, ''),
 ('marseille3-min.jpg', 3, 2, ''),
 ('lyon3-min.jpg', 3, 3, ''),
@@ -265,6 +286,13 @@ INSERT INTO `utak_kepek` (`neve`, `darabszam`, `ut_id3`, `neve2`) VALUES
 ('Sanghaj3-min.jpg', 3, 26, ''),
 ('Busan3-min.jpg', 3, 27, ''),
 ('Isztambul3.jpg', 3, 28, ''),
+('fluelen3-min.jpg', 3, 29, ''),
+('casablanca3-min.jpg', 3, 30, ''),
+('antananarivo3-min.jpg', 3, 31, ''),
+('sousse3-min.jpg', 3, 32, ''),
+('fokvaros3-min.jpg', 3, 33, ''),
+('szofia3-min.jpg', 3, 34, ''),
+('agra3-min.jpg', 3, 35, ''),
 ('paris4-min.jpg', 4, 1, ''),
 ('marseille4-min.jpg', 4, 2, ''),
 ('lyon4-min.jpg', 4, 3, ''),
@@ -293,6 +321,13 @@ INSERT INTO `utak_kepek` (`neve`, `darabszam`, `ut_id3`, `neve2`) VALUES
 ('Sanghaj4-min.jpg', 4, 26, ''),
 ('Busan4-min.jpg', 4, 27, ''),
 ('Isztambul4.jpg', 4, 28, ''),
+('fluelen4-min.jpg', 4, 29, ''),
+('casablanca4-min.jpg', 4, 30, ''),
+('antananarivo4-min.jpg', 4, 31, ''),
+('sousse4-min.jpg', 4, 32, ''),
+('fokvaros4-min.jpg', 4, 33, ''),
+('szofia4-min.jpg', 4, 34, ''),
+('agra4-min.jpg', 4, 35, ''),
 ('paris5-min.jpg', 5, 1, ''),
 ('marseille5-min.jpg', 5, 2, ''),
 ('lyon5-min.jpg', 5, 3, ''),
@@ -317,6 +352,13 @@ INSERT INTO `utak_kepek` (`neve`, `darabszam`, `ut_id3`, `neve2`) VALUES
 ('Sanghaj5-min.jpg', 5, 26, ''),
 ('Busan5-min.jpg', 5, 27, ''),
 ('Isztambul5.jpg', 5, 28, ''),
+('fluelen5-min.jpg', 5, 29, ''),
+('casablanca5-min.jpg', 5, 30, ''),
+('antananarivo5-min.jpg', 5, 31, ''),
+('sousse5-min.jpg', 5, 32, ''),
+('fokvaros5-min.jpg', 5, 33, ''),
+('szofia5-min.jpg', 5, 34, ''),
+('agra5-min.jpg', 5, 35, ''),
 ('wifi.svg', 6, 1, 'Wifi'),
 ('wifi.svg', 6, 2, 'Wifi'),
 ('wifi.svg', 6, 3, 'Wifi'),
@@ -345,6 +387,13 @@ INSERT INTO `utak_kepek` (`neve`, `darabszam`, `ut_id3`, `neve2`) VALUES
 ('wifi.svg', 6, 26, 'Wifi'),
 ('wifi.svg', 6, 27, 'Wifi'),
 ('wifi.svg', 6, 28, 'Wifi'),
+('wifi.svg', 6, 29, 'Wifi'),
+('wifi.svg', 6, 30, 'Wifi'),
+('wifi.svg', 6, 31, 'Wifi'),
+('wellness.svg', 6, 32, 'Wellness lehetőség'),
+('wifi.svg', 6, 33, 'Wifi'),
+('wifi.svg', 6, 34, 'Wifi'),
+('no_smoking.svg', 6, 35, 'Dohányzás mentes'),
 ('no_smoking.svg', 7, 1, 'Dohányzás mentes'),
 ('no_smoking.svg', 7, 2, 'Dohányzás mentes'),
 ('parkolas.svg', 7, 3, 'Fizetős parkoló'),
@@ -364,7 +413,7 @@ INSERT INTO `utak_kepek` (`neve`, `darabszam`, `ut_id3`, `neve2`) VALUES
 ('legkondi.svg', 7, 17, 'Légkondícionálás'),
 ('legkondi.svg', 7, 18, 'Légkondícionálás'),
 ('	 no_smoking.svg', 7, 19, 'Dohányzás mentes'),
-('no_smoking.svg', 7, 20, 'Dohányzás mentes'),
+('	 no_smoking.svg', 7, 20, 'Dohányzás mentes'),
 ('legkondi.svg', 7, 21, 'Légkondícionálás'),
 ('legkondi.svg', 7, 22, 'Légkondícionálás'),
 ('legkondi.svg', 7, 23, 'Légkondícionálás'),
@@ -373,6 +422,13 @@ INSERT INTO `utak_kepek` (`neve`, `darabszam`, `ut_id3`, `neve2`) VALUES
 ('parkolas.svg', 7, 26, 'Ingyenes parkolás'),
 ('parkolas.svg', 7, 27, 'Ingyenes parkolás '),
 ('parkolas.svg', 7, 28, 'Ingyenes parkolás'),
+('parkolas.svg', 7, 29, 'Ingyenes parkolás'),
+('wellness.svg', 7, 30, 'Wellness lehetőség'),
+('parkolas.svg', 7, 31, 'Ingyenes parkolás'),
+('legkondi.svg', 7, 32, 'Légkondícionálás'),
+('parkolas.svg', 7, 33, 'Ingyenes parkolás'),
+('parkolas.svg', 7, 34, 'Ingyenes parkolás'),
+('parkolas.svg', 7, 35, 'Ingyenes parkolás'),
 ('kisallat.svg', 8, 1, 'Kisállat vihető'),
 ('restaurant.svg', 8, 2, 'Saját étterem'),
 ('restaurant.svg', 8, 3, 'Saját étterem'),
@@ -398,6 +454,13 @@ INSERT INTO `utak_kepek` (`neve`, `darabszam`, `ut_id3`, `neve2`) VALUES
 ('legkondi.svg', 8, 26, 'Légkondícionálás'),
 ('kisallat.svg', 8, 27, 'Kisállat vihető'),
 ('legkondi.svg', 8, 28, 'Légkondícionálás'),
+('restaurant.svg', 8, 29, 'Saját étterem'),
+('restaurant.svg', 8, 30, 'Saját étterem'),
+('no_smoking.svg', 8, 31, 'Dohányzás mentes'),
+('wifi.svg', 8, 32, 'Wifi'),
+('restaurant.svg', 8, 33, 'Saját étterem'),
+('restaurant.svg', 8, 34, 'Saját étterem'),
+('restaurant.svg', 8, 35, 'Saját étterem'),
 ('legkondi.svg', 9, 1, 'Légkondícionálás'),
 ('kilatas.svg', 9, 2, 'Terasz'),
 ('medence.svg', 9, 3, 'Medence'),
@@ -423,6 +486,13 @@ INSERT INTO `utak_kepek` (`neve`, `darabszam`, `ut_id3`, `neve2`) VALUES
 ('no_smoking.svg', 9, 26, 'Dohányzás mentes'),
 ('kilatas.svg', 9, 27, 'Terasz'),
 ('kisallat.svg', 9, 28, 'Kisállat vihető'),
+('kilatas.svg', 9, 29, 'Terasz'),
+('kisallat.svg', 9, 30, 'Kisállat bevihető'),
+('kilatas.svg', 9, 31, 'Terasz'),
+('no_smoking.svg', 9, 32, 'Dohányzás mentes'),
+('legkondi.svg', 9, 33, 'Légkondícionálás'),
+('no_smoking.svg', 9, 34, 'Dohányzás mentes'),
+('kilatas.svg', 9, 35, 'Terasz'),
 ('medence.svg', 10, 1, 'Medence'),
 ('wellness.svg', 10, 2, 'Wellness lehetőség'),
 ('no_smoking.svg', 10, 3, 'Dohányzás mentes'),
@@ -445,6 +515,11 @@ INSERT INTO `utak_kepek` (`neve`, `darabszam`, `ut_id3`, `neve2`) VALUES
 ('kilatas.svg', 10, 26, 'Terasz'),
 ('medence.svg', 10, 27, 'Medence'),
 ('kilatas.svg', 10, 28, 'Terasz'),
+('legkondi.svg', 10, 29, 'Légkondícionálás'),
+('legkondi.svg', 10, 30, 'Légkondícionálás'),
+('kisallat.svg', 10, 32, 'Kisállat vihető'),
+('wellness.svg', 10, 33, 'Wellness lehetőség'),
+('wellness.svg', 10, 35, 'Wellness lehetőség'),
 ('parkolas.svg', 11, 1, 'Ingyenes parkolás'),
 ('kilatas.svg', 11, 3, 'Terasz'),
 ('kilatas.svg', 11, 7, 'Terasz'),
@@ -458,9 +533,15 @@ INSERT INTO `utak_kepek` (`neve`, `darabszam`, `ut_id3`, `neve2`) VALUES
 ('restaurant.svg', 11, 19, 'Saját étterem'),
 ('wellness.svg', 11, 23, 'Wellness lehetőség'),
 ('restaurant.svg', 11, 24, 'Saját étterem'),
+('no_smoking.svg', 11, 29, 'Dohányzás mentes'),
+('parkolas.svg', 11, 30, 'Ingyenes parkolás'),
+('kilatas.svg', 11, 32, 'Terasz'),
+('kisallat.svg', 11, 33, 'Kisállat bevihető'),
+('parkolas.svg', 11, 35, 'Fizetős parkoló'),
 ('kilatas.svg', 12, 9, 'Terasz'),
 ('wellness.svg', 12, 10, 'Wellness lehetőség'),
-('medence.svg', 12, 23, 'Medence');
+('medence.svg', 12, 23, 'Medence'),
+('kilatas.svg', 12, 30, 'Terasz');
 
 --
 -- Indexek a kiírt táblákhoz
@@ -521,23 +602,17 @@ ALTER TABLE `foglalas`
 -- AUTO_INCREMENT a táblához `szallas`
 --
 ALTER TABLE `szallas`
-  MODIFY `szallas_id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
+  MODIFY `szallas_id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
 
 --
 -- AUTO_INCREMENT a táblához `utak`
 --
 ALTER TABLE `utak`
-  MODIFY `ut_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
+  MODIFY `ut_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=56;
 
 --
 -- Megkötések a kiírt táblákhoz
 --
-
---
--- Megkötések a táblához `foglalas`
---
-ALTER TABLE `foglalas`
-  ADD CONSTRAINT `foglalas_ibfk_1` FOREIGN KEY (`ut_id2`) REFERENCES `utak` (`ut_id`);
 
 --
 -- Megkötések a táblához `utak`
