@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Gép: 127.0.0.1
--- Létrehozás ideje: 2023. Már 29. 14:02
+-- Létrehozás ideje: 2023. Már 29. 15:20
 -- Kiszolgáló verziója: 10.4.6-MariaDB
 -- PHP verzió: 7.3.8
 
@@ -134,7 +134,11 @@ INSERT INTO `szallas` (`szallas_id`, `megnev`, `leiras2`, `tipus`, `elhelyezkede
 (32, 'Sousse Pearl Marriott Resort & Spa', 'A Pearl Resort & Spa saját stranddal és ingyenes wifivel rendelkező szálláshely Szúszában, a Nagymecsettől 2 km-re. Az 5 csillagos szálloda légkondicionált szobákkal és saját fürdőszobával várja vendégeit. A szálláshely 2,9 km-re fekszik a Dar Essid Múzeumtól és 3,1 km-re a Dar Am Taieb múzeumtól. Minden szoba ülősarokkal és síkképernyős műholdas TV-vel rendelkezik. A vízforralóval ellátott szobák egy részéhez terasz is tartozik. A szállásegységekben ruhásszekrény található.', 5, 'Boulevard Abdelhamid El Kadhi La corniche, 4000 Sousse, 4000 Szúsza, Tunézia', 'hotel32-min.jpg', 30000, 'BB (Bed and Breakfast)', 'A szállás árában benne van a reggeli.'),
 (33, 'The Table Bay Hotel', 'A Table Bay Hotel egy 5 csillagos luxusszálloda Fokvárosban, a V&A Waterfront partszakaszon. Gyönyörű kilátás nyílik a működő kikötőre, a Table Mountainre és az Atlanti-óceánra. A szálloda medencével és gyógyfürdővel várja vendégeit. Minden légkondicionált szoba minibárral, síkképernyős műholdas TV-vel, valamint tea- és kávéfőzési lehetőséggel rendelkezik. A saját fürdőszobában kád, zuhanyzó és ingyenes piperecikkek állnak rendelkezésre.', 5, 'Quay 6, Victoria & Alfred Waterfront , Waterfront, 8002 Fokváros, Dél-afrikai Köztársaság', 'hotel33-min.jpg', 90000, 'AI (All Inclusive)', 'A legnépszerűbb étkeztetési mód, különösen azok körében, akik a szabadságukat a tengerparton szeretnénk tölteni, közel a hotelhez. Teljes ellátást foglal magában (napi három-hat étkezés, plusz a ropogtatnivalók), valamint az alkoholmentes italok és a helyi készítésű alkoholok korlátlan mennyiségű fogyasztását.'),
 (34, 'Sofia Place Hotel by HMG', 'A központi elhelyezkedésű Sofia Place Hotel by HMG 7 perces sétára található a Szent Szófia-székesegyháztól és közel a Vitosha körút sétálóutcájához. Ingyenes internet-hozzáférést és 24 órás recepciót kínál. A Sofia Place Hotel by HMG légkondicionált szobái minibárral, síkképernyős kábel-TV-vel és ülősarokkal rendelkeznek. Minden szoba lágy krémszínekkel díszített, és íróasztallal és saját fürdőszobával rendelkezik.', 3, '29, Hristo Belchev Str., 1000 Szófia, Bulgária', 'hotel34-min.jpg', 40000, 'HB (Half Board)', 'Azon kívül, hogy a hotelben aludhatunk, az árban reggeli és vacsora is benne van.'),
-(35, 'Taj Hotel & Convention Centre Agra', 'A Taj Hotel & Convention Center Agra egy 4,5 hektáros területen található, mindössze 1 km-re a Tádzs Mahaltól. A szálláshely egészségklubbal, végtelenített medencével és gyógyfürdővel, valamint 5 étkezési lehetőséggel várja vendégeit. A légkondicionált szobák ingyenes Wi-Fi-vel és síkképernyős TV-vel rendelkeznek.\r\n\r\nA Taj Hotel & Convention Center Agra fapadlóval és földszínekkel díszített szobái minibárral, tea- és kávéfőzési lehetőséggel, valamint saját fürdőszobával rendelkeznek. 24 órás szobaszerviz áll rendelkezésre.', 5, 'Taj East Gate Road, Uttar Pradesh, 282001 Agra, India', 'hotel35-min.jpg', 60000, 'UAI (Ultra All Inclusive)', 'Ugyanaz, mint az All Inclusive, de az alkoholos italok (főleg a nemzetköziek) szélesebb választékával. Hoteltől függően magában foglalhat további szolgáltatásokat – pl. masszázsok, spa, szaunák.');
+(35, 'Taj Hotel & Convention Centre Agra', 'A Taj Hotel & Convention Center Agra egy 4,5 hektáros területen található, mindössze 1 km-re a Tádzs Mahaltól. A szálláshely egészségklubbal, végtelenített medencével és gyógyfürdővel, valamint 5 étkezési lehetőséggel várja vendégeit. A légkondicionált szobák ingyenes Wi-Fi-vel és síkképernyős TV-vel rendelkeznek.\r\n\r\nA Taj Hotel & Convention Center Agra fapadlóval és földszínekkel díszített szobái minibárral, tea- és kávéfőzési lehetőséggel, valamint saját fürdőszobával rendelkeznek. 24 órás szobaszerviz áll rendelkezésre.', 5, 'Taj East Gate Road, Uttar Pradesh, 282001 Agra, India', 'hotel35-min.jpg', 60000, 'UAI (Ultra All Inclusive)', 'Ugyanaz, mint az All Inclusive, de az alkoholos italok (főleg a nemzetköziek) szélesebb választékával. Hoteltől függően magában foglalhat további szolgáltatásokat – pl. masszázsok, spa, szaunák.'),
+(37, 'ibis Styles Kingsgate Hotel', 'Az ibis Styles Kingsgate Hotel ideális helyen, Melbourne központi üzleti negyedében található, 5 perces sétára a Southern Cross pályaudvartól. A szálloda megfizethető áron és kényelmet kínál, és tökéletes választás a pénztárcabarát utazók számára.', 3, '131 King Street, 3000 Melbourne, Ausztrália', 'hotel36.jpg', 30365, 'OV', 'Ezért nem jár semmilyen étkezés a hotelben. Ezt az aktív turisták választják, akik idejük nagy részét a hotelen kívül töltik.'),
+(38, 'Airport Garden Inn Hotel & Conference Centre', 'Az Aucklandben, egy 1990-ben épült épületben, a Mount Smart Stadiontól 6 km-re található Airport Garden Inn Hotel & Conference Center kaszinóval és ingyenes Wi-Fi-vel felszerelt szobákkal várja vendégeit. Az Auckland Botanic Gardenstől körülbelül 9 km-re, az Ellerslie rendezvényközponttól pedig 10 km-re található a szálloda. Az ingatlan a Manukau kerületben található, az Ellerslie lóversenypálya pedig 10 km-re található.\r\n', 4, '12 Tidal Road, 2022 Auckland, Új-Zéland', 'hotel37.jpg', 38380, 'PP', 'Az ételeket az utazás programjához illesztve szolgálják fel. Általában a szabadidőben szervezett kirándulások határozzák meg.'),
+(39, 'Grand Pacific Hotel', 'A suvai Nagyszerű öreg hölgy, \"The Grand Old Lady\" néven is emlegetett, korhűen felújított Grand Pacific Hotel 1914-ben épült. A szálláshely ingyenes wifivel, 5 étteremmel, 3 bárral, wellnessrészleggel és fitneszközponttal is várja vendégeit. Minden szállás légkondicionált, és bútorozott fedetlen teraszra vagy erkélyre nyílik.', 5, '584-618 Victoria Parade, Suva, Fidzsi-szigetek', 'hotel38.jpg', 76280, 'FB (Full Board)', 'Reggeli, ebéd és vacsora is benne van az árban. Azoknak ajánlott, akik nem terveznek három óránál hosszabb kirándulásokat, ugyanakkor nem akarnak étterembe menni.'),
+(40, 'Garden Palace Downtown Koror', 'A Koror településén található Garden Palace Downtown Koror ingyenes reptéri transzferrel és ingyenes reggelivel várja vendégeit. A kertre néző szálláshely tetőtéri terasszal is rendelkezik. A szobákban ingyenes palackozott víz biztosított.', 4, 'Garden Palace Downtown Koror, Ngerbeched, 96940 Koror, Palau ', 'hotel39.jpg', 54200, 'BB (Bed and Breakfast)', 'A szállás árában benne van a reggeli.');
 
 -- --------------------------------------------------------
 
@@ -204,7 +208,11 @@ INSERT INTO `utak` (`ut_id`, `kontinens`, `orszag`, `varos`, `utak_img`, `leiras
 (32, 'Afrika', 'Tunézia', 'Sousse', 'sousse1-min.jpg', 'Sousse egy város Tunéziában. Ez a kiváló múzeum tartalmazza a legnagyobb gyűjteménye antikvitás az országban után Tunisz \" Bardo Múzeum. Sousse erődje-szerű nagy mecsetje az AD 851-ben épült, néhány évvel az Aghlabids által a város újbóli megalapítása után. Ha kedveled a vásárlási helyet, és nem bánod a szórakoztató alkudozással, akkor a medina souk kerületének helye kell. Ez a célzott üdülőkomplexum, ahol sok látogató marad a napfényes és a tengerparton.', 'repülő', 'repulo.svg', 'külföldi', 'Pihenés Sousse városában', '1 hetes', 32, 'Afrika', 'Tunezia', 'Sousse', 'tengerparti nyaralás', 4000000, '10 óra 35 perc', 'Magyarország, Budapest, 1185 Nemzetközi Repülőtér', 'Sousse Régészeti Múzeum, Sousse Nagy Mecset, Souk kerület, Port el Kantaoui'),
 (33, 'Afrika', 'Dél-afrikai Köztársaság', 'Fokváros', 'fokvaros1-min.jpg', 'Fokváros a Dél-afrikai Köztársaság törvényhozási fővárosa és második legnépesebb települése, Nyugati Fokföld tartomány, a dél-afrikai parlament és sok más kormányhivatal székhelye. A Victoria & Alfred Waterfront Fokvárosban az Atlanti-óceán partján, a Table Bay kikötőben, Fokváros városában és a Table Mountainben található. A Kirstenbosch egy fontos botanikus kert, amely Fokvárosban, a Table Mountain keleti lábánál található. A Jóreménység foka egy sziklás földnyelv Dél-Afrikában az Atlanti-óceán partján. A Two Oceans Aquarium egy akvárium, amely a Victoria & Alfred vízparton található Fokvárosban, Western Cape-ban, Dél-Afrikában.', 'repülő', 'repulo.svg', 'külföldi', 'Fokváros felsőfokon', '4 nap', 33, 'Afrika', 'Del-afrikai Koztarsasag', 'Fokvaros', 'last minute', 3000000, '1 nap 3 óra', 'Magyarország, Budapest, 1185 Nemzetközi Repülőtér', 'V&A Waterfront, Kirstenbosch National Botanical Garden, Jóreménység foka, Two Oceans Aquarium'),
 (34, 'Európa', 'Bulgária', 'Szófia', 'bulgaria1-min.jpg', 'Szófia, Bulgária fővárosa, és egyben a legnépesebb városa. Az Alekszandr Nyevszkij-székesegyház egy bolgár ortodox templom Szófiában. A Bojana-templom középkori bolgár ortodox templom Szófiában, a Vitosa lábánál, a Bojana-negyedben. A Borisova gradina vagy Knyaz-Borisova gradina a legrégebbi és legismertebb park Szófiában, Bulgária fővárosában. A Bulgária fővárosában, Szófiában található Nemzeti Kultúrpalota Délkelet-Európa legnagyobb, többfunkciós konferencia- és kiállítási központja.', 'autó', 'auto.svg', 'külföldi', '5 napos nyaralás Szófiában', '5 nap', 34, 'Europa', 'Bulgaria', 'Szofia', 'városlátogatás', 1000000, '7 óra 20 perc', 'Magyarország, Budapest, 1185 Nemzetközi Repülőtér', 'Alekszandr Nyevszkij-székesegyház, Bojana-templom, Borisova Gradina Park, Nemzeti Kultúrpalota'),
-(35, 'Ázsia', 'India', 'Agra', 'agra1-min.jpg', 'Agra város India északi részén, a Jamuna folyó partján fekszik, Uttar Prades tagállamának nyugati részén. A Tádzs Mahal az indiai Agrában, a Jamuna folyó partján található muszlim mauzóleum elnevezése, amely valójában egy teljes épületkomplexumot takar, ennek része maga a fehér márvány síremlék is. A Vörös Erőd egy UNESCO-védelem alá tartozó világörökségi helyszín India Agra városában. I\'timād-ud-Daulah sírja egy mogul mauzóleum Agra városában, az indiai Uttar Pradesh államban. Akbar sírja Akbar mogul császár sírja.', 'repülő', 'repulo.svg', 'külföldi', 'Agra, a Tadzs Mahal városa', '3 nap', 35, 'Azsia', 'India', 'Agra', 'last minute', 900000, '10 óra 10 perc', 'Magyarország, Budapest, 1185 Nemzetközi Repülőtér', 'Tádzs Mahal, Vörös Erőd, Itmad-ud-Daula, Tomb of Akbar the Great');
+(35, 'Ázsia', 'India', 'Agra', 'agra1-min.jpg', 'Agra város India északi részén, a Jamuna folyó partján fekszik, Uttar Prades tagállamának nyugati részén. A Tádzs Mahal az indiai Agrában, a Jamuna folyó partján található muszlim mauzóleum elnevezése, amely valójában egy teljes épületkomplexumot takar, ennek része maga a fehér márvány síremlék is. A Vörös Erőd egy UNESCO-védelem alá tartozó világörökségi helyszín India Agra városában. I\'timād-ud-Daulah sírja egy mogul mauzóleum Agra városában, az indiai Uttar Pradesh államban. Akbar sírja Akbar mogul császár sírja.', 'repülő', 'repulo.svg', 'külföldi', 'Agra, a Tadzs Mahal városa', '3 nap', 35, 'Azsia', 'India', 'Agra', 'last minute', 900000, '10 óra 10 perc', 'Magyarország, Budapest, 1185 Nemzetközi Repülőtér', 'Tádzs Mahal, Vörös Erőd, Itmad-ud-Daula, Tomb of Akbar the Great'),
+(37, 'Ausztrália', 'Ausztrália', 'Melbourne', 'Melbourne.jpg', 'Melbourne ausztrál város, Victoria állam fővárosa, Ausztrália és Óceánia második legnagyobb városa. A Royal Botanic Gardens valójában két viktoriánus helyszínen található: a 35 hektáros helyszín a városban, és a hatalmas, 363 hektáros Cranbourne-i királyi botanikus kert, amely Melbourne városától 55 km-re délkeletre található. Az Ausztrál Sportmúzeum az ausztrál sportnak szentelt múzeum, és a Melbourne-i krikettpályán belül található, Melbourne-ben, Ausztráliában. A 1861-ben létrehozott Victoria Nemzeti Galéria nagy művészek festményeit mutatja be. Közülük említésre méltó Anthony Van Dyck, Paolo Uccello, Peter Paul Rubens, Rembrandt, Giovanni Battista Tiepolo, Paolo Veronese, DossoDossi, Claude Monet, Pablo Picasso.  Az Eureka Tower Melbourne legmagasabb épülete. Országos szinten csak a második, mivel a Gold Coast-i Q1 Tower 22 méterrel magasabb. A Föld 35. legmagasabb felhőkarcolójaként tartjuk számon.  A Királyi Kiállítási Épület a Melbourne-i Carlton-kertben található, a város üzleti negyedének északkeleti szélén.', 'repülő', 'repulo.svg', 'külföldi', 'Fedezze fel Ausztrália legszebb kertjeit Melbourneben', '5 nap', 37, 'Ausztrália', 'Ausztrália', 'Melbourne', 'last minute', 500000, '1 nap 13 óra', 'Budapest ', 'Királyi Botanikus Kertek,  Melbourne Cricket Ground és a Nemzeti Sportmúzeum,  Victoria Nemzeti Galéria,  Eureka torony,  Melbourne Múzeum és a Royal Exhibition Building'),
+(38, 'Ausztrália', 'New Zeland', 'Auckland', 'new-zealand.jpg', 'Auckland Új-Zéland legnagyobb városa, az Északi-szigeten helyezkedik el. A város népessége a 2008-as adatok szerint 438 100, azonban elővárosaival együtt 1,4 millió ember él itt, az ország lakosságának 31%-a.  A Sky Tower az új-zélandi Aucklandben épült 328 méter magas kommunikációs és megfigyelőtorony.  Az Auckland War Memorial Museum nevétől eltérően Új-Zéland legnagyobb városának általános jellegű történelmi, kulturális, hadtörténeti, természettudományos múzeuma, az ország legfontosabb múzeumainak egyike. A Maungakiekie / One Tree Hill egy 182 méteres vulkáni csúcs és Tūpuna Maunga Aucklandben, Új-Zélandon. Aucklandi Művészeti Galéria Auckland központi üzleti negyede területén helyezkedik el. A környék jól ismert a következőknek köszönhetően: barátságos közeg, múzeumok, kávézók. Amennyiben szeretnéd felfedezni a helyi látnivalókat és programlehetőségeket, mindenképp látogass el Kawakawa Bay vagy Queen Street bevásárlónegyed helyszínére.', 'repülő', 'repulo.svg', 'külföldi', 'A hosszú fehér felhő földje , Auckland', '4 nap', 38, 'Ausztrália', 'New Zeland', 'Auckland', 'varoslatogatas', 400000, '1 nap 17 óra', 'Budapest', 'Auckland Sky Tower, Auckland Háborús Emlékmúzeum, Egy Tree Hill ,  Auckland Művészeti Galéria'),
+(39, 'Ausztrália', 'Fidzsi-szigetek', 'Suva', 'Fidzsi-szigetek.jpg', 'Suva, a Csendes-óceáni Fidzsi-szigetek fővárosa a korallzátonyoktól szegélyezett Viti Levu délkeleti partjain épült. A Fidzsi Múzeum egy múzeum a Fidzsi-szigeteki Suva városában, a főváros botanikus kertjében, a Thurston Gardensben. A Thurston Gardens a Fidzsi-szigetek botanikus kertje. Korábban Suva Botanical Gardens néven ismerték. A Sacred Heart Cathedral egy katolikus templom Szarajevóban; Szarajevói székesegyházként emlegetik, Bosznia-Hercegovina legnagyobb katedrálisa. A Municipal Handicraft Center egy bolha- és utcai piac, amely Suva városában, Viti Levuban található. A Városi Kézműves Központ címe: Municipal Car Park, Suva, Viti Levu Fiji. Ha a helyszínre szeretne menni, vagy bármilyen szolgáltatásra van szüksége, közvetlenül kapcsolatba léphet velük. ', 'repülő', 'repulo.svg', 'külföldi', 'Egzotikus utazás? Findzsi-szigetek !', '5 nap', 39, 'Ausztrália', 'Fidzsi-szigetek', 'Suva', 'last minute', 700000, '1 nap 17 óra', 'Budapest', 'Fiji Museum, Thurston Gardens, Sacred Heart Cathedral , Municipal Handicraft Centre, Suva Municipal Market'),
+(40, 'Ausztrália', 'Palau', 'Koror', 'Palau.jpg', 'Koror település Palau legnagyobb szigetén, Babelthuap szigeten. A szigetország legnagyobb és legnépesebb települése, Palau vezető központja, 2006-ig fővárosa. A Sziklák Szűzanya egyike annak a két szigetnek, amely a Perast partjainál található a Kotori-öbölben. A Njegoš mauzóleum a Lovćen-hegy tetején található Petar II Petrović-Njegoš mauzóleuma. A mauzóleum a közeli Cetinjétől huszonegy kilométerre, aszfaltos úton található, Ivan Meštrović horvát szobrász ötlete alapján épült. A kotori Szent Trifun-székesegyház egyike Montenegró két római katolikus székesegyházának, a Kotori egyházmegye székhelye. A Lovcen Nemzeti Park a Dinara-Alpok sziklás régiójában található. A Lovcen hegy lejtői meredeken, Budva tengerparti régiójából és Cetinje nyugati részéből emelkednek ki. A park délről a Budva – Cetinje autópályával, északról pedig a régi Kotori úttal határos. Különös múzeum a macskákhoz kapcsolódó emléktárgyak, nyomtatványok és régies műtárgyak gyűjteményével. ', 'repülő', 'repulo.svg', 'külföldi', 'Palau, egy csodálatos paradicsomi sziget', '5 nap', 40, 'Ausztrália', 'Palau', 'Koror', 'varoslatogatas', 80000, '1 óra 20 perc ', 'Budapest', '(Our Lady of the Rocks, Njegos Mausoleum, St. Tryphon\'s Cathedral, Lovcen National Park ,Kotor Cats Museum');
 
 -- --------------------------------------------------------
 
@@ -224,6 +232,7 @@ CREATE TABLE `utak_kepek` (
 --
 
 INSERT INTO `utak_kepek` (`neve`, `darabszam`, `ut_id3`, `neve2`) VALUES
+('	Palau2.jpg', 0, 0, ''),
 ('paris2-min.jpg', 2, 1, ''),
 ('marseille2-min.jpg', 2, 2, ''),
 ('lyon2-min.jpg', 2, 3, ''),
@@ -259,6 +268,10 @@ INSERT INTO `utak_kepek` (`neve`, `darabszam`, `ut_id3`, `neve2`) VALUES
 ('fokvaros2-min.jpg', 2, 33, ''),
 ('szofia2-min.jpg', 2, 34, ''),
 ('agra2-min.jpg', 2, 35, ''),
+('Melbourne2.jpg', 2, 37, ''),
+('new-zealand2.jpg', 2, 38, ''),
+('Fidzsi-szigetek2.jpg', 2, 39, ''),
+('Palau2.jpg', 2, 40, ''),
 ('paris3-min.jpg', 3, 1, ''),
 ('marseille3-min.jpg', 3, 2, ''),
 ('lyon3-min.jpg', 3, 3, ''),
@@ -294,6 +307,10 @@ INSERT INTO `utak_kepek` (`neve`, `darabszam`, `ut_id3`, `neve2`) VALUES
 ('fokvaros3-min.jpg', 3, 33, ''),
 ('szofia3-min.jpg', 3, 34, ''),
 ('agra3-min.jpg', 3, 35, ''),
+('Melbourne3.jpg', 3, 37, ''),
+('new-zealand3.jpg', 3, 38, ''),
+('Fidzsi-szigetek3.jpg', 3, 39, ''),
+('Palau3.jpg', 3, 40, ''),
 ('paris4-min.jpg', 4, 1, ''),
 ('marseille4-min.jpg', 4, 2, ''),
 ('lyon4-min.jpg', 4, 3, ''),
@@ -329,6 +346,10 @@ INSERT INTO `utak_kepek` (`neve`, `darabszam`, `ut_id3`, `neve2`) VALUES
 ('fokvaros4-min.jpg', 4, 33, ''),
 ('szofia4-min.jpg', 4, 34, ''),
 ('agra4-min.jpg', 4, 35, ''),
+('Melbourne4.jpg', 4, 37, ''),
+('new-zealand4.jpg', 4, 38, ''),
+('Fidzsi-szigetek4.jpg', 4, 39, ''),
+('Palau4.jpg', 4, 40, ''),
 ('paris5-min.jpg', 5, 1, ''),
 ('marseille5-min.jpg', 5, 2, ''),
 ('lyon5-min.jpg', 5, 3, ''),
@@ -360,6 +381,10 @@ INSERT INTO `utak_kepek` (`neve`, `darabszam`, `ut_id3`, `neve2`) VALUES
 ('fokvaros5-min.jpg', 5, 33, ''),
 ('szofia5-min.jpg', 5, 34, ''),
 ('agra5-min.jpg', 5, 35, ''),
+('Melbourne5.jpg', 5, 37, ''),
+('new-zealand5.jpg', 5, 38, ''),
+('Fidzsi-szigetek5.jpg', 5, 39, ''),
+('Palau5.jpg', 5, 40, ''),
 ('wifi.svg', 6, 1, 'Wifi'),
 ('wifi.svg', 6, 2, 'Wifi'),
 ('wifi.svg', 6, 3, 'Wifi'),
@@ -603,7 +628,7 @@ ALTER TABLE `foglalas`
 -- AUTO_INCREMENT a táblához `szallas`
 --
 ALTER TABLE `szallas`
-  MODIFY `szallas_id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
+  MODIFY `szallas_id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
 
 --
 -- AUTO_INCREMENT a táblához `utak`
