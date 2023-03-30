@@ -29,6 +29,7 @@ if (!$db->is_error()) {
     if (!$db->is_error()) {
 
             $result = $db->get_data();
+          
 
     } else  Util::setError($db->get_error(), false);
   } else  Util::setError('Email már létezik!', false);

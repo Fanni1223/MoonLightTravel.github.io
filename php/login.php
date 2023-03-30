@@ -19,6 +19,7 @@ $db->execute($query, $args);
 if (!$db->is_error()) {
   
         $result = $db->get_data();
+       
 
 } else  Util::setError($db->get_error(), false);
 
