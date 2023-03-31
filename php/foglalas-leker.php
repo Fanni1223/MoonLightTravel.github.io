@@ -11,22 +11,14 @@ $db = new Database();
 
 // Set query
 $query = "SELECT *, 
-          `foglalas`.teljes_nev,
-          `foglalas`.teljes_nev,
-          `foglalas`.teljes_nev,
-          `foglalas`.teljes_nev,
-          `foglalas`.teljes_nev,
-          `foglalas`.teljes_nev,
-          `foglalas`.teljes_nev,
-          `foglalas`.teljes_nev,
-          `foglalas`.teljes_nev,
-          `foglalas`.teljes_nev,
-          `foglalas`.teljes_nev,
-          
+          `felhasznalok`.`nev` ,
+          `felhasznalok`.`email`
 
           FROM `foglalas`
           INNER JOIN `felhasznalok` 
           ON `foglalas`.`felhasznalo_id` = `felhasznalok`.`id`
+          INNER JOIN `ut` 
+          ON `utak`.`ut_id`=`foglalas`.`ut_id2`
           WHERE `felhasznalo_id` = :userId";
 
 // Execute query
