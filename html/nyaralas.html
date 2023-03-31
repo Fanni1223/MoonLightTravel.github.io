@@ -147,7 +147,7 @@
       <img ng-src="./img/szalloda/{{data[0].szallas_img}}" alt="Szállás" title="Szállás" class="img-fluid">
     </div>
     <div class="col-xl-4 col-md-4" ng-if="data.length">
-      <img src="./img/ikonok/star.svg" class="ikon" alt="ikon" title="ikon" ng-repeat="x in [].constructor(data[0].tipus) track by $index">
+      <img src="./img/ikonok/star.svg" class="ikon mt-2" alt="ikon" title="ikon" ng-repeat="x in [].constructor(data[0].tipus) track by $index">
       <p class="fw-bold mx-1">{{data[0].megnev}}</p>
       <p class="fw-bold mx-1"><img src="./img/ikonok/tartozkodasihely.svg" class="ikon" alt="Elhelyezkedés">{{data[0].elhelyezkedes}}</p>
     </div>
