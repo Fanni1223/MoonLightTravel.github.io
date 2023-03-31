@@ -17,7 +17,7 @@ $query = "SELECT *,
           FROM `foglalas`
           INNER JOIN `felhasznalok` 
           ON `foglalas`.`felhasznalo_id` = `felhasznalok`.`id`
-          INNER JOIN `ut` 
+          INNER JOIN `utak` 
           ON `utak`.`ut_id`=`foglalas`.`ut_id2`
           WHERE `felhasznalo_id` = :userId";
 
