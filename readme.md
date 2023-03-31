@@ -117,6 +117,44 @@
 75. https://pixabay.com/hu/photos/sz%c3%a1lloda-eleg%c3%a1ns-reggeli-luxus-940730/
 76. https://pixabay.com/hu/photos/szingap%c3%bar-fullerton-hotel-kil%c3%a1t%c3%a1s-50547/
 77. https://unsplash.com/photos/CrU3lUW2jRk
+78. https://pixabay.com/hu/photos/v%c3%a1ros-%c3%a9p%c3%bclet-v%c3%a1rosk%c3%a9p-utaz%c3%a1s-4820579/
+79. https://pixabay.com/hu/photos/h%c3%add-v%c3%a1ros-foly%c3%b3-portug%c3%a1lia-4441037/
+80. https://pixabay.com/hu/photos/portug%c3%a1lia-strand-v%c3%adz-hegyek-costa-4442631/
+81. https://pixabay.com/hu/photos/lisszabon-portug%c3%a1lia-eur%c3%b3pa-utaz%c3%a1s-938996/
+82. https://pixabay.com/hu/photos/lisszabon-retus%c3%a1l%c3%a1s-napnyugta-vihar-1450809/
+83. https://pixabay.com/hu/photos/h%c3%a1l%c3%b3szoba-%c3%a1gy-b%c3%bator-szoba-h%c3%a1z-349698/
+84. https://pixabay.com/hu/photos/santorini-g%c3%b6r%c3%b6gorsz%c3%a1g-%c3%b3ce%c3%a1n-v%c3%a1ros-4825173/
+85. https://pixabay.com/hu/photos/g%c3%b6r%c3%b6gorsz%c3%a1g-parthenon-templom-romok-1594689/
+86. https://pixabay.com/hu/photos/v%c3%a1ros-t%c3%b3-utaz%c3%a1s-vid%c3%a9ki-%c3%a9jszaka-6843799/
+87. https://pixabay.com/hu/photos/g%c3%b6r%c3%b6gorsz%c3%a1g-ath%c3%a9n-parthenon-1776244/
+88. https://pixabay.com/hu/photos/g%c3%b6r%c3%b6gorsz%c3%a1g-sz%c3%a1lloda-%c3%bcnnep-luxus-844269/
+89. https://pixabay.com/hu/photos/bels%c5%91-t%c3%a9r-sz%c3%a1lloda-renderel%c3%a9s-1026449/
+90. https://pixabay.com/hu/photos/h%c3%a1zak-szikla-tenger-olaszorsz%c3%a1g-4093227/
+91. https://pixabay.com/hu/photos/utca-%c3%a9p%c3%adt%c3%a9szet-v%c3%a1ros-%c3%bat-3453557/
+92. https://pixabay.com/hu/photos/velence-canale-grande-gondol%c3%a1s-3183168/
+93. https://pixabay.com/hu/photos/csatorna-velence-gondol%c3%a1k-3547224/
+94. https://pixabay.com/hu/photos/olaszorsz%c3%a1g-firenze-templom-4256018/
+95. https://pixabay.com/hu/photos/a-hotel-olaszorsz%c3%a1g-com%c3%b3i--t%c3%b3-565759/
+96. https://pixabay.com/hu/photos/kast%c3%a9ly-bulg%c3%a1ria-kert-%c3%a9p%c3%adt%c3%a9szet-2139690/
+97. https://pixabay.com/hu/photos/belogradchik-bulg%c3%a1ria-er%c5%91d-szikla-2711435/
+98. https://pixabay.com/hu/photos/sofia-bulg%c3%a1ria-sz%c3%a9kesegyh%c3%a1z-templom-2400016/
+99. https://pixabay.com/hu/photos/rila-kolostor-bulg%c3%a1ria-templom-676748/
+100. https://pixabay.com/hu/photos/bulg%c3%a1ria-beach-tenger-homok-3757545/
+101. https://pixabay.com/hu/photos/bulg%c3%a1ria-lak%c3%b3park-medence-2098435/
+102. https://pixabay.com/hu/photos/montenegr%c3%b3-sziget-mediterr%c3%a1n-1028751/
+103. https://pixabay.com/hu/photos/sveti-stefan-montenegr%c3%b3-sziget-3577827/
+104. https://pixabay.com/hu/photos/hogy-cove-montenegr%c3%b3-kotor-eur%c3%b3pa-4627352/
+105. https://pixabay.com/hu/photos/kotor-perast-montenegr%c3%b3-balk%c3%a1ni-821534/
+106. https://pixabay.com/hu/photos/kotor-perast-montenegr%c3%b3-balk%c3%a1ni-821545/
+107. https://pixabay.com/hu/photos/kotor-perast-montenegr%c3%b3-balk%c3%a1ni-821546/
+108. https://pixabay.com/hu/photos/montenegr%c3%b3-sveti-stefan-kil%c3%a1t%c3%a1s-2367203/
+109. https://pixabay.com/hu/photos/london-napnyugta-anglia-%c3%a9p%c3%adt%c3%a9szet-5297395/
+110. https://pixabay.com/hu/photos/tower-bridge-h%c3%add-napnyugta-441853/
+111. https://pixabay.com/hu/photos/a-buckingham-palota-n%c3%a9gyzet-szobor-3932671/
+112. https://pixabay.com/hu/photos/oxford-anglia-%c3%a9p%c3%bclet-%c3%a9p%c3%adt%c3%a9szet-534808/
+113. https://pixabay.com/hu/photos/big-ben-westminster-london-anglia-1143631/
+114. https://pixabay.com/hu/photos/sz%c3%bcrke-utca-sz%c3%a1lloda-617250/
+
 
 
 ### Frontend és Backendhez használt alkalmazások:
