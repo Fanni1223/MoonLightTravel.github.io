@@ -11,8 +11,19 @@ $db = new Database();
 
 // Set query
 $query = "SELECT *, 
-          `felhasznalok`.nev ,
-          `felhasznalok`.email
+          `foglalas`.teljes_nev,
+          `foglalas`.teljes_nev,
+          `foglalas`.teljes_nev,
+          `foglalas`.teljes_nev,
+          `foglalas`.teljes_nev,
+          `foglalas`.teljes_nev,
+          `foglalas`.teljes_nev,
+          `foglalas`.teljes_nev,
+          `foglalas`.teljes_nev,
+          `foglalas`.teljes_nev,
+          `foglalas`.teljes_nev,
+          
+
           FROM `foglalas`
           INNER JOIN `felhasznalok` 
           ON `foglalas`.`felhasznalo_id` = `felhasznalok`.`id`
