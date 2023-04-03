@@ -4,21 +4,25 @@
   <div class="row" ng-if="data.length">
     <h1 class="text-center mt-5">{{data[0].allapot}}</h1>
   </div>
-  <div class='row mt-2'>
-    <div class='col-12 col-md-4' ng-repeat="ut in data">
-      <div class='card my-3'>
+  <div class="row mt-2">
+    <div class="col-12 col-md-4" ng-repeat="ut in data">
+      <div class="card my-3">
         <img ng-src="./img/utak/{{ut.utak_img}}">
-        <div class='card-body'>
-          <h5 class='card-title'>{{ut.nev}}</h5>
-          <h5 class='card-title'>{{ut.megnev}}<img src="./img/ikonok/hotel.svg" class="ikon mx-1"></h5> 
+        <div class="card-body">
+          <h5 class="card-title">{{ut.nev}}</h5>
+          <h5 class="card-title">
+            {{ut.megnev}}<img src="./img/ikonok/hotel.svg" class="ikon mx-1">
+          </h5>
           <img src="./img/ikonok/star.svg" class="ikon" ng-repeat="x in [].constructor(ut.tipus) track by $index">
           <img ng-src="./img/ikonok/{{ut.kozlekedesi_eszkoz_img}}" class="ikon mx-5 float-end">
           <br>
           <br>
-          <p class='card-title2'>{{ut.idoszak}}<span class="mx-5 float-end">{{ut.ut_ar}}Ft</span></p> 
+          <p class="card-title2">
+            {{ut.idoszak}}<span class="mx-5 float-end">{{ut.ut_ar}}Ft</span>
+          </p>
           <br>
           <a ui-sref="nyaralas({nyaralas:'{{ut.varos}}'})">
-            <button type='submit' class='btn'>Tovább>></button>
+            <button type="submit" class="btn">Tovább&gt;&gt;</button>
           </a>
         </div>
       </div>
@@ -26,7 +30,5 @@
   </div>
 </div>
 
- <!-- Footer -->
- <footer id="availability"
- ng-include src="'../MoonLightTravel.github.io/html/footer.html'"></footer>
- 
+<!-- Footer -->
+<footer id="availability" ng-include src="'../MoonLightTravel.github.io/html/footer.html'"></footer>
