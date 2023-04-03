@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Gép: 127.0.0.1
--- Létrehozás ideje: 2023. Már 31. 08:32
+-- Létrehozás ideje: 2023. Ápr 03. 11:49
 -- Kiszolgáló verziója: 10.4.6-MariaDB
 -- PHP verzió: 7.3.8
 
@@ -43,8 +43,6 @@ INSERT INTO `felhasznalok` (`id`, `nev`, `email`, `jelszo`) VALUES
 (1, 'Regina', 'regina@citromail.hu', 'a'),
 (2, 'Fanni', 'fanni@citromail.hu', 'a'),
 (3, 'Turi Regina', 'turi.viktoriar-2018@keri.mako.hu', 'aa'),
-(4, 'Turi Regina', 'turiviki2003@gmail.com', 'aaa'),
-(5, 'Fanni', 'fanni@hotmail.com', 'a'),
 (6, 'Félix', 'felix@freemail.hu', '123456');
 
 -- --------------------------------------------------------
@@ -62,7 +60,7 @@ CREATE TABLE `foglalas` (
   `fo` int(2) NOT NULL,
   `vegosszeg` int(6) NOT NULL,
   `kisagy` int(100) NOT NULL,
-  `evszam` date NOT NULL,
+  `evszam` year(4) NOT NULL,
   `honap` int(10) NOT NULL,
   `nap` int(10) NOT NULL,
   `oda_ora` int(10) NOT NULL,
@@ -75,7 +73,7 @@ CREATE TABLE `foglalas` (
 --
 
 INSERT INTO `foglalas` (`foglalas_id`, `felhasznalo_id`, `teljes_nev`, `telefonsz`, `email`, `fo`, `vegosszeg`, `kisagy`, `evszam`, `honap`, `nap`, `oda_ora`, `vissza_ora`, `ut_id2`) VALUES
-(1, 6, 'kdhadkddf', 63, 'djfdsffdfhdfsdfsdf', 3, 12345, 2, '2023-03-28', 12, 1, 12, 12, 1);
+(1, 6, 'kdhadkddf', 63, 'djfdsffdfhdfsdfsdf', 3, 12345, 2, 2023, 12, 1, 12, 12, 1);
 
 -- --------------------------------------------------------
 
@@ -183,7 +181,7 @@ INSERT INTO `utak` (`ut_id`, `kontinens`, `orszag`, `varos`, `utak_img`, `leiras
 (6, 'Európa', 'Magyarország', 'Siófok', 'balaton1-min.jpg', 'Az élményteli programot nyújtó állatparki séta bármely korosztály számára kellemes kikapcsolódást jelent, ahol felfedezhetik a szelíd állatok csodálatos világát és találkozhatnak kedvenceikkel. Magyarország legnagyobb és legszebb magángyűjteménye 1986 júniusa óta látogatható Siófok város centrumában,a Kálmán sétány 10. alatt. Siófok szívében, üde színfoltként hívogat a város egyik legszebb parkja, a Millennium park. Siófok a XX. század elejére a Balaton egyik legkedveltebb üdülőhelyévé vált. A fejlődés megkövetelte a modern víz- és szennyvízhálózat kiépítését. A Siófok Aranypart szabadstrand Siófok központjától több mint 4 km hosszan nyúlik el keleti irányba. A 20-30 méter széles part mindenhol füves, a legtöbb részen nagy fák nyújtanak hűs árnyékot.\r\n\r\n\r\n\r\n\r\n\r\n', 'busz', 'busz.svg', 'belföldi', '1 hetes nyaralás Siófokon', '1 hét', 6, 'Europa', 'Magyarorszag', 'Siofok', 'last minute', 30000, '6 óra 38 perc', 'Magyarország, Makó, 6900 Posta u. 4-6.', 'Bella Állatpark\r\nÁsványmúzeum\r\nMillennium park\r\nAranypart\r\nVíztorony'),
 (7, 'Amerika', 'Mexikó', 'Mexikóváros', 'mexiko1-min.jpg', 'A Soumaya Múzeum Mexikóváros egyik híres művészeti múzeuma. A Copper Canyon egy hat különálló kanyonból álló csoport a Sierra Madre Occidentalban, Chihuahua állam délnyugati részén, Mexikó északnyugati részén, és mérete 65 000 négyzetkilométer. A Szépművészeti Palota Mexikóváros legjelentősebb kulturális központja, évente körülbelül egymillió látogatója van. Amellett, hogy színház működik benne, két múzeumnak, a Szépművészeti Múzeumnak és a Nemzeti Építészeti Múzeumnak is helyt ad. A Plaza de la Constitución, közismert nevén Zócalo Mexikóváros főtere. A világ egyik legnagyobb városi tere.\r\n\r\n', 'repülő', 'repulo.svg', 'külföldi', 'Irány Mexikó!', '1 hét', 7, 'Amerika', 'Mexiko', 'Mexikovaros', 'last minute', 300000, '19 óra 20 perc', 'Magyarország, Budapest, 1185 Nemzetközi Repülőtér', '\r\nSoumaya Múzeum\r\nCopper Kanyon\r\nPalacio de Bellas Artes\r\nZócalo'),
 (8, 'Ázsia', 'Japán', 'Tokió', 'tokio1-min.jpg', 'A Meidzsi-szentély egy sintószentély a tokiói Sibujában, amit az 1912-ben elhunyt Meidzsi császár és 1914-ben elhunyt felesége, Sóken császárné tiszteletére emeltek. A Tokyo Metropolitan Art Museum egy művészeti múzeum Tokióban, Japánban. Ez egyike Japán számos múzeumának, amelyet a prefektusi kormány támogat. A Hibiya Park egy park Chiyoda Cityben, Tokióban, Japánban. A Sumida akváriumot 2012 májusában hozták létre egy bevásárlóközpontban, a Tokió SKYTREE-ben, mely 634 méteres magasságával a legmagasabb mesterséges alkotás Japánban. A Tokyo Dome City Attractions egy vidámpark a tokiói Tokyo Dome baseballstadion mellett Bunkjóban. A Mount Mitake egy hegy a Chichibu Tama Kai Nemzeti Parkban, Tokió közelében, Japánban. A Yomiuriland egy vidámpark Inagiban , Tokióban , Japánban , amelyet először 1964-ben nyitottak meg. A Rainbow Bridge egy függőhíd, amely a Tokiói-öböl északi részét keresztezi a Shibaura móló és az Odaiba vízparti fejlesztés között, Minatoban, Tokióban, Japánban.\r\n\r\n\r\n', 'repülő', 'repulo.svg', 'külföldi', 'Felkelő nap országának városa', '10 nap', 8, 'Azsia', 'Japan', 'Tokio', 'last minute', 800000, '1 nap 2 óra', 'Magyarország, Budapest, 1185 Nemzetközi Repülőtér', 'Meidzsi-szentély\r\nTokyo Metropolitan Art Museum\r\nHibiya Park\r\nSumida Aquarium\r\nTokyo Dome City\r\nMount Mitake\r\nYomiuri Land\r\nRainbow Bridge'),
-(9, 'Afrika', 'Egyiptom', 'Kairó', 'egyiptom1-min.jpg', 'Az Egyiptomi Régiségek Múzeuma, melyet gyakran csak Egyiptomi Múzeum néven említenek, Egyiptom fővárosában, Kairóban, a Tahrír téren áll, és legendás lazac színű épülete rejti a világ leggazdagabb egyiptológiai gyűjteményét. A Kairói Citadella vagy Szaladin fellegvára egy középkori iszlám kori erődítmény Kairóban, Egyiptomban, amelyet Salah ad-Din épített, és a későbbi egyiptomi uralkodók fejlesztettek tovább. Az Amr Ibn al-Ász mecset Kairó történelmi kerületében található, Egyiptomban. Gízai piramisok néven három piramist értünk: az egyiptomi óbirodalmi Hufu, Hafré és Menkauré fáraók piramisait. Maga a teljes piramismező a három nagy piramison kívül magába foglalja a hozzájuk tartozó halotti templomokat, kisebb piramisokat \r\n\r\n\r\n', 'repülő', 'repulo.svg', 'külföldi', 'Piramisok városa, Kairó', '6 nap', 9, 'Afrika', 'Egyiptom', 'Kairo', 'last minute', 500000, '3 óra 25 perc', 'Magyarország, Budapest, 1185 Nemzetközi Repülőtér', 'Egyiptomi Régiségek Múzeuma\r\nCitadella\r\nAmr Ibn al-Ász mecset\r\nGízai piramismező'),
+(9, 'Afrika', 'Egyiptom', 'Kairó', 'egyiptom1-min.jpg', 'Az Egyiptomi Régiségek Múzeuma, melyet gyakran csak Egyiptomi Múzeum néven említenek, Egyiptom fővárosában, Kairóban, a Tahrír téren áll, és legendás lazac színű épülete rejti a világ leggazdagabb egyiptológiai gyűjteményét. A Kairói Citadella vagy Szaladin fellegvára egy középkori iszlám kori erődítmény Kairóban, Egyiptomban, amelyet Salah ad-Din épített, és a későbbi egyiptomi uralkodók fejlesztettek tovább. Az Amr Ibn al-Ász mecset Kairó történelmi kerületében található, Egyiptomban. Gízai piramisok néven három piramist értünk: az egyiptomi óbirodalmi Hufu, Hafré és Menkauré fáraók piramisait. Maga a teljes piramismező a három nagy piramison kívül magába foglalja a hozzájuk tartozó halotti templomokat, kisebb piramisokat.\r\n\r\n\r\n', 'repülő', 'repulo.svg', 'külföldi', 'Piramisok városa, Kairó', '6 nap', 9, 'Afrika', 'Egyiptom', 'Kairo', 'last minute', 500000, '3 óra 25 perc', 'Magyarország, Budapest, 1185 Nemzetközi Repülőtér', 'Egyiptomi Régiségek Múzeuma\r\nCitadella\r\nAmr Ibn al-Ász mecset\r\nGízai piramismező'),
 (10, 'Ausztrália', 'Ausztrália', 'Sydney', 'sydney1-min.jpg', 'A Sydney-i Királyi Botanikus Kert egy műemléki védettségű, 30 hektáros botanikus kert, rendezvényhelyszín és nyilvános rekreációs terület. A Sydney-torony Sydney legmagasabb építménye, Ausztrália, és a második legmagasabb kilátó a déli féltekén. A BridgeClimb Sydney egy ausztrál turistalátványosság. A BridgeClimb elkalauzolja a vendégeket a Sydney Harbour Bridge megmászására. A Wild Life Sydney Zoo egy vadaspark a Darling Harbor körzetben, Sydney központi üzleti negyedének nyugati szélén, Sydneyben, Új-Dél-Walesben, Ausztráliában. A Hornby Lighthouse, más néven South Head Lower Light vagy South Head Signal Station, egy műemléki védelem alatt álló aktív világítótorony, amely South Head csúcsán, Új-Dél-Walesben, Ausztráliában található.\r\n\r\n\r\n', 'repülő', 'repulo.svg', 'külföldi', 'Nyaralás Sydney tengerpartján', '5 nap', 10, 'Ausztralia', 'Ausztralia', 'Sydney', 'tengerparti nyaralás', 900000, '1 nap 18 óra', 'Magyarország, Budapest, 1185 Nemzetközi Repülőtér', 'Royal Botanic Garden\r\nSydney Tower Eye\r\nBridgeClimb\r\nWILD LIFE Sydney\r\nHornby Lighthouse'),
 (11, 'Amerika', 'Kanada', 'Torontó', 'toronto1-min.jpg', 'A CN Towert 1973 és 1976 között építették a kanadai Torontóban, az ottani ipar erejének demonstrálása végett. A Royal Ontario Museum egy művészeti, világkultúra és természettörténeti múzeum Torontóban, Ontario államban, Kanadában. A Toronto Eaton Center egy bevásárlóközpont és irodakomplexum a kanadai Ontario állam Toronto belvárosában. A Nathan Phillips Square egy városi tér Torontóban, Ontario államban, Kanadában. A Casa Loma egy gótikus, újjászületett kastély stílusú kastély és kert a kanadai Ontario állambeli Toronto belvárosában, amely ma történelmi házmúzeum és nevezetesség.', 'repülő', 'repulo.svg', 'külföldi', 'Helyek, amelyeket látnia kell Torontóban!', '5 nap', 11, 'Amerika', 'Kanada', 'Toronto', 'Városlátogatás', 600000, '21 óra 29 perc', 'Magyarország, Budapest, 1185 Nemzetközi Repülőtér', 'CN Tower, Royal Ontario Museum, CF Toronto Eaton Centre,  Nathan Phillips Square, Casa Loma'),
 (12, 'Amerika', 'Egyesült Államok', 'New York', 'newyork1-min.jpg', 'A Central Park egy 3,41 km² területű nyilvános park Manhattan szívében, New York városában. Az Empire State Building New York város 102 emeletes, 381 méter magas épülete és egyik jelképe, 42 évig volt az USA legmagasabb épülete. A Times Square New Yorkban, Manhattan városrész egyik negyede. Egyike a legismertebb amerikai negyedeknek, a napi látogatószáma eléri a 330 ezret. A Szabadság megvilágosítja a világot, ismertebb nevén a Szabadság-szobor New York előtt, a Liberty Islanden található, a Hudson folyó torkolatánál. A High Line Park, vagy ahogy szintén ismert, a High Line, egy 1,6 km² területű nyilvános, lineáris park Manhattan nyugati részén, New Yorkban. A New York-i Modern Művészeti Múzeum egyike a világ legjelentősebb kortárs gyűjteménnyel rendelkező művészeti múzeumainak. ', 'repülő', 'repulo.svg', 'külföldi', 'New York kihagyhatatlan programjai', '6 nap', 12, 'Amerika', 'Egyesult Allamok', 'New York', 'Last minute', 4000000, '13 óra 5perc', 'Magyarország, Budapest, 1185 Nemzetközi Repülőtér', 'Central Park, Empire State Building , Times Square, Szabadság-szobor, High Line Park, Modern Művészeti Múzeum'),
@@ -675,10 +673,22 @@ ALTER TABLE `utak`
 --
 
 --
+-- Megkötések a táblához `foglalas`
+--
+ALTER TABLE `foglalas`
+  ADD CONSTRAINT `foglalas_ibfk_1` FOREIGN KEY (`ut_id2`) REFERENCES `utak` (`ut_id`);
+
+--
 -- Megkötések a táblához `utak`
 --
 ALTER TABLE `utak`
   ADD CONSTRAINT `utak_ibfk_1` FOREIGN KEY (`szallas_id2`) REFERENCES `szallas` (`szallas_id`);
+
+--
+-- Megkötések a táblához `utak_kepek`
+--
+ALTER TABLE `utak_kepek`
+  ADD CONSTRAINT `utak_kepek_ibfk_1` FOREIGN KEY (`ut_id3`) REFERENCES `utak` (`ut_id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

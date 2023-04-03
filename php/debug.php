@@ -1,5 +1,7 @@
 <?php
 
+/*
+
 $_GET['data'] = '"Párizs"';
 
-require_once("./search.php");
+require_once("./search.php");*/

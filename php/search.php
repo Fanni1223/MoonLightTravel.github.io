@@ -1,6 +1,4 @@
 <?php
-
-// Inport environment
 require_once('../../common/php/environment.php');
 
 // Get arguments
