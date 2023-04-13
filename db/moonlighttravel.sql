@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Gép: 127.0.0.1
--- Létrehozás ideje: 2023. Ápr 03. 11:49
+-- Létrehozás ideje: 2023. Ápr 13. 10:00
 -- Kiszolgáló verziója: 10.4.6-MariaDB
 -- PHP verzió: 7.3.8
 
@@ -55,12 +55,12 @@ CREATE TABLE `foglalas` (
   `foglalas_id` int(50) NOT NULL,
   `felhasznalo_id` int(11) NOT NULL,
   `teljes_nev` varchar(50) COLLATE utf8_hungarian_ci NOT NULL,
-  `telefonsz` int(11) NOT NULL,
+  `telefonsz` varchar(20) COLLATE utf8_hungarian_ci NOT NULL,
   `email` varchar(50) COLLATE utf8_hungarian_ci NOT NULL,
   `fo` int(2) NOT NULL,
   `vegosszeg` int(6) NOT NULL,
   `kisagy` int(100) NOT NULL,
-  `evszam` year(4) NOT NULL,
+  `evszam` int(11) NOT NULL,
   `honap` int(10) NOT NULL,
   `nap` int(10) NOT NULL,
   `oda_ora` int(10) NOT NULL,
@@ -73,7 +73,8 @@ CREATE TABLE `foglalas` (
 --
 
 INSERT INTO `foglalas` (`foglalas_id`, `felhasznalo_id`, `teljes_nev`, `telefonsz`, `email`, `fo`, `vegosszeg`, `kisagy`, `evszam`, `honap`, `nap`, `oda_ora`, `vissza_ora`, `ut_id2`) VALUES
-(1, 6, 'kdhadkddf', 63, 'djfdsffdfhdfsdfsdf', 3, 12345, 2, 2023, 12, 1, 12, 12, 1);
+(1, 6, 'kdhadkddf', '63', 'djfdsffdfhdfsdfsdf', 3, 12345, 2, 20230316, 12, 1, 12, 12, 1),
+(3, 6, 'Bálint Márk Félix', '+36 70 207 6464', 'markbalint112@gmail.com', 5, 140000, 1, 20230413, 4, 13, 13, 13, 19);
 
 -- --------------------------------------------------------
 
@@ -654,7 +655,7 @@ ALTER TABLE `felhasznalok`
 -- AUTO_INCREMENT a táblához `foglalas`
 --
 ALTER TABLE `foglalas`
-  MODIFY `foglalas_id` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `foglalas_id` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT a táblához `szallas`

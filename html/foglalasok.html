@@ -5,10 +5,7 @@
 .foglalas-kartya {
     border-radius: 8px;
     transition: height 0.2s ease;
-    min-height: 200px;
-    height: auto;
     padding: 1em 3em 2em 3em;
-    margin: 0em auto;
     background-color: #fff;
     box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px;
     }
@@ -29,29 +26,31 @@
   </div>
 
  
-
-  <div class="card foglalas-kartya" 
+<div class="row">
+  <div class="card foglalas-kartya col-md-3 col-lg-3 my-3 row mx-4" 
        ng-repeat="x in data"
        style="width: 25rem;">   
 
 
     
-    
+
     <img ng-src="./img/utak/{{x.utak_img}}" class="card-img-top" alt="">
     
     <div class="card-body">
-      <p class="card-text">Név&emsp;{{x.nev}}</p>
-      <p class="card-text">Tel. szám&emsp;{{x.telefonsz}}</p>
-      <p class="card-text">Email&emsp;{{x.email}}</p>
-      <p class="card-text">Fő&emsp;{{x.fo}}</p>
-      <p class="card-text">Dátum&emsp;{{x.evszam}}.{{x.honap}}.{{x.nap}}</p>
-      <p class="card-text">Kezdete&emsp;{{x.oda_ora}}</p>
-      <p class="card-text">Vége&emsp;{{x.vissza_ora}}</p>
-      <p class="card-text">Kiságy&emsp;{{x.kisagy}}</p>
-      <p class="card-text">Végösszeg&emsp;{{x.vegosszeg}}</p>
-
+    <table>
+      <tr><td><p class="card-text">Név</td><td class="mx-3">{{x.nev}}</p></td></tr>
+      <tr><td><p class="card-text">Tel. szám</td><td class="mx-3">{{x.telefonsz}}</p></td></tr>
+      <tr><td><p class="card-text">Email</td><td class="mx-3">{{x.email}}</p></td></tr>
+      <tr><td><p class="card-text">Fő</td><td class="mx-3">{{x.fo}}</p></td></tr>
+      <tr><td><p class="card-text">Dátum</td><td class="mx-3">{{x.evszam}}.{{x.honap}}.{{x.nap}}</p></td></tr>
+      <tr><td><p class="card-text">Kezdete</td><td class="mx-3">{{x.oda_ora}}</p></td></tr>
+      <tr><td><p class="card-text">Vége</td><td class="mx-3">{{x.vissza_ora}}</p></td></tr>
+      <tr><td><p class="card-text">Kiságy</td><td class="mx-3">{{x.kisagy}}</p></td></tr>
+      <tr><td><p class="card-text">Végösszeg</td><td class="mx-3">{{x.vegosszeg}}</p></td></tr>
+    </table>
 
     </div>
+  </div>
   </div>
 
 </div>
