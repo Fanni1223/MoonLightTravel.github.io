@@ -312,7 +312,6 @@ main input:checked+label {
 
 .lb-header {
   position: relative;
-  color: #00415d;
   margin: 5px 5px 10px 5px;
   padding-bottom: 10px;
   border-bottom: 1px solid #eee;
@@ -324,7 +323,6 @@ main input:checked+label {
   margin: 0 25px;
   padding: 0 20px;
   text-decoration: none;
-  color: #666;
   font-weight: bold;
   font-size: 15px;
   -webkit-transition: all 0.1s linear;
@@ -399,7 +397,7 @@ main input:checked+label {
   border: 1px solid #ddd;
   padding: 0 10px;
   border-radius: 2px;
-  color: #333;
+ 
   font-size: 0.8rem;
   -webkit-transition: all 0.1s linear;
   -moz-transition: all 0.1s linear;
@@ -427,7 +425,6 @@ main input:checked+label {
   width: 50%;
   text-align: left;
   text-decoration: underline;
-  color: #888;
   font-size: 0.75rem;
 }
 
@@ -438,7 +435,6 @@ h3 {
 }
 
 .social {
-  color: #333;
   font-size: 14px;
   text-decoration: none;
   margin: 15px 0;
@@ -498,11 +494,12 @@ h3 {
 }
 
 .beviteli {
-  background-color: #eee;
-  border: none;
+  border-radius: 10px;
+  border-color: black;
   padding: 4px;
   margin: 10px 0;
   font-size: 14px;
+
 
 }
 
@@ -533,7 +530,6 @@ h3 {
   display: block;
   align-items: center;
   justify-content: center;
-
   padding: 0 50px;
   height: 100%;
   text-align: center;
