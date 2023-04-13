@@ -1,49 +1,51 @@
+<!--Banner, menü-->
 <div ng-include src="'../MoonLightTravel.github.io/html/navigate.html'"></div>
 <div class="container">
   <div class="row mt-5 text-center">
     <h1>Kalandtúrák</h1>
   </div>
-    <div class="row mt-5">
-      
-      <div class="col-xl-8 col-md-10 col-sm-12 mt-3">
-        <img src="../MoonLightTravel.github.io/img/blog/hegytura.jpg" alt="Blog" title="Blog" id="nagy_kep" class="img-fluid clearfix">
-        
-        <div class="col-xl-9 col-md-10 col-sm-12 mt-2">
-          <img src="../MoonLightTravel.github.io/img/blog/hegytura2.jpg" alt="Blog" title="Blog" width="134px" ng-click="nagyit($event.target)"  class="mt-1 mx-1">
-          <img src="../MoonLightTravel.github.io/img/blog/hegytura3.jpg" alt="Blog" title="Blog" width="134px" ng-click="nagyit($event.target)"  class="mt-1 mx-1">
-          <img src="../MoonLightTravel.github.io/img/blog/hegytura4.jpg" alt="Blog" title="Blog" width="134px" ng-click="nagyit($event.target)"  class="mt-1 mx-1">
-          <img src="../MoonLightTravel.github.io/img/blog/hegytura.jpg" alt="Blog" title="Blog" width="134px" ng-click="nagyit($event.target)"  class="mt-1 mx-1">
-        </div>
-  
+  <div class="row mt-5">
+    <!--Képgaléria-->
+    <div class="col-xl-8 col-md-10 col-sm-12 mt-3">
+      <img src="../MoonLightTravel.github.io/img/blog/hegytura.jpg" alt="Blog" title="Blog" id="nagy_kep"
+        class="img-fluid clearfix">
+      <div class="col-xl-9 col-md-10 col-sm-12 mt-2">
+        <img src="../MoonLightTravel.github.io/img/blog/hegytura2.jpg" alt="Blog" title="Blog" width="134px"
+          ng-click="nagyit($event.target)" class="mt-1 mx-1">
+        <img src="../MoonLightTravel.github.io/img/blog/hegytura3.jpg" alt="Blog" title="Blog" width="134px"
+          ng-click="nagyit($event.target)" class="mt-1 mx-1">
+        <img src="../MoonLightTravel.github.io/img/blog/hegytura4.jpg" alt="Blog" title="Blog" width="134px"
+          ng-click="nagyit($event.target)" class="mt-1 mx-1">
+        <img src="../MoonLightTravel.github.io/img/blog/hegytura.jpg" alt="Blog" title="Blog" width="134px"
+          ng-click="nagyit($event.target)" class="mt-1 mx-1">
       </div>
-  
-  
-  <div class="col-12 col-md-4 mt-2">
-    <p><i>Schneeberg (2076m)</i></p>
-    <p>A Schneeberg Alsó-Ausztria legmagasabb hegycsúcsa az Alpok hegységben, 
-      egyben az Alpok fő vonulatának utolsó keleti tagja, amely magasságával meghaladja a 2000 métert. 
-      A hegység látképe Észak-Burgenlandból, Bécsből és az Alpokalja tájegységről is könnyen megfigyelhető Kőszegtől Sopronig.
-      A magyar határhoz legközelebbi igazi alpesi óriás, már a Fertő-tótól felismerhető a jellegzetes alakú, impozáns, késő tavaszig hóval fedett sziklapiramis, 
-      mely 1500 méterre emelkedik ki közvetlen környezetéből. Legmagasabb pontját, a 2076 méteres Klosterwappent könnyű hegyi séta keretében mászhatjuk meg a több mint százéves, rendkívül népszerű fogaskerekű vasút hegyi állomásától.</p>
-    <br>
-    <b>A túra hossza:</b> 7,0 km<br>
-    <b>A túra időtartama:</b> 5-6 óra<br>
-    <b>Szintkülönbség:</b> 280 m fel, ugyanannyi le. <br>
-    <b>A túra jellege:</b> Könnyű gyalogtúra<br>
-    <b>Költségek: </b>35 euro / fő<br>
-    <b>Túra nehézség </b>: Közepes
-    <a ui-sref="ut({ut:'Európa'})">
-      <button type='submit' class='btn mt-5'>Megnézem az európai utak között</button>
-    </a>
+    </div>
+    <!--Leírás-->
+    <div class="col-12 col-md-4 mt-2">
+      <p><i>Schneeberg (2076m)</i></p>
+      <p>A Schneeberg Alsó-Ausztria legmagasabb hegycsúcsa az Alpok hegységben,
+        egyben az Alpok fő vonulatának utolsó keleti tagja, amely magasságával meghaladja a 2000 métert.
+        A hegység látképe Észak-Burgenlandból, Bécsből és az Alpokalja tájegységről is könnyen megfigyelhető Kőszegtől
+        Sopronig.
+        A magyar határhoz legközelebbi igazi alpesi óriás, már a Fertő-tótól felismerhető a jellegzetes alakú, impozáns,
+        késő tavaszig hóval fedett sziklapiramis,
+        mely 1500 méterre emelkedik ki közvetlen környezetéből. Legmagasabb pontját, a 2076 méteres Klosterwappent
+        könnyű hegyi séta keretében mászhatjuk meg a több mint százéves, rendkívül népszerű fogaskerekű vasút hegyi
+        állomásától.</p>
+      <br>
+      <b>A túra hossza:</b> 7,0 km<br>
+      <b>A túra időtartama:</b> 5-6 óra<br>
+      <b>Szintkülönbség:</b> 280 m fel, ugyanannyi le. <br>
+      <b>A túra jellege:</b> Könnyű gyalogtúra<br>
+      <b>Költségek: </b>35 euro / fő<br>
+      <b>Túra nehézség </b>: Közepes
+      <a ui-sref="ut({ut:'Európa'})">
+        <button type='submit' class='btn mt-5'>Megnézem az európai utak között</button>
+      </a>
+    </div>
   </div>
-  </div>
-  </div>
-  
-  
-  
-  <!-- Footer -->
-  <footer id="availability"
-  ng-include src="'../MoonLightTravel.github.io/html/footer.html'">
-  </footer>
-  
- 
+</div>
+
+<!-- Footer -->
+<footer id="availability" ng-include src="'../MoonLightTravel.github.io/html/footer.html'">
+</footer>

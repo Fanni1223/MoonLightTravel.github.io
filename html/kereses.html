@@ -1,20 +1,28 @@
 <!--Banner, menü-->
 <div ng-include src="'../MoonLightTravel.github.io/html/navigate.html'"></div>
 <div class="container">
-  <div class='row mt-2'>
-    <div class='col-md-4' ng-repeat="hely in keresesEredmenye">
-      <div class='card my-3'>
+  <div class="row mt-2">
+    <div class="col-md-4" ng-repeat="hely in keresesEredmenye">
+      <div class="card my-3">
         <img ng-src="./img/utak/{{hely.utak_img}}">
-        <div class='card-body'>
-          <h5 class='card-title'>{{hely.nev}}</h5>
-          <h5 class='card-title'>{{hely.megnev}}<img src="./img/ikonok/hotel.svg" class="ikon"></h5> 
-          <img src="./img/ikonok/star.svg" class="ikon"><img src="./img/ikonok/star.svg" class="ikon"><img src="./img/ikonok/star.svg" class="ikon"><img src="../MoonLightTravel.github.io/img/ikonok/repulo.svg" class="ikon mx-5 float-end">
+        <div class="card-body">
+          <h5 class="card-title">{{hely.nev}}</h5>
+          <h5 class="card-title">
+            {{hely.megnev}}<img src="./img/ikonok/hotel.svg" class="ikon">
+          </h5>
+          <img src="./img/ikonok/star.svg" class="ikon">
+          <img src="./img/ikonok/star.svg" class="ikon">
+          <img src="./img/ikonok/star.svg" class="ikon">
+          <img src="../MoonLightTravel.github.io/img/ikonok/repulo.svg" class="ikon mx-5 float-end">
           <br>
           <br>
-          <p class='card-title2'>{{hely.idoszak}} <span class="mx-5 float-end">{{hely.ut_ar}}Ft</span></p> 
+          <p class="card-title2">
+            {{hely.idoszak}}
+            <span class="mx-5 float-end">{{hely.ut_ar}}Ft</span>
+          </p>
           <br>
           <a ui-sref="nyaralas({nyaralas:'{{ut.varos}}'})">
-            <button type='submit' class='btn'>Tovább>></button>
+            <button type="submit" class="btn">Tovább>></button>
           </a>
         </div>
       </div>
@@ -23,11 +31,5 @@
 </div>
 
 <!-- Footer -->
- <footer id="availability"
-         ng-include src="'../MoonLightTravel.github.io/html/footer.html'">
+<footer id="availability" ng-include src="'../MoonLightTravel.github.io/html/footer.html'">
 </footer>
-
-
-
-
-

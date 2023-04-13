@@ -1,29 +1,35 @@
 <!--Banner, menü-->
 <div ng-include src="'../MoonLightTravel.github.io/html/navigate.html'"></div>
 <div class="container">
-  <div class='row mt-5' ng-if="data.length">
+  <div class="row mt-5" ng-if="data.length">
     <h1 class="text-center mt-5">{{data[0].nev}}</h1>
   </div>
 
   <!--Képgaléria-->
   <div class="row mt-5" ng-if="data.length">
-
     <div class="col-xl-8 col-md-10 col-sm-12 mt-3" ng-if="data.length">
-      <img ng-src="./img/utak/{{data[0].utak_img}}" alt="{{data[0].varos}}" title="{{data[0].varos}}" id="nagy_kep" class="img-fluid clearfix">
-      
+      <img ng-src="./img/utak/{{data[0].utak_img}}" alt="{{data[0].varos}}" title="{{data[0].varos}}" id="nagy_kep"
+        class="img-fluid clearfix">
+
       <div class="col-xl-8 col-md-10 col-sm-12 mt-2">
-        <img ng-if="nyaralas.neve.includes('.jpg')"  ng-repeat="nyaralas in data" ng-src="./img/utak/{{nyaralas.neve}}" alt="{{data[0].varos}}" title="{{data[0].varos}}" width="134px" ng-click="nagyit($event.target)" class="mt-1 mx-1">
+        <img ng-if="nyaralas.neve.includes('.jpg')" ng-repeat="nyaralas in data" ng-src="./img/utak/{{nyaralas.neve}}"
+          alt="{{data[0].varos}}" title="{{data[0].varos}}" width="134px" ng-click="nagyit($event.target)"
+          class="mt-1 mx-1">
       </div>
 
       <!--Tabok-->
       <div class="col-xl-8 col-md-10 mt-2 col-sm-12 col-lg-7" ng-if="data.length">
         <main>
           <input id="tab1" type="radio" name="tabs" checked class="input_tab">
-          <label for="tab1"><img src="../MoonLightTravel.github.io/img/ikonok/leiras.svg" alt="ikon" title="ikon" class="ikon mx-2">Leírás</label>
+          <label for="tab1">
+            <img src="../MoonLightTravel.github.io/img/ikonok/leiras.svg" alt="ikon" title="ikon"
+              class="ikon mx-2">Leírás</label>
           <input id="tab2" type="radio" name="tabs" class="input_tab">
-          <label for="tab2"><img src="../MoonLightTravel.github.io/img/ikonok/repulo.svg" alt="ikon" title="ikon" class="ikon mx-2">Közlekedés</label>
+          <label for="tab2"><img src="../MoonLightTravel.github.io/img/ikonok/repulo.svg" alt="ikon" title="ikon"
+              class="ikon mx-2">Közlekedés</label>
           <input id="tab3" type="radio" name="tabs" class="input_tab">
-          <label for="tab3"><img src="../MoonLightTravel.github.io/img/ikonok/ar.svg" alt="ikon" title="ikon" class="ikon mx-2">Ár</label>
+          <label for="tab3"><img src="../MoonLightTravel.github.io/img/ikonok/ar.svg" alt="ikon" title="ikon"
+              class="ikon mx-2">Ár</label>
           <!--Leírás-->
           <section id="content1">
             <h5>Látványosságok, leírás</h5>
@@ -34,20 +40,28 @@
           <!--Közlekedés-->
           <section id="content2">
             <h5>Az utazás ideje átlagosan</h5>
-            <p class="mx-3 mt-3"><img ng-src="./img/ikonok/{{data[0].kozlekedesi_eszkoz_img}}" alt="ikon" title="ikon" class="ikon mx-3">{{data[0].ido}}<p>
+            <p class="mx-3 mt-3">
+              <img ng-src="./img/ikonok/{{data[0].kozlekedesi_eszkoz_img}}" alt="ikon" title="ikon"
+                class="ikon mx-3">{{data[0].ido}}
+            </p>
+            <p></p>
             <h5>Az indulás helye</h5>
-            <p class="mx-3 mt-3">{{data[0].indulasi_hely}}</P>
+            <p class="mx-3 mt-3">{{data[0].indulasi_hely}}</p>
           </section>
-           <!--Ár-->
-           <section id="content3">
+          <!--Ár-->
+          <section id="content3">
             <h5>Az utazás ára</h5>
-            <p class="mx-3 mt-3"><img ng-src="./img/ikonok/{{data[0].kozlekedesi_eszkoz_img}}" alt="ikon" title="ikon" class="ikon mx-3">{{data[0].ut_ar}} Ft<p>
+            <p class="mx-3 mt-3">
+              <img ng-src="./img/ikonok/{{data[0].kozlekedesi_eszkoz_img}}" alt="ikon" title="ikon"
+                class="ikon mx-3">{{data[0].ut_ar}} Ft
+            </p>
+            <p></p>
             <h5>Az összeg tartalmazza a jegyet és az utazás árát.</h5>
           </section>
         </main>
       </div>
     </div>
-  
+
     <!--Foglalás-->
     <div class="foglalas_form col-sm-10 col-md-10 col-lg-5 col-xl-4 mt-3">
       <form id="foglalas" ng-if="data.length">
@@ -58,15 +72,15 @@
         <div class="row mt-3">
           <h6>Adatok</h6>
           <div class="input-group input-group-icon">
-            <input type="text" placeholder="Teljes név" ng-model="model.nev2" ng-change="changed()"/>
+            <input type="text" placeholder="Teljes név" ng-model="model.nev2" ng-change="changed()">
             <div class="input-icon mx-3"><i class="fa fa-user"></i></div>
           </div>
           <div class="input-group input-group-icon">
-            <input type="text" placeholder="Telefonszám" ng-model="model.telefonsz" ng-change="changed()"/>
+            <input type="text" placeholder="Telefonszám" ng-model="model.telefonsz" ng-change="changed()">
             <div class="input-icon mx-3"><i class="fa fa-phone"></i></div>
           </div>
           <div class="input-group input-group-icon">
-            <input type="text" placeholder="Email-cím" ng-model="model.email" ng-change="changed()"/>
+            <input type="text" placeholder="Email-cím" ng-model="model.email" ng-change="changed()">
             <div class="input-icon mx-3"><i class="fa fa-envelope"></i></div>
           </div>
         </div>
@@ -75,21 +89,21 @@
           <h6>Mikor szeretne utazni?</h6>
           <div class="input-group">
             <input type="text" style="width: 30%;" class="mx-1" placeholder="Évszám" ng-model="model.evszam"
-                   ng-change="changed()"/>
+              ng-change="changed()">
             <input type="text" style="width: 30%;" class="mx-1" placeholder="Hónap" ng-model="model.honap"
-                   ng-change="changed()"/>
+              ng-change="changed()">
             <input type="text" style="width: 30%;" class="mx-1" placeholder="Nap" ng-model="model.nap"
-                   ng-change="changed()"/>
+              ng-change="changed()">
           </div>
         </div>
 
         <div class="row">
           <div class="input-group">
-            <input id="ido1" type="radio" name="oda_ora" ng-value="8" ng-model="model.oda_ora"/>
+            <input id="ido1" type="radio" name="oda_ora" ng-value="8" ng-model="model.oda_ora">
             <label for="ido1" class="ido"><span>8:00</span></label>
-            <input id="ido2" type="radio" name="oda_ora" ng-value="10" ng-model="model.oda_ora"/>
+            <input id="ido2" type="radio" name="oda_ora" ng-value="10" ng-model="model.oda_ora">
             <label for="ido2"> <span>10:00</span></label>
-            <input id="ido3" type="radio" name="oda_ora" ng-value="15" ng-model="model.oda_ora"/>
+            <input id="ido3" type="radio" name="oda_ora" ng-value="15" ng-model="model.oda_ora">
             <label for="ido3"> <span>15:00</span></label>
           </div>
         </div>
@@ -97,20 +111,19 @@
         <div class="row mt-2">
           <h6>Hány órakor szeretne vissza utazni?</h6>
           <div class="input-group">
-            <input id="ido4" type="radio" name="vissza_ora" ng-value="8" ng-model="model.vissza_ora"/>
+            <input id="ido4" type="radio" name="vissza_ora" ng-value="8" ng-model="model.vissza_ora">
             <label for="ido4"><span>8:00</span></label>
-            <input id="ido5" type="radio" name="vissza_ora" ng-value="10" ng-model="model.vissza_ora"/>
+            <input id="ido5" type="radio" name="vissza_ora" ng-value="10" ng-model="model.vissza_ora">
             <label for="ido5"> <span>10:00</span></label>
-            <input id="ido6" type="radio" name="vissza_ora" ng-value="15" ng-model="model.vissza_ora"/>
+            <input id="ido6" type="radio" name="vissza_ora" ng-value="15" ng-model="model.vissza_ora">
             <label for="ido6"> <span>15:00</span></label>
           </div>
         </div>
-    
+
         <div class="row mt-2">
           <h6>Hány főre szeretne foglalni?</h6>
           <div class="input-group input-group-icon">
-            <input type="text" placeholder="Fő" style="width: 40%" ng-model="model.fo"
-                   ng-change="changed()"/>
+            <input type="text" placeholder="Fő" style="width: 40%" ng-model="model.fo" ng-change="changed()">
             <div class="input-icon mx-3"><i class="fa fa-user"></i></div>
           </div>
         </div>
@@ -119,9 +132,9 @@
           <h6>Szeretne kiságyat a szállásra?</h6>
           <div class="input-group input-group-icon">
             <div class="input-group">
-              <input id="igen" type="radio" name="kisagy" ng-value="1" ng-model="model.kisagy"/>
+              <input id="igen" type="radio" name="kisagy" ng-value="1" ng-model="model.kisagy">
               <label for="igen"><span>Igen</span></label>
-              <input id="nem" type="radio" name="kisagy" ng-value="0" ng-model="model.kisagy"/>
+              <input id="nem" type="radio" name="kisagy" ng-value="0" ng-model="model.kisagy">
               <label for="nem"> <span>Nem</span></label>
             </div>
           </div>
@@ -131,12 +144,11 @@
           <h6>Végösszeg</h6>
           <h6 class="text-secondary mx-2">{{model.vegosszeg}} Ft</h6>
         </div>
-        
-        <button id="foglalas-btn" type="button" class="btn float-end" style="width: 40%;" 
-                ng-click="insertData()" disabled>
+
+        <button id="foglalas-btn" type="button" class="btn float-end" style="width: 40%;" ng-click="insertData()"
+          disabled>
           Foglalás
         </button>
-        
       </form>
     </div>
   </div>
@@ -147,48 +159,64 @@
       <img ng-src="./img/szalloda/{{data[0].szallas_img}}" alt="Szállás" title="Szállás" class="img-fluid">
     </div>
     <div class="col-xl-4 col-md-4" ng-if="data.length">
-      <img src="./img/ikonok/star.svg" class="ikon mt-2" alt="ikon" title="ikon" ng-repeat="x in [].constructor(data[0].tipus) track by $index">
+      <img src="./img/ikonok/star.svg" class="ikon mt-2" alt="ikon" title="ikon"
+        ng-repeat="x in [].constructor(data[0].tipus) track by $index">
       <p class="fw-bold mx-1">{{data[0].megnev}}</p>
-      <p class="fw-bold mx-1"><img src="./img/ikonok/tartozkodasihely.svg" class="ikon" alt="Elhelyezkedés">{{data[0].elhelyezkedes}}</p>
+      <p class="fw-bold mx-1">
+        <img src="./img/ikonok/tartozkodasihely.svg" class="ikon" alt="Elhelyezkedés">{{data[0].elhelyezkedes}}
+      </p>
     </div>
   </div>
 
-<!--Tabok-->
+  <!--Tabok-->
   <div class="row col-xl-7 col-md-7 mt-2" ng-if="data.length">
     <main>
-      <input id="tab4" type="radio" name="tabs2" class="input_tab">
-      <label for="tab4"><img src="../MoonLightTravel.github.io/img/ikonok/leiras.svg" alt="ikon" class="ikon mx-2">Leírás</label>
-      <input id="tab5" type="radio" name="tabs2" class="input_tab">
-      <label for="tab5"><img src="../MoonLightTravel.github.io/img/ikonok/ellatas.svg" alt="ikon" class="ikon mx-2">Ellátás</label>
-      <input id="tab6" type="radio" name="tabs2" class="input_tab" checked>
-      <label for="tab6"><img src="../MoonLightTravel.github.io/img/ikonok/szolgaltatas.svg" alt="ikon" class="ikon mx-2">Szolgáltatások</label>
-      <input id="tab7" type="radio" name="tabs2" class="input_tab">
-      <label for="tab7"><img src="../MoonLightTravel.github.io/img/ikonok/ar.svg" alt="ikon" class="ikon mx-2">Ár</label>
-  <!--Leírás-->
+      <input id="tab4" type="radio" name="tabs2" class="input_tab" />
+      <label for="tab4"><img src="../MoonLightTravel.github.io/img/ikonok/leiras.svg" alt="ikon"
+          class="ikon mx-2">Leírás</label>
+      <input id="tab5" type="radio" name="tabs2" class="input_tab" />
+      <label for="tab5">
+        <img src="../MoonLightTravel.github.io/img/ikonok/ellatas.svg" alt="ikon" class="ikon mx-2">Ellátás</label>
+      <input id="tab6" type="radio" name="tabs2" class="input_tab" checked />
+      <label for="tab6"><img src="../MoonLightTravel.github.io/img/ikonok/szolgaltatas.svg" alt="ikon"
+          class="ikon mx-2" />Szolgáltatások</label>
+      <input id="tab7" type="radio" name="tabs2" class="input_tab" />
+      <label for="tab7"><img src="../MoonLightTravel.github.io/img/ikonok/ar.svg" alt="ikon"
+          class="ikon mx-2" />Ár</label>
+      <!--Leírás-->
       <section id="content4">
         <h5>A szállásról röviden</h5>
         <p class="mx-3">{{data[0].leiras2}}</p>
       </section>
-  <!--Ellátás-->
+      <!--Ellátás-->
       <section id="content5">
         <h5>Az ellátás típusa</h5>
         <p class="mx-3">{{data[0].ellatas}}</p>
         <p class="mx-3">{{data[0].ellatas_leiras}}</p>
       </section>
-  <!--Szolgáltatás-->
+      <!--Szolgáltatás-->
       <section id="content6">
-        <button disabled ng-repeat="nyaralas in data" ng-if="nyaralas.neve.includes('.svg')" class="mx-2 border border-grey mt-2"><p class="mt-3 mx-1 text-black fw-bold"><img  ng-src="./img/ikonok/{{nyaralas.neve}}" alt="ikon" class="ikon mx-2">{{nyaralas.neve2}}</p></button>
+        <button disabled ng-repeat="nyaralas in data" ng-if="nyaralas.neve.includes('.svg')"
+          class="mx-2 border border-grey mt-2">
+          <p class="mt-3 mx-1 text-black fw-bold">
+            <img ng-src="./img/ikonok/{{nyaralas.neve}}" alt="ikon" class="ikon mx-2" />{{nyaralas.neve2}}
+          </p>
+        </button>
       </section>
       <!--Ár-->
       <section id="content7">
         <h5>A szállás ára</h5>
-        <p class="mx-3 mt-3"><img ng-src="./img/ikonok/hotel.svg" alt="ikon" title="ikon" class="ikon mx-3">{{data[0].szallas_ar}} Ft<p>
-        <h5>Az összeg tartalmazza a szállást és a hozzá tartozó szolgáltatásokat is.</h5>
+        <p class="mx-3 mt-3">
+          <img ng-src="./img/ikonok/hotel.svg" alt="ikon" title="ikon" class="ikon mx-3" />{{data[0].szallas_ar}} Ft
+        </p>
+        <p></p>
+        <h5>
+          Az összeg tartalmazza a szállást és a hozzá tartozó szolgáltatásokat
+          is.
+        </h5>
       </section>
     </main>
   </div>
 </div>
- <!-- Footer -->
- <footer id="availability"
- ng-include src="'../MoonLightTravel.github.io/html/footer.html'"></footer>
-
+<!-- Footer -->
+<footer id="availability" ng-include src="'../MoonLightTravel.github.io/html/footer.html'"></footer>

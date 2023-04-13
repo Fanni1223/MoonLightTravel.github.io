@@ -1,56 +1,65 @@
+<!--Banner, menü-->
 <div ng-include src="'../MoonLightTravel.github.io/html/navigate.html'"></div>
 <div class="container">
-<div class="row mt-5 text-center">
-  <h1>Utazás a görög szigetekre</h1>
-</div>
-  <div class="row mt-5">
-
-<div class="col-xl-8 col-md-10 col-sm-12 mt-3">
-  <img src="../MoonLightTravel.github.io/img/blog/gorog_ut1.jpg" alt="Blog" title="Blog" id="nagy_kep" class="img-fluid clearfix">
-  
-  <div class="col-xl-9 col-md-10 col-sm-12 mt-2">
-    <img src="../MoonLightTravel.github.io/img/blog/gorog_ut2.jpg" alt="Blog" title="Blog" width="134px" ng-click="nagyit($event.target)"  class="mt-1 mx-1">
-    <img src="../MoonLightTravel.github.io/img/blog/gorog_ut3.jpg" alt="Blog" title="Blog" width="134px" ng-click="nagyit($event.target)"  class="mt-1 mx-1">
-    <img src="../MoonLightTravel.github.io/img/blog/gorog_ut4.jpg" alt="Blog" title="Blog" width="134px" ng-click="nagyit($event.target)"  class="mt-1 mx-1">
-    <img src="../MoonLightTravel.github.io/img/blog/gorog_ut1.jpg" alt="Blog" title="Blog" width="134px" ng-click="nagyit($event.target)"  class="mt-1 mx-1">
+  <div class="row mt-5 text-center">
+    <h1>Utazás a görög szigetekre</h1>
   </div>
+  <div class="row mt-5">
+    <!--Képgaléria-->
+    <div class="col-xl-8 col-md-10 col-sm-12 mt-3">
+      <img src="../MoonLightTravel.github.io/img/blog/gorog_ut1.jpg" alt="Blog" title="Blog" id="nagy_kep"
+        class="img-fluid clearfix">
 
+      <div class="col-xl-9 col-md-10 col-sm-12 mt-2">
+        <img src="../MoonLightTravel.github.io/img/blog/gorog_ut2.jpg" alt="Blog" title="Blog" width="134px"
+          ng-click="nagyit($event.target)" class="mt-1 mx-1">
+        <img src="../MoonLightTravel.github.io/img/blog/gorog_ut3.jpg" alt="Blog" title="Blog" width="134px"
+          ng-click="nagyit($event.target)" class="mt-1 mx-1">
+        <img src="../MoonLightTravel.github.io/img/blog/gorog_ut4.jpg" alt="Blog" title="Blog" width="134px"
+          ng-click="nagyit($event.target)" class="mt-1 mx-1">
+        <img src="../MoonLightTravel.github.io/img/blog/gorog_ut1.jpg" alt="Blog" title="Blog" width="134px"
+          ng-click="nagyit($event.target)" class="mt-1 mx-1">
+      </div>
+    </div>
+    <!--Leírás-->
+    <div class="col-12 col-md-4 mt-2">
+      <p>
+        <i>Tartson velünk egy felejthetetlen hajó utazásra a Görög szigetekre és
+          Athénba</i>
+      </p>
+      <p>
+        Szórakoztató programokkal, tradicionális görög ételekkel várjuk,
+        válogatott italkínálattal az étkezések során, melyet a görög
+        vendégszeretet tesz egyedülállóvá. Ismerje meg Görögország
+        ellenállhatatlan varázsát akár néhány nap alatt, látogasson el az
+        Égei-tenger szigeteire, mesés strandjaira és merüljön el a görög kultúra
+        szépségeiben a Mobidik hajóutazással.
+      </p>
+      <br>
+      <b>Ellátás:</b> teljes<br>
+      <b>Hajó adatok:</b>
+      <li>9 utasfedélzet</li>
+      <li>Kb. 1700 utas</li>
+      <li>214 m hosszú</li>
+      <li>525 fős személyzet</li>
+      <br>
+      <b>Szolgálatások:</b>
+      <li>2 medence</li>
+      <li>3 étterem, 5 bár</li>
+      <li>fitneszterem</li>
+      <li>boltok</li>
+      <li>könyvtár</li>
+      <li>szépségszalon</li>
+      <li>szauna</li>
+      <a ui-sref="ut({ut:'Európa'})">
+        <button type="submit" class="btn mt-5">
+          Megnézem az európai utak között
+        </button>
+      </a>
+    </div>
+  </div>
 </div>
-
- 
-
-
-<div class="col-12 col-md-4 mt-2">
-  <p><i>Tartson velünk egy felejthetetlen hajó utazásra a Görög szigetekre és Athénba</i></p>
-  <p>Szórakoztató programokkal, tradicionális görög ételekkel várjuk, válogatott italkínálattal az étkezések során, melyet a görög vendégszeretet tesz egyedülállóvá. Ismerje meg Görögország ellenállhatatlan varázsát akár néhány nap alatt, látogasson el az Égei-tenger szigeteire, mesés strandjaira és merüljön el a görög kultúra szépségeiben a Mobidik hajóutazással.</p>
-  <br>
-  <b>Ellátás:</b> teljes<br>
-  <b>Hajó adatok:</b>
-  <li>9 utasfedélzet</li>
-  <li>Kb. 1700 utas</li>
-  <li>214 m hosszú</li>
-  <li>525 fős személyzet</li>
-  <br>
-  <b>Szolgálatások:</b>
-  <li>2 medence</li>
-  <li>3 étterem, 5 bár</li>
-  <li>fitneszterem</li>
-  <li>boltok</li>
-  <li>könyvtár</li>
-  <li>szépségszalon</li>
-  <li>szauna</li>
-  <a ui-sref="ut({ut:'Európa'})">
-    <button type='submit' class='btn mt-5'>Megnézem az európai utak között</button>
-  </a>
-</div>
-</div>
-</div>
-
-
 
 <!-- Footer -->
-<footer id="availability"
-ng-include src="'../MoonLightTravel.github.io/html/footer.html'">
+<footer id="availability" ng-include src="'../MoonLightTravel.github.io/html/footer.html'">
 </footer>
-
-

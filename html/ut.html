@@ -10,21 +10,21 @@
         <img ng-src="./img/utak/{{ut.utak_img}}">
         <div class='card-body'>
           <h5 class='card-title'>{{ut.nev}}</h5>
-          <h5 class='card-title'>{{ut.megnev}}<img src="./img/ikonok/hotel.svg" class="ikon mx-1"></h5> 
+          <h5 class='card-title'>{{ut.megnev}}<img src="./img/ikonok/hotel.svg" class="ikon mx-1"></h5>
           <img src="./img/ikonok/star.svg" class="ikon" ng-repeat="x in [].constructor(ut.tipus) track by $index">
           <img ng-src="./img/ikonok/{{ut.kozlekedesi_eszkoz_img}}" class="ikon mx-5 float-end">
           <br>
           <br>
-          <p class='card-title2'>{{ut.idoszak}}<span class="mx-5 float-end">{{ut.ut_ar}}Ft</span></p> 
+          <p class='card-title2'>{{ut.idoszak}}<span class="mx-5 float-end">{{ut.ut_ar}}Ft</span></p>
           <br>
           <a ui-sref="nyaralas({nyaralas:'{{ut.varos}}', ut_id: {{ut.ut_id}}})">
             <button type='submit' class='btn'>Tovább>></button>
           </a>
-          </div>
         </div>
       </div>
     </div>
   </div>
+</div>
 
- <!-- Footer -->
- <footer ng-include src="'../MoonLightTravel.github.io/html/footer.html'"></footer>  
+<!-- Footer -->
+<footer ng-include src="'../MoonLightTravel.github.io/html/footer.html'"></footer>

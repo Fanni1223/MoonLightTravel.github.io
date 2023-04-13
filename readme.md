@@ -154,7 +154,21 @@
 112. https://pixabay.com/hu/photos/oxford-anglia-%c3%a9p%c3%bclet-%c3%a9p%c3%adt%c3%a9szet-534808/
 113. https://pixabay.com/hu/photos/big-ben-westminster-london-anglia-1143631/
 114. https://pixabay.com/hu/photos/sz%c3%bcrke-utca-sz%c3%a1lloda-617250/
-
+115. https://pixabay.com/hu/photos/sidebyside-tun%c3%a9zia-afrika-utaz%c3%a1s-4604270/
+116. https://pixabay.com/hu/photos/tun%c3%a9zia-v%c3%a1ros-turizmus-gy%c3%b6ny%c3%b6r%c5%b1-2425441/
+117. https://pixabay.com/hu/photos/szikl%c3%a1k-sousse-ny%c3%a1r-sziget-7424247/
+118. https://pixabay.com/hu/photos/k%c3%b6zelk%c3%a9p-ny%c3%a1r-v%c3%adz-strand-tenger-7424231/
+119. https://pixabay.com/hu/photos/ribat-sousse-er%c5%91d-tun%c3%a9zia-fal-1066653/
+120. https://pixabay.com/hu/photos/d%c3%a9l-afrika-cape-town-k%c3%b6peny-997540/
+121. https://pixabay.com/hu/photos/sziget-b%c3%b3bit%c3%a1santilop-d%c3%a9l-afrika-2076042/
+122. https://pixabay.com/hu/photos/cape-town-d%c3%a9l-afrika-d%c3%a9l-afrika-246070/
+123. https://pixabay.com/hu/photos/cape-town-d%c3%a9l-afrika-western-cape-490137/
+124. https://pixabay.com/hu/photos/fokv%c3%a1ros-strand-napnyugta-2295679/
+125. https://pixabay.com/hu/photos/fl%c3%bcelapass-%c3%batlev%c3%a9l-sv%c3%a1jc-ny%c3%a1r-t%c3%b3-2612303/
+126. https://pixabay.com/hu/photos/hegyek-h%c3%b3-v%c3%b6lgy-cs%c3%bacs-5823756/
+127. https://unsplash.com/photos/jVdn8gxUFzg
+128. https://unsplash.com/photos/hRzLQzqBV84
+129. https://pixabay.com/hu/photos/hegyek-t%c3%b3-f%c3%a1k-erd%c5%91-visszaver%c5%91d%c3%a9s-1645078/
 
 
 ### Frontend és Backendhez használt alkalmazások:
