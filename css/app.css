@@ -945,7 +945,7 @@ h3 {
   box-sizing: border-box;
   text-align: left;
   font: bold 16px sans-serif;
-  padding: 55px 50px;
+  padding: 40px 40px;
 }
 
 .footer-distributed .footer-left,
@@ -1026,7 +1026,7 @@ h3 {
 .footer-distributed .footer-center p a {
   color: lightseagreen;
   text-decoration: none;
-  ;
+  max-width: max-content;
 }
 
 .footer-distributed .footer-links a:before {
@@ -1053,7 +1053,7 @@ h3 {
   color: white;
   font-size: 13px;
   font-weight: normal;
-  margin: 0;
+  min-width: 40% !important;
 }
 
 .footer-distributed .footer-company-about span {
@@ -1095,7 +1095,6 @@ h3 {
   .footer-distributed .footer-left,
   .footer-distributed .footer-center,
   .footer-distributed .footer-right {
-    display: block;
 
     margin-bottom: 40px;
     text-align: center;
@@ -1374,11 +1373,37 @@ a:hover {
 #right {
   top: -8px;
   left: 120%;
+  
 }
 
 #right::before {
   top: 35%;
   left: -2%;
+  
+}
+
+#right2 {
+  top: -8px;
+  left: 120%;
+  
+}
+
+#right2::before {
+  top: 35%;
+  left: -2%;
+  
+}
+
+#right3 {
+  top: -8px;
+  left: 120%;
+  
+}
+
+#right3::before {
+  top: 35%;
+  left: -2%;
+  
 }
 
 .hover-text {
