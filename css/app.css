@@ -30,6 +30,7 @@ nav {
 
 a.nav-link {
   color: white !important;
+  font-size: 20px;
 }
 
 #kereses {
@@ -1399,6 +1400,6 @@ a:hover {
   
   }
   .lablec_logo{
-    width: 300px;
-    height: 100px;
+    width: 350px;
+    height: 70px;
   }
