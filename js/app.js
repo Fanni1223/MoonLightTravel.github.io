@@ -195,7 +195,7 @@
           place = place.trim();
           if (place.length) {
             http.request({
-              url: "./php/search.php",
+              url: "./php/kereses.php",
               method: 'POST',
               data: place
             })
@@ -320,9 +320,6 @@
             $scope.$applyAsync();
           })
           .catch((e) => console.log(e));
-
-
-
       },
     ])
 
