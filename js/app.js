@@ -186,9 +186,6 @@
       '$state',
       'http',
       function ($rootScope, $scope, $state, http) {
-
-
-
         // Search
         $scope.place = "";
         $scope.searchForPlace = (place) => {
