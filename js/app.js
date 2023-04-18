@@ -284,6 +284,7 @@
           } else {
             container.classList.remove("right-panel-active");
           }
+          
         }
       }
     ])
@@ -451,6 +452,7 @@
 
         // Foglalás
         $scope.insertData = function () {
+           console.log($scope.model);
           http.request({
             url: "./php/foglalas.php",
             method: "POST",
@@ -523,7 +525,7 @@
       },
     ])
 
-
+    
 
 })(window, angular);
 
