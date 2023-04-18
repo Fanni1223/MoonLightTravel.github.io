@@ -131,12 +131,16 @@
       "$rootScope",
       "$transitions",
       "$timeout",
-      "http",
-      function ($rootScope, $transitions, $timeout, http) {
+      "util",
+      function ($rootScope, $transitions, $timeout, util) {
 
         // Set global variables
         $rootScope.state = { id: null, prev: null };
-        $rootScope.user = { id: null, nev: null };
+
+        let data = localStorage.getItem("user");
+        if (util.isJson(data))
+              $rootScope.user = JSON.parse(data);
+        else  $rootScope.user = { id: null, nev: null };
 
         // On before transaction
         $transitions.onBefore({}, function (transition) {
@@ -172,6 +176,7 @@
 
 
         $rootScope.logout = () => {
+          localStorage.removeItem("user");
           location.reload();
         };
 
@@ -260,6 +265,7 @@
                   id: data[0].id,
                   nev: data[0].nev
                 };
+                localStorage.setItem("user", JSON.stringify($rootScope.user));
                 alert('Sikeres bejelentkezés!');
               } else {
                 alert('Hibás email, vagy jelszó!');
@@ -281,6 +287,7 @@
           } else {
             container.classList.remove("right-panel-active");
           }
+          
         }
       }
     ])
@@ -445,6 +452,7 @@
 
         // Foglalás
         $scope.insertData = function () {
+           console.log($scope.model);
           http.request({
             url: "./php/foglalas.php",
             method: "POST",
@@ -517,7 +525,7 @@
       },
     ])
 
-
+    
 
 })(window, angular);
 
