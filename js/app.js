@@ -335,14 +335,12 @@
     // Nyaralás controller
     .controller("nyaralasController", [
       '$state',
+      '$rootScope',
       "$scope",
-      "$element",
-      "$timeout",
       "http",
       "util",
       "$stateParams",
-      function ($state, $scope, $element, $timeout, http, util, $stateParams) {
-
+      function ($state, $rootScope, $scope, http, util, $stateParams) {
 
         $scope.nyaralas = $stateParams.nyaralas;
         if (!$scope.nyaralas) {
@@ -455,19 +453,20 @@
 
         // Foglalás
         $scope.insertData = function () {
-           console.log($scope.model);
+          let args = util.cloneVariable($scope.model);
+          args.userId = $rootScope.user.id;
           http.request({
             url: "./php/foglalas.php",
             method: "POST",
-            data: $scope.model,
+            data: args,
           })
             .then((data) => {
+              alert("Sikeresen lefoglalta az utat! Foglalását megtekintheti a foglalások menüpontban a bejelentkezés után.");
               console.log(data);
             })
             .catch((error) => {
               console.log(error);
             });
-          alert("Sikeresen lefoglalta az utat! Foglalását megtekintheti a foglalások menüpontban a bejelentkezés után.")
         };
       },
     ])

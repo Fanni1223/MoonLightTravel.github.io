@@ -10,7 +10,7 @@ $args = Util::getArgs();
 $db = new Database();
 
 // Set query
-$query = "INSERT INTO `foglalas` (`nev2`, `telefonsz`, `email`, `fo`, `vegosszeg`, `kisagy`, `evszam`, `honap`, `nap`, `oda_ora`, `vissza_ora`, `ut_id2`) VALUES (:nev2, :telefonsz, :email, :fo, :vegosszeg, :kisagy, :evszam, :honap, :nap, :oda_ora, :vissza_ora, :ut_id2)";
+$query = "INSERT INTO `foglalas` (`teljes_nev`, `telefonsz`, `email`, `fo`, `vegosszeg`, `kisagy`, `evszam`, `honap`, `nap`, `oda_ora`, `vissza_ora`, `ut_id2`, `felhasznalo_id`) VALUES (:nev2, :telefonsz, :email, :fo, :vegosszeg, :kisagy, :evszam, :honap, :nap, :oda_ora, :vissza_ora, :ut_id2, :userId)";
 
 // Execute query
 $result = $db->execute($query, $args);
