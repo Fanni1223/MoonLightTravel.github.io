@@ -131,12 +131,16 @@
       "$rootScope",
       "$transitions",
       "$timeout",
-      "http",
-      function ($rootScope, $transitions, $timeout, http) {
+      "util",
+      function ($rootScope, $transitions, $timeout, util) {
 
         // Set global variables
         $rootScope.state = { id: null, prev: null };
-        $rootScope.user = { id: null, nev: null };
+
+        let data = localStorage.getItem("user");
+        if (util.isJson(data))
+              $rootScope.user = JSON.parse(data);
+        else  $rootScope.user = { id: null, nev: null };
 
         // On before transaction
         $transitions.onBefore({}, function (transition) {
@@ -172,6 +176,7 @@
 
 
         $rootScope.logout = () => {
+          localStorage.removeItem("user");
           location.reload();
         };
 
@@ -195,7 +200,7 @@
           place = place.trim();
           if (place.length) {
             http.request({
-              url: "./php/search.php",
+              url: "./php/kereses.php",
               method: 'POST',
               data: place
             })
@@ -263,6 +268,7 @@
                   id: data[0].id,
                   nev: data[0].nev
                 };
+                localStorage.setItem("user", JSON.stringify($rootScope.user));
                 alert('Sikeres bejelentkezés!');
               } else {
                 alert('Hibás email, vagy jelszó!');
@@ -321,9 +327,6 @@
             $scope.$applyAsync();
           })
           .catch((e) => console.log(e));
-
-
-
       },
     ])
 

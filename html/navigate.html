@@ -24,7 +24,7 @@
 <!--Menü-->
 <nav class="navbar navbar-expand-xl">
   <div class="container-fluid">
-    <a class="navbar-brand" >  <img src="img/logo5.png" class="logonk" alt=""></a>
+    <a class="navbar-brand"> <img src="img/logo5.png" class="logonk" alt=""></a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
       aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -57,7 +57,7 @@
             </li>
           </ul>
         </li>
-        <li class="nav-item">
+        <li class="nav-item" ng-if="user.id">
           <a class="nav-link" ui-sref="foglalasok">Foglalások</a>
         </li>
         <li class="nav-item">
@@ -73,8 +73,15 @@
           Keresés
         </button>
       </form>
+<<<<<<< HEAD
       
       <button class="btn mx-2 mt-2" ng-click="scrollTo('bejelentkezes', true)">
+=======
+
+      <button class="btn mx-2 mt-2"
+              ng-if="!user.id"
+              ng-click="scrollTo('bejelentkezes', true)">
+>>>>>>> c38ae3af89f763426142c234b81e75cf8d0006da
         Bejelentkezés\Regisztráció
       </button>
       

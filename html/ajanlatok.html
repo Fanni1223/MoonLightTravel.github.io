@@ -7,14 +7,14 @@
   <div class="row mt-2">
     <div class="col-12 col-md-4" ng-repeat="ut in data">
       <div class="card my-3">
-        <img ng-src="./img/utak/{{ut.utak_img}}">
+        <img ng-src="./img/utak/{{ut.utak_img}}" alt="Út kép" title="Út kép">
         <div class="card-body">
           <h5 class="card-title">{{ut.nev}}</h5>
           <h5 class="card-title">
-            {{ut.megnev}}<img src="./img/ikonok/hotel.svg" class="ikon mx-1">
+            {{ut.megnev}}<img src="./img/ikonok/hotel.svg" class="ikon mx-1" alt="ikon">
           </h5>
-          <img src="./img/ikonok/star.svg" class="ikon" ng-repeat="x in [].constructor(ut.tipus) track by $index">
-          <img ng-src="./img/ikonok/{{ut.kozlekedesi_eszkoz_img}}" class="ikon mx-5 float-end">
+          <img src="./img/ikonok/star.svg" class="ikon" ng-repeat="x in [].constructor(ut.tipus) track by $index" alt="ikon">
+          <img ng-src="./img/ikonok/{{ut.kozlekedesi_eszkoz_img}}" class="ikon mx-5 float-end" alt="ikon">
           <br>
           <br>
           <p class="card-title2">
