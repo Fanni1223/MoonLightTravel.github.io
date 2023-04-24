@@ -5,6 +5,8 @@
     <h1 class="text-center mt-5">{{data[0].nev}}</h1>
   </div>
 
+  
+  
   <!--Képgaléria-->
   <div class="row mt-5" ng-if="data.length">
     <div class="col-xl-8 col-md-10 col-sm-12 mt-3" ng-if="data.length">
@@ -65,7 +67,7 @@
 
 
     <!--Foglalás-->
-    <div class="foglalas_form col-sm-10 col-md-10 col-lg-5 col-xl-4 mt-3">
+    <div class="foglalas_form col-sm-10 col-md-10 col-lg-5 col-xl-4 mt-3" ng-if="user.id">
       <form id="foglalas" ng-if="data.length">
         <div class="row">
           <h2 class="text-center mt-3">Foglalja le az utat most!</h2>
@@ -230,3 +232,4 @@
 </div>
 <!-- Footer -->
 <footer id="availability" ng-include src="'../MoonLightTravel.github.io/html/footer.html'"></footer>
+

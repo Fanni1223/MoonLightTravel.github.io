@@ -362,7 +362,7 @@
               telefonsz: null,
               email: null,
               fo: 1,
-              vegosszeg: $scope.data[0].ut_ar + $scope.data[0].szallas_ar,
+              vegosszeg: ($scope.data[0].ut_ar + $scope.data[0].szallas_ar) * $scope.data[0].fo,
               evszam: null,
               honap: null,
               nap: null,
