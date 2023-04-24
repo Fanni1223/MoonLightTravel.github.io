@@ -180,6 +180,25 @@
           location.reload();
         };
 
+       
+      // Az overlay és popup elemek kiválasztása
+      var overlay = document.querySelector('.overlay_popup');
+      var popup = document.querySelector('.popup');
+
+      // A felugró ablak bezárásának függvénye
+      $rootScope.closePopup = () => {
+        overlay.style.display = 'none';
+      };
+
+      // Az oldal betöltődésekor megjelenő felugró ablak
+      window.onload = function () {
+        overlay.style.display = 'flex';
+      };
+      
+      $rootScope.scrollTo = function (elementId)  {
+        var element = document.getElementById(elementId);
+        element.scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"});
+      };
 
       },
     ])
@@ -362,7 +381,7 @@
               telefonsz: null,
               email: null,
               fo: 1,
-              vegosszeg: ($scope.data[0].ut_ar + $scope.data[0].szallas_ar) * $scope.data[0].fo,
+              vegosszeg: $scope.data[0].ut_ar + $scope.data[0].szallas_ar,
               evszam: null,
               honap: null,
               nap: null,
@@ -458,13 +477,18 @@
             data: args,
           })
             .then((data) => {
-              alert("Sikeresen lefoglalta az utat! Foglalását megtekintheti a foglalások menüpontban a bejelentkezés után.");
+              alert("Sikeresen lefoglalta az utat! Foglalását megtekintheti a foglalások menüpontban.");
               console.log(data);
             })
             .catch((error) => {
               console.log(error);
             });
         };
+
+        $scope.changed2 = function() {
+          $scope.model.vegosszeg = ($scope.data[0].ut_ar + $scope.data[0].szallas_ar) * $scope.model.fo ;
+        };
+      
       },
     ])
 
