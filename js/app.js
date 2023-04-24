@@ -195,7 +195,7 @@
         overlay.style.display = 'flex';
       };
       
-      $rootScope.scrollTo = function (elementId)  {
+      $rootScope.scrollTo = function (elementId) {
         var element = document.getElementById(elementId);
         element.scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"});
       };
