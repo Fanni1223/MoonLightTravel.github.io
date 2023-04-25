@@ -279,7 +279,7 @@
                 jelszo: null
               };
               $scope.$applyAsync();
-              if (data.length) {
+              if (data) {
                 $rootScope.user = {
                   id: data[0].id,
                   nev: data[0].nev
@@ -329,14 +329,9 @@
         }
 
         http.request({
-          url: "./php/get.php",
+          url: "./php/utak.php",
           method: "POST",
-          data: {
-            db: "moonlighttravel",
-            query: "SELECT `utak`.*, `szallas`.* FROM `utak` INNER JOIN `szallas` ON `utak`.`szallas_id2` = `szallas`.`szallas_id` WHERE `kontinens` = :ut",
-            params: { ut: $scope.ut },
-            isAssoc: true,
-          },
+          data: {ut: $scope.ut}
         })
           .then((data) => {
             $scope.data = data;
@@ -365,14 +360,9 @@
         }
 
         http.request({
-          url: "./php/get.php",
+          url: "./php/ut.php",
           method: "POST",
-          data: {
-            db: "moonlighttravel",
-            query: "SELECT `utak`.*, `szallas`.*, `utak_kepek`.*  FROM `utak` INNER JOIN `szallas` ON `utak`.`szallas_id2` = `szallas`.`szallas_id` INNER JOIN `utak_kepek` ON `utak`.`ut_id` = `utak_kepek`.`ut_id3` WHERE `varos` = :nyaralas",
-            params: { nyaralas: $scope.nyaralas },
-            isAssoc: true,
-          },
+          data: { nyaralas: $scope.nyaralas }
         })
           .then((data) => {
             $scope.data = data;
@@ -509,14 +499,9 @@
         }
 
         http.request({
-          url: "./php/get.php",
+          url: "./php/ajanlatok.php",
           method: "POST",
-          data: {
-            db: "moonlighttravel",
-            query: "SELECT `utak`.*, `szallas`.* FROM `utak` INNER JOIN `szallas` ON `utak`.`szallas_id2` = `szallas`.`szallas_id` WHERE `allapot` = :ajanlatok",
-            params: { ajanlatok: $scope.ajanlatok },
-            isAssoc: true,
-          },
+          data: { ajanlatok: $scope.ajanlatok }
         })
           .then((data) => {
             $scope.data = data;
