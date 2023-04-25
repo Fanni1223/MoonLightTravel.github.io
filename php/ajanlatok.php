@@ -8,7 +8,10 @@ $args = Util::getArgs();
 $db = new Database();
 
 // Set query
-$query = "SELECT * FROM `felhasznalok` WHERE `email` = :email AND BINARY `jelszo` = BINARY :jelszo;";
+$query = "SELECT `utak`.*, `szallas`.* 
+          FROM `utak` 
+          INNER JOIN `szallas` ON `utak`.`szallas_id2` = `szallas`.`szallas_id` 
+          WHERE `allapot` = :ajanlatok";
 
 // Execute query
 $result = $db->execute($query, $args);
