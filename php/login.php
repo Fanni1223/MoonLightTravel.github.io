@@ -1,30 +1,19 @@
 <?php
-
-// Require file
-require_once('../../../common/php/Database.php');
-
-// Set result
-$result = null;
+require_once('../../common/php/environment.php');
 
 // Get arguments
 $args = Util::getArgs();
 
-// Connect to MySQL server
-$db = new Database('moonlighttravel');
+// Connect to database
+$db = new Database();
 
+// Set query
 $query = "SELECT * FROM `felhasznalok` WHERE `email` = :email AND BINARY `jelszo` = BINARY :jelszo;";
 
-$db->execute($query, $args);
+// Execute query
+$result = $db->execute($query, $args);
 
-if (!$db->is_error()) {
-  
-        $result = $db->get_data();
-       
-
-} else  Util::setError($db->get_error(), false);
-
-// Disconect
+// Disconnect
 $db = null;
 
-// Set response
 Util::setResponse($result);

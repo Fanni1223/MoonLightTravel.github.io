@@ -180,6 +180,25 @@
           location.reload();
         };
 
+       
+      // Az overlay és popup elemek kiválasztása
+      var overlay = document.querySelector('.overlay_popup');
+      var popup = document.querySelector('.popup');
+
+      // A felugró ablak bezárásának függvénye
+      $rootScope.closePopup = () => {
+        overlay.style.display = 'none';
+      };
+
+      // Az oldal betöltődésekor megjelenő felugró ablak
+      window.onload = function () {
+        overlay.style.display = 'flex';
+      };
+      
+      $rootScope.scrollTo = function (elementId) {
+        var element = document.getElementById(elementId);
+        element.scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"});
+      };
 
       },
     ])
@@ -191,9 +210,6 @@
       '$state',
       'http',
       function ($rootScope, $scope, $state, http) {
-
-
-
         // Search
         $scope.place = "";
         $scope.searchForPlace = (place) => {
@@ -263,7 +279,7 @@
                 jelszo: null
               };
               $scope.$applyAsync();
-              if (data.length) {
+              if (data) {
                 $rootScope.user = {
                   id: data[0].id,
                   nev: data[0].nev
@@ -313,14 +329,9 @@
         }
 
         http.request({
-          url: "./php/get.php",
+          url: "./php/utak.php",
           method: "POST",
-          data: {
-            db: "moonlighttravel",
-            query: "SELECT `utak`.*, `szallas`.* FROM `utak` INNER JOIN `szallas` ON `utak`.`szallas_id2` = `szallas`.`szallas_id` WHERE `kontinens` = :ut",
-            params: { ut: $scope.ut },
-            isAssoc: true,
-          },
+          data: {ut: $scope.ut}
         })
           .then((data) => {
             $scope.data = data;
@@ -335,14 +346,12 @@
     // Nyaralás controller
     .controller("nyaralasController", [
       '$state',
+      '$rootScope',
       "$scope",
-      "$element",
-      "$timeout",
       "http",
       "util",
       "$stateParams",
-      function ($state, $scope, $element, $timeout, http, util, $stateParams) {
-
+      function ($state, $rootScope, $scope, http, util, $stateParams) {
 
         $scope.nyaralas = $stateParams.nyaralas;
         if (!$scope.nyaralas) {
@@ -351,14 +360,9 @@
         }
 
         http.request({
-          url: "./php/get.php",
+          url: "./php/ut.php",
           method: "POST",
-          data: {
-            db: "moonlighttravel",
-            query: "SELECT `utak`.*, `szallas`.*, `utak_kepek`.*  FROM `utak` INNER JOIN `szallas` ON `utak`.`szallas_id2` = `szallas`.`szallas_id` INNER JOIN `utak_kepek` ON `utak`.`ut_id` = `utak_kepek`.`ut_id3` WHERE `varos` = :nyaralas",
-            params: { nyaralas: $scope.nyaralas },
-            isAssoc: true,
-          },
+          data: { nyaralas: $scope.nyaralas }
         })
           .then((data) => {
             $scope.data = data;
@@ -455,20 +459,26 @@
 
         // Foglalás
         $scope.insertData = function () {
-           console.log($scope.model);
+          let args = util.cloneVariable($scope.model);
+          args.userId = $rootScope.user.id;
           http.request({
             url: "./php/foglalas.php",
             method: "POST",
-            data: $scope.model,
+            data: args,
           })
             .then((data) => {
+              alert("Sikeresen lefoglalta az utat! Foglalását megtekintheti a foglalások menüpontban.");
               console.log(data);
             })
             .catch((error) => {
               console.log(error);
             });
-          alert("Sikeresen lefoglalta az utat! Foglalását megtekintheti a foglalások menüpontban a bejelentkezés után.")
         };
+
+        $scope.changed2 = function() {
+          $scope.model.vegosszeg = ($scope.data[0].ut_ar + $scope.data[0].szallas_ar) * $scope.model.fo ;
+        };
+      
       },
     ])
 
@@ -489,14 +499,9 @@
         }
 
         http.request({
-          url: "./php/get.php",
+          url: "./php/ajanlatok.php",
           method: "POST",
-          data: {
-            db: "moonlighttravel",
-            query: "SELECT `utak`.*, `szallas`.* FROM `utak` INNER JOIN `szallas` ON `utak`.`szallas_id2` = `szallas`.`szallas_id` WHERE `allapot` = :ajanlatok",
-            params: { ajanlatok: $scope.ajanlatok },
-            isAssoc: true,
-          },
+          data: { ajanlatok: $scope.ajanlatok }
         })
           .then((data) => {
             $scope.data = data;
