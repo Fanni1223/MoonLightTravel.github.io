@@ -1,9 +1,11 @@
 <!--Banner, menü-->
 <div ng-include src="'../MoonLightTravel.github.io/html/navigate.html'"></div>
 <div class="container">
-  
+
   <!--Top ajánlatok-->
-  <h1 class="text-center mt-5">Top ajánlatok</h1>
+  <div class="row">
+    <h1 class="text-center mt-5">Top ajánlatok</h1>
+  </div>
   <ul class="cards">
     <li>
       <a ui-sref="ajanlatok({ajanlatok:'tengerparti nyaralás'})" class="card kartya">
@@ -12,7 +14,6 @@
         <div class="card__overlay">
           <div class="card__header">
             <svg class="card__arc" xmlns="http://www.w3.org/2000/svg">
-              <path />
             </svg>
             <div class="card__header-text">
               <h3 class="card__title">Tengerparti nyaralások</h3>
@@ -30,7 +31,6 @@
         <div class="card__overlay">
           <div class="card__header">
             <svg class="card__arc" xmlns="http://www.w3.org/2000/svg">
-              <path />
             </svg>
             <div class="card__header-text">
               <h3 class="card__title">Last minute utak</h3>
@@ -48,7 +48,6 @@
         <div class="card__overlay">
           <div class="card__header">
             <svg class="card__arc" xmlns="http://www.w3.org/2000/svg">
-              <path />
             </svg>
             <div class="card__header-text">
               <h3 class="card__title">Városlátogatások</h3>
@@ -159,7 +158,7 @@
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <h1 class="modal-title fs-5" id="staticBackdropLabel">Mi alapján választjuk ki a közlekedési eszközt?</h1>
+          <h1 class="modal-title fs-5" id="staticBackdropLabel2">Mi alapján választjuk ki a közlekedési eszközt?</h1>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
@@ -180,7 +179,7 @@
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <h1 class="modal-title fs-5" id="staticBackdropLabel">Hogyan alakítjuk az árainkat?</h1>
+          <h1 class="modal-title fs-5" id="staticBackdropLabel3">Hogyan alakítjuk az árainkat?</h1>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
@@ -205,7 +204,7 @@
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <h1 class="modal-title fs-5" id="staticBackdropLabel">Hogyan működik a valutaváltás?</h1>
+          <h1 class="modal-title fs-5" id="staticBackdropLabel4">Hogyan működik a valutaváltás?</h1>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
@@ -225,7 +224,7 @@
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <h1 class="modal-title fs-5" id="staticBackdropLabel">Hogyan parkolhatunk a repülőtéren?</h1>
+          <h1 class="modal-title fs-5" id="staticBackdropLabel5">Hogyan parkolhatunk a repülőtéren?</h1>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
@@ -260,7 +259,7 @@
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <h1 class="modal-title fs-5" id="staticBackdropLabel">Mely okmányokra van szükség az utazáshoz?</h1>
+          <h1 class="modal-title fs-5" id="staticBackdropLabe6">Mely okmányokra van szükség az utazáshoz?</h1>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
@@ -281,16 +280,15 @@
         </div>
       </div>
     </div>
-
-
-
   </div>
 </div>
+
+<!--Űrlap-->
 <div class="row">
   <h1 class="text-center mt-5">Regisztráció és bejelentkezés</h1>
 </div>
 <div class="row mt-5  col-mt-6  m-1">
-  <div class="bejelentkezes col-xl-6 col-md-6 col-lg-6 col-mt-6  centered-form " id="bejelentkezes"> 
+  <div class="bejelentkezes col-xl-6 col-md-6 col-lg-6 col-mt-6  centered-form " id="bejelentkezes">
     <div class="form-bejelentkezes sign-up-bejelentkezes ">
       <form class="login">
         <h1>Regisztráció</h1>
@@ -317,20 +315,18 @@
         <div class="overlay-panel overlay-left">
           <h3>Jelentkezz be itt!</h3>
           <br>
-          <button class="ghost" id="signIn" class="btn2" ng-click="changeActive($event)">Bejelentkezés</button>
+          <button class="ghost btn2" id="signIn" ng-click="changeActive($event)">Bejelentkezés</button>
         </div>
         <div class="overlay-panel overlay-right">
           <h3>Regisztrálj itt!</h3>
           <br>
-          <button class="ghost" id="signUp" class="btn2" ng-click="changeActive($event)">Regisztráció</button>
+          <button class="ghost btn2" id="signUp" ng-click="changeActive($event)">Regisztráció</button>
         </div>
       </div>
     </div>
   </div>
 </div>
-</div>
 
 <!-- Footer -->
 <footer id="availability" ng-include src="'../MoonLightTravel.github.io/html/footer.html'">
 </footer>
-

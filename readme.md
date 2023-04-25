@@ -182,7 +182,7 @@
 ### Dokumentáció:
 1. readme.md
 2. ppt bemutató alapján vizsgaremek védése
-3. dokumentáció
+3. word dokumentáció
 
 
 

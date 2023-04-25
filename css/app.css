@@ -47,6 +47,11 @@ a.nav-link {
   background-color: #FFB400;
 }
 
+/*Menü ikon*/
+.log-picture {
+  width: 30px;
+  height: 30px;
+}
 
 /*Címek, szövegek*/
 h1 {
@@ -398,7 +403,7 @@ main input:checked+label {
   border: 1px solid #ddd;
   padding: 0 10px;
   border-radius: 2px;
- 
+
   font-size: 0.8rem;
   -webkit-transition: all 0.1s linear;
   -moz-transition: all 0.1s linear;
@@ -929,16 +934,6 @@ h3 {
   min-height: 40px;
 }
 
-
-
-
-.log-picture {
-  width: 30px;
-  height: 30px;
-}
-
-
-
 /*Lábléc*/
 .footer-distributed {
   background: #B01E68 !important;
@@ -1110,8 +1105,6 @@ h3 {
   list-style: none;
   color: white;
 }
-
-
 
 
 /*Blog*/
@@ -1373,37 +1366,37 @@ a:hover {
 #right {
   top: -8px;
   left: 120%;
-  
+
 }
 
 #right::before {
   top: 35%;
   left: -2%;
-  
+
 }
 
 #right2 {
   top: -8px;
   left: 120%;
-  
+
 }
 
 #right2::before {
   top: 35%;
   left: -2%;
-  
+
 }
 
 #right3 {
   top: -8px;
   left: 120%;
-  
+
 }
 
 #right3::before {
   top: 35%;
   left: -2%;
-  
+
 }
 
 .hover-text {
@@ -1414,46 +1407,54 @@ a:hover {
   text-align: center;
 }
 
-.infoikon{
+.infoikon {
   height: 20px;
   width: 20px;
 }
 
-.logonk{
-width:300px;
-height: 50px;
+.logonk {
+  width: 300px;
+  height: 50px;
 
 }
-.lablec_logo{
+
+.lablec_logo {
   width: 350px;
   height: 70px;
 }
 
-.alcim_blog{
+.alcim_blog {
   font-size: 20px;
   color: #DC143C;
 }
 
 /* A teljes képernyőre terjedő, átlátszó réteg */
 .overlay_popup {
-	position: fixed;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	background-color: rgba(0, 0, 0, 0.5);
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	z-index: 9999;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
 }
 
 /* A felugró ablak doboza */
 .popup {
-	background-color: #fff;
-	padding: 20px;
-	border-radius: 5px;
-	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
-	text-align: center;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+  text-align: center;
 }
 
+.foglalas-kartya {
+  border-radius: 8px;
+  transition: height 0.2s ease;
+  padding: 1em 3em 2em 3em;
+  background-color: #fff;
+  box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px;
+}
