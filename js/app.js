@@ -131,12 +131,16 @@
       "$rootScope",
       "$transitions",
       "$timeout",
-      "http",
-      function ($rootScope, $transitions, $timeout, http) {
+      "util",
+      function ($rootScope, $transitions, $timeout, util) {
 
         // Set global variables
         $rootScope.state = { id: null, prev: null };
-        $rootScope.user = { id: null, nev: null };
+
+        let data = localStorage.getItem("user");
+        if (util.isJson(data))
+              $rootScope.user = JSON.parse(data);
+        else  $rootScope.user = { id: null, nev: null };
 
         // On before transaction
         $transitions.onBefore({}, function (transition) {
@@ -172,9 +176,29 @@
 
 
         $rootScope.logout = () => {
+          localStorage.removeItem("user");
           location.reload();
         };
 
+       
+      // Az overlay és popup elemek kiválasztása
+      var overlay = document.querySelector('.overlay_popup');
+      var popup = document.querySelector('.popup');
+
+      // A felugró ablak bezárásának függvénye
+      $rootScope.closePopup = () => {
+        overlay.style.display = 'none';
+      };
+
+      // Az oldal betöltődésekor megjelenő felugró ablak
+      window.onload = function () {
+        overlay.style.display = 'flex';
+      };
+      
+      $rootScope.scrollTo = function (elementId) {
+        var element = document.getElementById(elementId);
+        element.scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"});
+      };
 
       },
     ])
@@ -186,16 +210,13 @@
       '$state',
       'http',
       function ($rootScope, $scope, $state, http) {
-
-
-
         // Search
         $scope.place = "";
         $scope.searchForPlace = (place) => {
           place = place.trim();
           if (place.length) {
             http.request({
-              url: "./php/search.php",
+              url: "./php/kereses.php",
               method: 'POST',
               data: place
             })
@@ -263,6 +284,7 @@
                   id: data[0].id,
                   nev: data[0].nev
                 };
+                localStorage.setItem("user", JSON.stringify($rootScope.user));
                 alert('Sikeres bejelentkezés!');
               } else {
                 alert('Hibás email, vagy jelszó!');
@@ -284,6 +306,7 @@
           } else {
             container.classList.remove("right-panel-active");
           }
+          
         }
       }
     ])
@@ -320,9 +343,6 @@
             $scope.$applyAsync();
           })
           .catch((e) => console.log(e));
-
-
-
       },
     ])
 
@@ -331,14 +351,12 @@
     // Nyaralás controller
     .controller("nyaralasController", [
       '$state',
+      '$rootScope',
       "$scope",
-      "$element",
-      "$timeout",
       "http",
       "util",
       "$stateParams",
-      function ($state, $scope, $element, $timeout, http, util, $stateParams) {
-
+      function ($state, $rootScope, $scope, http, util, $stateParams) {
 
         $scope.nyaralas = $stateParams.nyaralas;
         if (!$scope.nyaralas) {
@@ -451,19 +469,26 @@
 
         // Foglalás
         $scope.insertData = function () {
+          let args = util.cloneVariable($scope.model);
+          args.userId = $rootScope.user.id;
           http.request({
             url: "./php/foglalas.php",
             method: "POST",
-            data: $scope.model,
+            data: args,
           })
             .then((data) => {
+              alert("Sikeresen lefoglalta az utat! Foglalását megtekintheti a foglalások menüpontban.");
               console.log(data);
             })
             .catch((error) => {
               console.log(error);
             });
-          alert("Sikeresen lefoglalta az utat! Foglalását megtekintheti a foglalások menüpontban a bejelentkezés után.")
         };
+
+        $scope.changed2 = function() {
+          $scope.model.vegosszeg = ($scope.data[0].ut_ar + $scope.data[0].szallas_ar) * $scope.model.fo ;
+        };
+      
       },
     ])
 
@@ -523,7 +548,7 @@
       },
     ])
 
-
+    
 
 })(window, angular);
 

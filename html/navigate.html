@@ -24,7 +24,7 @@
 <!--Menü-->
 <nav class="navbar navbar-expand-xl">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">Moonlight Travel</a>
+    <a class="navbar-brand"> <img src="img/logo5.png" class="logonk" alt=""></a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
       aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -57,7 +57,7 @@
             </li>
           </ul>
         </li>
-        <li class="nav-item">
+        <li class="nav-item" ng-if="user.id">
           <a class="nav-link" ui-sref="foglalasok">Foglalások</a>
         </li>
         <li class="nav-item">
@@ -74,9 +74,12 @@
         </button>
       </form>
 
-      <button class="btn mx-2 mt-2" ng-click="scrollTo('bejelentkezes', true)">
+      <button class="btn mx-2 mt-2"
+              ng-if="!user.id"
+              ng-click="scrollTo('bejelentkezes', true)">
         Bejelentkezés\Regisztráció
       </button>
+      
 
       <div class="login-kep mx-1 mt-2">
         <img src="../MoonLightTravel.github.io/img/ikonok/ember.svg" class="log-picture" alt="">
@@ -86,6 +89,8 @@
       <button class="btn mx-2 mt-2" id="logout" ng-click="logout()">
         Kijelentkezés<i class="fa fa-sign-out mx-1" style="font-size:12px"></i>
       </button>
+
+     
     </div>
   </div>
 </nav>

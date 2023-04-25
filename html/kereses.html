@@ -1,6 +1,6 @@
 <!--Banner, menü-->
 <div ng-include src="'../MoonLightTravel.github.io/html/navigate.html'"></div>
-<div class="container">
+<div class="container" ng-if="keresesEredmenye">
   <div class="row mt-2">
     <div class="col-md-4" ng-repeat="hely in keresesEredmenye">
       <div class="card my-3">
@@ -21,13 +21,17 @@
             <span class="mx-5 float-end">{{hely.ut_ar}}Ft</span>
           </p>
           <br>
-          <a ui-sref="nyaralas({nyaralas:'{{ut.varos}}'})">
+          <a ui-sref="nyaralas({nyaralas:'{{hely.varos}}'})">
             <button type="submit" class="btn">Tovább>></button>
           </a>
         </div>
       </div>
     </div>
   </div>
+</div>
+
+<div class="container" ng-if="!keresesEredmenye">
+  <p class="fw-bold mt-5 text-center fs-4 p-5">Sajnáljuk, de nincs találat erre a keresési eredményre.</p>
 </div>
 
 <!-- Footer -->

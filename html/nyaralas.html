@@ -5,6 +5,8 @@
     <h1 class="text-center mt-5">{{data[0].nev}}</h1>
   </div>
 
+
+
   <!--Képgaléria-->
   <div class="row mt-5" ng-if="data.length">
     <div class="col-xl-8 col-md-10 col-sm-12 mt-3" ng-if="data.length">
@@ -62,15 +64,21 @@
       </div>
     </div>
 
+
+
     <!--Foglalás-->
-    <div class="foglalas_form col-sm-10 col-md-10 col-lg-5 col-xl-4 mt-3">
+    <div class="foglalas_form col-sm-10 col-md-10 col-lg-5 col-xl-4 mt-3" ng-if="user.id">
       <form id="foglalas" ng-if="data.length">
         <div class="row">
           <h2 class="text-center mt-3">Foglalja le az utat most!</h2>
         </div>
 
         <div class="row mt-3">
-          <h6>Adatok</h6>
+          <h6>Adatok<div class="hover-text"><img src="./img/ikonok/informacio.svg" alt="Információ" class="infoikon">
+              <span class="tooltip-text" id="right">Kérjük, minden mezőt helyesen, és valós adatokkal töltsön ki!
+              </span>
+            </div>
+          </h6>
           <div class="input-group input-group-icon">
             <input type="text" placeholder="Teljes név" ng-model="model.nev2" ng-change="changed()">
             <div class="input-icon mx-3"><i class="fa fa-user"></i></div>
@@ -86,7 +94,11 @@
         </div>
 
         <div class="row mt-2">
-          <h6>Mikor szeretne utazni?</h6>
+          <h6>Mikor szeretne utazni?<div class="hover-text"><img src="./img/ikonok/informacio.svg" alt="Információ"
+                class="infoikon">
+              <span class="tooltip-text" id="right2">Visszamenőlegesen és a mai napra nem foglalhat!</span>
+            </div>
+          </h6>
           <div class="input-group">
             <input type="text" style="width: 30%;" class="mx-1" placeholder="Évszám" ng-model="model.evszam"
               ng-change="changed()">
@@ -123,7 +135,7 @@
         <div class="row mt-2">
           <h6>Hány főre szeretne foglalni?</h6>
           <div class="input-group input-group-icon">
-            <input type="text" placeholder="Fő" style="width: 40%" ng-model="model.fo" ng-change="changed()">
+            <input type="number" placeholder="Fő" style="width: 40%" ng-model="model.fo" ng-change="changed2()">
             <div class="input-icon mx-3"><i class="fa fa-user"></i></div>
           </div>
         </div>
@@ -142,7 +154,7 @@
 
         <div class="row mt-2" ng-if="data.length">
           <h6>Végösszeg</h6>
-          <h6 class="text-secondary mx-2">{{model.vegosszeg}} Ft</h6>
+          <input type="text" id="osszeg" name="osszeg" style="width: 40%;" class="mx-2" disabled placeholder="{{model.vegosszeg}} Ft">
         </div>
 
         <button id="foglalas-btn" type="button" class="btn float-end" style="width: 40%;" ng-click="insertData()"
@@ -207,12 +219,13 @@
       <section id="content7">
         <h5>A szállás ára</h5>
         <p class="mx-3 mt-3">
-          <img ng-src="./img/ikonok/hotel.svg" alt="ikon" title="ikon" class="ikon mx-3" />{{data[0].szallas_ar}} Ft
+          <img ng-src="./img/ikonok/hotel.svg" alt="ikon" title="ikon" class="ikon mx-3" />{{data[0].szallas_ar}}
+          Ft/éjszaka
         </p>
         <p></p>
         <h5>
           Az összeg tartalmazza a szállást és a hozzá tartozó szolgáltatásokat
-          is.
+          is. Az összeg úgy került kiszámításra, hogy már bele van kalkulálva az ott töltött napok száma.
         </h5>
       </section>
     </main>
