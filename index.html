@@ -14,20 +14,19 @@
 </head>
 
 <body ng-app="app" class="top-shadow">
+
+  <!-- Application container -->
+  <ui-view class="app-container"></ui-view>
   <div class="overlay_popup">
     <div class="popup">
       <h2>Üdvözöljük az oldalon!</h2>
       <p class="text-center fw-bold">Út foglalása esetén előbb regisztrálnia, majd bejelentkeznie kell.</p>
-      <p class="text-center fw-bold">Bejelentkezés után láthatóvá válik a foglaláshoz tartozó űrlap és le tudja foglalni a
+      <p class="text-center fw-bold">Bejelentkezés után láthatóvá válik a foglaláshoz tartozó űrlap és le tudja foglalni
+        a
         kiválasztott utat.</p>
       <button class="btn" ng-click="closePopup()">Bezárás</button>
     </div>
   </div>
-
-
-  <!-- Application container -->
-  <ui-view class="app-container"></ui-view>
-
   <!-- Application components -->
   <div class="app-components d-none">
     <script src="../components/jquery/3.6.1/js/jquery.min.js"></script>
