@@ -183,7 +183,6 @@
 
         // Az overlay és popup elemek kiválasztása
         var overlay = document.querySelector('.overlay_popup');
-        var popup = document.querySelector('.popup');
 
         // A felugró ablak bezárásának függvénye
         $rootScope.closePopup = () => {
@@ -199,6 +198,7 @@
           var element = document.getElementById(elementId);
           element.scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" });
         };
+
 
       },
     ])
