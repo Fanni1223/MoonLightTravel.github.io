@@ -1,0 +1,88 @@
+:root {
+  --sm-font-size: 0.75rem;
+  --md-font-size: 0.8rem;
+}
+
+/* Box sizing */
+*, 
+*:before, 
+*:after {
+  -webkit-box-sizing:border-box !important;
+     -moz-box-sizing:border-box !important;
+          box-sizing:border-box !important;
+}
+
+/* User select */
+*:not(input):not(textarea) {
+  -webkit-user-select: none !important;
+   -khtml-user-select: none !important;
+     -moz-user-select: none !important;
+      -ms-user-select: none !important;
+          user-select: none !important;
+        outline-style: none !important;
+}
+
+/* Clear fix */
+.clearfix:before,
+.clearfix:after {
+  content: '';
+  display: block;
+}
+.clearfix:after {
+  clear: both;
+  overflow: hidden;
+}
+
+/* Background image */
+.bg-img {
+  background-repeat: no-repeat !important;
+  background-position: center center !important;
+}
+
+/* Background image contain */
+.bg-img-contain {
+  -webkit-background-size: contain !important;
+          background-size: contain !important;
+}
+
+/* Background image cover */
+.bg-image-cover {
+  -webkit-background-size: cover !important;
+          background-size: cover !important;
+}
+
+/* Conditional display/visibility */
+.d-conditional:not(.show) {
+  display: none !important;
+}
+.d-hidden:not(.show) {
+  visibility: hidden !important
+}
+
+/* Curso pointer */
+.cursor-pointer {
+  cursor: pointer !important;
+}
+
+/* Text align justify */
+.text-justify {
+  text-align: justify !important
+}
+
+/* Text ident */
+.text-indent-3 {
+  text-indent: 30px !important
+}
+
+/* Letter spacing */
+.letter-spacing-2 {
+  letter-spacing: 2px !important;
+}
+
+/* Font size */
+.fs-sm {
+  font-size: var(--sm-font-size) !important;
+}
+.fs-md {
+  font-size: var(--md-font-size) !important;
+}
