@@ -1,0 +1,14 @@
+Használati útmutató az oldal működéséhez
+
+Állományok elhelyezése:
+A htdocs mappába létre kell hozni egy Project mappát. A Project mappába bele kell tenni a MoonLightTravel.github.io mappát(a mappa nevéből ki kell törölni a "-main" részt, mert így szedi le a Github). 
+A MoonLightTravel.github.io mappából ki kell vágni a common és a components mappákat és egy szintre kell helyezni a MoonLightTravel.github.io mappával.
+xampp/htdocs/Project/MoonLightTravel.github.io
+
+Adatbázis fájl elhelyezése:
+A XAMPP felületen létre kell hozni egy új adatbázist moonlighttravel néven, a kódolás utf8_hunagrian_ci legyen.
+A MoonLightTravel.github.io/db mappából be kell importálni a moonlighttravel.sql fájlt.
+
+Az oldal indítása:
+Chrome keresőbe be kell írni az elérési útvonalat: localhost/Project/
+Ki kell választani a MoonLightTravel.github.io mappát, ezután használható az oldal.
