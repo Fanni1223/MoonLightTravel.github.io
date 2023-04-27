@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Gép: 127.0.0.1
--- Létrehozás ideje: 2023. Ápr 14. 09:32
+-- Létrehozás ideje: 2023. Ápr 27. 09:51
 -- Kiszolgáló verziója: 10.4.6-MariaDB
 -- PHP verzió: 7.3.8
 
@@ -40,7 +40,6 @@ CREATE TABLE `felhasznalok` (
 --
 
 INSERT INTO `felhasznalok` (`id`, `nev`, `email`, `jelszo`) VALUES
-(1, 'Regina', 'regina@citromail.hu', 'a'),
 (2, 'Fanni', 'fanni@citromail.hu', 'a'),
 (3, 'Turi Regina', 'turi.viktoriar-2018@keri.mako.hu', 'aa'),
 (6, 'Félix', 'felix@freemail.hu', '123456');
@@ -73,7 +72,13 @@ CREATE TABLE `foglalas` (
 --
 
 INSERT INTO `foglalas` (`foglalas_id`, `felhasznalo_id`, `teljes_nev`, `telefonsz`, `email`, `fo`, `vegosszeg`, `kisagy`, `evszam`, `honap`, `nap`, `oda_ora`, `vissza_ora`, `ut_id2`) VALUES
-(3, 6, 'Bálint Márk Félix', '+36 70 207 6464', 'markbalint112@gmail.com', 5, 140000, 1, 20230413, 4, 13, 13, 13, 19);
+(12, 2, 'Juhász Fanni', ' 36 308789060', 'fanni@citromail.hu', 1, 340000, 0, 2023, 12, 12, 8, 15, 7),
+(13, 2, 'Juhász Fanni', '36 308789060', 'fanni@citromail.hu', 3, 2820000, 0, 2023, 5, 27, 8, 15, 14),
+(14, 2, 'Juhász Fanni', '36 308789060', 'fanni@citromail.hu', 4, 3416000, 1, 2024, 2, 1, 8, 15, 40),
+(15, 3, 'Túri Regina', '06309897630', 'turi.viktoriar-2018@keri.mako.hu', 1, 130000, 1, 2023, 8, 4, 15, 8, 6),
+(16, 6, 'Bálint Márk Félix', ' 36 304568090', 'felix@freemail.hu', 3, 1830000, 0, 2024, 5, 12, 15, 15, 9),
+(17, 6, 'Bálint Márk Félix', '36 304568090', 'felix@freemail.hu', 3, 1860000, 1, 2023, 4, 25, 10, 15, 16),
+(18, 6, 'Bálint Márk Félix', '36 304568090', 'felix@freemail.hu', 3, 9120000, 1, 2023, 9, 9, 15, 10, 15);
 
 -- --------------------------------------------------------
 
@@ -196,7 +201,7 @@ INSERT INTO `utak` (`ut_id`, `kontinens`, `orszag`, `varos`, `utak_img`, `leiras
 (21, 'Európa ', 'Montenegró', 'Herceg novi', 'hercegnovi1-min.jpg', 'Herceg Novi város és község Montenegróban, az Adriai-tenger partján. A mintegy 16 000 lakosú község Európa-szerte ismert és népszerű üdülőhely. A Kanli Kula (Véres torony) erődöt 1487-ben a törökök építették, Herceg Novi városnak a legészakibb részén foglal helyet és a város összetett várrendszerének az egyik eleme, ami védelmi szerepet töltött be és börtönként is használták. A Tengeri erődöt (Forte Mare) a 14. században építették, később a törökök, majd az osztrákok is átépítették. Ma szabadtéri színház működik benne, augusztus elején filmfesztiválnak ad helyet.A Durmitor hegyei Montenegró északi részén húzódnak, a határhoz közel. A Durmitor legmagasabb csúcsa, a Bobotov Kuk. A Savina kolostor egy szerb ortodox kolostor, amely három templomból áll Herceg Novi város közelében, a Kotori-öbölben, sűrű mediterrán növényzetben, az egyik legszélesebb körben. ', 'repülő', 'repulo.svg', 'külföldi', 'Unod az egyszerű nyaralásokat? Gyere el és fedezd fel a Balkán-félszigetet!', '5 nap', 21, 'Europa ', 'Montenegro', 'Herceg novi', 'Tengerparti nyaralás', 1000000, '19 óra 45 perc', 'Magyarország, Budapest, 1185 Nemzetközi Repülőtér', 'Kanli kula, Forte Mare, Old Town, Durmitor, Savina Monastery, Montenegro'),
 (22, 'Európa ', 'Ausztria', 'Schneeberg', 'schneeberg1-min.jpg', 'A Schneeberg Alsó-Ausztria legmagasabb hegycsúcsa az Alpok hegységben, egyben az Alpok fő vonulatának utolsó keleti tagja, amely magasságával meghaladja a 2000 métert. A hegység látképe Észak-Burgenlandból, Bécsből és az Alpokalja tájegységről is könnyen megfigyelhető Kőszegtől Sopronig. Magassága 2076m. Schneeberg közeli távolsága miatt számos egynapos túrázás célpontja, csakúgy, mint az Alpok. Az egyik legnépszerűbb program, hogy egy hétvége keretében járják be mindkét célpontot a kirándulni vágyók.', 'repülő', 'repulo.svg', 'külföldi', 'Szeret túrázni? Másszon fel Alsó-Ausztria legmagasabb hegycsúcsára, a Schneebergre!', '3 nap', 22, 'Europa ', 'Ausztria', 'Schneeberg', 'Last minute', 500000, '4 óra 55 perc', 'Magyarország, Budapest, 1185 Nemzetközi Repülőtér', 'Hegymászás'),
 (23, 'Európa', 'Olaszország', 'Róma', 'roma1-min.jpg', 'Róma Olaszország fővárosa, Lazio régió központja, a hajdani Római Birodalom központja. Az ország legnagyobb és legnépesebb városa 1285,3 km²-en mintegy 2,8 millió lakossal, az Európai Unió harmadik legnépesebb városa.A firenzei dóm, olaszul Cattedrale di Santa Maria del Fiore, a Firenzei főegyházmegye főtemploma. A vatikáni Szent Péter-bazilika a római katolikus egyház első számú szentélye, a négy nagy bazilika egyike. A Colosseum az ókori Róma hatalmas amfiteátruma, ma pedig nevezetes látványossága a városnak. A Trevi-kút Róma egyik legnagyobb és világszinten legismertebb szökőkútja. A barokk szökőkutat a 17. században építette Niccolò Salvi a Poli-palota déli homlokzatán. ', 'repülő', 'repulo.svg', 'külföldi', 'Róma, az örök város', '5 nap', 23, 'Europa', 'Olaszorszag', 'Roma', 'Tengerparti nyaralás', 2000000, '5 óra 40 perc', 'Magyarország, Budapest, 1185 Nemzetközi Repülőtér', 'Firenzei dóm, Szent Péter-bazilika, Vatikán, Colosseum, Trevi-kút'),
-(24, 'Európa ', 'Görögország', 'Athén', 'athen1-min.jpg', 'Athén Görögország fővárosa. A modern Athén hatalmas, kozmopolita jellegű város; az ókori Athén nagy hatalmú városállam és jelentős tudományos központ volt. Az athéni Akropolisz Görögországban található, az ókorból származó épületegyüttes, az európai civilizáció és demokrácia jelképe, az emberi alkotógéniusz egyik legnagyobb alkotása. A Nemzeti Kert egy 15,5 hektáros nyilvános park a görög főváros, Athén központjában. A Kolonaki és Pangrati kerületek között található, közvetlenül a görög parlament épülete mögött, és dél felé halad a Zappeion területére, szemben az 1896-os Olimpiai Játékok Panathenaiko vagy Kalimarmaro Olimpiai Stadionjával. Az Athéni Nemzeti Obszervatórium egy kutatóintézet Athénban, Görögországban. Az 1842-ben alapított intézmény Görögország legrégebbi kutatási alapja. Az athéni Stadiou utcában található régi Parlament épülete 1875 és 1935 között a görög parlamentnek adott otthont. Jelenleg az ország Nemzeti Történeti Múzeumának ad otthont.  ', 'autó', 'auto.svg', 'külföldi', 'Az ókori világ központja, Athén', '5 nap', 24, 'Europa ', 'Gorogorszag', 'Athen', 'Tengerparti nyaralás', 2000000, '2 óra 5 perc', 'Magyarország, Budapest, 1185 Nemzetközi Repülőtér', 'Akropolisz, Acropolis Museum, Nemzeti Kert, National Observatory of Athens, Old Parliament'),
+(24, 'Európa ', 'Görögország', 'Athén', 'athen1-min.jpg', 'Athén Görögország fővárosa. A modern Athén hatalmas, kozmopolita jellegű város; az ókori Athén nagy hatalmú városállam és jelentős tudományos központ volt. Az athéni Akropolisz Görögországban található, az ókorból származó épületegyüttes, az európai civilizáció és demokrácia jelképe, az emberi alkotógéniusz egyik legnagyobb alkotása. A Nemzeti Kert egy 15,5 hektáros nyilvános park a görög főváros, Athén központjában. A Kolonaki és Pangrati kerületek között található, közvetlenül a görög parlament épülete mögött, és dél felé halad a Zappeion területére, szemben az 1896-os Olimpiai Játékok Panathenaiko vagy Kalimarmaro Olimpiai Stadionjával. Az Athéni Nemzeti Obszervatórium egy kutatóintézet Athénban, Görögországban. Az 1842-ben alapított intézmény Görögország legrégebbi kutatási alapja. Az athéni Stadiou utcában található régi Parlament épülete 1875 és 1935 között a görög parlamentnek adott otthont. Jelenleg az ország Nemzeti Történeti Múzeumának ad otthont.  ', 'autó', 'auto.svg', 'külföldi', 'Az ókori világ központja, Athén', '5 nap', 24, 'Europa ', 'Gorogorszag', 'Athen', 'Tengerparti nyaralás', 2000000, '2 óra 5 perc', 'Magyarország, Budapest, 1185 Nemzetközi Repülőtér', 'Akropolisz, Acropolis Museum, Nemzeti Kert, National Observatory of Athens, Old Parliament, hajó út'),
 (25, 'Európa', 'Norvégia', 'Flatbostad', 'flatbostad1-min.jpg', 'Viosen egy idilli hely, amely gyönyörűen fekszik a Snåsavatnet-tó legvégén. A strand és az út között gyönyörű homokos strand, nyári kávézó, hangulatos épületek és egy szép nyírfa fasor található. Múzeum\r\nGjerstadhuset Joralf Gjerstad gyermekkori otthona, amely 2012-ben nyitotta meg kapuit a nagyközönség előtt. A megjelenés gyakorlatilag megegyezik azzal, ahogyan egész gyermekkorában kinézett. A ház Berg Nedre városából származik az 1800-as évek közepéről, de 1924-ben költöztették át jelenlegi helyére.                          ', 'repülő', 'repulo.svg', 'külföldi', 'Norvégia felejthetetlen látnivalói', '4 nap', 25, 'Europa', 'Norvegia', 'Flatbostad', 'Tengerparti nyaralás', 1000000, '12 óra 55 perc', 'Magyarország, Budapest, 1185 Nemzetközi Repülőtér', 'Park ved Semskaia, Viosen, Gjerstadhuset,'),
 (26, 'Ázsia', 'Kína', 'Sanghai', 'sanghai1-min.jpg', 'Sanghaj Kína legnagyobb ipari városa, a Távol-Kelet egyik gazdasági központja, tartományi jogú város a kelet-kínai tengerpart középső részén, a Jangce torkolatvidékén, a folyam Huangpu nevű kis mellékfolyójának két partján található. A Yu garden komplexum egyik központi épülete a Huxinting teaház. Kína legrégebbi teaháza fa oszlopokon áll egy mesterséges tó közepén és egy cikk-cakkos hídon közelíthető meg, mely a kínai hiedelmek szerint távol tartja a pavilontól a szellemeket. A bár a Captain Hostel lobbyjából közelíthető meg, lifttel a legfelső emeletre, majd még 1-2 emelet lépcsőn és megérkezünk a tetőteraszra. A hostel a Bund második épület sorában helyezkedik el, de szerencsére nem takarja semmi a kilátást a folyó és Pudong felhőkarcolói felé.\r\nAz East Nanjing sétálóutcában ehetünk utcáról, kézben pálcikás húst (chuan), vehetünk gyönyörű mangót és más friss gyümölcsöket, remek a bao felhozatal, az alagsorban pedig van pár leülős hely is, ahol kiszolgálnak. Nagy a pörgés, minden frissen készül, 20-40 yuanból (800-1500 Ft) ehetünk ellenőrzött körülmények között készült gusztusos street foodot. \r\nA Jing’an Sangaj talán legismertebb buddhista temploma, illetve a legtöbbet fotózott épülete, hiszen nagyon látványosan ékelődik be a környező toronyházak közé.  A Pudong városrészben található a legnépszerűbb Ritz Carlton tetőterasz, Inenn rá lehet láttni a Oriental Pearl Tower-re.', 'repülő', 'repulo.svg', 'külföldi', 'Tekintsd meg  a világ egyik legnagyobb városát, Sanghait!', '5 nap', 26, 'Azsia', 'Kina', 'Sanghai', 'Városlátogatás', 2000000, '1 nap 2 óra', 'Magyarország, Budapest, 1185 Nemzetközi Repülőtér', 'Huxinting teaház, The Captain bar, East Nanjing road food court, Jing’an templom, Ritz-Carlton Pudong'),
 (27, 'Ázsia', 'Korea', 'Busan', 'busan1-min.jpg', 'A Busan Puszan Dél-Korea második legnagyobb városa, mely a Koreai-félsziget délkeleti részén, a Japán-tenger partján található. A Gamcheon Culture Village festői látványosság színes házakkal, \r\nfalfestményekkel, üzletekkel és kávézókkal. A Busani Művészeti Múzeum a művészeti tevékenységeket népszerűsíti kulturális területén annak érdekében, hogy növelje a város polgárainak figyelmét a művészet és a kultúra iránt. Hozzájárul az ország kulturális színterének fejlődéséhez, és sokféle műalkotást\r\n és művészi tevékenységet támogat, hogy a közönség könnyen hozzáférhessen a művészetekhez, valamint bővíti a művészbázist, élénkíti a művészetalkotást. A Beomeosa (a nirvánai hal temploma) a Koreai Buddhizmus Jogye Rendjének főtemploma Cheongnyong-dongban, Geumjeong-gu-ban, Busanban, Dél-Koreában. Geumjeongsan lejtőin épült, ez az ország egyik legismertebb városi temploma. A Sea Life Busan Aquarium egy akvárium a dél-koreai Haeundae Beach területén. A Yongdusan Park egy park a dél-koreai Busan állambeli Jung-gu városában. Itt található a 120 méter magas Busan-torony.', 'repülő', 'repulo.svg', 'külföldi', 'A filmfesztiválók hazája, Busan', '5 nap', 27, 'Azsia', 'Korea', 'Busan', 'Last minute', 1500000, '15 óra 10 perc ', 'Magyarország, Budapest, 1185 Nemzetközi Repülőtér', 'Gamcheon Culture Village,  Busan Museum of Art , Beomeosa, SEALIFE Busan Aquarium, Yongdusan Park'),
@@ -618,7 +623,8 @@ ALTER TABLE `felhasznalok`
 --
 ALTER TABLE `foglalas`
   ADD PRIMARY KEY (`foglalas_id`),
-  ADD KEY `ut_id2_2` (`ut_id2`);
+  ADD KEY `ut_id2_2` (`ut_id2`),
+  ADD KEY `felhasznalo_id` (`felhasznalo_id`);
 
 --
 -- A tábla indexei `szallas`
@@ -654,7 +660,7 @@ ALTER TABLE `felhasznalok`
 -- AUTO_INCREMENT a táblához `foglalas`
 --
 ALTER TABLE `foglalas`
-  MODIFY `foglalas_id` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `foglalas_id` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT a táblához `szallas`
@@ -676,7 +682,8 @@ ALTER TABLE `utak`
 -- Megkötések a táblához `foglalas`
 --
 ALTER TABLE `foglalas`
-  ADD CONSTRAINT `foglalas_ibfk_1` FOREIGN KEY (`ut_id2`) REFERENCES `utak` (`ut_id`);
+  ADD CONSTRAINT `foglalas_ibfk_1` FOREIGN KEY (`ut_id2`) REFERENCES `utak` (`ut_id`),
+  ADD CONSTRAINT `foglalas_ibfk_2` FOREIGN KEY (`felhasznalo_id`) REFERENCES `felhasznalok` (`id`);
 
 --
 -- Megkötések a táblához `utak`
