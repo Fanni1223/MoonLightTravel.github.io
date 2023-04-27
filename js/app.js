@@ -139,8 +139,8 @@
 
         let data = localStorage.getItem("user");
         if (util.isJson(data))
-              $rootScope.user = JSON.parse(data);
-        else  $rootScope.user = { id: null, nev: null };
+          $rootScope.user = JSON.parse(data);
+        else $rootScope.user = { id: null, nev: null };
 
         // On before transaction
         $transitions.onBefore({}, function (transition) {
@@ -180,25 +180,25 @@
           location.reload();
         };
 
-       
-      // Az overlay és popup elemek kiválasztása
-      var overlay = document.querySelector('.overlay_popup');
-      var popup = document.querySelector('.popup');
 
-      // A felugró ablak bezárásának függvénye
-      $rootScope.closePopup = () => {
-        overlay.style.display = 'none';
-      };
+        // Az overlay és popup elemek kiválasztása
+        var overlay = document.querySelector('.overlay_popup');
+        var popup = document.querySelector('.popup');
 
-      // Az oldal betöltődésekor megjelenő felugró ablak
-      window.onload = function () {
-        overlay.style.display = 'flex';
-      };
-      
-      $rootScope.scrollTo = function (elementId) {
-        var element = document.getElementById(elementId);
-        element.scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"});
-      };
+        // A felugró ablak bezárásának függvénye
+        $rootScope.closePopup = () => {
+          overlay.style.display = 'none';
+        };
+
+        // Az oldal betöltődésekor megjelenő felugró ablak
+        window.onload = function () {
+          overlay.style.display = 'flex';
+        };
+
+        $rootScope.scrollTo = function (elementId) {
+          var element = document.getElementById(elementId);
+          element.scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" });
+        };
 
       },
     ])
@@ -305,7 +305,7 @@
           } else {
             container.classList.remove("right-panel-active");
           }
-          
+
         }
       }
     ])
@@ -330,7 +330,7 @@
         http.request({
           url: "./php/utak.php",
           method: "POST",
-          data: {ut: $scope.ut}
+          data: { ut: $scope.ut }
         })
           .then((data) => {
             $scope.data = data;
@@ -474,10 +474,10 @@
             });
         };
 
-        $scope.changed2 = function() {
-          $scope.model.vegosszeg = ($scope.data[0].ut_ar + $scope.data[0].szallas_ar) * $scope.model.fo ;
+        $scope.changed2 = function () {
+          $scope.model.vegosszeg = ($scope.data[0].ut_ar + $scope.data[0].szallas_ar) * $scope.model.fo;
         };
-      
+
       },
     ])
 
@@ -532,7 +532,7 @@
       },
     ])
 
-    
+
 
 })(window, angular);
 
