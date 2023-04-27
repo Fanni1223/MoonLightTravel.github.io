@@ -1,42 +1,33 @@
 <?php
-
-// Require file
-require_once('../../../common/php/Database.php');
-
-// Set result
-$result = null;
+require_once('../../common/php/environment.php');
 
 // Get arguments
 $args = Util::getArgs();
 
-// Connect to MySQL server
-$db = new Database('moonlighttravel');
+// Connect to database
+$db = new Database();
 
+// Set query
 $query = "SELECT * FROM `felhasznalok` WHERE `email` = :email;";
 
-$db->execute($query, array('email'=>$args['email']));
+// Execute query
+$result = $db->execute($query, array('email' => $args['email']));
 
-if (!$db->is_error()) {
-  
-  $result = $db->get_data();
+if (!is_null($result)) {
 
-  if (count($result) === 0) {
+	// Disconnect
+	$db = null;
 
-    $query = "INSERT INTO `felhasznalok` (`nev`,`email`,`jelszo`) VALUES (:nev, :email, :jelszo);";
+	Util::setError('Email már létezik!');
+}
 
-    $db->execute($query, $args);
+// Set query
+$query = "INSERT INTO `felhasznalok` (`nev`,`email`,`jelszo`) VALUES (:nev, :email, :jelszo);";
 
-    if (!$db->is_error()) {
+// Execute query
+$result = $db->execute($query, $args);
 
-            $result = $db->get_data();
-          
-
-    } else  Util::setError($db->get_error(), false);
-  } else  Util::setError('Email már létezik!', false);
-} else  Util::setError($db->get_error(), false);
-
-// Disconect
+// Disconnect
 $db = null;
 
-// Set response
 Util::setResponse($result);

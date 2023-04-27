@@ -4,9 +4,6 @@
   <div class="row mt-5" ng-if="data.length">
     <h1 class="text-center mt-5">{{data[0].nev}}</h1>
   </div>
-
-
-
   <!--Képgaléria-->
   <div class="row mt-5" ng-if="data.length">
     <div class="col-xl-8 col-md-10 col-sm-12 mt-3" ng-if="data.length">
@@ -154,7 +151,8 @@
 
         <div class="row mt-2" ng-if="data.length">
           <h6>Végösszeg</h6>
-          <input type="text" id="osszeg" name="osszeg" style="width: 40%;" class="mx-2" disabled placeholder="{{model.vegosszeg}} Ft">
+          <input type="text" id="osszeg" name="osszeg" style="width: 40%;" class="mx-2" disabled
+            placeholder="{{model.vegosszeg}} Ft">
         </div>
 
         <button id="foglalas-btn" type="button" class="btn float-end" style="width: 40%;" ng-click="insertData()"
@@ -220,13 +218,13 @@
         <h5>A szállás ára</h5>
         <p class="mx-3 mt-3">
           <img ng-src="./img/ikonok/hotel.svg" alt="ikon" title="ikon" class="ikon mx-3" />{{data[0].szallas_ar}}
-          Ft/éjszaka
+          Ft
         </p>
-        <p></p>
         <h5>
           Az összeg tartalmazza a szállást és a hozzá tartozó szolgáltatásokat
-          is. Az összeg úgy került kiszámításra, hogy már bele van kalkulálva az ott töltött napok száma.
+          is.
         </h5>
+        <h5>Az összeg úgy került kiszámításra, hogy már bele van kalkulálva az ott töltött napok száma.</h5>
       </section>
     </main>
   </div>

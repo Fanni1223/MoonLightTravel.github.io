@@ -1,19 +1,21 @@
 <!--Banner, menü-->
 <div ng-include src="'../MoonLightTravel.github.io/html/navigate.html'"></div>
 <div class="container" ng-if="keresesEredmenye">
+
+  <!--Kártyák, ha van eredmény-->
   <div class="row mt-2">
     <div class="col-md-4" ng-repeat="hely in keresesEredmenye">
       <div class="card my-3">
-        <img ng-src="./img/utak/{{hely.utak_img}}">
+        <img ng-src="./img/utak/{{hely.utak_img}}" alt="Út" title="Út">
         <div class="card-body">
           <h5 class="card-title">{{hely.nev}}</h5>
           <h5 class="card-title">
-            {{hely.megnev}}<img src="./img/ikonok/hotel.svg" class="ikon">
+            {{hely.megnev}}<img src="./img/ikonok/hotel.svg" class="ikon" alt="ikon">
           </h5>
-          <img src="./img/ikonok/star.svg" class="ikon">
-          <img src="./img/ikonok/star.svg" class="ikon">
-          <img src="./img/ikonok/star.svg" class="ikon">
-          <img src="../MoonLightTravel.github.io/img/ikonok/repulo.svg" class="ikon mx-5 float-end">
+          <img src="./img/ikonok/star.svg" class="ikon" alt="ikon">
+          <img src="./img/ikonok/star.svg" class="ikon" alt="ikon">
+          <img src="./img/ikonok/star.svg" class="ikon" alt="ikon">
+          <img src="../MoonLightTravel.github.io/img/ikonok/repulo.svg" class="ikon mx-5 float-end" alt="ikon">
           <br>
           <br>
           <p class="card-title2">
@@ -30,6 +32,8 @@
   </div>
 </div>
 
+
+<!--Üzenet, ha nincs eredmény-->
 <div class="container" ng-if="!keresesEredmenye">
   <p class="fw-bold mt-5 text-center fs-4 p-5">Sajnáljuk, de nincs találat erre a keresési eredményre.</p>
 </div>

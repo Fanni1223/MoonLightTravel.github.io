@@ -74,23 +74,19 @@
         </button>
       </form>
 
-      <button class="btn mx-2 mt-2"
-              ng-if="!user.id"
-              ng-click="scrollTo('bejelentkezes', true)">
+      <button class="btn mx-2 mt-2" ng-if="!user.id" ng-click="scrollTo('bejelentkezes', true)">
         Bejelentkezés\Regisztráció
       </button>
-      
+
 
       <div class="login-kep mx-1 mt-2">
         <img src="../MoonLightTravel.github.io/img/ikonok/ember.svg" class="log-picture" alt="">
       </div>
-      <div class="text-rigth mt-2" class="nev">{{user.nev}}</div>
+      <div class="text-rigth mt-2 nev">{{user.nev}}</div>
 
       <button class="btn mx-2 mt-2" id="logout" ng-click="logout()">
         Kijelentkezés<i class="fa fa-sign-out mx-1" style="font-size:12px"></i>
       </button>
-
-     
     </div>
   </div>
 </nav>

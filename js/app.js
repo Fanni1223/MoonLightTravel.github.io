@@ -252,7 +252,6 @@
                 $rootScope.user = {
                   id: parseInt(data.lastInsertId),
                   nev: $scope.model.register.nev
-
                 };
                 alert('Sikeres regisztráció!');
               } else {
