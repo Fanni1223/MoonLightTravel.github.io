@@ -451,7 +451,7 @@ h3 {
 
 .btn2 {
   border-radius: 20px;
-  border: 1px;
+  border: 1px solid white;
   background-color: #FFB400;
   color: #FFFFFF;
   font-size: 12px;
