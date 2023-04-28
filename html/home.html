@@ -283,49 +283,50 @@
   </div>
 
 
-<!--Űrlap-->
-<div class="row">
-  <h1 class="text-center mt-5">Regisztráció és bejelentkezés</h1>
-</div>
-<div class="row mt-5  col-mt-6  m-1">
-  <div class="bejelentkezes col-xl-6 col-md-6 col-lg-6 col-mt-6  centered-form " id="bejelentkezes">
-    <div class="form-bejelentkezes sign-up-bejelentkezes ">
-      <form class="login">
-        <h1>Regisztráció</h1>
-        <br>
-        <input type="text" class="beviteli " placeholder="Név" ng-model="model.register.nev" name="nev" />
-        <input type="email" class="beviteli mt-2" placeholder="Email" ng-model="model.register.email" name="email" />
-        <input type="password" class="beviteli " placeholder="Jelszó" ng-model="model.register.jelszo" name="jelszo" />
-        <br>
-        <button class="btn2" ng-click="register()">Regisztráció</button>
-      </form>
-    </div>
-    <div class="form-bejelentkezes sign-in-bejelentkezes">
-      <form class="login">
-        <h1>Bejelentkezés</h1>
-        <br>
-        <input type="email" class="beviteli" placeholder="Email" ng-model="model.login.email" />
-        <input type="password" class="beviteli" placeholder="Jelszó" ng-model="model.login.jelszo" />
-        <br>
-        <button class="btn2" ng-click="login()">Bejelentkezés</button>
-      </form>
-    </div>
-    <div class="overlay-bejelentkezes">
-      <div class="overlay">
-        <div class="overlay-panel overlay-left">
-          <h3>Jelentkezz be itt!</h3>
+  <!--Űrlap-->
+  <div class="row">
+    <h1 class="text-center mt-5">Regisztráció és bejelentkezés</h1>
+  </div>
+  <div class="row mt-5  col-mt-6  m-1">
+    <div class="bejelentkezes col-xl-6 col-md-6 col-lg-6 col-mt-6  centered-form " id="bejelentkezes">
+      <div class="form-bejelentkezes sign-up-bejelentkezes ">
+        <form class="login">
+          <h1>Regisztráció</h1>
           <br>
-          <button class="ghost btn2" id="signIn" ng-click="changeActive($event)">Bejelentkezés</button>
-        </div>
-        <div class="overlay-panel overlay-right">
-          <h3>Regisztrálj itt!</h3>
+          <input type="text" class="beviteli " placeholder="Név" ng-model="model.register.nev" name="nev" />
+          <input type="email" class="beviteli mt-2" placeholder="Email" ng-model="model.register.email" name="email" />
+          <input type="password" class="beviteli " placeholder="Jelszó" ng-model="model.register.jelszo"
+            name="jelszo" />
           <br>
-          <button class="ghost btn2" id="signUp" ng-click="changeActive($event)">Regisztráció</button>
+          <button class="btn2" ng-click="register()">Regisztráció</button>
+        </form>
+      </div>
+      <div class="form-bejelentkezes sign-in-bejelentkezes">
+        <form class="login">
+          <h1>Bejelentkezés</h1>
+          <br>
+          <input type="email" class="beviteli" placeholder="Email" ng-model="model.login.email" />
+          <input type="password" class="beviteli" placeholder="Jelszó" ng-model="model.login.jelszo" />
+          <br>
+          <button class="btn2" ng-click="login()">Bejelentkezés</button>
+        </form>
+      </div>
+      <div class="overlay-bejelentkezes">
+        <div class="overlay">
+          <div class="overlay-panel overlay-left">
+            <h3>Jelentkezz be itt!</h3>
+            <br>
+            <button class="ghost btn2" id="signIn" ng-click="changeActive($event)">Bejelentkezés</button>
+          </div>
+          <div class="overlay-panel overlay-right">
+            <h3>Regisztrálj itt!</h3>
+            <br>
+            <button class="ghost btn2" id="signUp" ng-click="changeActive($event)">Regisztráció</button>
+          </div>
         </div>
       </div>
     </div>
   </div>
-</div>
 </div>
 <!-- Footer -->
 <footer id="availability" ng-include src="'../MoonLightTravel.github.io/html/footer.html'">
