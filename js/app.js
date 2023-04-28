@@ -129,10 +129,11 @@
     //app run
     .run([
       "$rootScope",
+      "$state",
       "$transitions",
       "$timeout",
       "util",
-      function ($rootScope, $transitions, $timeout, util) {
+      function ($rootScope, $state, $transitions, $timeout, util) {
 
         // Set global variables
         $rootScope.state = { id: null, prev: null };
@@ -199,6 +200,16 @@
           element.scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" });
         };
 
+        $rootScope.scrollAndRedirect = function () {
+          $state.go('home');
+          $timeout(function () {
+            $rootScope.scrollTo('bejelentkezes');
+          });
+        };
+        
+        
+        
+      
 
       },
     ])
