@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Gép: 127.0.0.1
--- Létrehozás ideje: 2023. Ápr 27. 09:51
+-- Létrehozás ideje: 2023. Ápr 28. 10:35
 -- Kiszolgáló verziója: 10.4.6-MariaDB
 -- PHP verzió: 7.3.8
 
@@ -42,7 +42,9 @@ CREATE TABLE `felhasznalok` (
 INSERT INTO `felhasznalok` (`id`, `nev`, `email`, `jelszo`) VALUES
 (2, 'Fanni', 'fanni@citromail.hu', 'a'),
 (3, 'Turi Regina', 'turi.viktoriar-2018@keri.mako.hu', 'aa'),
-(6, 'Félix', 'felix@freemail.hu', '123456');
+(6, 'Félix', 'felix@freemail.hu', '123456'),
+(7, 'Nagy Viktória', 'nagyviki@gmail.com', '1234567'),
+(8, 'Nagy Sándor', 'nagysandor@gmail.com', 'asd123');
 
 -- --------------------------------------------------------
 
@@ -654,13 +656,13 @@ ALTER TABLE `utak_kepek`
 -- AUTO_INCREMENT a táblához `felhasznalok`
 --
 ALTER TABLE `felhasznalok`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT a táblához `foglalas`
 --
 ALTER TABLE `foglalas`
-  MODIFY `foglalas_id` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `foglalas_id` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
 -- AUTO_INCREMENT a táblához `szallas`
