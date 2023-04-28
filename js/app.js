@@ -206,10 +206,10 @@
             $rootScope.scrollTo('bejelentkezes');
           });
         };
-        
-        
-        
-      
+
+
+
+
 
       },
     ])
